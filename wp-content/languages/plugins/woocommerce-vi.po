@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-06-23T22:16:25+00:00\n"
-"PO-Revision-Date: 2020-07-10 08:24+0000\n"
+"PO-Revision-Date: 2020-07-10 10:17+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: woocommerce\n"
 "Language: vi\n"
@@ -8188,7 +8188,7 @@ msgstr ""
 #. Translators: %s order type name.
 #: includes/admin/class-wc-admin-meta-boxes.php:128
 msgid "%s notes"
-msgstr "Ghi chú %s"
+msgstr "Ghi chú đơn hàng"
 
 #: includes/admin/class-wc-admin-meta-boxes.php:129
 msgid "Downloadable product permissions"
@@ -8203,7 +8203,7 @@ msgstr ""
 #. Translators: %s order type name.
 #: includes/admin/class-wc-admin-meta-boxes.php:131
 msgid "%s actions"
-msgstr "%s tác vụ"
+msgstr "Tác vụ đơn hàng"
 
 #: includes/admin/class-wc-admin-meta-boxes.php:135
 msgid "Coupon data"
@@ -11296,7 +11296,7 @@ msgstr ""
 #: templates/emails/email-order-details.php:43
 #: templates/global/quantity-input.php:28
 msgid "Quantity"
-msgstr ""
+msgstr "Số lượng"
 
 #: includes/admin/importers/mappings/generic.php:26
 #: includes/admin/meta-boxes/views/html-product-data-advanced.php:28
@@ -11368,7 +11368,7 @@ msgstr ""
 #: packages/woocommerce-blocks/build/reviews-by-product-legacy.js:1
 #: packages/woocommerce-blocks/build/reviews-by-product.js:1
 msgid "Product"
-msgstr ""
+msgstr "Sản phẩm"
 
 #: includes/admin/importers/views/html-csv-import-done.php:62
 msgid "Reason for failure"
@@ -11622,7 +11622,7 @@ msgstr ""
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:365
 #: includes/class-wc-query.php:115
 msgid "Order #%s"
-msgstr ""
+msgstr "Đơn hàng #%s"
 
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:367
 #: includes/admin/settings/views/html-admin-page-shipping-zone-methods.php:151
@@ -11634,7 +11634,7 @@ msgstr ""
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:375
 #: templates/checkout/form-billing.php:28
 msgid "Billing details"
-msgstr ""
+msgstr "Chi tiết thanh toán"
 
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:379
 #: includes/admin/reports/class-wc-report-customer-list.php:216
@@ -12108,7 +12108,7 @@ msgstr ""
 
 #: includes/admin/meta-boxes/class-wc-meta-box-order-actions.php:66
 msgid "Move to Trash"
-msgstr ""
+msgstr "Di chuyển đến thùng rác"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-order-actions.php:75
 msgid "Create"
@@ -12120,7 +12120,7 @@ msgstr ""
 
 #: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:179
 msgid "%1$s #%2$s details"
-msgstr "%1$s #%2$s chi tiết"
+msgstr "Chi tiết đơn hàng  #%2$s"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:194
 msgid "Payment via %s"
@@ -12155,7 +12155,7 @@ msgstr "Trạng thái:"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:251
 msgid "Customer payment page &rarr;"
-msgstr ""
+msgstr "Trang thanh toán khách hàng &rarr;"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:270
 msgid "Customer:"
@@ -12262,11 +12262,11 @@ msgstr ""
 
 #: includes/admin/meta-boxes/class-wc-meta-box-order-notes.php:41
 msgid "Private note"
-msgstr ""
+msgstr "Ghi chú riêng"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-order-notes.php:42
 msgid "Note to customer"
-msgstr ""
+msgstr "Ghi chú tới khách hàng"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-order-notes.php:44
 #: includes/admin/meta-boxes/views/html-order-items.php:397
@@ -12275,7 +12275,7 @@ msgstr ""
 #: packages/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:33
 #: templates/myaccount/my-address.php:63
 msgid "Add"
-msgstr ""
+msgstr "Thêm"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:63
 msgid "Virtual products are intangible and are not shipped."
@@ -12501,7 +12501,7 @@ msgstr ""
 
 #: includes/admin/meta-boxes/views/html-order-items.php:260
 msgid "Add item(s)"
-msgstr ""
+msgstr "Thêm sản phẩm"
 
 #: includes/admin/meta-boxes/views/html-order-items.php:262
 #: templates/cart/cart.php:143 templates/checkout/form-coupon.php:38
@@ -12519,7 +12519,7 @@ msgstr "Đơn hàng này không thể chỉnh sửa"
 #: includes/admin/meta-boxes/views/html-order-items.php:268
 #: includes/class-wc-order.php:2043
 msgid "Refund"
-msgstr ""
+msgstr "Hoàn tiền"
 
 #: includes/admin/meta-boxes/views/html-order-items.php:275
 msgid "Recalculate"
@@ -12639,11 +12639,11 @@ msgstr ""
 #: includes/admin/meta-boxes/views/html-order-notes.php:37
 #: includes/class-wc-ajax.php:1493
 msgid "Delete note"
-msgstr ""
+msgstr "Xóa ghi chú"
 
 #: includes/admin/meta-boxes/views/html-order-notes.php:44
 msgid "There are no notes yet."
-msgstr ""
+msgstr "Chưa có ghi chú"
 
 #. translators: 1: refund id 2: refund date 3: username
 #: includes/admin/meta-boxes/views/html-order-refund.php:23
@@ -12931,7 +12931,7 @@ msgstr ""
 
 #: includes/admin/meta-boxes/views/html-product-data-panel.php:18
 msgid "Product Type"
-msgstr ""
+msgstr "Loại sản phẩm"
 
 #: includes/admin/meta-boxes/views/html-product-data-shipping.php:14
 #: includes/admin/meta-boxes/views/html-product-data-variations.php:83
@@ -18671,7 +18671,7 @@ msgstr "Thêm mới sản phẩm"
 #: includes/class-wc-post-types.php:318
 #: includes/tracks/events/class-wc-products-tracking.php:130
 msgid "Edit product"
-msgstr ""
+msgstr "Sửa sản phẩm"
 
 #: includes/class-wc-post-types.php:319
 msgid "New product"
@@ -18751,7 +18751,7 @@ msgstr ""
 
 #: includes/class-wc-post-types.php:381
 msgid "Add order"
-msgstr ""
+msgstr "Thêm đơn hàng"
 
 #: includes/class-wc-post-types.php:382
 msgid "Add new order"
@@ -18896,7 +18896,7 @@ msgstr "Chờ thanh toán"
 #: includes/class-wc-post-types.php:497
 msgid "Pending payment <span class=\"count\">(%s)</span>"
 msgid_plural "Pending payment <span class=\"count\">(%s)</span>"
-msgstr[0] ""
+msgstr[0] "Chờ thanh toán <span class=\"count\">(%s)</span>"
 msgstr[1] ""
 
 #: includes/class-wc-post-types.php:500 includes/wc-order-functions.php:96
@@ -18920,7 +18920,7 @@ msgstr "Đang chờ"
 #: includes/class-wc-post-types.php:515
 msgid "On hold <span class=\"count\">(%s)</span>"
 msgid_plural "On hold <span class=\"count\">(%s)</span>"
-msgstr[0] "Đang chờ"
+msgstr[0] "Đang chờ <span class=\"count\">(%s)</span>"
 msgstr[1] ""
 
 #: includes/class-wc-post-types.php:518 includes/wc-order-functions.php:98
@@ -18932,7 +18932,7 @@ msgstr "Hoàn tất"
 #: includes/class-wc-post-types.php:524
 msgid "Completed <span class=\"count\">(%s)</span>"
 msgid_plural "Completed <span class=\"count\">(%s)</span>"
-msgstr[0] ""
+msgstr[0] "Hoàn tất <span class=\"count\">(%s)</span>"
 msgstr[1] ""
 
 #: includes/class-wc-post-types.php:527 includes/wc-order-functions.php:99
@@ -18944,7 +18944,7 @@ msgstr "Hủy"
 #: includes/class-wc-post-types.php:533
 msgid "Cancelled <span class=\"count\">(%s)</span>"
 msgid_plural "Cancelled <span class=\"count\">(%s)</span>"
-msgstr[0] ""
+msgstr[0] "Hủy <span class=\"count\">(%s)</span>"
 msgstr[1] ""
 
 #: includes/class-wc-post-types.php:536 includes/wc-order-functions.php:100
@@ -23514,7 +23514,7 @@ msgstr ""
 
 #: includes/wc-product-functions.php:572
 msgid "Simple product"
-msgstr ""
+msgstr "Loại bình thường"
 
 #: includes/wc-product-functions.php:573
 msgid "Grouped product"
@@ -24767,7 +24767,7 @@ msgstr ""
 
 #: packages/woocommerce-admin/includes/connect-existing-pages.php:210
 msgid "Edit Product"
-msgstr ""
+msgstr "Sửa sản phẩm"
 
 #: packages/woocommerce-admin/includes/emails/html-admin-report-export-download.php:17
 msgid "Download your %s Report"
@@ -33035,7 +33035,7 @@ msgstr ""
 #: packages/woocommerce-admin/dist/chunks/analytics-report-stock.2939053e1a82a2ae848c.js:259
 msgid "product"
 msgid_plural "products"
-msgstr[0] ""
+msgstr[0] "sản phẩm"
 msgstr[1] ""
 
 #: packages/woocommerce-admin/dist/chunks/4.b94ffcec7f813ed34edb.js:1302
