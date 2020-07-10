@@ -158,7 +158,7 @@ class Analytics {
 
 		foreach ( $report_pages as $report_page ) {
 			if ( ! is_null( $report_page ) ) {
-				wc_admin_register_page( $report_page );
+				//wc_admin_register_page( $report_page );
 			}
 		}
 	}
