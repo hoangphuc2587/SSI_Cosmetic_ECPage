@@ -350,3 +350,12 @@ function isPhoneNumberExist($phone) {
 }
 add_filter('phone_number_check_exist', 'isPhoneNumberExist');
 
+/*************** set defaul billing_phone ***********/
+add_filter( 'woocommerce_checkout_fields' , 'default_values_checkout_fields' );
+function default_values_checkout_fields( $fields ) {
+    $current_user_id = get_current_user_id();
+    $phone = get_user_meta($current_user_id,'user_phone',true);
+    $fields['billing']['billing_phone']['default'] = $phone;
+    return $fields;
+}
+
