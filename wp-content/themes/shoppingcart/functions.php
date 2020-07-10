@@ -308,3 +308,54 @@ function shoppingcart_woocommerce_add_to_cart_fragment( $fragments ) {
 
 	return $fragments;
 }
+
+/************** add login css *************************************/
+function add_login_css() {
+    wp_enqueue_style('my-script-slug',  get_template_directory_uri() . '/css/login-register-style.css');
+}
+add_action('wp_enqueue_scripts', 'add_login_css');
+
+/************** redirect to the custom login page *************************************/
+function redirect_to_custom_login_page() {
+	wp_redirect(site_url() . "/login");
+	exit();
+}
+add_action('wp_logout', 'redirect_to_custom_login_page');
+
+/************** to check phone number valid or not *************************************/
+function isPhoneNumber($phone) {
+	if (preg_match("/^(03[2-9]|05[6|8|9]|07[0|6-9]|08[1-9]|09[0-9])+([0-9]{7})$/", $phone)) {
+		return true;
+	}
+	return false;
+}
+add_filter('phone_number_check_valid', 'isPhoneNumber');
+
+/************** to check phone number existing or not *************************************/
+function isPhoneNumberExist($phone) {
+	$args = array(
+		'meta_key'     => 'user_phone',
+		'meta_value'   => $phone,
+		'meta_compare' => '=',
+		'exclude' => array( $current_user_id )
+	);
+	$user_query = new WP_User_Query( $args );
+	// Get the results
+	$authors = $user_query->get_results();
+	// Check for results
+	if (!empty($authors)){
+		return true;
+	}
+	return false;
+}
+add_filter('phone_number_check_exist', 'isPhoneNumberExist');
+
+/*************** set defaul billing_phone ***********/
+add_filter( 'woocommerce_checkout_fields' , 'default_values_checkout_fields' );
+function default_values_checkout_fields( $fields ) {
+    $current_user_id = get_current_user_id();
+    $phone = get_user_meta($current_user_id,'user_phone',true);
+    $fields['billing']['billing_phone']['default'] = $phone;
+    return $fields;
+}
+
