@@ -17,11 +17,20 @@ get_header();
 		$layout = 'default';
 	} ?>
 <div class="wrap">
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-			<?php woocommerce_content(); ?>
-		</main><!-- end #main -->
-	</div> <!-- #primary -->
+    <?php if(is_shop()) { ?>
+        <div id="primary-full" class="content-area">
+            <main id="main" class="site-main" role="main">
+                <?php woocommerce_content(); ?>
+            </main><!-- end #main -->
+        </div> <!-- #primary -->
+    <?php } else{ ?>
+        <div id="primary" class="content-area">
+            <main id="main" class="site-main" role="main">
+                <?php woocommerce_content(); ?>
+            </main><!-- end #main -->
+        </div> <!-- #primary -->
+    <?php } ?>
+
 <?php 
 if( 'default' == $layout ) { //Settings from customizer
 	if(($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'nosidebar') && ($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'fullwidth')){ ?>
@@ -29,7 +38,7 @@ if( 'default' == $layout ) { //Settings from customizer
 	<?php }
 } 
 	if( 'default' == $layout ) { //Settings from customizer
-		if(($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'nosidebar') && ($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'fullwidth')): ?>
+		if((!is_shop())&&($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'nosidebar') && ($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'fullwidth')): ?>
 		<?php dynamic_sidebar( 'shoppingcart_woocommerce_sidebar' ); ?>
 </aside><!-- end #secondary -->
 <?php endif;

@@ -19,7 +19,7 @@ get_header();
 		$layout = 'default';
 	} ?>
 <div class="wrap">
-	<div id="primary" class="content-area">
+	<div class="contact-form" style="justify-content: center; display: flex;">
 		<main id="main" class="site-main" role="main">
 		<header class="page-header">
 			<h1 class="page-title"><?php the_title();?></h1>
@@ -52,30 +52,7 @@ get_header();
 			</div> <!-- end #entry-content -->
 		</main> <!-- end #main -->
 	</div> <!-- #primary -->
-	<?php 
-	if( 'default' == $layout ) { //Settings from customizer
-		if(($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'nosidebar') && ($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'fullwidth')){ ?>
-	<aside id="secondary" class="widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Secondary', 'shoppingcart' ); ?>">
-	<?php }
-	}else{ // for page/ post
-			if(($layout != 'no-sidebar') && ($layout != 'full-width')){ ?>
-	<aside id="secondary" class="widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Secondary', 'shoppingcart' ); ?>">
-
-		<?php }
-		}
-		if ( is_active_sidebar( 'shoppingcart_contact_page_sidebar' ) ) :
-			dynamic_sidebar( 'shoppingcart_contact_page_sidebar' );
-		endif;?>
-		<?php 
-		if( 'default' == $layout ) { //Settings from customizer
-			if(($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'nosidebar') && ($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'fullwidth')): ?>
-	</aside><!-- end #secondary -->
-	<?php endif;
-		}else{ // for page/post
-			if(($layout != 'no-sidebar') && ($layout != 'full-width')){
-				echo '</aside><!-- end #secondary -->';
-			} 
-		} ?>
+	
 </div><!-- end .wrap -->
 <?php
 get_footer();

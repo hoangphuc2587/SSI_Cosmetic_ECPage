@@ -1,0 +1,15 @@
+#woocommerce_price_filter-2{
+    width:20%;
+    min-width: 182px;
+    display: inline-block;
+    justify-content: center;
+    margin-bottom: 0px;
+    margin-top:-20px;
+}
+.woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content{
+
+    margin-top:0px;
+}
+#main{
+    text-align: center;
+}
