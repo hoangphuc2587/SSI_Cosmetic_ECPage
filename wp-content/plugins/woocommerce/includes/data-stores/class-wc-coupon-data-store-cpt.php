@@ -163,7 +163,6 @@ class WC_Coupon_Data_Store_CPT extends WC_Data_Store_WP implements WC_Coupon_Dat
 	public function update( &$coupon ) {
 		$coupon->save_meta_data();
 		$changes = $coupon->get_changes();
-
 		if ( array_intersect( array( 'code', 'description', 'date_created', 'date_modified' ), array_keys( $changes ) ) ) {
 			$post_data = array(
 				'post_title'        => $coupon->get_code( 'edit' ),
@@ -261,8 +260,6 @@ class WC_Coupon_Data_Store_CPT extends WC_Data_Store_WP implements WC_Coupon_Dat
 		);
 
 		$props_to_update = $this->get_props_to_update( $coupon, $meta_key_to_props );
-        $props_to_update['active_coupon'] = 'active_coupon';
-        $props_to_update['used_coupon']   = 'used_coupon';
 		foreach ( $props_to_update as $meta_key => $prop ) {
 			$value = $coupon->{"get_$prop"}( 'edit' );
 			$value = is_string( $value ) ? wp_slash( $value ) : $value;

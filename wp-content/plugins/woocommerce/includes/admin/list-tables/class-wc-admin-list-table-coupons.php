@@ -115,7 +115,7 @@ class WC_Admin_List_Table_Coupons extends WC_Admin_List_Table {
 		$edit_link = get_edit_post_link( $this->object->get_id() );
 		$title     = $this->object->get_code();
 
-		echo '<strong><a class="row-title" href="' . esc_url( $edit_link ) . '">' . esc_html( $title ) . '</a>';
+		echo '<strong><a class="row-title" href="' . esc_url( $edit_link ) . '">' . esc_html( strtoupper ($title )) . '</a>';
 		_post_states( $post );
 		echo '</strong>';
 	}
@@ -131,7 +131,7 @@ class WC_Admin_List_Table_Coupons extends WC_Admin_List_Table {
 	 * Render columm: amount.
 	 */
 	protected function render_amount_column() {
-		echo esc_html( wc_format_localized_price( $this->object->get_amount() ) );
+		echo esc_html( number_format( $this->object->get_amount() ) );
 	}
 	/**
 	 * Render columm: products.
@@ -181,7 +181,7 @@ class WC_Admin_List_Table_Coupons extends WC_Admin_List_Table {
 		$expiry_date = $this->object->get_date_expires();
 
 		if ( $expiry_date ) {
-			echo esc_html( $expiry_date->date_i18n( 'F j, Y' ) );
+			echo esc_html( $expiry_date->date_i18n( 'd/m/Y' ) );
 		} else {
 			echo '&ndash;';
 		}
