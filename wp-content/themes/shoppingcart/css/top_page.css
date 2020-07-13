@@ -81,33 +81,55 @@
 /* #site-branding .wrap #site-detail .site-title-menu ul li i.fa {
     margin-right: 10px;
 } */
-#site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li {
-    padding: 10px;
+#site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li {    
     border-bottom: 1px solid #aaaaaa;
     font-size: 16px;
+    color: #000;
     text-transform: uppercase;
 }
 #site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li.menu-item-has-children {
     padding: 0;
 }
 #site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li > a::before {
-    content: "\02C3\0020";
+    content: "";
+    background-image: url("/wp-content/themes/shoppingcart/images/icon_arrow_den.png");
+    background-repeat: no-repeat;
+    top: 17px;
+    left: 10px;
+    position: absolute;
+    height: 7px;
+    width: 7px;
 }
 #site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li.menu-item-has-children > a::before {
-    content: "\02C5\0020";
+    /*content: "\02C5\0020";*/
 }
 #site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li.menu-item-has-children > a {
     display: block;
     padding: 10px;
+    position: relative;
 }
+
+#site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li a {
+    display: block;
+    padding: 10px 10px 10px 30px !important;  
+    position: relative;
+}
+
 #site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li.menu-item-has-children ul.sub-menu > li {
-    padding: 10px;
+    /*padding: 0px 10px;*/
     border-top: 1px dashed #aaaaaa;
     font-size: 14px;
     text-transform: capitalize;
 }
 #site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li.menu-item-has-children ul.sub-menu > li a::before {
-    content: "\02C3\0020";
+    content: "";
+    background-image: url("/wp-content/themes/shoppingcart/images/icon_arrow_xam.png");
+    background-repeat: no-repeat;
+    top: 17px;
+    left: 10px;
+    position: absolute;
+    height: 7px;
+    width: 7px;
 }
 /* #site-branding .wrap #site-detail .site-title-menu ul li.stm-active {
     background-image: url("/wp-content/themes/shoppingcart/images/banner_menu_active.png");
