@@ -392,7 +392,7 @@ add_filter( "woocommerce_catalog_orderby", "custom_woocommerce_product_sorting",
 /************ add filter price *****************/
 add_action("woocommerce_before_shop_loop","custom_abc");
 function custom_abc(){
-    echo do_shortcode('[do_widget id=woocommerce_price_filter-2]');
+    echo do_shortcode('[do_widget id=woocommerce_price_filter-1]');
 }
 
 /*************** add css in shop page **********/
