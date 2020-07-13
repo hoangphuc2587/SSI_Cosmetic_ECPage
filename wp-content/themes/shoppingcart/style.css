@@ -3374,7 +3374,7 @@ html[xmlns] .brand-slider .slides {
 ================================================== */
 .googlemaps_widget {
 	width: 100%;
-	margin-bottom: 50px;
+	/* margin-bottom: 50px; */
 }
 
 .maps-container {

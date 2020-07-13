@@ -380,4 +380,3 @@ function default_values_checkout_fields( $fields ) {
     $fields['billing']['billing_phone']['default'] = $phone;
     return $fields;
 }
-
