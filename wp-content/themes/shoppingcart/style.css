@@ -2969,7 +2969,8 @@ html[xmlns] .brand-slider .slides {
 
 .advertisement-banner-one .five-column-grid .shoppingcart-grid-product,
 .product-widget-box .five-column-grid .shoppingcart-grid-product {
-	width: 20%;
+	/*width: 20%;*/
+	width: 25%;
 }
 
 .sc-grid-product-img {
