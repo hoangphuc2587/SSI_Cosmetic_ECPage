@@ -380,3 +380,25 @@ function default_values_checkout_fields( $fields ) {
     $fields['billing']['billing_phone']['default'] = $phone;
     return $fields;
 }
+
+//*************** sort custom **********/
+function custom_woocommerce_product_sorting( $orderby ) {
+    unset($orderby["popularity"]);
+    unset($orderby["rating"]);
+    return $orderby;
+}
+add_filter( "woocommerce_catalog_orderby", "custom_woocommerce_product_sorting", 20 );
+
+/************ add filter price *****************/
+add_action("woocommerce_before_shop_loop","custom_abc");
+function custom_abc(){
+    echo do_shortcode('[do_widget id=woocommerce_price_filter-2]');
+}
+
+/*************** add css in shop page **********/
+function add_custom_css() {
+    if( is_shop() ) :
+        wp_enqueue_style( 'shop', get_template_directory_uri() . '/css/custom.css',false,'1.1');
+    endif;
+}
+add_action('wp_enqueue_scripts', 'add_custom_css');
