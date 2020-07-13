@@ -237,28 +237,50 @@ add_action( 'customize_register', 'shoppingcart_customize_register' );
 /******************* ShoppingCart Header Display *************************/
 function shoppingcart_header_display(){
 	$shoppingcart_settings = shoppingcart_get_theme_options();
+	$header_display = $shoppingcart_settings['shoppingcart_header_display'];
 
-$header_display = $shoppingcart_settings['shoppingcart_header_display'];
+	if ($header_display == 'header_logo' || $header_display == 'show_both') {
+		shoppingcart_the_custom_logo();
+	}
+	if ($header_display == 'header_text' || $header_display == 'show_both') {
+		echo '<div id="site-detail">';
+			if (is_home() || is_front_page()){ ?>
+				<h1 id="site-title"> <?php }else{?> <h2 id="site-title"> <?php } ?>
+				<a href="<?php echo esc_url(home_url('/'));?>" title="<?php echo esc_html(get_bloginfo('name', 'display'));?>" rel="home">
+					<img src="<?php echo home_url() . "/wp-content/themes/shoppingcart/images/logo.png"; ?>" alt="img" />
+				</a>
+				<?php if(is_home() || is_front_page()){ ?>
+				</h1>  <!-- end .site-title -->
+				<?php } else { ?> </h2> <!-- end .site-title --> <?php }
 
-		if ($header_display == 'header_logo' || $header_display == 'show_both') {
-			shoppingcart_the_custom_logo();
-		}
-		if ($header_display == 'header_text' || $header_display == 'show_both') {
-			echo '<div id="site-detail">';
-				if (is_home() || is_front_page()){ ?>
-					<h1 id="site-title"> <?php }else{?> <h2 id="site-title"> <?php } ?>
-					<a href="<?php echo esc_url(home_url('/'));?>" title="<?php echo esc_html(get_bloginfo('name', 'display'));?>" rel="home"> <?php bloginfo('name');?> </a>
-					<?php if(is_home() || is_front_page()){ ?>
-					</h1>  <!-- end .site-title -->
-					<?php } else { ?> </h2> <!-- end .site-title --> <?php }
+				$site_description = get_bloginfo( 'description', 'display' );
+				if ($site_description){?>
+					<div id="site-description"> <?php bloginfo('description');?> </div> <!-- end #site-description -->
+			<?php } ?>
 
-					$site_description = get_bloginfo( 'description', 'display' );
-					if ($site_description){?>
-						<div id="site-description"> <?php bloginfo('description');?> </div> <!-- end #site-description -->
-				<?php }
-			echo '</div>'; // end #site-detail
-		}
+	<div class="site-title-menu">
+		<?php
+			wp_nav_menu(array('container' => '', 'items_wrap' => '<ul class="stm-menu-lv1">%3$s</ul>'));
+		?>
+		<!-- <ul>
+			<li class="stm-active"><a href="#"><i class='fa fa-angle-down'></i>SẢN PHẨM</a></li>
 
+			<li class="menu-sub-1 stm-ms1-active"><a href="#"><i class='fa fa-angle-right'></i>Shirowakihime</a></li>
+			<li class="menu-sub-1"><a href="#"><i class='fa fa-angle-right'></i>Shirowakihime Night Pack</a></li>
+			<li class="menu-sub-1"><a href="#"><i class='fa fa-angle-right'></i>Slinky Touch</a></li>
+			<li class="menu-sub-1"><a href="#"><i class='fa fa-angle-right'></i>Slinky Touch</a></li>
+			<li class="menu-sub-1"><a href="#"><i class='fa fa-angle-right'></i>Tsubuoporon EX</a></li>
+			<li class="menu-sub-1"><a href="#"><i class='fa fa-angle-right'></i>Tsubuoporon Night Pack</a></li>
+			<li class="menu-sub-1 menu-sub-1-last"><a href="#"><i class='fa fa-angle-right'></i>Tsubuoporon Eye Essence</a></li>
+
+			<li><a href="#"><i class='fa fa-angle-right'></i>VỀ CHÚNG TÔI</a></li>
+			<li><a href="#"><i class='fa fa-angle-right'></i>FACEBOOK</a></li>
+			<li><a href="#"><i class='fa fa-angle-right'></i>LIÊN HỆ</a></li>
+		</ul> -->
+	</div>
+	<div class="carico-co-ltd">CARICO CO.,LTD</div>
+	<?php echo '</div>'; // end #site-detail
+	}
 }
 add_action('shoppingcart_site_branding','shoppingcart_header_display');
 

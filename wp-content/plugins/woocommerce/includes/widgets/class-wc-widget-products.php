@@ -190,7 +190,7 @@ class WC_Widget_Products extends WC_Widget {
 		if ( $products && $products->have_posts() ) {
 			$this->widget_start( $args, $instance );
 
-			echo wp_kses_post( apply_filters( 'woocommerce_before_widget_product_list', '<ul class="product_list_widget">' ) );
+			echo wp_kses_post( apply_filters( 'woocommerce_before_widget_product_list', '<div class="shoppingcart-grid-widget-wrap five-column-grid">' ) );
 
 			$template_args = array(
 				'widget_id'   => isset( $args['widget_id'] ) ? $args['widget_id'] : $this->widget_id,
@@ -202,7 +202,7 @@ class WC_Widget_Products extends WC_Widget {
 				wc_get_template( 'content-widget-product.php', $template_args );
 			}
 
-			echo wp_kses_post( apply_filters( 'woocommerce_after_widget_product_list', '</ul>' ) );
+			echo wp_kses_post( apply_filters( 'woocommerce_after_widget_product_list', '</div><div class="area-more-product"><a href="'.home_url().'/shop">Xem thêm &gt;&gt;</a></div>' ) );
 
 			$this->widget_end( $args );
 		}
@@ -211,4 +211,39 @@ class WC_Widget_Products extends WC_Widget {
 
 		echo $this->cache_widget( $args, ob_get_clean() ); // WPCS: XSS ok.
 	}
+
+	// BACKUP START
+	// public function widget( $args, $instance ) {
+	// 	if ( $this->get_cached_widget( $args ) ) {
+	// 		return;
+	// 	}
+
+	// 	ob_start();
+
+	// 	$products = $this->get_products( $args, $instance );
+	// 	if ( $products && $products->have_posts() ) {
+	// 		$this->widget_start( $args, $instance );
+
+	// 		echo wp_kses_post( apply_filters( 'woocommerce_before_widget_product_list', '<ul class="product_list_widget">' ) );
+
+	// 		$template_args = array(
+	// 			'widget_id'   => isset( $args['widget_id'] ) ? $args['widget_id'] : $this->widget_id,
+	// 			'show_rating' => true,
+	// 		);
+
+	// 		while ( $products->have_posts() ) {
+	// 			$products->the_post();
+	// 			wc_get_template( 'content-widget-product.php', $template_args );
+	// 		}
+
+	// 		echo wp_kses_post( apply_filters( 'woocommerce_after_widget_product_list', '</ul>' ) );
+
+	// 		$this->widget_end( $args );
+	// 	}
+
+	// 	wp_reset_postdata();
+
+	// 	echo $this->cache_widget( $args, ob_get_clean() ); // WPCS: XSS ok.
+	// }
+	// BACKUP END
 }

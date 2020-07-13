@@ -18,6 +18,8 @@ $shoppingcart_settings = shoppingcart_get_theme_options(); ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php endif;
 wp_head(); ?>
+<link rel="stylesheet" type="text/css" href="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/css/top_page.css">
+<script src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/js/top_page.js"></script>
 </head>
 <body <?php body_class(); ?>>
 	<?php 
@@ -62,20 +64,7 @@ wp_head(); ?>
 
 								if(has_nav_menu ('top-menu')){ ?>
 
-									<nav class="top-bar-menu" role="navigation" aria-label="<?php esc_attr_e('Top Bar Menu','shoppingcart');?>">
-										<button class="top-menu-toggle" type="button">
-											<span class="screen-reader-text"><?php esc_html_e('Topbar Menu','shoppingcart');?></span>
-											<i class="fa fa-bars"></i>
-									  	</button>
-										<?php
-											wp_nav_menu( array(
-												'container' 	=> '',
-												'theme_location' => 'top-menu',
-												'depth'          => 1,
-												'items_wrap'      => '<ul class="top-menu">%3$s</ul>',
-											) );
-										?>
-									</nav> <!-- end .top-bar-menu -->
+									<!-- end .top-bar-menu MOVED -->
 								<?php } ?>
 
 							</div> <!-- end .right-top-bar -->
@@ -107,9 +96,13 @@ wp_head(); ?>
 									}
 								?>
 							</div>  <!-- end #search-box -->
-						<?php } 
+						<?php } ?>
 
-						do_action ('shoppingcart_cart_wishlist_icon_display'); ?>
+						<div class="he-ri-btn"><?php do_action ('shoppingcart_cart_wishlist_icon_display'); ?></div>
+						<div class="he-ri-logo"><img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/banner_logo.png' ?>" alt="img" /></div>
+						<div class="he-ri-text"><img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/banner_text.png' ?>" alt="img" /></div>
+						<div class="he-ri-img"><img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/banner_product.png' ?>" alt="img" /></div>
+
 					</div> <!-- end .header-right -->
 				</div><!-- end .wrap -->	
 			</div><!-- end #site-branding -->
@@ -133,7 +126,9 @@ wp_head(); ?>
 								if ($header_display == 'header_text' || $header_display == 'show_both') { ?>
 								<div id="site-detail">
 									<div id="site-title">
-										<a href="<?php echo esc_url(home_url('/'));?>" title="<?php echo esc_html(get_bloginfo('name', 'display'));?>" rel="home"> <?php bloginfo('name');?> </a>
+										<a href="<?php echo esc_url(home_url('/'));?>" title="<?php echo esc_html(get_bloginfo('name', 'display'));?>" rel="home">
+											<img src="<?php echo home_url() . "/wp-content/themes/shoppingcart/images/logo.png"; ?>" alt="img" />
+										</a>
 									</div><!-- end .site-title --> 
 									<?php
 									$site_description = get_bloginfo( 'description', 'display' );
@@ -173,7 +168,7 @@ wp_head(); ?>
 								<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 									<span class="line-bar"></span>
 								</button><!-- end .menu-toggle -->
-								<?php	wp_page_menu(array('menu_class' => 'menu', 'items_wrap'     => '<ul id="primary-menu" class="menu nav-menu">%3$s</ul>'));
+								<?php wp_page_menu(array('menu_class' => 'menu', 'items_wrap'     => '<ul id="primary-menu" class="menu nav-menu">%3$s</ul>'));
 								} ?>
 							</nav> <!-- end #site-navigation -->
 

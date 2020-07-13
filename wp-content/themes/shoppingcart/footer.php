@@ -18,56 +18,33 @@ $footer_column = $shoppingcart_settings['shoppingcart_footer_column_section'];
 	<div class="widget-wrap">
 		<div class="wrap">
 			<div class="widget-area">
-			<?php
-				if($footer_column == '1' || $footer_column == '2' ||  $footer_column == '3' || $footer_column == '4'){
-				echo '<div class="column-'.absint($footer_column).'">';
-					if ( is_active_sidebar( 'shoppingcart_footer_1' ) ) :
-						dynamic_sidebar( 'shoppingcart_footer_1' );
-					endif;
-				echo '</div><!-- end .column'.absint($footer_column). '  -->';
-				}
-				if($footer_column == '2' ||  $footer_column == '3' || $footer_column == '4'){
-				echo '<div class="column-'.absint($footer_column).'">';
-					if ( is_active_sidebar( 'shoppingcart_footer_2' ) ) :
-						dynamic_sidebar( 'shoppingcart_footer_2' );
-					endif;
-				echo '</div><!--end .column'.absint($footer_column).'  -->';
-				}
-				if($footer_column == '3' || $footer_column == '4'){
-				echo '<div class="column-'.absint($footer_column).'">';
-					if ( is_active_sidebar( 'shoppingcart_footer_3' ) ) :
-						dynamic_sidebar( 'shoppingcart_footer_3' );
-					endif;
-				echo '</div><!--end .column'.absint($footer_column).'  -->';
-				}
-				if($footer_column == '4'){
-				echo '<div class="column-'.absint($footer_column).'">';
-					if ( is_active_sidebar( 'shoppingcart_footer_4' ) ) :
-						dynamic_sidebar( 'shoppingcart_footer_4' );
-					endif;
-				echo '</div><!--end .column'.absint($footer_column).  '-->';
-				}
-				?>
+				<div class="f-wa-left">
+					<div class="fwal-logo"><a href="<?php echo home_url(); ?>">
+						<img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/logo.png' ?>" alt="img" /></a></div>
+					<div class="fwal-name">CARICO CO.,LTD</div>
+					<div class="fwal-addr">579 Yonezu-cho, Minami-ku, Hamamatsu-city,<br>Shizuoka, Japan</div>
+				</div>
+				<div class="f-wa-right">
+					<div>Hướng dẫn mua hàng</div>
+					<div class="fwar-table">
+						<ul>
+							<li><a href="#"><i class='fa fa-angle-right'></i>Mua hàng</a></li>
+							<li><a href="#"><i class='fa fa-angle-right'></i>Đổi trả hàng</a></li>
+						</ul>
+						<ul class="fwart-ul2">
+							<li><a href="#"><i class='fa fa-angle-right'></i>Phí vận chuyển</a></li>
+							<li><a href="#"><i class='fa fa-angle-right'></i>Về Carico</a></li>
+						</ul>
+						<div></div>
+					</div>
+				</div>
 			</div> <!-- end .widget-area -->
 		</div><!-- end .wrap -->
 	</div> <!-- end .widget-wrap -->
 	<?php } ?>
 	<div class="site-info">
 	<div class="wrap">
-	<?php do_action('shoppingcart_footer_menu');
-	if($shoppingcart_settings['shoppingcart_buttom_social_icons'] == 0):
-		do_action('shoppingcart_social_links');
-	endif;
-
-	if ( is_active_sidebar( 'shoppingcart_footer_options' ) ) :
-		dynamic_sidebar( 'shoppingcart_footer_options' );
-	else:
-		echo '<div class="copyright">'; ?>
-		<a title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" target="_blank" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo get_bloginfo( 'name', 'display' ); ?></a> | 
-						<?php esc_html_e('Designed by:','shoppingcart'); ?> <a title="<?php echo esc_attr__( 'Theme Freesia', 'shoppingcart' ); ?>" target="_blank" href="<?php echo esc_url( 'https://themefreesia.com' ); ?>"><?php esc_html_e('Theme Freesia','shoppingcart');?></a> |
-						<?php  echo '&copy; ' . date_i18n(__('Y','shoppingcart')) ; ?> <a title="<?php echo esc_attr__( 'WordPress', 'shoppingcart' );?>" target="_blank" href="<?php echo esc_url( 'https://wordpress.org' );?>"><?php esc_html_e('WordPress','shoppingcart'); ?></a>
-					</div>
-	<?php endif; ?>
+			<img src="<?php echo home_url().'/wp-content/themes/shoppingcart/images/footer_bct.png'; ?>" alt="img" />
 			<div style="clear:both;"></div>
 		</div> <!-- end .wrap -->
 	</div> <!-- end .site-info -->

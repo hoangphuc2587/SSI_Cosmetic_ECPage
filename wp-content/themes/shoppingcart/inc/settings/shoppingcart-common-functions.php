@@ -111,11 +111,12 @@ add_action ('shoppingcart_cart_wishlist_icon_display','shoppingcart_cart_wishlis
 function shoppingcart_cart_wishlist_icon(){
 
 	if ( class_exists( 'woocommerce' ) ) { ?>
-		<div class="cart-box">
+		<!-- <div class="cart-box">
 			<div class="sx-cart-views">
 				<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="wcmenucart-contents">
-					<i class="fa fa-shopping-basket"></i>
+					<i class="fa fa-shopping-cart"></i>
 					<span class="cart-value"><?php echo wp_kses_data ( WC()->cart->get_cart_contents_count() ); ?></span>
+					Giỏ hàng
 				</a>
 				<div class="my-cart-wrap">
 					<div class="my-cart"><?php esc_html_e('Total', 'shoppingcart'); ?></div>
@@ -124,21 +125,37 @@ function shoppingcart_cart_wishlist_icon(){
 			</div>
 			
 			<?php the_widget( 'WC_Widget_Cart', '' ); ?>
-		</div> <!-- end .cart-box -->
+		</div> -->
+		<!-- end .cart-box -->
 	<?php }
 
 	if ( function_exists( 'YITH_WCWL' ) ) {
 
-		$wishlist_url = YITH_WCWL()->get_wishlist_url(); ?>
-		<div class="wishlist-box">
+		//$wishlist_url = YITH_WCWL()->get_wishlist_url();
+		?>
+		<!-- <div class="wishlist-box">
 			<div class="wishlist-wrap">
 				<a class="wishlist-btn" href="<?php echo esc_url( $wishlist_url ); ?>">
 					<i class="fa fa-heart-o"> </i>
 					<span class="wl-counter"><?php echo absint( yith_wcwl_count_products() ); ?></span>
 				</a>
 			</div>
-		</div> <!-- end .wishlist-box -->
+		</div> -->
+		<!-- end .wishlist-box -->
 
-	<?php }
+	<?php } ?>
 
+	<button type="button" onclick="location.href='<?php echo home_url().'/login'; ?>';">
+		<i class='fa fa-lock'></i> Đăng nhập
+	</button>
+
+	<button type="button" onclick="location.href='<?php echo home_url().'/register'; ?>';">
+		<i class='fa fa-user'></i> Đăng ký
+	</button>
+
+	<button type="button" class="iws-right-est" onclick="location.href='<?php echo home_url().'/cart'; ?>';">
+		<i class='fa fa-shopping-cart'></i> Giỏ hàng
+	</button>
+	
+<?php
 }
