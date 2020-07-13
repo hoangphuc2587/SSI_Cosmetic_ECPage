@@ -145,13 +145,20 @@ function shoppingcart_cart_wishlist_icon(){
 
 	<?php } ?>
 
-	<button type="button" onclick="location.href='<?php echo home_url().'/login'; ?>';">
-		<i class='fa fa-lock'></i> Đăng nhập
-	</button>
-
-	<button type="button" onclick="location.href='<?php echo home_url().'/register'; ?>';">
-		<i class='fa fa-user'></i> Đăng ký
-	</button>
+	<?php
+		global $current_user;
+		if ( is_user_logged_in() ) { 
+			echo 'Hello <a href="'.home_url().'/my-account">' . $current_user->user_login . '</a>';
+		}
+		else {
+	?>
+		<button type="button" onclick="location.href='<?php echo home_url().'/login'; ?>';">
+			<i class='fa fa-lock'></i> Đăng nhập
+		</button>
+		<button type="button" onclick="location.href='<?php echo home_url().'/register'; ?>';">
+			<i class='fa fa-user'></i> Đăng ký
+		</button>
+	<?php } ?>
 
 	<button type="button" class="iws-right-est" onclick="location.href='<?php echo home_url().'/cart'; ?>';">
 		<i class='fa fa-shopping-cart'></i> Giỏ hàng
