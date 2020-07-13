@@ -43,6 +43,8 @@ class WC_Coupon_Data_Store_CPT extends WC_Data_Store_WP implements WC_Coupon_Dat
 		'usage_limit_per_user',
 		'limit_usage_to_x_items',
 		'free_shipping',
+        'active_coupon',
+        'used_coupon',
 		'product_categories',
 		'exclude_product_categories',
 		'exclude_sale_items',
@@ -136,6 +138,8 @@ class WC_Coupon_Data_Store_CPT extends WC_Data_Store_WP implements WC_Coupon_Dat
 				'usage_limit_per_user'        => get_post_meta( $coupon_id, 'usage_limit_per_user', true ),
 				'limit_usage_to_x_items'      => 0 < get_post_meta( $coupon_id, 'limit_usage_to_x_items', true ) ? get_post_meta( $coupon_id, 'limit_usage_to_x_items', true ) : null,
 				'free_shipping'               => 'yes' === get_post_meta( $coupon_id, 'free_shipping', true ),
+                'active_coupon'               => 'yes' === get_post_meta( $coupon_id, 'active_coupon', true ),
+                'used_coupon'                 => 'yes' === get_post_meta( $coupon_id, 'used_coupon', true ),
 				'product_categories'          => array_filter( (array) get_post_meta( $coupon_id, 'product_categories', true ) ),
 				'excluded_product_categories' => array_filter( (array) get_post_meta( $coupon_id, 'exclude_product_categories', true ) ),
 				'exclude_sale_items'          => 'yes' === get_post_meta( $coupon_id, 'exclude_sale_items', true ),
@@ -246,6 +250,8 @@ class WC_Coupon_Data_Store_CPT extends WC_Data_Store_WP implements WC_Coupon_Dat
 			'usage_count'                => 'usage_count',
 			'date_expires'               => 'date_expires',
 			'free_shipping'              => 'free_shipping',
+            'active_coupon'              => 'active_coupon',
+            'used_coupon'                => 'used_coupon',
 			'product_categories'         => 'product_categories',
 			'exclude_product_categories' => 'excluded_product_categories',
 			'exclude_sale_items'         => 'exclude_sale_items',
@@ -255,12 +261,16 @@ class WC_Coupon_Data_Store_CPT extends WC_Data_Store_WP implements WC_Coupon_Dat
 		);
 
 		$props_to_update = $this->get_props_to_update( $coupon, $meta_key_to_props );
+        $props_to_update['active_coupon'] = 'active_coupon';
+        $props_to_update['used_coupon']   = 'used_coupon';
 		foreach ( $props_to_update as $meta_key => $prop ) {
 			$value = $coupon->{"get_$prop"}( 'edit' );
 			$value = is_string( $value ) ? wp_slash( $value ) : $value;
 			switch ( $prop ) {
 				case 'individual_use':
 				case 'free_shipping':
+                case 'active_coupon':
+                case 'used_coupon':
 				case 'exclude_sale_items':
 					$value = wc_bool_to_string( $value );
 					break;

@@ -83,8 +83,10 @@ class WC_Admin_List_Table_Coupons extends WC_Admin_List_Table {
 		$show_columns['type']        = __( 'Coupon type', 'woocommerce' );
 		$show_columns['amount']      = __( 'Coupon amount', 'woocommerce' );
 		$show_columns['description'] = __( 'Description', 'woocommerce' );
-		$show_columns['products']    = __( 'Product IDs', 'woocommerce' );
-		$show_columns['usage']       = __( 'Usage / Limit', 'woocommerce' );
+        $show_columns['active']      = __( 'Kích hoạt', 'woocommerce' );
+        $show_columns['using']       = __( 'Đã sử dụng', 'woocommerce' );
+//		$show_columns['products']    = __( 'Product IDs', 'woocommerce' );
+//		$show_columns['usage']       = __( 'Usage / Limit', 'woocommerce' );
 		$show_columns['expiry_date'] = __( 'Expiry date', 'woocommerce' );
 
 		return $show_columns;

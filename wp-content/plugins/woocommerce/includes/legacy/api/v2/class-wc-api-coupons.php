@@ -245,6 +245,8 @@ class WC_API_Coupons extends WC_API_Resource {
 				'usage_count'                  => '',
 				'expiry_date'                  => '',
 				'enable_free_shipping'         => false,
+                'active_coupon'                => false,
+                'used_coupon'                  => false,
 				'product_category_ids'         => array(),
 				'exclude_product_category_ids' => array(),
 				'exclude_sale_items'           => false,
@@ -288,7 +290,9 @@ class WC_API_Coupons extends WC_API_Resource {
 			update_post_meta( $id, 'usage_count', absint( $coupon_data['usage_count'] ) );
 			update_post_meta( $id, 'expiry_date', $this->get_coupon_expiry_date( wc_clean( $coupon_data['expiry_date'] ) ) );
 			update_post_meta( $id, 'date_expires', $this->get_coupon_expiry_date( wc_clean( $coupon_data['expiry_date'] ), true ) );
-			update_post_meta( $id, 'free_shipping', ( true === $coupon_data['enable_free_shipping'] ) ? 'yes' : 'no' );
+            update_post_meta( $id, 'free_shipping', ( true === $coupon_data['enable_free_shipping'] ) ? 'yes' : 'no' );
+            update_post_meta( $id, 'active_coupon', ( true === $coupon_data['active_coupon'] ) ? 'yes' : 'no' );
+            update_post_meta( $id, 'used_coupon', ( true === $coupon_data['used_coupon'] ) ? 'yes' : 'no' );
 			update_post_meta( $id, 'product_categories', array_filter( array_map( 'intval', $coupon_data['product_category_ids'] ) ) );
 			update_post_meta( $id, 'exclude_product_categories', array_filter( array_map( 'intval', $coupon_data['exclude_product_category_ids'] ) ) );
 			update_post_meta( $id, 'exclude_sale_items', ( true === $coupon_data['exclude_sale_items'] ) ? 'yes' : 'no' );
@@ -407,6 +411,14 @@ class WC_API_Coupons extends WC_API_Resource {
 			if ( isset( $data['enable_free_shipping'] ) ) {
 				update_post_meta( $id, 'free_shipping', ( true === $data['enable_free_shipping'] ) ? 'yes' : 'no' );
 			}
+
+            if ( isset( $data['active_coupon'] ) ) {
+                update_post_meta( $id, 'active_coupon', ( true === $data['active_coupon'] ) ? 'yes' : 'no' );
+            }
+
+            if ( isset( $data['used_coupon'] ) ) {
+                update_post_meta( $id, 'used_coupon', ( true === $data['used_coupon'] ) ? 'yes' : 'no' );
+            }
 
 			if ( isset( $data['product_category_ids'] ) ) {
 				update_post_meta( $id, 'product_categories', array_filter( array_map( 'intval', $data['product_category_ids'] ) ) );
