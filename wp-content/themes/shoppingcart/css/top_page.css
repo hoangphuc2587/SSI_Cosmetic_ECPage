@@ -90,8 +90,11 @@
 #site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li.menu-item-has-children {
     padding: 0;
 }
-#site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li.menu-item-has-children > a::after {
-    content: " \02C5";
+#site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li > a::before {
+    content: "\02C3\0020";
+}
+#site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li.menu-item-has-children > a::before {
+    content: "\02C5\0020";
 }
 #site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li.menu-item-has-children > a {
     display: block;
@@ -102,6 +105,9 @@
     border-top: 1px dashed #aaaaaa;
     font-size: 14px;
     text-transform: capitalize;
+}
+#site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li.menu-item-has-children ul.sub-menu > li a::before {
+    content: "\02C3\0020";
 }
 /* #site-branding .wrap #site-detail .site-title-menu ul li.stm-active {
     background-image: url("/wp-content/themes/shoppingcart/images/banner_menu_active.png");
@@ -227,6 +233,12 @@
     margin: 0 auto;
     max-width: 1300px;
 }
+@media only screen and (max-width: 1330px) {
+    #site-content-contain #content .area-store-list .asl-wrap {
+        margin: 0 auto;
+        max-width: 96%;
+    }
+}
 #site-content-contain #content .area-store-list .asl-row {
     margin-left: -15px;
     margin-right: -15px;
@@ -239,7 +251,22 @@
 #site-content-contain #content .area-store-list .aslr-col {
     float: left;
     padding: 15px;
-    width: 20%;
+    width: 25%;
+}
+@media only screen and (max-width: 992px) {
+    #site-content-contain #content .area-store-list .aslr-col {
+        width: 33.333%;
+    }
+}
+@media only screen and (max-width: 767px) {
+    #site-content-contain #content .area-store-list .aslr-col {
+        width: 50%;
+    }
+}
+@media only screen and (max-width: 575px) {
+    #site-content-contain #content .area-store-list .aslr-col {
+        width: 100%;
+    }
 }
 #site-content-contain #content .area-store-list .store-item .si-cont {
     padding: 10px;
@@ -250,11 +277,17 @@
     margin-top: 5px;
 }
 #site-content-contain #content .area-store-list .store-item .si-name {
-    border: 1px solid #555555;
-    padding: 5px;
     text-align: center;
-    margin-left: -7px;
-    margin-right: -7px;
+    margin-left: -10px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-right: -10px;
+    margin-top: -8px;
+    height: 50px;
+    background-image: url(/wp-content/themes/shoppingcart/images/ds_cua_hang_h1.png);
+    padding-top: 17px;
+    font-weight: bold;
 }
 #site-content-contain #content .area-store-list .store-item .si-img img {
     width: 100%;

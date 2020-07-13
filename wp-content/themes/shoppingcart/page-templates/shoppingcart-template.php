@@ -36,13 +36,13 @@ get_header(); ?>
 	<div class="asl-wrap">
 		<div class="asl-title">DANH SÁCH CỬA HÀNG</div>
 		<div class="asl-row">
-			<?php for($i=0; $i<5; $i++) { ?>
+			<?php for($i=0; $i<4; $i++) { ?>
 			<div class="aslr-col">
 				<div class="store-item">
 					<div class="si-img">
 						<img src="<?php echo home_url().'/wp-content/themes/shoppingcart/images/home_store.png' ?>" alt="img" />
 					</div>
-					<div class="si-name"><i class="fa fa-heart"></i> SHOP BONITA <i class="fa fa-heart"></i></div>
+					<div class="si-name"><i class="fa fa-heart"></i>&nbsp;&nbsp;SHOP BONITA&nbsp;&nbsp;<i class="fa fa-heart"></i></div>
 					<div class="si-cont">
 						<div class="sic-addr">
 							<img src="<?php echo home_url().'/wp-content/themes/shoppingcart/images/icon_map_marker.png'; ?>" alt="img" />&nbsp;&nbsp;

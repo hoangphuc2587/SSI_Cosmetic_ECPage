@@ -46,7 +46,7 @@ if ( ! is_a( $product, 'WC_Product' ) ) {
 			// echo '<div class="woocommerce-product-rating woocommerce">' .wp_kses_post( $shoppingcart_rating ) . ' </div>';
 			} ?>
 
-			<h2 class="sc-grid-product-title"><b><a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></b></h2>
+			<h2 style="text-transform: uppercase;" class="sc-grid-product-title"><b><a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></b></h2>
 			<div style="margin-bottom: 5px; color: #555555;"><?php echo $product->get_short_description(); ?></div>
 			<?php if ( $price_html = $product->get_price_html() ) : ?>
 			<span class="price">
