@@ -83,8 +83,8 @@ class WC_Admin_List_Table_Coupons extends WC_Admin_List_Table {
 		$show_columns['type']        = __( 'Coupon type', 'woocommerce' );
 		$show_columns['amount']      = __( 'Coupon amount', 'woocommerce' );
 		$show_columns['description'] = __( 'Description', 'woocommerce' );
-        $show_columns['active']      = __( 'Kích hoạt', 'woocommerce' );
-        $show_columns['using']       = __( 'Đã sử dụng', 'woocommerce' );
+        $show_columns['active_coupon']      = __( 'Kích hoạt', 'woocommerce' );
+        $show_columns['used_coupon']       = __( 'Đã sử dụng', 'woocommerce' );
 //		$show_columns['products']    = __( 'Product IDs', 'woocommerce' );
 //		$show_columns['usage']       = __( 'Usage / Limit', 'woocommerce' );
 		$show_columns['expiry_date'] = __( 'Expiry date', 'woocommerce' );
@@ -186,6 +186,14 @@ class WC_Admin_List_Table_Coupons extends WC_Admin_List_Table {
 			echo '&ndash;';
 		}
 	}
+
+    protected function render_active_coupon_column() {
+        echo esc_html( $this->object->get_active_coupon() ? 'Đã kích hoạt' : 'Chưa kích hoạt') ;
+    }
+
+    protected function render_used_coupon_column() {
+        echo esc_html( $this->object->get_used_coupon() ? 'Đã sử dụng' : 'Chưa sử dụng') ;
+    }
 
 	/**
 	 * Render columm: description.
