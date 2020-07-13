@@ -45,15 +45,15 @@ defined( 'ABSPATH' ) || exit;
 			)
 		);
 
-		woocommerce_wp_text_input(
-			array(
-				'id'          => '_sale_price',
-				'value'       => $product_object->get_sale_price( 'edit' ),
-				'data_type'   => 'price',
-				'label'       => __( 'Sale price', 'woocommerce' ) . ' (' . get_woocommerce_currency_symbol() . ')',
-				'description' => '<a href="#" class="sale_schedule">' . __( 'Schedule', 'woocommerce' ) . '</a>',
-			)
-		);
+//		woocommerce_wp_text_input(
+//			array(
+//				'id'          => '_sale_price',
+//				'value'       => $product_object->get_sale_price( 'edit' ),
+//				'data_type'   => 'price',
+//				'label'       => __( 'Sale price', 'woocommerce' ) . ' (' . get_woocommerce_currency_symbol() . ')',
+//				'description' => '<a href="#" class="sale_schedule">' . __( 'Schedule', 'woocommerce' ) . '</a>',
+//			)
+//		);
 
 		$sale_price_dates_from_timestamp = $product_object->get_date_on_sale_from( 'edit' ) ? $product_object->get_date_on_sale_from( 'edit' )->getOffsetTimestamp() : false;
 		$sale_price_dates_to_timestamp   = $product_object->get_date_on_sale_to( 'edit' ) ? $product_object->get_date_on_sale_to( 'edit' )->getOffsetTimestamp() : false;

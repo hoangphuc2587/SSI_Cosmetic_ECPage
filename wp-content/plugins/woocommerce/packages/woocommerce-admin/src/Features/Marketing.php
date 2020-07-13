@@ -78,7 +78,7 @@ class Marketing {
 
 		foreach ( $marketing_pages as $marketing_page ) {
 			if ( ! is_null( $marketing_page ) ) {
-				wc_admin_register_page( $marketing_page );
+				//wc_admin_register_page( $marketing_page );
 			}
 		}
 	}

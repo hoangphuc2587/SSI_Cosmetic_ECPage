@@ -56,20 +56,20 @@ class WC_Meta_Box_Product_Data {
 		return apply_filters(
 			'product_type_options',
 			array(
-				'virtual'      => array(
-					'id'            => '_virtual',
-					'wrapper_class' => 'show_if_simple',
-					'label'         => __( 'Virtual', 'woocommerce' ),
-					'description'   => __( 'Virtual products are intangible and are not shipped.', 'woocommerce' ),
-					'default'       => 'no',
-				),
-				'downloadable' => array(
-					'id'            => '_downloadable',
-					'wrapper_class' => 'show_if_simple',
-					'label'         => __( 'Downloadable', 'woocommerce' ),
-					'description'   => __( 'Downloadable products give access to a file upon purchase.', 'woocommerce' ),
-					'default'       => 'no',
-				),
+//				'virtual'      => array(
+//					'id'            => '_virtual',
+//					'wrapper_class' => 'show_if_simple',
+//					'label'         => __( 'Virtual', 'woocommerce' ),
+//					'description'   => __( 'Virtual products are intangible and are not shipped.', 'woocommerce' ),
+//					'default'       => 'no',
+//				),
+//				'downloadable' => array(
+//					'id'            => '_downloadable',
+//					'wrapper_class' => 'show_if_simple',
+//					'label'         => __( 'Downloadable', 'woocommerce' ),
+//					'description'   => __( 'Downloadable products give access to a file upon purchase.', 'woocommerce' ),
+//					'default'       => 'no',
+//				),
 			)
 		);
 	}
@@ -89,42 +89,42 @@ class WC_Meta_Box_Product_Data {
 					'class'    => array( 'hide_if_grouped' ),
 					'priority' => 10,
 				),
-				'inventory'      => array(
-					'label'    => __( 'Inventory', 'woocommerce' ),
-					'target'   => 'inventory_product_data',
-					'class'    => array( 'show_if_simple', 'show_if_variable', 'show_if_grouped', 'show_if_external' ),
-					'priority' => 20,
-				),
-				'shipping'       => array(
-					'label'    => __( 'Shipping', 'woocommerce' ),
-					'target'   => 'shipping_product_data',
-					'class'    => array( 'hide_if_virtual', 'hide_if_grouped', 'hide_if_external' ),
-					'priority' => 30,
-				),
-				'linked_product' => array(
-					'label'    => __( 'Linked Products', 'woocommerce' ),
-					'target'   => 'linked_product_data',
-					'class'    => array(),
-					'priority' => 40,
-				),
-				'attribute'      => array(
-					'label'    => __( 'Attributes', 'woocommerce' ),
-					'target'   => 'product_attributes',
-					'class'    => array(),
-					'priority' => 50,
-				),
-				'variations'     => array(
-					'label'    => __( 'Variations', 'woocommerce' ),
-					'target'   => 'variable_product_options',
-					'class'    => array( 'variations_tab', 'show_if_variable' ),
-					'priority' => 60,
-				),
-				'advanced'       => array(
-					'label'    => __( 'Advanced', 'woocommerce' ),
-					'target'   => 'advanced_product_data',
-					'class'    => array(),
-					'priority' => 70,
-				),
+//				'inventory'      => array(
+//					'label'    => __( 'Inventory', 'woocommerce' ),
+//					'target'   => 'inventory_product_data',
+//					'class'    => array( 'show_if_simple', 'show_if_variable', 'show_if_grouped', 'show_if_external' ),
+//					'priority' => 20,
+//				),
+//				'shipping'       => array(
+//					'label'    => __( 'Shipping', 'woocommerce' ),
+//					'target'   => 'shipping_product_data',
+//					'class'    => array( 'hide_if_virtual', 'hide_if_grouped', 'hide_if_external' ),
+//					'priority' => 30,
+//				),
+//				'linked_product' => array(
+//					'label'    => __( 'Linked Products', 'woocommerce' ),
+//					'target'   => 'linked_product_data',
+//					'class'    => array(),
+//					'priority' => 40,
+//				),
+//				'attribute'      => array(
+//					'label'    => __( 'Attributes', 'woocommerce' ),
+//					'target'   => 'product_attributes',
+//					'class'    => array(),
+//					'priority' => 50,
+//				),
+//				'variations'     => array(
+//					'label'    => __( 'Variations', 'woocommerce' ),
+//					'target'   => 'variable_product_options',
+//					'class'    => array( 'variations_tab', 'show_if_variable' ),
+//					'priority' => 60,
+//				),
+//				'advanced'       => array(
+//					'label'    => __( 'Advanced', 'woocommerce' ),
+//					'target'   => 'advanced_product_data',
+//					'class'    => array(),
+//					'priority' => 70,
+//				),
 			)
 		);
 

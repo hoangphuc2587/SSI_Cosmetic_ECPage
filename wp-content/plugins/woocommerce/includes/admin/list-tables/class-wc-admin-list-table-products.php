@@ -116,13 +116,13 @@ class WC_Admin_List_Table_Products extends WC_Admin_List_Table {
 		$show_columns['thumb'] = '<span class="wc-image tips" data-tip="' . esc_attr__( 'Image', 'woocommerce' ) . '">' . __( 'Image', 'woocommerce' ) . '</span>';
 		$show_columns['name']  = __( 'Name', 'woocommerce' );
 
-		if ( wc_product_sku_enabled() ) {
-			$show_columns['sku'] = __( 'SKU', 'woocommerce' );
-		}
-
-		if ( 'yes' === get_option( 'woocommerce_manage_stock' ) ) {
-			$show_columns['is_in_stock'] = __( 'Stock', 'woocommerce' );
-		}
+//		if ( wc_product_sku_enabled() ) {
+//			$show_columns['sku'] = __( 'SKU', 'woocommerce' );
+//		}
+//
+//		if ( 'yes' === get_option( 'woocommerce_manage_stock' ) ) {
+//			$show_columns['is_in_stock'] = __( 'Stock', 'woocommerce' );
+//		}
 
 		$show_columns['price']       = __( 'Price', 'woocommerce' );
 		$show_columns['product_cat'] = __( 'Categories', 'woocommerce' );
@@ -351,7 +351,7 @@ class WC_Admin_List_Table_Products extends WC_Admin_List_Table {
 	 */
 	protected function render_products_type_filter() {
 		$current_product_type = isset( $_REQUEST['product_type'] ) ? wc_clean( wp_unslash( $_REQUEST['product_type'] ) ) : false; // WPCS: input var ok, sanitization ok.
-		$output               = '<select name="product_type" id="dropdown_product_type"><option value="">' . esc_html__( 'Filter by product type', 'woocommerce' ) . '</option>';
+		$output               = '<select name="product_type" id="dropdown_product_type" style="display:none"><option value="">' . esc_html__( 'Filter by product type', 'woocommerce' ) . '</option>';
 
 		foreach ( wc_get_product_types() as $value => $label ) {
 			$output .= '<option value="' . esc_attr( $value ) . '" ';
@@ -382,7 +382,7 @@ class WC_Admin_List_Table_Products extends WC_Admin_List_Table {
 	public function render_products_stock_status_filter() {
 		$current_stock_status = isset( $_REQUEST['stock_status'] ) ? wc_clean( wp_unslash( $_REQUEST['stock_status'] ) ) : false; // WPCS: input var ok, sanitization ok.
 		$stock_statuses       = wc_get_product_stock_status_options();
-		$output               = '<select name="stock_status"><option value="">' . esc_html__( 'Filter by stock status', 'woocommerce' ) . '</option>';
+		$output               = '<select name="stock_status" style="display:none"><option value="">' . esc_html__( 'Filter by stock status', 'woocommerce' ) . '</option>';
 
 		foreach ( $stock_statuses as $status => $label ) {
 			$output .= '<option ' . selected( $status, $current_stock_status, false ) . ' value="' . esc_attr( $status ) . '">' . esc_html( $label ) . '</option>';

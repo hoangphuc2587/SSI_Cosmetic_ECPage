@@ -255,26 +255,7 @@ if ( wc_tax_enabled() ) {
 	<div class="clear"></div>
 </div>
 <div class="wc-order-data-row wc-order-bulk-actions wc-order-data-row-toggle">
-	<p class="add-items">
-		<?php if ( $order->is_editable() ) : ?>
-			<button type="button" class="button add-line-item"><?php esc_html_e( 'Add item(s)', 'woocommerce' ); ?></button>
-			<?php if ( wc_coupons_enabled() ) : ?>
-				<button type="button" class="button add-coupon"><?php esc_html_e( 'Apply coupon', 'woocommerce' ); ?></button>
-			<?php endif; ?>
-		<?php else : ?>
-			<span class="description"><?php echo wc_help_tip( __( 'To edit this order change the status back to "Pending"', 'woocommerce' ) ); ?> <?php esc_html_e( 'This order is no longer editable.', 'woocommerce' ); ?></span>
-		<?php endif; ?>
-		<?php if ( 0 < $order->get_total() - $order->get_total_refunded() || 0 < absint( $order->get_item_count() - $order->get_item_count_refunded() ) ) : ?>
-			<button type="button" class="button refund-items"><?php esc_html_e( 'Refund', 'woocommerce' ); ?></button>
-		<?php endif; ?>
-		<?php
-			// Allow adding custom buttons.
-			do_action( 'woocommerce_order_item_add_action_buttons', $order );
-		?>
-		<?php if ( $order->is_editable() ) : ?>
-			<button type="button" class="button button-primary calculate-action"><?php esc_html_e( 'Recalculate', 'woocommerce' ); ?></button>
-		<?php endif; ?>
-	</p>
+
 </div>
 <div class="wc-order-data-row wc-order-add-item wc-order-data-row-toggle" style="display:none;">
 	<button type="button" class="button add-order-item"><?php esc_html_e( 'Add product(s)', 'woocommerce' ); ?></button>
