@@ -119,6 +119,9 @@ button {
     position: relative;
     font-family: montserratMedium;
 }
+#site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li > a {
+    color: #222 !important;
+}
 
 #site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li.menu-item-has-children ul.sub-menu > li {
     border-top: 1px dashed #aaaaaa;
@@ -140,6 +143,10 @@ button {
     position: absolute;
     height: 7px;
     width: 7px;
+}
+#site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li.menu-item-has-children ul.sub-menu > li:hover a::before {
+    background-image: url("/wp-content/themes/shoppingcart/images/icon_arrow_do.png");
+    
 }
 #site-branding .wrap #site-detail .carico-co-ltd {
     font-size: 21px;
@@ -190,9 +197,42 @@ button {
     background-size: contain;
     border: 1px solid #f9be0b;
 }
+#sticky-header #primary-menu > li {
+    margin-left: 25px;
+}
 #sticky-header #primary-menu > li a {
     font-size: 16px;
     font-family: montserratMedium;
+}
+#sticky-header #primary-menu > li > a {
+    color: #222222 !important;
+}
+#sticky-header #primary-menu > li.menu-item-has-children > a::after {
+    content: "";
+}
+#sticky-header #primary-menu > li a::before {
+    content: "";
+    background-image: url("/wp-content/themes/shoppingcart/images/icon_arrow_den.png");
+    background-repeat: no-repeat;
+    top: 20px;
+    left: -6px;
+    position: absolute;
+    height: 7px;
+    width: 7px;
+}
+#sticky-header #primary-menu > li.menu-item-has-children:hover > a::before {
+    background-image: url("/wp-content/themes/shoppingcart/images/icon_arrow_den_down.png");
+}
+#sticky-header #primary-menu > li ul.sub-menu li a {
+    padding-left: 20px;
+}
+#sticky-header #primary-menu > li ul.sub-menu li a::before {
+    left: 15px;
+    background-image: url("/wp-content/themes/shoppingcart/images/icon_arrow_xam.png");
+}
+#sticky-header #primary-menu > li ul.sub-menu li:hover a::before {
+   
+    background-image: url("/wp-content/themes/shoppingcart/images/icon_arrow_do.png");
 }
 #sticky-header #primary-menu > li a:hover {
     font-family: montserratBold;
@@ -373,4 +413,20 @@ button {
 }
 .area-store-list .shoppingcart-grid-product:hover .si-cont {
     background-color: #f4f4f4;
+}
+#sticky-header #primary-menu > li ul.sub-menu li a{
+    border:0px;
+    border-top: 1px dashed #aaaaaa;
+}
+#sticky-header #primary-menu > li ul.sub-menu li:first-child a{
+    border-top:0px;
+}
+.main-navigation ul li ul li,.main-navigation ul li ul li:before{
+    border:0px!important;
+}
+.main-navigation ul li ul li{
+    padding:0 13px 0 13px;
+}
+#sticky-header-sticky-wrapper .main-navigation ul li ul li, #sticky-header-sticky-wrapper .main-navigation ul li ul{
+    width:320px;
 }
