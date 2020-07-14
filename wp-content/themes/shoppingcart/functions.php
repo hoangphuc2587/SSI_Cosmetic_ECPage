@@ -262,21 +262,6 @@ function shoppingcart_header_display(){
 		<?php
 			wp_nav_menu(array('container' => '', 'items_wrap' => '<ul class="stm-menu-lv1">%3$s</ul>'));
 		?>
-		<!-- <ul>
-			<li class="stm-active"><a href="#"><i class='fa fa-angle-down'></i>SẢN PHẨM</a></li>
-
-			<li class="menu-sub-1 stm-ms1-active"><a href="#"><i class='fa fa-angle-right'></i>Shirowakihime</a></li>
-			<li class="menu-sub-1"><a href="#"><i class='fa fa-angle-right'></i>Shirowakihime Night Pack</a></li>
-			<li class="menu-sub-1"><a href="#"><i class='fa fa-angle-right'></i>Slinky Touch</a></li>
-			<li class="menu-sub-1"><a href="#"><i class='fa fa-angle-right'></i>Slinky Touch</a></li>
-			<li class="menu-sub-1"><a href="#"><i class='fa fa-angle-right'></i>Tsubuoporon EX</a></li>
-			<li class="menu-sub-1"><a href="#"><i class='fa fa-angle-right'></i>Tsubuoporon Night Pack</a></li>
-			<li class="menu-sub-1 menu-sub-1-last"><a href="#"><i class='fa fa-angle-right'></i>Tsubuoporon Eye Essence</a></li>
-
-			<li><a href="#"><i class='fa fa-angle-right'></i>VỀ CHÚNG TÔI</a></li>
-			<li><a href="#"><i class='fa fa-angle-right'></i>FACEBOOK</a></li>
-			<li><a href="#"><i class='fa fa-angle-right'></i>LIÊN HỆ</a></li>
-		</ul> -->
 	</div>
 	<div class="carico-co-ltd">CARICO CO.,LTD</div>
 	<?php echo '</div>'; // end #site-detail

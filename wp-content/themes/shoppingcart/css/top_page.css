@@ -40,16 +40,6 @@
     text-align: center;
     margin-top: 15px;
 }
-/* #site-branding .header-right .my-cart-wrap {
-    display: none;
-} */
-/* #site-branding .header-right .cart-box {
-    border: 1px solid #aaaaaa;
-} */
-/* #site-branding .header-right .cart-box .wcmenucart-contents i.fa {
-    font-size: 15px;
-    color: #222222;
-} */
 
 /* header left */
 #site-branding #site-detail #site-description {
@@ -71,6 +61,7 @@
     min-width: 250px;
     max-height: 697px;
     min-height: 689px;
+    position: relative;
 }
 #site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 {
     border-top: 1px solid #aaaaaa;
@@ -78,9 +69,6 @@
     margin-left: 15px;
     margin-right: 15px;
 }
-/* #site-branding .wrap #site-detail .site-title-menu ul li i.fa {
-    margin-right: 10px;
-} */
 #site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li {    
     border-bottom: 1px solid #aaaaaa;
     font-size: 16px;
@@ -100,9 +88,6 @@
     height: 7px;
     width: 7px;
 }
-#site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li.menu-item-has-children > a::before {
-    /*content: "\02C5\0020";*/
-}
 #site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li.menu-item-has-children > a {
     display: block;
     padding: 10px;
@@ -116,7 +101,6 @@
 }
 
 #site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li.menu-item-has-children ul.sub-menu > li {
-    /*padding: 0px 10px;*/
     border-top: 1px dashed #aaaaaa;
     font-size: 14px;
     text-transform: capitalize;
@@ -131,18 +115,12 @@
     height: 7px;
     width: 7px;
 }
-/* #site-branding .wrap #site-detail .site-title-menu ul li.stm-active {
-    background-image: url("/wp-content/themes/shoppingcart/images/banner_menu_active.png");
-    background-repeat: no-repeat;
-} */
-/* #site-branding .wrap #site-detail .site-title-menu ul li.stm-ms1-active a {
-    color: red;
-} */
 #site-branding .wrap #site-detail .carico-co-ltd {
     font-size: 21px;
     position: absolute;
     bottom: 20px;
-    padding-left: 25px;
+    width: 100%;
+    text-align: center;
 }
 
 /* sticky-header */
@@ -176,6 +154,7 @@
 #site-content-contain #colophon .widget-area {
     justify-content: space-between;
     padding: 40px 0 40px;
+    margin: 0;
 }
 #site-content-contain #colophon .widget-area .f-wa-left .fwal-logo {
     display: inline-block;
@@ -217,10 +196,16 @@
     color: #222222;
 }
 
-/* content */
+/* content - san pham */
+.product-widget-box .shoppingcart-grid-product {
+    padding-right: 20px;
+}
 #site-content-contain #content {
     background-color: #ffffff;
     padding-top: 0;
+}
+#site-content-contain #content .product-widget-wrap .widget {
+    margin-bottom: 60px;
 }
 #site-content-contain #content .promo-category-area, #site-content-contain #content .brand-content-box {
     display: none;
@@ -228,11 +213,18 @@
 #site-content-contain #content .woocommerce div.product {
     margin-bottom: 20px;
 }
-#site-content-contain #content .woocommerce h3.widget-title {
+#site-content-contain #content .woocommerce h3.widget-title, #content .area-store-list h3.widget-title {
     font-size: 40px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 30px;
+}
+#site-content-contain #content .woocommerce div.product span.price .woocommerce-Price-amount {
+    color: #333333;
+    font-weight: bold;
+}
+#site-content-contain #content .woocommerce div.product span.price .woocommerce-Price-amount .woocommerce-Price-currencySymbol {
+    display: none;
 }
 #site-content-contain #content .woocommerce .area-more-product {
     display: flex;
@@ -240,77 +232,41 @@
 }
 #site-content-contain #content .woocommerce .area-more-product a {
     display: inline-block;
-    width: 40%;
+    width: 49%;
     border: 1px solid #555555;
     padding: 5px;
     color: #222222;
     text-align: center;
 }
-#site-content-contain #content .area-store-list .asl-wrap .asl-title { /* store area */
-    font-size: 40px;
-    font-weight: bold;
-    text-align: center;
+#site-content-contain #content .woocommerce .sc-grid-product-img img, #content .area-store-list .sc-grid-product-img img {
+    width: 100%;
 }
-#site-content-contain #content .area-store-list .asl-wrap {
-    margin: 0 auto;
-    max-width: 1300px;
-}
-@media only screen and (max-width: 1330px) {
-    #site-content-contain #content .area-store-list .asl-wrap {
-        margin: 0 auto;
-        max-width: 96%;
-    }
-}
-#site-content-contain #content .area-store-list .asl-row {
-    margin-left: -15px;
-    margin-right: -15px;
-}
-#site-content-contain #content .area-store-list .asl-row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-#site-content-contain #content .area-store-list .aslr-col {
-    float: left;
-    padding: 15px;
-    width: 25%;
-}
-@media only screen and (max-width: 992px) {
-    #site-content-contain #content .area-store-list .aslr-col {
-        width: 33.333%;
-    }
-}
-@media only screen and (max-width: 767px) {
-    #site-content-contain #content .area-store-list .aslr-col {
-        width: 50%;
-    }
-}
-@media only screen and (max-width: 575px) {
-    #site-content-contain #content .area-store-list .aslr-col {
-        width: 100%;
-    }
-}
-#site-content-contain #content .area-store-list .store-item .si-cont {
-    padding: 10px;
-    background-color: #f4f4f4;
-    font-size: 14px;
-}
-#site-content-contain #content .area-store-list .store-item .si-cont .sic-ws {
-    margin-top: 5px;
-}
-#site-content-contain #content .area-store-list .store-item .si-name {
-    text-align: center;
-    margin-left: -10px;
+
+
+/* content cua hang */
+#content .area-store-list .si-name {
+    height: 52px;
+    background-image: url(/wp-content/themes/shoppingcart/images/ds_cua_hang_h1.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    margin-left: -10px;
     margin-right: -10px;
     margin-top: -8px;
-    height: 50px;
-    background-image: url(/wp-content/themes/shoppingcart/images/ds_cua_hang_h1.png);
     padding-top: 17px;
     font-weight: bold;
+    text-align: center;
 }
-#site-content-contain #content .area-store-list .store-item .si-img img {
-    width: 100%;
+#content .area-store-list .si-cont {
+    padding: 10px 10px 10px 40px;
+    background-color: #f4f4f4;
+    font-size: 14px;
+    text-align: left;
+}
+#content .area-store-list .si-cont .sic-ws {
+    margin-top: 5px;
+}
+#content .area-store-list .si-cont img {
+    position: absolute;
+    margin-left: -25px;
 }

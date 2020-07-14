@@ -211,39 +211,4 @@ class WC_Widget_Products extends WC_Widget {
 
 		echo $this->cache_widget( $args, ob_get_clean() ); // WPCS: XSS ok.
 	}
-
-	// BACKUP START
-	// public function widget( $args, $instance ) {
-	// 	if ( $this->get_cached_widget( $args ) ) {
-	// 		return;
-	// 	}
-
-	// 	ob_start();
-
-	// 	$products = $this->get_products( $args, $instance );
-	// 	if ( $products && $products->have_posts() ) {
-	// 		$this->widget_start( $args, $instance );
-
-	// 		echo wp_kses_post( apply_filters( 'woocommerce_before_widget_product_list', '<ul class="product_list_widget">' ) );
-
-	// 		$template_args = array(
-	// 			'widget_id'   => isset( $args['widget_id'] ) ? $args['widget_id'] : $this->widget_id,
-	// 			'show_rating' => true,
-	// 		);
-
-	// 		while ( $products->have_posts() ) {
-	// 			$products->the_post();
-	// 			wc_get_template( 'content-widget-product.php', $template_args );
-	// 		}
-
-	// 		echo wp_kses_post( apply_filters( 'woocommerce_after_widget_product_list', '</ul>' ) );
-
-	// 		$this->widget_end( $args );
-	// 	}
-
-	// 	wp_reset_postdata();
-
-	// 	echo $this->cache_widget( $args, ob_get_clean() ); // WPCS: XSS ok.
-	// }
-	// BACKUP END
 }
