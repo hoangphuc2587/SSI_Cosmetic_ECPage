@@ -123,7 +123,7 @@ class WC_Coupon_Data_Store_CPT extends WC_Data_Store_WP implements WC_Coupon_Dat
 		$coupon_id = $coupon->get_id();
 		$coupon->set_props(
 			array(
-				'code'                        => $post_object->post_title,
+				'code'                        => strtoupper($post_object->post_title),
 				'description'                 => $post_object->post_excerpt,
 				'date_created'                => 0 < $post_object->post_date_gmt ? wc_string_to_timestamp( $post_object->post_date_gmt ) : null,
 				'date_modified'               => 0 < $post_object->post_modified_gmt ? wc_string_to_timestamp( $post_object->post_modified_gmt ) : null,
@@ -165,7 +165,7 @@ class WC_Coupon_Data_Store_CPT extends WC_Data_Store_WP implements WC_Coupon_Dat
 		$changes = $coupon->get_changes();
 		if ( array_intersect( array( 'code', 'description', 'date_created', 'date_modified' ), array_keys( $changes ) ) ) {
 			$post_data = array(
-				'post_title'        => $coupon->get_code( 'edit' ),
+				'post_title'        => strtoupper($coupon->get_code( 'edit' )),
 				'post_excerpt'      => $coupon->get_description( 'edit' ),
 				'post_date'         => gmdate( 'Y-m-d H:i:s', $coupon->get_date_created( 'edit' )->getOffsetTimestamp() ),
 				'post_date_gmt'     => gmdate( 'Y-m-d H:i:s', $coupon->get_date_created( 'edit' )->getTimestamp() ),
