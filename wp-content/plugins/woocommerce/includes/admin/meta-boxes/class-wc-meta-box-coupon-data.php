@@ -49,16 +49,16 @@ class WC_Meta_Box_Coupon_Data {
 							'target' => 'general_coupon_data',
 							'class'  => 'general_coupon_data',
 						),
-						'usage_restriction' => array(
-							'label'  => __( 'Usage restriction', 'woocommerce' ),
-							'target' => 'usage_restriction_coupon_data',
-							'class'  => '',
-						),
-						'usage_limit'       => array(
-							'label'  => __( 'Usage limits', 'woocommerce' ),
-							'target' => 'usage_limit_coupon_data',
-							'class'  => '',
-						),
+//						'usage_restriction' => array(
+//							'label'  => __( 'Usage restriction', 'woocommerce' ),
+//							'target' => 'usage_restriction_coupon_data',
+//							'class'  => '',
+//						),
+//						'usage_limit'       => array(
+//							'label'  => __( 'Usage limits', 'woocommerce' ),
+//							'target' => 'usage_limit_coupon_data',
+//							'class'  => '',
+//						),
 					)
 				);
 
@@ -98,16 +98,32 @@ class WC_Meta_Box_Coupon_Data {
 				);
 
 				// Free Shipping.
-				if ( wc_shipping_enabled() ) {
-					woocommerce_wp_checkbox(
-						array(
-							'id'          => 'free_shipping',
-							'label'       => __( 'Allow free shipping', 'woocommerce' ),
-							'description' => sprintf( __( 'Check this box if the coupon grants free shipping. A <a href="%s" target="_blank">free shipping method</a> must be enabled in your shipping zone and be set to require "a valid free shipping coupon" (see the "Free Shipping Requires" setting).', 'woocommerce' ), 'https://docs.woocommerce.com/document/free-shipping/' ),
-							'value'       => wc_bool_to_string( $coupon->get_free_shipping( 'edit' ) ),
-						)
-					);
-				}
+//				if ( wc_shipping_enabled() ) {
+//					woocommerce_wp_checkbox(
+//						array(
+//							'id'          => 'free_shipping',
+//							'label'       => __( 'Allow free shipping', 'woocommerce' ),
+//							'description' => sprintf( __( 'Check this box if the coupon grants free shipping. A <a href="%s" target="_blank">free shipping method</a> must be enabled in your shipping zone and be set to require "a valid free shipping coupon" (see the "Free Shipping Requires" setting).', 'woocommerce' ), 'https://docs.woocommerce.com/document/free-shipping/' ),
+//							'value'       => wc_bool_to_string( $coupon->get_free_shipping( 'edit' ) ),
+//						)
+//					);
+//				}
+
+                woocommerce_wp_checkbox(
+                    array(
+                        'id'          => 'active_coupon',
+                        'label'       => __( 'Kích hoạt', 'woocommerce' ),
+                        'value'       => wc_bool_to_string( $coupon->get_active_coupon( 'edit' ) ),
+                    )
+                );
+
+                woocommerce_wp_checkbox(
+                    array(
+                        'id'          => 'used_coupon',
+                        'label'       => __( 'Đã sử dụng', 'woocommerce' ),
+                        'value'       => wc_bool_to_string( $coupon->get_used_coupon( 'edit' ) ),
+                    )
+                );
 
 				// Expiry date.
 				$expiry_date = $coupon->get_date_expires( 'edit' ) ? $coupon->get_date_expires( 'edit' )->date( 'Y-m-d' ) : '';
@@ -356,6 +372,7 @@ class WC_Meta_Box_Coupon_Data {
 	public static function save( $post_id, $post ) {
 		// Check for dupe coupons.
 		$coupon_code  = wc_format_coupon_code( $post->post_title );
+
 		$id_from_code = wc_get_coupon_id_by_code( $coupon_code, $post_id );
 
 		if ( $id_from_code ) {
@@ -379,6 +396,8 @@ class WC_Meta_Box_Coupon_Data {
 				'usage_limit_per_user'        => absint( $_POST['usage_limit_per_user'] ),
 				'limit_usage_to_x_items'      => absint( $_POST['limit_usage_to_x_items'] ),
 				'free_shipping'               => isset( $_POST['free_shipping'] ),
+                'active_coupon'               => isset( $_POST['active_coupon'] ),
+                'used_coupon'               => isset( $_POST['used_coupon'] ),
 				'product_categories'          => array_filter( array_map( 'intval', $product_categories ) ),
 				'excluded_product_categories' => array_filter( array_map( 'intval', $exclude_product_categories ) ),
 				'exclude_sale_items'          => isset( $_POST['exclude_sale_items'] ),

@@ -133,6 +133,8 @@ class WC_API_Coupons extends WC_API_Resource {
 				'usage_count'                  => (int) $coupon->get_usage_count(),
 				'expiry_date'                  => $coupon->get_date_expires() ? $this->server->format_datetime( $coupon->get_date_expires()->getTimestamp() ) : null, // API gives UTC times.
 				'enable_free_shipping'         => $coupon->get_free_shipping(),
+                'active_coupon'                => $coupon->get_active_coupon(),
+                'used_coupon'                  => $coupon->get_used_coupon(),
 				'product_category_ids'         => array_map( 'absint', (array) $coupon->get_product_categories() ),
 				'exclude_product_category_ids' => array_map( 'absint', (array) $coupon->get_excluded_product_categories() ),
 				'exclude_sale_items'           => $coupon->get_exclude_sale_items(),
@@ -405,6 +407,14 @@ class WC_API_Coupons extends WC_API_Resource {
 			if ( isset( $data['enable_free_shipping'] ) ) {
 				update_post_meta( $id, 'free_shipping', ( true === $data['enable_free_shipping'] ) ? 'yes' : 'no' );
 			}
+
+            if ( isset( $data['active_coupon'] ) ) {
+                update_post_meta( $id, 'active_coupon', ( true === $data['active_coupon'] ) ? 'yes' : 'no' );
+            }
+
+            if ( isset( $data['used_coupon'] ) ) {
+                update_post_meta( $id, 'used_coupon', ( true === $data['used_coupon'] ) ? 'yes' : 'no' );
+            }
 
 			if ( isset( $data['product_category_ids'] ) ) {
 				update_post_meta( $id, 'product_categories', array_filter( array_map( 'intval', $data['product_category_ids'] ) ) );

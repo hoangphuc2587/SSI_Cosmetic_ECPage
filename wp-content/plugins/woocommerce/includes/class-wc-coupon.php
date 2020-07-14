@@ -39,6 +39,8 @@ class WC_Coupon extends WC_Legacy_Coupon {
 		'usage_limit_per_user'        => 0,
 		'limit_usage_to_x_items'      => null,
 		'free_shipping'               => false,
+        'active_coupon'               => false,
+        'used_coupon'                 => false,
 		'product_categories'          => array(),
 		'excluded_product_categories' => array(),
 		'exclude_sale_items'          => false,
@@ -322,6 +324,14 @@ class WC_Coupon extends WC_Legacy_Coupon {
 	public function get_free_shipping( $context = 'view' ) {
 		return $this->get_prop( 'free_shipping', $context );
 	}
+
+    public function get_active_coupon( $context = 'view' ) {
+        return $this->get_prop( 'active_coupon', $context );
+    }
+
+    public function get_used_coupon( $context = 'view' ) {
+        return $this->get_prop( 'used_coupon', $context );
+    }
 
 	/**
 	 * Get product categories this coupon can apply to.
@@ -630,6 +640,14 @@ class WC_Coupon extends WC_Legacy_Coupon {
 		$this->set_prop( 'free_shipping', (bool) $free_shipping );
 	}
 
+    public function set_active_coupon( $active_coupon ) {
+        $this->set_prop( 'active_coupon', (bool) $active_coupon );
+    }
+
+    public function set_used_coupon( $used_coupon ) {
+        $this->set_prop( 'used_coupon', (bool) $used_coupon );
+    }
+
 	/**
 	 * Set the product category IDs this coupon can be used with.
 	 *
@@ -754,6 +772,8 @@ class WC_Coupon extends WC_Legacy_Coupon {
 					break;
 				case 'individual_use':
 				case 'free_shipping':
+                case 'active_coupon':
+                case 'used_coupon':
 				case 'exclude_sale_items':
 					if ( ! is_bool( $coupon[ $key ] ) ) {
 						wc_doing_it_wrong( $key, $key . ' should be true or false instead of yes or no.', '3.0' );
