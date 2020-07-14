@@ -127,7 +127,7 @@ wp_head(); ?>
 								<div id="site-detail">
 									<div id="site-title">
 										<a href="<?php echo esc_url(home_url('/'));?>" title="<?php echo esc_html(get_bloginfo('name', 'display'));?>" rel="home">
-											<img src="<?php echo home_url() . "/wp-content/themes/shoppingcart/images/logo.png"; ?>" alt="img" />
+											<img src="<?php echo home_url() . "/wp-content/themes/shoppingcart/images/logo_main_menu.png"; ?>" alt="img" />
 										</a>
 									</div><!-- end .site-title --> 
 									<?php

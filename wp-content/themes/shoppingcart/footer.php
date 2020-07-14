@@ -20,7 +20,7 @@ $footer_column = $shoppingcart_settings['shoppingcart_footer_column_section'];
 			<div class="widget-area">
 				<div class="f-wa-left">
 					<div class="fwal-logo"><a href="<?php echo home_url(); ?>">
-						<img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/logo.png' ?>" alt="img" /></a></div>
+						<img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/logo_main_menu.png' ?>" alt="img" /></a></div>
 					<div class="fwal-name">CARICO CO.,LTD</div>
 					<div class="fwal-addr">579 Yonezu-cho, Minami-ku, Hamamatsu-city,<br>Shizuoka, Japan</div>
 				</div>

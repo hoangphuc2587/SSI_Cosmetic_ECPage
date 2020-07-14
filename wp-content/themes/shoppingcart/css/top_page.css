@@ -1,3 +1,13 @@
+a {
+    outline: none !important;
+}
+a:hover {
+    color: #e74054 !important;
+}
+button {
+    outline: none;
+}
+
 #masthead .top-bar {
     padding: 0;
 }
@@ -18,11 +28,17 @@
     background-color: #ffffff;
     border-radius: 4px;
     cursor: pointer;
+    font-family: montserratRegular;
+    font-size: 14px;
 }
 #site-branding .header-right .he-ri-btn button.iws-right-est {
     margin-right: 30px;
-    background-image: url("/wp-content/themes/shoppingcart/images/banner_menu_active.png");
+}
+#site-branding .header-right .he-ri-btn button:hover {
+    background-image: url("/wp-content/themes/shoppingcart/images/banner_button_active.png");
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     border: 1px solid #f9be0b;
 }
 #site-branding .header-right .he-ri-btn {
@@ -58,7 +74,7 @@
     opacity: 0.8;
     padding-top: 30px;
     padding-bottom: 20px;
-    min-width: 250px;
+    min-width: 280px;
     max-height: 697px;
     min-height: 689px;
     position: relative;
@@ -88,6 +104,9 @@
     height: 7px;
     width: 7px;
 }
+#site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li.menu-item-has-children > a.exp-banner-memu::before {
+    background-image: url("/wp-content/themes/shoppingcart/images/icon_arrow_den_down.png");
+}
 #site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li.menu-item-has-children > a {
     display: block;
     padding: 10px;
@@ -98,12 +117,19 @@
     display: block;
     padding: 10px 10px 10px 30px !important;  
     position: relative;
+    font-family: montserratMedium;
 }
 
 #site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li.menu-item-has-children ul.sub-menu > li {
     border-top: 1px dashed #aaaaaa;
     font-size: 14px;
     text-transform: capitalize;
+}
+#site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li.menu-item-has-children ul.sub-menu > li a {
+    font-family: montserratRegular;
+}
+#site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li.menu-item-has-children ul.sub-menu > li a:hover {
+    font-family: montserratBold;
 }
 #site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li.menu-item-has-children ul.sub-menu > li a::before {
     content: "";
@@ -121,9 +147,21 @@
     bottom: 20px;
     width: 100%;
     text-align: center;
+    font-family: montserratSemiBold;
+}
+#site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li.current_page_item > a,
+#site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 > li > a:hover {
+    background-image: url("/wp-content/themes/shoppingcart/images/banner_menu_active.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-family: montserratBold;
 }
 
 /* sticky-header */
+#sticky-header-sticky-wrapper .main-navigation ul li ul li, #sticky-header-sticky-wrapper .main-navigation ul li ul {
+    width: 300px;
+}
 #sticky-header-sticky-wrapper {
     visibility: hidden;
 }
@@ -131,7 +169,9 @@
     padding: 10px 15px 10px 0;
 }
 #sticky-header .header-right {
-    padding-top: 5px;
+    padding-top: 7px;
+    font-family: montserratRegular;
+    font-size: 14px;
 }
 #sticky-header .header-right button {
     margin-left: 10px;
@@ -140,11 +180,34 @@
     background-color: #ffffff;
     border-radius: 4px;
     cursor: pointer;
+    font-family: montserratRegular;
+    font-size: 14px;
 }
-#sticky-header .header-right button.iws-right-est {
-    background-image: url("/wp-content/themes/shoppingcart/images/banner_menu_active.png");
+#sticky-header .header-right button:hover {
+    background-image: url("/wp-content/themes/shoppingcart/images/banner_button_active.png");
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     border: 1px solid #f9be0b;
+}
+#sticky-header #primary-menu > li a {
+    font-size: 16px;
+    font-family: montserratMedium;
+}
+#sticky-header #primary-menu > li a:hover {
+    font-family: montserratBold;
+}
+#sticky-header #primary-menu > li.current_page_item a {
+    color: #e74054;
+    font-family: montserratBold;
+}
+#sticky-header #primary-menu > li ul li a {
+    font-size: 14px;
+    font-family: montserratRegular;
+}
+#sticky-header #primary-menu > li ul.sub-menu {
+    border-top: none;
+    background-color: #fffde3;
 }
 
 /* footer */
@@ -165,9 +228,12 @@
 }
 #site-content-contain #colophon .widget-area .f-wa-left .fwal-name {
     font-size: 16px;
+    font-family: optimaMedium;
 }
 #site-content-contain #colophon .widget-area .f-wa-right {
     padding-top: 20px;
+    font-size: 14px;
+    font-family: montserratRegular;
 }
 #site-content-contain #colophon .widget-area .f-wa-right .fwar-table {
     display: flex;
@@ -185,7 +251,10 @@
     margin-right: 95px;
 }
 #site-content-contain #colophon .site-info {
-    background-image: url("/wp-content/themes/shoppingcart/images/banner_menu_active.png");
+    background-image: url("/wp-content/themes/shoppingcart/images/footer_bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 #site-content-contain #colophon button.go-to-top .icon-bg {
     border: 1px solid orange;
@@ -215,13 +284,21 @@
 }
 #site-content-contain #content .woocommerce h3.widget-title, #content .area-store-list h3.widget-title {
     font-size: 40px;
-    font-weight: bold;
     text-align: center;
     margin-bottom: 30px;
+    font-family: montserratBold;
 }
 #site-content-contain #content .woocommerce div.product span.price .woocommerce-Price-amount {
     color: #333333;
-    font-weight: bold;
+    font-family: robotoMedium;
+}
+#site-content-contain #content .woocommerce div.product .sc-grid-product-content h2 a {
+    font-family: robotoBold;
+    font-size: 18px;
+}
+#site-content-contain #content .woocommerce div.product .sc-grid-product-content .sgpc-short {
+    font-family: robotoLight;
+    font-size: 16px;
 }
 #site-content-contain #content .woocommerce div.product span.price .woocommerce-Price-amount .woocommerce-Price-currencySymbol {
     display: none;
@@ -237,31 +314,52 @@
     padding: 5px;
     color: #222222;
     text-align: center;
+    font-family: robotoMedium;
+    font-size: 16px;
 }
 #site-content-contain #content .woocommerce .sc-grid-product-img img, #content .area-store-list .sc-grid-product-img img {
     width: 100%;
+}
+#site-content-contain #content .woocommerce .shoppingcart-grid-widget-wrap .shoppingcart-grid-product .sc-grid-product-img .btn-quick-view {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    font-family: robotoBold;
+    background-image: url(/wp-content/themes/shoppingcart/images/banner_menu_active.png);
+    background-size: contain;
+    background-position: center;
+}
+#site-content-contain #content .woocommerce .shoppingcart-grid-widget-wrap .shoppingcart-grid-product:hover .sc-grid-product-img {
+    border: 1px solid #f9be0b;
+}
+#site-content-contain #content .woocommerce .shoppingcart-grid-widget-wrap .shoppingcart-grid-product:hover .sc-grid-product-img .btn-quick-view {
+    display: block;
 }
 
 
 /* content cua hang */
 #content .area-store-list .si-name {
-    height: 52px;
+    height: 49px;
     background-image: url(/wp-content/themes/shoppingcart/images/ds_cua_hang_h1.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     margin-left: -10px;
     margin-right: -10px;
-    margin-top: -8px;
+    margin-top: -9px;
     padding-top: 17px;
-    font-weight: bold;
     text-align: center;
+    font-family: robotoBold;
+    font-size: 16px;
 }
 #content .area-store-list .si-cont {
     padding: 10px 10px 10px 40px;
-    background-color: #f4f4f4;
     font-size: 14px;
     text-align: left;
+    font-family: robotoLight;
 }
 #content .area-store-list .si-cont .sic-ws {
     margin-top: 5px;
@@ -269,4 +367,10 @@
 #content .area-store-list .si-cont img {
     position: absolute;
     margin-left: -25px;
+}
+.area-store-list .shoppingcart-grid-product:hover .si-name {
+    background-image: url(/wp-content/themes/shoppingcart/images/store_name_hover.png) !important;
+}
+.area-store-list .shoppingcart-grid-product:hover .si-cont {
+    background-color: #f4f4f4;
 }
