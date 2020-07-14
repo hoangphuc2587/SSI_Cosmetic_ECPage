@@ -10,6 +10,14 @@
 
     margin-top:0px;
 }
+.woocommerce-loop-product__title{
+    max-height: 47px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+
+}
 #main{
     text-align: center;
 }
