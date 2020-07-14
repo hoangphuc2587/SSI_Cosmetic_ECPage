@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-06-23T22:16:25+00:00\n"
-"PO-Revision-Date: 2020-07-13 10:07+0000\n"
+"PO-Revision-Date: 2020-07-14 06:14+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: woocommerce\n"
 "Language: vi\n"
@@ -8689,7 +8689,7 @@ msgstr[1] ""
 #: includes/admin/class-wc-admin-post-types.php:225
 msgid "%s coupon permanently deleted."
 msgid_plural "%s coupons permanently deleted."
-msgstr[0] ""
+msgstr[0] "%s  phiếu giảm giá đã được xóa."
 msgstr[1] ""
 
 #. translators: %s: coupon count
@@ -18860,7 +18860,7 @@ msgstr "Tìm kiếm"
 
 #: includes/class-wc-post-types.php:453
 msgid "No coupons found"
-msgstr ""
+msgstr "Chưa có phiếu giảm giá"
 
 #: includes/class-wc-post-types.php:454
 msgid "No coupons found in trash"
