@@ -43,6 +43,8 @@ class WC_Coupon_Data_Store_CPT extends WC_Data_Store_WP implements WC_Coupon_Dat
 		'usage_limit_per_user',
 		'limit_usage_to_x_items',
 		'free_shipping',
+        'active_coupon',
+        'used_coupon',
 		'product_categories',
 		'exclude_product_categories',
 		'exclude_sale_items',
@@ -121,7 +123,7 @@ class WC_Coupon_Data_Store_CPT extends WC_Data_Store_WP implements WC_Coupon_Dat
 		$coupon_id = $coupon->get_id();
 		$coupon->set_props(
 			array(
-				'code'                        => $post_object->post_title,
+				'code'                        => strtoupper($post_object->post_title),
 				'description'                 => $post_object->post_excerpt,
 				'date_created'                => 0 < $post_object->post_date_gmt ? wc_string_to_timestamp( $post_object->post_date_gmt ) : null,
 				'date_modified'               => 0 < $post_object->post_modified_gmt ? wc_string_to_timestamp( $post_object->post_modified_gmt ) : null,
@@ -136,6 +138,8 @@ class WC_Coupon_Data_Store_CPT extends WC_Data_Store_WP implements WC_Coupon_Dat
 				'usage_limit_per_user'        => get_post_meta( $coupon_id, 'usage_limit_per_user', true ),
 				'limit_usage_to_x_items'      => 0 < get_post_meta( $coupon_id, 'limit_usage_to_x_items', true ) ? get_post_meta( $coupon_id, 'limit_usage_to_x_items', true ) : null,
 				'free_shipping'               => 'yes' === get_post_meta( $coupon_id, 'free_shipping', true ),
+                'active_coupon'               => 'yes' === get_post_meta( $coupon_id, 'active_coupon', true ),
+                'used_coupon'                 => 'yes' === get_post_meta( $coupon_id, 'used_coupon', true ),
 				'product_categories'          => array_filter( (array) get_post_meta( $coupon_id, 'product_categories', true ) ),
 				'excluded_product_categories' => array_filter( (array) get_post_meta( $coupon_id, 'exclude_product_categories', true ) ),
 				'exclude_sale_items'          => 'yes' === get_post_meta( $coupon_id, 'exclude_sale_items', true ),
@@ -159,10 +163,9 @@ class WC_Coupon_Data_Store_CPT extends WC_Data_Store_WP implements WC_Coupon_Dat
 	public function update( &$coupon ) {
 		$coupon->save_meta_data();
 		$changes = $coupon->get_changes();
-
 		if ( array_intersect( array( 'code', 'description', 'date_created', 'date_modified' ), array_keys( $changes ) ) ) {
 			$post_data = array(
-				'post_title'        => $coupon->get_code( 'edit' ),
+				'post_title'        => strtoupper($coupon->get_code( 'edit' )),
 				'post_excerpt'      => $coupon->get_description( 'edit' ),
 				'post_date'         => gmdate( 'Y-m-d H:i:s', $coupon->get_date_created( 'edit' )->getOffsetTimestamp() ),
 				'post_date_gmt'     => gmdate( 'Y-m-d H:i:s', $coupon->get_date_created( 'edit' )->getTimestamp() ),
@@ -246,6 +249,8 @@ class WC_Coupon_Data_Store_CPT extends WC_Data_Store_WP implements WC_Coupon_Dat
 			'usage_count'                => 'usage_count',
 			'date_expires'               => 'date_expires',
 			'free_shipping'              => 'free_shipping',
+            'active_coupon'              => 'active_coupon',
+            'used_coupon'                => 'used_coupon',
 			'product_categories'         => 'product_categories',
 			'exclude_product_categories' => 'excluded_product_categories',
 			'exclude_sale_items'         => 'exclude_sale_items',
@@ -261,6 +266,8 @@ class WC_Coupon_Data_Store_CPT extends WC_Data_Store_WP implements WC_Coupon_Dat
 			switch ( $prop ) {
 				case 'individual_use':
 				case 'free_shipping':
+                case 'active_coupon':
+                case 'used_coupon':
 				case 'exclude_sale_items':
 					$value = wc_bool_to_string( $value );
 					break;

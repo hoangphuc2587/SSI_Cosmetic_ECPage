@@ -53,14 +53,6 @@ if ( ! is_a( $product, 'WC_Product' ) ) {
 				<?php echo $price_html; ?>
 			</span>
 			<?php endif; ?>
-		<!-- <div class="product-item-action">
-				<?php woocommerce_template_loop_add_to_cart( $product );
-				if( function_exists( 'YITH_WCWL' ) ){
-					$wishlist_url = add_query_arg( 'add_to_wishlist', $product->get_id() ); ?>
-					<a href="<?php echo esc_url($wishlist_url); ?>" class="product_add_to_wishlist" title="<?php esc_attr_e('Add to Wishlist','shoppingcart'); ?>"><?php esc_html_e('Add to Wishlist','shoppingcart'); ?></a>
-
-				<?php } ?>
-		</div> -->
 	</div> <!-- end .sc-grid-product-content -->
 
 	<!-- <a href="<?php echo esc_url( $product->get_permalink() ); ?>">
@@ -77,21 +69,3 @@ if ( ! is_a( $product, 'WC_Product' ) ) {
 	<?php do_action( 'woocommerce_widget_product_item_end', $args ); ?>
 </div>
 
-<!-- BACKUP START
-<li>
-	<?php do_action( 'woocommerce_widget_product_item_start', $args ); ?>
-
-	<a href="<?php echo esc_url( $product->get_permalink() ); ?>">
-		<?php echo $product->get_image(); // PHPCS:Ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-		<span class="product-title"><?php echo wp_kses_post( $product->get_name() ); ?></span>
-	</a>
-
-	<?php if ( ! empty( $show_rating ) ) : ?>
-		<?php echo wc_get_rating_html( $product->get_average_rating() ); // PHPCS:Ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-	<?php endif; ?>
-
-	<?php echo $product->get_price_html(); // PHPCS:Ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-
-	<?php do_action( 'woocommerce_widget_product_item_end', $args ); ?>
-</li>
-BACKUP END -->

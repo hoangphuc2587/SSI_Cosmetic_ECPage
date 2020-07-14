@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-06-23T22:16:25+00:00\n"
-"PO-Revision-Date: 2020-07-10 10:17+0000\n"
+"PO-Revision-Date: 2020-07-14 06:14+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: woocommerce\n"
 "Language: vi\n"
@@ -6962,7 +6962,7 @@ msgstr ""
 #: includes/wc-template-functions.php:1742
 #: templates/single-product/tabs/description.php:22
 msgid "Description"
-msgstr ""
+msgstr "Ghi chú"
 
 #: includes/admin/class-wc-admin-api-keys-table-list.php:49
 #: includes/admin/settings/views/html-keys-edit.php:81
@@ -7309,7 +7309,7 @@ msgstr ""
 
 #: includes/admin/class-wc-admin-assets.php:293
 msgid "Generate coupon code"
-msgstr ""
+msgstr "Tạo mã phiếu giảm giá"
 
 #: includes/admin/class-wc-admin-assets.php:304
 msgid "Are you sure you want to remove the selected items?"
@@ -8132,7 +8132,7 @@ msgstr ""
 #: packages/woocommerce-admin/dist/chunks/marketing-overview.c105acbfa46d79f7a6d6.js:474
 #: packages/woocommerce-admin/dist/chunks/task-list.52fe0e41a24d55f1b9b1.js:4927
 msgid "Settings"
-msgstr ""
+msgstr "Cài đặt"
 
 #: includes/admin/class-wc-admin-menus.php:141
 msgid "WooCommerce status"
@@ -8207,7 +8207,7 @@ msgstr "Tác vụ đơn hàng"
 
 #: includes/admin/class-wc-admin-meta-boxes.php:135
 msgid "Coupon data"
-msgstr ""
+msgstr "Thông tin phiếu giảm giá"
 
 #: includes/admin/class-wc-admin-meta-boxes.php:139
 msgid "Rating"
@@ -8582,7 +8582,7 @@ msgstr ""
 #: includes/admin/class-wc-admin-post-types.php:169
 #: includes/admin/class-wc-admin-post-types.php:171
 msgid "Coupon updated."
-msgstr ""
+msgstr "Phiếu giảm giá đã được cập nhật."
 
 #: includes/admin/class-wc-admin-post-types.php:172
 msgid "Coupon saved."
@@ -8689,14 +8689,14 @@ msgstr[1] ""
 #: includes/admin/class-wc-admin-post-types.php:225
 msgid "%s coupon permanently deleted."
 msgid_plural "%s coupons permanently deleted."
-msgstr[0] ""
+msgstr[0] "%s  phiếu giảm giá đã được xóa."
 msgstr[1] ""
 
 #. translators: %s: coupon count
 #: includes/admin/class-wc-admin-post-types.php:227
 msgid "%s coupon moved to the Trash."
 msgid_plural "%s coupons moved to the Trash."
-msgstr[0] ""
+msgstr[0] "%s phiếu giảm giá được di chuyển đến thùng rác."
 msgstr[1] ""
 
 #. translators: %s: coupon count
@@ -8709,11 +8709,11 @@ msgstr[1] ""
 #: includes/admin/class-wc-admin-post-types.php:710 templates/cart/cart.php:143
 #: templates/checkout/form-coupon.php:34
 msgid "Coupon code"
-msgstr ""
+msgstr "Mã phiếu giảm giá"
 
 #: includes/admin/class-wc-admin-post-types.php:724
 msgid "Description (optional)"
-msgstr ""
+msgstr "Ghi chú ( không bắt buộc)"
 
 #: includes/admin/class-wc-admin-post-types.php:761
 msgid "Catalog visibility:"
@@ -11483,17 +11483,17 @@ msgstr ""
 
 #: includes/admin/list-tables/class-wc-admin-list-table-coupons.php:82
 msgid "Code"
-msgstr ""
+msgstr "Mã"
 
 #: includes/admin/list-tables/class-wc-admin-list-table-coupons.php:83
 msgid "Coupon type"
-msgstr ""
+msgstr "Loại"
 
 #: includes/admin/list-tables/class-wc-admin-list-table-coupons.php:84
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:91
 #: includes/admin/reports/class-wc-report-sales-by-date.php:736
 msgid "Coupon amount"
-msgstr ""
+msgstr "Giá trị"
 
 #: includes/admin/list-tables/class-wc-admin-list-table-coupons.php:86
 msgid "Product IDs"
@@ -11505,7 +11505,7 @@ msgstr ""
 
 #: includes/admin/list-tables/class-wc-admin-list-table-coupons.php:88
 msgid "Expiry date"
-msgstr ""
+msgstr "Ngày hết hạn"
 
 #. translators: 1: count 2: limit
 #: includes/admin/list-tables/class-wc-admin-list-table-coupons.php:169
@@ -11514,7 +11514,7 @@ msgstr ""
 
 #: includes/admin/list-tables/class-wc-admin-list-table-coupons.php:201
 msgid "Show all types"
-msgstr ""
+msgstr "Tất cả thể loại"
 
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:51
 msgid "When you receive a new order, it will appear here."
@@ -11901,11 +11901,11 @@ msgstr ""
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:81
 msgid "Discount type"
-msgstr ""
+msgstr "Loại giảm giá"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:93
 msgid "Value of the coupon."
-msgstr ""
+msgstr "Giá trị phiếu giảm giá"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:105
 msgid "Allow free shipping"
@@ -11921,11 +11921,11 @@ msgstr ""
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:118
 msgid "Coupon expiry date"
-msgstr ""
+msgstr "Ngày hết hạn"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:120
 msgid "The coupon will expire at 00:00:00 of this date."
-msgstr ""
+msgstr "Phiếu giảm giá sẽ hết hạn vào 00:00:00 ngày này."
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:142
 msgid "Minimum spend"
@@ -12108,7 +12108,7 @@ msgstr ""
 
 #: includes/admin/meta-boxes/class-wc-meta-box-order-actions.php:66
 msgid "Move to Trash"
-msgstr "Di chuyển đến thùng rác"
+msgstr "Bỏ vào thùng rác"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-order-actions.php:75
 msgid "Create"
@@ -15736,7 +15736,7 @@ msgstr ""
 
 #: includes/admin/settings/views/html-webhooks-edit.php:69
 msgid "Coupon updated"
-msgstr ""
+msgstr "Phiếu giảm giá đã được cập nhật"
 
 #: includes/admin/settings/views/html-webhooks-edit.php:70
 msgid "Coupon deleted"
@@ -18819,7 +18819,7 @@ msgstr ""
 #: packages/woocommerce-admin/dist/chunks/analytics-report-revenue.edcb0bfb0b19d47c76b8.js:1412
 #: packages/woocommerce-admin/dist/chunks/dashboard-charts.d100272c0e3ae443b829.js:1316
 msgid "Coupons"
-msgstr ""
+msgstr "Phiếu giảm giá"
 
 #: includes/class-wc-post-types.php:444
 msgid "Coupon"
@@ -18828,19 +18828,19 @@ msgstr ""
 #: includes/class-wc-post-types.php:445
 msgctxt "Admin menu name"
 msgid "Coupons"
-msgstr ""
+msgstr "Phiếu giảm giá"
 
 #: includes/class-wc-post-types.php:446
 msgid "Add coupon"
-msgstr ""
+msgstr "Thêm mới"
 
 #: includes/class-wc-post-types.php:447
 msgid "Add new coupon"
-msgstr ""
+msgstr "Thêm mới"
 
 #: includes/class-wc-post-types.php:449
 msgid "Edit coupon"
-msgstr ""
+msgstr "Sửa phiếu giảm giá"
 
 #: includes/class-wc-post-types.php:450
 msgid "New coupon"
@@ -18856,11 +18856,11 @@ msgstr ""
 #: packages/woocommerce-admin/dist/chunks/analytics-report-orders.f2d90c48c3f4b0a88512.js:1631
 #: packages/woocommerce-admin/dist/chunks/dashboard-charts.d100272c0e3ae443b829.js:1600
 msgid "Search coupons"
-msgstr ""
+msgstr "Tìm kiếm"
 
 #: includes/class-wc-post-types.php:453
 msgid "No coupons found"
-msgstr ""
+msgstr "Chưa có phiếu giảm giá"
 
 #: includes/class-wc-post-types.php:454
 msgid "No coupons found in trash"
@@ -23432,11 +23432,11 @@ msgstr ""
 
 #: includes/wc-coupon-functions.php:22
 msgid "Percentage discount"
-msgstr ""
+msgstr "Giảm theo phần trăm"
 
 #: includes/wc-coupon-functions.php:23
 msgid "Fixed cart discount"
-msgstr ""
+msgstr "Giảm theo số tiền "
 
 #: includes/wc-coupon-functions.php:24
 msgid "Fixed product discount"
@@ -24763,7 +24763,7 @@ msgstr "Chỉnh sửa đơn hàng"
 
 #: packages/woocommerce-admin/includes/connect-existing-pages.php:180
 msgid "Edit Coupon"
-msgstr ""
+msgstr "Sửa phiếu giảm giá"
 
 #: packages/woocommerce-admin/includes/connect-existing-pages.php:210
 msgid "Edit Product"
@@ -24815,7 +24815,7 @@ msgstr ""
 #: packages/woocommerce-admin/dist/chunks/10.56ca8e03dceb770c657e.js:134
 #: packages/woocommerce-admin/dist/chunks/analytics-report-coupons.43d42c8cb52eecf8abdf.js:134
 msgid "Coupon Code"
-msgstr ""
+msgstr "Mã phiếu giảm giá"
 
 #: packages/woocommerce-admin/src/API/Leaderboards.php:131
 #: packages/woocommerce-admin/src/API/Reports/Coupons/Controller.php:304

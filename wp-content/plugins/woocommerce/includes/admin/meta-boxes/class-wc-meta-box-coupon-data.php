@@ -34,6 +34,11 @@ class WC_Meta_Box_Coupon_Data {
 
 		<style type="text/css">
 			#edit-slug-box, #minor-publishing-actions { display:none }
+            .generate-coupon-code {display: none !important;}
+            input[name=post_title] {pointer-events: none !important;}
+            <?php if (empty($_GET['action'])): ?>
+            #titlediv{ display: none;}
+            <?php endif;?>
 		</style>
 		<div id="coupon_options" class="panel-wrap coupon_data">
 
@@ -49,16 +54,16 @@ class WC_Meta_Box_Coupon_Data {
 							'target' => 'general_coupon_data',
 							'class'  => 'general_coupon_data',
 						),
-						'usage_restriction' => array(
-							'label'  => __( 'Usage restriction', 'woocommerce' ),
-							'target' => 'usage_restriction_coupon_data',
-							'class'  => '',
-						),
-						'usage_limit'       => array(
-							'label'  => __( 'Usage limits', 'woocommerce' ),
-							'target' => 'usage_limit_coupon_data',
-							'class'  => '',
-						),
+//						'usage_restriction' => array(
+//							'label'  => __( 'Usage restriction', 'woocommerce' ),
+//							'target' => 'usage_restriction_coupon_data',
+//							'class'  => '',
+//						),
+//						'usage_limit'       => array(
+//							'label'  => __( 'Usage limits', 'woocommerce' ),
+//							'target' => 'usage_limit_coupon_data',
+//							'class'  => '',
+//						),
 					)
 				);
 
@@ -73,6 +78,20 @@ class WC_Meta_Box_Coupon_Data {
 			</ul>
 			<div id="general_coupon_data" class="panel woocommerce_options_panel">
 				<?php
+
+
+                // Quantity
+                if (empty($_GET['action']))
+                    woocommerce_wp_text_input(
+                        array(
+                            'id'          => 'coupon_quantity',
+                            'label'       => __( 'Số lượng', 'woocommerce' ),
+                            'placeholder' => wc_format_localized_price( 0 ),
+                            'description' => __( 'Số lượng phiếu giảm giá muốn tạo', 'woocommerce' ),
+                            'desc_tip'    => true,
+                            'value'       => '1',
+                        )
+                );
 
 				// Type.
 				woocommerce_wp_select(
@@ -98,16 +117,32 @@ class WC_Meta_Box_Coupon_Data {
 				);
 
 				// Free Shipping.
-				if ( wc_shipping_enabled() ) {
-					woocommerce_wp_checkbox(
-						array(
-							'id'          => 'free_shipping',
-							'label'       => __( 'Allow free shipping', 'woocommerce' ),
-							'description' => sprintf( __( 'Check this box if the coupon grants free shipping. A <a href="%s" target="_blank">free shipping method</a> must be enabled in your shipping zone and be set to require "a valid free shipping coupon" (see the "Free Shipping Requires" setting).', 'woocommerce' ), 'https://docs.woocommerce.com/document/free-shipping/' ),
-							'value'       => wc_bool_to_string( $coupon->get_free_shipping( 'edit' ) ),
-						)
-					);
-				}
+//				if ( wc_shipping_enabled() ) {
+//					woocommerce_wp_checkbox(
+//						array(
+//							'id'          => 'free_shipping',
+//							'label'       => __( 'Allow free shipping', 'woocommerce' ),
+//							'description' => sprintf( __( 'Check this box if the coupon grants free shipping. A <a href="%s" target="_blank">free shipping method</a> must be enabled in your shipping zone and be set to require "a valid free shipping coupon" (see the "Free Shipping Requires" setting).', 'woocommerce' ), 'https://docs.woocommerce.com/document/free-shipping/' ),
+//							'value'       => wc_bool_to_string( $coupon->get_free_shipping( 'edit' ) ),
+//						)
+//					);
+//				}
+
+                woocommerce_wp_checkbox(
+                    array(
+                        'id'          => 'active_coupon',
+                        'label'       => __( 'Kích hoạt', 'woocommerce' ),
+                        'value'       => wc_bool_to_string( $coupon->get_active_coupon( 'edit' ) ),
+                    )
+                );
+
+                woocommerce_wp_checkbox(
+                    array(
+                        'id'          => 'used_coupon',
+                        'label'       => __( 'Đã sử dụng', 'woocommerce' ),
+                        'value'       => wc_bool_to_string( $coupon->get_used_coupon( 'edit' ) ),
+                    )
+                );
 
 				// Expiry date.
 				$expiry_date = $coupon->get_date_expires( 'edit' ) ? $coupon->get_date_expires( 'edit' )->date( 'Y-m-d' ) : '';
@@ -356,6 +391,7 @@ class WC_Meta_Box_Coupon_Data {
 	public static function save( $post_id, $post ) {
 		// Check for dupe coupons.
 		$coupon_code  = wc_format_coupon_code( $post->post_title );
+
 		$id_from_code = wc_get_coupon_id_by_code( $coupon_code, $post_id );
 
 		if ( $id_from_code ) {
@@ -365,29 +401,60 @@ class WC_Meta_Box_Coupon_Data {
 		$product_categories         = isset( $_POST['product_categories'] ) ? (array) $_POST['product_categories'] : array();
 		$exclude_product_categories = isset( $_POST['exclude_product_categories'] ) ? (array) $_POST['exclude_product_categories'] : array();
 
-		$coupon = new WC_Coupon( $post_id );
-		$coupon->set_props(
-			array(
-				'code'                        => $post->post_title,
-				'discount_type'               => wc_clean( $_POST['discount_type'] ),
-				'amount'                      => wc_format_decimal( $_POST['coupon_amount'] ),
-				'date_expires'                => wc_clean( $_POST['expiry_date'] ),
-				'individual_use'              => isset( $_POST['individual_use'] ),
-				'product_ids'                 => isset( $_POST['product_ids'] ) ? array_filter( array_map( 'intval', (array) $_POST['product_ids'] ) ) : array(),
-				'excluded_product_ids'        => isset( $_POST['exclude_product_ids'] ) ? array_filter( array_map( 'intval', (array) $_POST['exclude_product_ids'] ) ) : array(),
-				'usage_limit'                 => absint( $_POST['usage_limit'] ),
-				'usage_limit_per_user'        => absint( $_POST['usage_limit_per_user'] ),
-				'limit_usage_to_x_items'      => absint( $_POST['limit_usage_to_x_items'] ),
-				'free_shipping'               => isset( $_POST['free_shipping'] ),
-				'product_categories'          => array_filter( array_map( 'intval', $product_categories ) ),
-				'excluded_product_categories' => array_filter( array_map( 'intval', $exclude_product_categories ) ),
-				'exclude_sale_items'          => isset( $_POST['exclude_sale_items'] ),
-				'minimum_amount'              => wc_format_decimal( $_POST['minimum_amount'] ),
-				'maximum_amount'              => wc_format_decimal( $_POST['maximum_amount'] ),
-				'email_restrictions'          => array_filter( array_map( 'trim', explode( ',', wc_clean( $_POST['customer_email'] ) ) ) ),
-			)
-		);
-		$coupon->save();
-		do_action( 'woocommerce_coupon_options_save', $post_id, $coupon );
+		$quantity = 1;
+		if (isset( $_POST['coupon_quantity'] )){
+		   if (!is_numeric($_POST['coupon_quantity']) || (int)($_POST['coupon_quantity']) < 1){
+               $quantity = 1;
+           }
+		   else{
+		       $quantity = $_POST['coupon_quantity'];
+		   }
+        }
+
+		//case edit
+        if (!empty($_GET['action']) && $_GET['action'] == 'edit') {
+            $quantity = 1;
+        }
+
+		for ($i = 0; $i < $quantity; $i++){
+
+            if (empty($_GET['action'])) {
+                $characters = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+                $charactersLength = strlen($characters);
+                $randomString = '';
+                for ($j = 0; $j < 8; $j++) {
+                    $randomString .= $characters[rand(0, $charactersLength - 1)];
+                }
+                $post->post_title = strtoupper($randomString);
+            }
+
+            $coupon = new WC_Coupon( $post_id );
+            $coupon->set_props(
+                array(
+                    'code'                        => $post->post_title,
+                    'discount_type'               => wc_clean( $_POST['discount_type'] ),
+                    'amount'                      => wc_format_decimal( $_POST['coupon_amount'] ),
+                    'date_expires'                => wc_clean( $_POST['expiry_date'] ),
+                    'individual_use'              => isset( $_POST['individual_use'] ),
+                    'product_ids'                 => isset( $_POST['product_ids'] ) ? array_filter( array_map( 'intval', (array) $_POST['product_ids'] ) ) : array(),
+                    'excluded_product_ids'        => isset( $_POST['exclude_product_ids'] ) ? array_filter( array_map( 'intval', (array) $_POST['exclude_product_ids'] ) ) : array(),
+                    'usage_limit'                 => absint( $_POST['usage_limit'] ),
+                    'usage_limit_per_user'        => absint( $_POST['usage_limit_per_user'] ),
+                    'limit_usage_to_x_items'      => absint( $_POST['limit_usage_to_x_items'] ),
+                    'free_shipping'               => isset( $_POST['free_shipping'] ),
+                    'active_coupon'               => isset( $_POST['active_coupon'] ),
+                    'used_coupon'                 => isset( $_POST['used_coupon'] ),
+                    'product_categories'          => array_filter( array_map( 'intval', $product_categories ) ),
+                    'excluded_product_categories' => array_filter( array_map( 'intval', $exclude_product_categories ) ),
+                    'exclude_sale_items'          => isset( $_POST['exclude_sale_items'] ),
+                    'minimum_amount'              => wc_format_decimal( $_POST['minimum_amount'] ),
+                    'maximum_amount'              => wc_format_decimal( $_POST['maximum_amount'] ),
+                    'email_restrictions'          => array_filter( array_map( 'trim', explode( ',', wc_clean( $_POST['customer_email'] ) ) ) ),
+                )
+            );
+            $coupon->save();
+            do_action( 'woocommerce_coupon_options_save', $post_id, $coupon );
+            $post_id = $post_id + 1;
+        }
 	}
 }
