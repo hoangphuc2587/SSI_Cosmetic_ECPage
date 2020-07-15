@@ -20,6 +20,7 @@ $shoppingcart_settings = shoppingcart_get_theme_options(); ?>
 wp_head(); ?>
 <link rel="stylesheet" type="text/css" href="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/css/top_page.css">
 <script src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/js/top_page.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/css/product_detail.css">
 </head>
 <body <?php body_class(); ?>>
 	<?php 

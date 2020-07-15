@@ -24,7 +24,7 @@ get_header();
             </main><!-- end #main -->
         </div> <!-- #primary -->
     <?php } else{ ?>
-        <div id="primary" class="content-area">
+        <div id="primary" class="content-area<?php echo is_product() ? " primary-product-detail" : "" ?>">
             <main id="main" class="site-main" role="main">
                 <?php woocommerce_content(); ?>
             </main><!-- end #main -->
@@ -33,12 +33,12 @@ get_header();
 
 <?php 
 if( 'default' == $layout ) { //Settings from customizer
-	if(($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'nosidebar') && ($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'fullwidth')){ ?>
+	if((!is_product())&&($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'nosidebar') && ($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'fullwidth')){ ?>
 <aside id="secondary" class="widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Secondary', 'shoppingcart' ); ?>">
 	<?php }
 } 
 	if( 'default' == $layout ) { //Settings from customizer
-		if((!is_shop())&&($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'nosidebar') && ($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'fullwidth')): ?>
+		if((!is_product())&&(!is_shop())&&($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'nosidebar') && ($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'fullwidth')): ?>
 		<?php dynamic_sidebar( 'shoppingcart_woocommerce_sidebar' ); ?>
 </aside><!-- end #secondary -->
 <?php endif;
