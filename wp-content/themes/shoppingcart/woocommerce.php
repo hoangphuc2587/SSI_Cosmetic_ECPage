@@ -23,13 +23,19 @@ get_header();
                 <?php woocommerce_content(); ?>
             </main><!-- end #main -->
         </div> <!-- #primary -->
-    <?php } else{ ?>
-        <div id="primary" class="content-area<?php echo is_product() ? " primary-product-detail" : "" ?>">
+    <?php } elseif(is_product()) { ?>
+        <div id="primary" class="content-area primary-product-detail">
             <main id="main" class="site-main" role="main">
                 <?php woocommerce_content(); ?>
             </main><!-- end #main -->
         </div> <!-- #primary -->
-    <?php } ?>
+	<?php } else { ?>
+		<div id="primary" class="content-area">
+            <main id="main" class="site-main" role="main">
+                <?php woocommerce_content(); ?>
+            </main><!-- end #main -->
+		</div> <!-- #primary -->
+	<?php } ?>
 
 <?php 
 if( 'default' == $layout ) { //Settings from customizer
