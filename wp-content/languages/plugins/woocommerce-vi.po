@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-06-23T22:16:25+00:00\n"
-"PO-Revision-Date: 2020-07-16 09:56+0000\n"
+"PO-Revision-Date: 2020-07-16 10:16+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: woocommerce\n"
 "Language: vi\n"
@@ -11147,7 +11147,7 @@ msgstr ""
 #: packages/woocommerce-admin/dist/chunks/dashboard-charts.d100272c0e3ae443b829.js:1914
 #: packages/woocommerce-admin/dist/chunks/dashboard-charts.d100272c0e3ae443b829.js:2425
 msgid "Downloads"
-msgstr ""
+msgstr "Downloads"
 
 #: includes/admin/importers/class-wc-product-csv-importer-controller.php:723
 msgid "Download name"
@@ -14385,7 +14385,7 @@ msgstr ""
 #: includes/admin/settings/class-wc-settings-advanced.php:283
 #: includes/class-wc-query.php:124 includes/wc-account-functions.php:102
 msgid "Addresses"
-msgstr ""
+msgstr "Địa chỉ"
 
 #: includes/admin/settings/class-wc-settings-advanced.php:284
 msgid "Endpoint for the \"My account &rarr; Addresses\" page."
@@ -14410,7 +14410,7 @@ msgstr ""
 #: includes/wc-account-functions.php:105
 #: templates/auth/form-grant-access.php:52
 msgid "Logout"
-msgstr ""
+msgstr "Đăng xuất"
 
 #: includes/admin/settings/class-wc-settings-advanced.php:311
 msgid ""
@@ -19192,7 +19192,7 @@ msgstr ""
 
 #: includes/class-wc-privacy-exporters.php:257
 msgid "Shipping Address"
-msgstr ""
+msgstr "Địa chỉ giao hàng"
 
 #: includes/class-wc-privacy-exporters.php:303
 msgid "Payer first name"
@@ -19477,7 +19477,7 @@ msgstr ""
 
 #: includes/class-wc-query.php:121 includes/wc-account-functions.php:104
 msgid "Account details"
-msgstr ""
+msgstr "Chi tiết tài khoản"
 
 #. translators: %s: ID of the attachment.
 #: includes/class-wc-regenerate-images-request.php:107
@@ -20561,7 +20561,7 @@ msgstr ""
 
 #: includes/gateways/bacs/class-wc-gateway-bacs.php:132
 msgid "Account details:"
-msgstr ""
+msgstr "Chi tiết tài khoản:"
 
 #: includes/gateways/bacs/class-wc-gateway-bacs.php:139
 #: packages/woocommerce-admin/dist/chunks/43.52fe0e41a24d55f1b9b1.js:3232
@@ -32414,7 +32414,7 @@ msgstr "Địa chỉ thanh toán"
 #: templates/myaccount/my-address.php:27
 #: templates/order/order-details-customer.php:50
 msgid "Shipping address"
-msgstr ""
+msgstr "Địa chỉ giao hàng"
 
 #: templates/emails/email-customer-details.php:24
 #: templates/emails/plain/email-customer-details.php:22
@@ -32494,7 +32494,7 @@ msgstr[1] ""
 #. translators: 1: user display name 2: logout url
 #: templates/myaccount/dashboard.php:29
 msgid "Hello %1$s (not %1$s? <a href=\"%2$s\">Log out</a>)"
-msgstr ""
+msgstr "Xin chào %1$s (nếu không phải %1$s? <a href=\"%2$s\">Đăng xuất</a>)"
 
 #: templates/myaccount/dashboard.php:39
 msgid ""
@@ -32502,6 +32502,9 @@ msgid ""
 "orders</a>, manage your <a href=\"%2$s\">shipping and billing addresses</a>, "
 "and <a href=\"%3$s\">edit your password and account details</a>."
 msgstr ""
+"Từ trang tổng quan tài khoản bạn có thể xem <a href=\"%1$s\">đơn hàng gần "
+"đây</a>, quản lý <a href=\"%2$s\">địa chỉ giao hàng và thanh toán</a>, và <a "
+"href=\"%3$s\">chỉnh sửa mật khẩu và thông tin tài khoản</a>."
 
 #: templates/myaccount/downloads.php:40 templates/myaccount/orders.php:101
 msgid "Browse products"
@@ -32586,11 +32589,11 @@ msgstr ""
 
 #: templates/myaccount/my-address.php:46
 msgid "The following addresses will be used on the checkout page by default."
-msgstr ""
+msgstr "Các địa chỉ sau sẽ được sử dụng  làm mặc định trong trang thanh toán."
 
 #: templates/myaccount/my-address.php:67
 msgid "You have not set up this type of address yet."
-msgstr ""
+msgstr "Bạn chưa thiết lập loại địa chỉ này."
 
 #: templates/myaccount/my-downloads.php:29
 msgid "Available downloads"

@@ -1765,6 +1765,10 @@ function wp_insert_user( $userdata ) {
 
 	$meta['user_phone'] = empty( $userdata['user_phone'] ) ? '' : $userdata['user_phone'];
 
+	$meta['gender'] = empty( $userdata['gender'] ) ? '' : $userdata['gender'];
+
+	$meta['birthday'] = empty( $userdata['birthday'] ) ? '' : $userdata['birthday'];
+
 	$compacted = compact( 'user_pass', 'user_nicename', 'user_email', 'user_url', 'user_registered', 'user_activation_key', 'display_name' );
 	$data      = wp_unslash( $compacted );
 
