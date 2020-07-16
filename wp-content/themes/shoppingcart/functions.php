@@ -387,3 +387,30 @@ function add_custom_css() {
     endif;
 }
 add_action('wp_enqueue_scripts', 'add_custom_css');
+//*********** remove add to cart
+add_action('woocommerce_after_shop_loop_item_title','woocommerce_template_single_excerpt', 5);
+add_action( 'woocommerce_after_shop_loop_item', function(){
+    remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
+    remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+}, 1 );
+//********* custom product itemn
+function add_img_wrapper_start() {
+    echo '<div class="archive-imgae-wrap">';
+}
+add_action( 'woocommerce_before_shop_loop_item_title', 'add_img_wrapper_start', 5, 2 );
+
+function add_img_wrapper_close() {
+    echo '<div class="btn-quick-view">XEM NHANH</div></div>';
+}
+add_action( 'woocommerce_before_shop_loop_item_title', 'add_img_wrapper_close', 12, 2 );
+
+
+
+add_filter('woocommerce_currency_symbol', 'change_existing_currency_symbol', 10, 2);
+
+function change_existing_currency_symbol( $currency_symbol, $currency ) {
+    switch( $currency ) {
+        case 'VND': $currency_symbol = ''; break;
+    }
+    return $currency_symbol;
+}
