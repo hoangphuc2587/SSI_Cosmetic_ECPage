@@ -35,8 +35,32 @@
   margin-top: -30px;
   font-style: italic;
 }
+.register .error-msg-2{
+  color: red;
+  display: block;
+  font-style: italic;
+}
 
 .login .error-msg {
   color: red;
   font-style: italic;
+}
+
+.register .customer-name {
+  display: flex;
+}
+
+.register .lastname-field {
+  margin-right: 10px;
+}
+
+.register .birthday-select {
+  min-height: 34px;
+  margin-left: 20px;
+  width: 80px;
+  padding: 5px 7px;
+}
+
+.register .birthday, .register .gender {
+  margin-bottom: 30px;
 }

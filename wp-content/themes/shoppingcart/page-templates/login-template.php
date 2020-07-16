@@ -38,7 +38,7 @@ if (!$user_ID) {
 	<div class="wrap">
 		<div class="login">
 			<form action="" class="form-login" id="loginForm" method="POST">
-				<h1>Login</h1>
+				<h1>Đăng nhập</h1>
 				<?php
 					if (is_wp_error($verify_user)) {
 						echo "<p class='error-msg'>Tên đăng nhập hoặc mật khẩu không đúng!</p>";
@@ -46,15 +46,15 @@ if (!$user_ID) {
 				?>
 				<hr>
 
-				<label for="username"><b>Username or Email address</b></label>
+				<label for="username"><b>Tên đăng nhập hoặc Email</b></label>
 				<input type="text" name="username" id="username" value="<?php echo $username ?>" required>
 
-				<label for="password"><b>Password</b></label>
+				<label for="password"><b>Mật khẩu</b></label>
 				<input type="password" name="password" id="password" value="<?php echo $password ?>" required>
 
 				<input type="submit" id="btn-submit" value="Login">
 				
-				<p>Not registered? <a href="/register">Create an account</a>.</p>
+				<p>Bạn chưa có tài khoản? <a href="/register">Đăng ký</a>.</p>
 			</form>
 		</div>
 	</div><!-- end .wrap -->	
