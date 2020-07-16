@@ -63,5 +63,6 @@ $footer_column = $shoppingcart_settings['shoppingcart_footer_column_section'];
 </div><!-- end .site-content-contain -->
 </div><!-- end #page -->
 <?php wp_footer(); ?>
+<script src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/js/product_detail_priority.js"></script>
 </body>
 </html>

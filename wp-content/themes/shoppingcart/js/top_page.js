@@ -1,7 +1,6 @@
 jQuery(document).ready(function(){
     jQuery("#masthead #site-branding #site-detail .stm-menu-lv1 li.menu-item-has-children > a").attr('href', 'javascript:void(0)');
     jQuery("#masthead #site-branding #site-detail .stm-menu-lv1 .menu-item-has-children > ul").css("display", "none");
-    //jQuery("#masthead #sticky-header-sticky-wrapper").css("visibility", "hidden");
 
     jQuery("#masthead #site-branding #site-detail .stm-menu-lv1 .menu-item-has-children > a").click(function(){
         var menu_display = jQuery("#masthead #site-branding #site-detail .stm-menu-lv1 .menu-item-has-children > ul").css("display");
@@ -16,10 +15,6 @@ jQuery(document).ready(function(){
             jQuery("#masthead #site-branding #site-detail .stm-menu-lv1 > li.menu-item-has-children").addClass("current_page_item");
         }
     });
-
-    // jQuery(".area-store-list .shoppingcart-grid-product").hover(function(){
-    //     jQuery(this).css("background-color", "yellow");
-    // });
 
 });
 
