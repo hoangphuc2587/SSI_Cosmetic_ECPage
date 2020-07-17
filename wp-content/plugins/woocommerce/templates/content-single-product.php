@@ -60,8 +60,9 @@ if ( post_password_required() ) {
 		do_action( 'woocommerce_single_product_summary' );
 		?>
 		<div class="sum-pro-desc">
-			<?php //echo $product->get_description(); ?>
-			<ul class="spd-lv1">
+			<?php echo $product->get_description(); ?>
+
+			<!-- <ul class="spd-lv1">
 				<li>
 					<div class="spd-row">
 						<div class="spdr-left"><i class="fa fa-heart"></i>Trọng lượng</div>
@@ -175,9 +176,9 @@ if ( post_password_required() ) {
 						</li>
 					</ul>
 				</li>
-			</ul>
+			</ul> -->
+
 		</div>
-		
 	</div>
 
 	<?php
