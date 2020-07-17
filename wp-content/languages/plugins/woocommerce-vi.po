@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-06-23T22:16:25+00:00\n"
-"PO-Revision-Date: 2020-07-17 03:41+0000\n"
+"PO-Revision-Date: 2020-07-17 07:17+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: woocommerce\n"
 "Language: vi\n"
@@ -20236,7 +20236,7 @@ msgstr "Hóa đơn cho đơn hàng #{order_number}"
 #: includes/emails/class-wc-email-customer-invoice.php:115
 #: includes/emails/class-wc-email-customer-processing-order.php:144
 msgid "Thanks for using {site_url}!"
-msgstr ""
+msgstr "Cảm ơn bạn đã sử dụng {site_url}!"
 
 #: includes/emails/class-wc-email-customer-invoice.php:207
 msgid "Subject (paid)"
@@ -20425,7 +20425,7 @@ msgstr "Đơn hàng mới: #{order_number}"
 
 #: includes/emails/class-wc-email-new-order.php:149
 msgid "Congratulations on the sale."
-msgstr ""
+msgstr " Chúc mừng bạn đã có đơn hàng mới !"
 
 #: includes/emails/class-wc-email.php:718
 msgid "Plain text"
@@ -20710,7 +20710,7 @@ msgstr ""
 #: includes/gateways/cod/class-wc-gateway-cod.php:86
 #: includes/gateways/cod/class-wc-gateway-cod.php:93
 msgid "Pay with cash upon delivery."
-msgstr ""
+msgstr "Thanh toán khi nhận hàng"
 
 #: includes/gateways/cod/class-wc-gateway-cod.php:92
 msgid "Instructions that will be added to the thank you page."
@@ -32268,7 +32268,7 @@ msgstr ""
 #: templates/emails/admin-new-order.php:26
 #: templates/emails/plain/admin-new-order.php:25
 msgid "You’ve received the following order from %s:"
-msgstr ""
+msgstr "Bạn vừa nhận được đơn hàng từ %s. Đơn hàng như sau:"
 
 #. translators: %s: Customer first name
 #. translators: %s: Customer username
@@ -32357,7 +32357,7 @@ msgstr ""
 msgid ""
 "Just to let you know &mdash; we've received your order #%s, and it is now "
 "being processed:"
-msgstr ""
+msgstr "Đơn hàng #%s đã được đặt thành công và chúng tôi đang xử lý"
 
 #. translators: %s: Site title
 #: templates/emails/customer-refunded-order.php:32
