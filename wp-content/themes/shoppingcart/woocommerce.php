@@ -53,7 +53,11 @@ if( 'default' == $layout ) { //Settings from customizer
 </div><!-- end .wrap -->
 
 <?php if(is_product()) { ?>
-	<iframe style="width: 100%; height: 100%; overflow:hidden;" src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/p_detail_landing/tsubuporon_night_pack/index.html" title="Tsubuporon Night Pack"></iframe>
+	<div class="iframe-container">
+		  <!-- <iframe src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/p_detail_landing/tsubuporon_night_pack.html" title="Tsubuporon Night Pack"></iframe> -->
+		  <iframe src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/p_detail_landing/<?php echo get_post_meta($product->get_id(), 'landing_page',  true); ?>" title="Tsubuporon Night Pack"></iframe>
+    </div>
+	<!-- <iframe scrolling="no" id="ifr_pdetail" src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/p_detail_landing/tsubuporon_night_pack.html" title="Tsubuporon Night Pack"></iframe> -->
 <?php } ?>
 
 <?php

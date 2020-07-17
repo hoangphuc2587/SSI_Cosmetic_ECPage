@@ -1,7 +1,16 @@
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1300px;
+    }
+}
+
 #banner_top img {
     width: 100%;
 }
 
+#wrap_content {
+    margin-bottom: 15px;
+}
 #wrap_content .title-area .ta-first {
     font-size: 18px;
     text-align: center;
@@ -9,16 +18,29 @@
     font-family: robotoLight;
     margin-top: 70px;
 }
-
 #wrap_content .title-area .ta-name {
     font-size: 36px;
     text-align: center;
     text-transform: uppercase;
     font-family: montserratBold;
+    margin: 5px 0;
 }
 #wrap_content .title-area .ta-sologan {
     font-size: 30px;
     text-align: center;
     font-family: UVNBayBuom;
     color: #ea5264;
+}
+#wrap_content .title-area .ta-sologan span {
+    border-top: 1px solid #f26c4f;
+    border-bottom: 1px solid #f26c4f;
+    display: inline-block;
+    padding: 5px 0 10px 0;
+}
+
+#wrap_content .desc-area .da-title {
+    text-align: center;
+    font-family: AmaticSCBold;
+    font-size: 40px;
+    text-transform: uppercase;
 }
