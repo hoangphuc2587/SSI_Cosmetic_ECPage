@@ -203,3 +203,23 @@
 #content .primary-product-detail #main .product .woocommerce-product-gallery .woocommerce-product-gallery__trigger::after {
     content: normal;
 }
+
+/* #ifr_pdetail {
+    width: 100%;
+    height: calc(100vh + 100px);
+} */
+
+.iframe-container {
+    overflow: hidden;
+    padding-top: 56.25%;
+    position: relative;
+}
+
+.iframe-container iframe {
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
