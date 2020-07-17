@@ -1,0 +1,14 @@
+#billing_country_field,
+#shipping_country_field {
+  display: none; }
+
+#billing_address_2_field > label {
+  width: initial !important;
+  opacity: initial !important; }
+
+.form-row select,
+.form-row .select2-container .select2-choice,
+.form-row .select2-container .select2-selection {
+  outline: none !important; }
+.form-row .select2-container {
+  width: 100% !important; }
