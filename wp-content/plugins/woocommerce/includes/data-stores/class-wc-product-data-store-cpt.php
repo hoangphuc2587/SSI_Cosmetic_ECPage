@@ -186,6 +186,7 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 		$this->read_visibility( $product );
 		$this->read_product_data( $product );
 		$this->read_extra_data( $product );
+		$this->read_landing_page ( $product );
 		$product->set_object_read( true );
 
 		do_action( 'woocommerce_product_read', $product->get_id() );
@@ -499,6 +500,15 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 			$product->set_downloads( $downloads );
 		}
 	}
+
+    protected function read_landing_page( &$product ) {
+        $meta_values = get_post_meta( $product->get_id(), 'landing_page',  true );
+
+        if ( $meta_values ) {
+
+            $product->set_landing_page( $meta_values );
+        }
+    }
 
 	/**
 	 * Helper method that updates all the post meta for a product based on it's settings in the WC_Product class.

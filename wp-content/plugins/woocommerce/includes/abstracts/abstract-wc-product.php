@@ -102,6 +102,7 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 		'rating_counts'      => array(),
 		'average_rating'     => 0,
 		'review_count'       => 0,
+        'landing_page'      => '',
 	);
 
 	/**
@@ -2027,4 +2028,13 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 		}
 		return apply_filters( 'woocommerce_get_availability_class', $class, $this );
 	}
+
+
+    public function set_landing_page( $landing_page ) {
+        $this->set_prop( 'landing_page', $landing_page);
+    }
+
+    public function get_landing_page( $context = 'view' ) {
+        return $this->get_prop( 'landing_page', $context );
+    }
 }

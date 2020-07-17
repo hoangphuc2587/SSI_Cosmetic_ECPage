@@ -403,6 +403,7 @@ class WC_Meta_Box_Product_Data {
 				'reviews_allowed'    => ! empty( $_POST['comment_status'] ) && 'open' === $_POST['comment_status'],
 				'attributes'         => $attributes,
 				'default_attributes' => self::prepare_set_attributes( $attributes, 'default_attribute_' ),
+                'landing_page'      => isset( $_POST['landing_page_product'] ) ? wc_clean( wp_unslash( $_POST['landing_page_product'] ) ) : null,
 			)
 		);
 
@@ -427,6 +428,9 @@ class WC_Meta_Box_Product_Data {
 		}
 
 		do_action( 'woocommerce_process_product_meta_' . $product_type, $post_id );
+
+        update_post_meta( $post_id , 'landing_page', isset( $_POST['landing_page'] ) ? wc_clean( wp_unslash( $_POST['landing_page'] ) ) : null );
+
 		// phpcs:enable WordPress.Security.NonceVerification.Missing
 	}
 

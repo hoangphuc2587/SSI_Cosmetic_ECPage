@@ -24,12 +24,18 @@ add_action( 'add_meta_boxes', 'my_meta_box_add' );
 
 
 function my_meta_box( $post ) {
+    $value = get_post_meta( $post->ID, 'landing_page',  true );
+    $files = scandir(get_template_directory().'/p_detail_landing');
     ?>
     <p>
-        <label for="landing_page_product">Landing Page : </label>
-        <select name='landing_page_product' id='landing_page_productt'>
-            <option value="2.html">Page HTML 1</option>
-            <option value="2.html">Page HTML 2</option>
+        <label for="landing_page">Landing Page : </label>
+        <select name='landing_page' id='landing_page'>
+            <option value=''>Chọn</option>
+            <?php foreach ($files as $file):?>
+            <?php if (!is_dir($file)): ?>
+            <option value='<?php echo $file?>'<?php echo $file === $value ? " selected='selected'" : "";?>><?php echo $file?></option>
+            <?php endif;?>
+            <?php endforeach;?>
         </select>
     </p>
     <?php
