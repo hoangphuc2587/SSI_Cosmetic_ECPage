@@ -1,3 +1,24 @@
 #banner_top img {
     width: 100%;
 }
+
+#wrap_content .title-area .ta-first {
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: robotoLight;
+    margin-top: 70px;
+}
+
+#wrap_content .title-area .ta-name {
+    font-size: 36px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: montserratBold;
+}
+#wrap_content .title-area .ta-sologan {
+    font-size: 30px;
+    text-align: center;
+    font-family: UVNBayBuom;
+    color: #ea5264;
+}

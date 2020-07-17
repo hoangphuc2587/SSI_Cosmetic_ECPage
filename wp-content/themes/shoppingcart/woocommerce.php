@@ -53,7 +53,7 @@ if( 'default' == $layout ) { //Settings from customizer
 </div><!-- end .wrap -->
 
 <?php if(is_product()) { ?>
-	<iframe src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/p_detail_landing/tsubuporon_night_pack/index.html" title="Tsubuporon Night Pack"></iframe>
+	<iframe style="width: 100%; height: 100%; overflow:hidden;" src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/p_detail_landing/tsubuporon_night_pack/index.html" title="Tsubuporon Night Pack"></iframe>
 <?php } ?>
 
 <?php

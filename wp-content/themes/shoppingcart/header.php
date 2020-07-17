@@ -18,6 +18,7 @@ $shoppingcart_settings = shoppingcart_get_theme_options(); ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php endif;
 wp_head(); ?>
+<link rel="stylesheet" type="text/css" href="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/fonts/include_fonts.css">
 <link rel="stylesheet" type="text/css" href="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/css/top_page.css">
 <link rel="stylesheet" type="text/css" href="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/css/product_detail.css">
 <script src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/js/top_page.js"></script>
