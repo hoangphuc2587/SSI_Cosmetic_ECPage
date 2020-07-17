@@ -414,3 +414,35 @@ function change_existing_currency_symbol( $currency_symbol, $currency ) {
     }
     return $currency_symbol;
 }
+
+add_action( 'woocommerce_thankyou', 'bbloomer_checkout_save_user_meta');
+
+function bbloomer_checkout_save_user_meta( $order_id ) {
+
+    $order = wc_get_order( $order_id );
+    foreach( $order->get_used_coupons() as $coupon_code ){
+        // Retrieving the coupon ID
+        $coupon_post_obj = get_page_by_title($coupon_code, OBJECT, 'shop_coupon');
+        $coupon_id       = $coupon_post_obj->ID;
+        update_post_meta( $coupon_id, 'used_coupon', 'yes' );
+    }
+
+}
+
+//// define the woocommerce_coupon_is_valid callback
+function filter_woocommerce_coupon_is_valid( $true, $instance ) {
+    $coupon_id = $instance->get_id();
+    $date_expires = $instance->get_date_expires();
+    $active_coupon  = $instance->get_active_coupon();
+    $is_used = $instance->get_used_coupon();
+
+    if($active_coupon == $true && $is_used != $true){
+        return $true;
+    }else{
+        return false;
+    }
+
+};
+
+//// add the filter
+add_filter( 'woocommerce_coupon_is_valid', 'filter_woocommerce_coupon_is_valid', 10, 2 );

@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-06-23T22:16:25+00:00\n"
-"PO-Revision-Date: 2020-07-17 07:17+0000\n"
+"PO-Revision-Date: 2020-07-17 11:19+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: woocommerce\n"
 "Language: vi\n"
@@ -17858,6 +17858,8 @@ msgid ""
 "Sorry, it seems the coupon \"%s\" is invalid - it has now been removed from "
 "your order."
 msgstr ""
+"Rất tiếc, có vẻ như mã giảm giá  \"%s\" không hợp lệ - bây giờ nó sẽ được "
+"xóa khỏi đơn hàng của bạn."
 
 #. translators: %s: coupon code
 #: includes/class-wc-coupon.php:962
@@ -17865,6 +17867,8 @@ msgid ""
 "Sorry, it seems the coupon \"%s\" is not yours - it has now been removed "
 "from your order."
 msgstr ""
+"Rất tiếc, có vẻ như mã giảm giá \"%s\" không phải của bạn - bây giờ nó sẽ "
+"được xóa khỏi đơn hàng của bạn."
 
 #. translators: %s: coupon code
 #: includes/class-wc-coupon.php:969
@@ -18144,11 +18148,11 @@ msgstr ""
 #: includes/class-wc-form-handler.php:606
 #: includes/class-wc-form-handler.php:610
 msgid "%s removed."
-msgstr ""
+msgstr "%s đã được xóa."
 
 #: includes/class-wc-form-handler.php:607
 msgid "Undo?"
-msgstr ""
+msgstr "Đặt lại ?"
 
 #. Translators: %s Product title.
 #: includes/class-wc-form-handler.php:662
@@ -18157,7 +18161,7 @@ msgstr ""
 
 #: includes/class-wc-form-handler.php:684
 msgid "Cart updated."
-msgstr ""
+msgstr "Giỏ hàng đã được cập nhật."
 
 #: includes/class-wc-form-handler.php:724
 msgid "Order cancelled by customer."
