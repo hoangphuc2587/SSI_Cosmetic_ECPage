@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-06-23T22:16:25+00:00\n"
-"PO-Revision-Date: 2020-07-17 03:04+0000\n"
+"PO-Revision-Date: 2020-07-17 03:41+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: woocommerce\n"
 "Language: vi\n"
@@ -6738,7 +6738,7 @@ msgstr ""
 #: includes/abstracts/abstract-wc-order.php:1130
 #: includes/class-wc-coupon.php:965
 msgid "Coupon code already applied!"
-msgstr ""
+msgstr "Mã giảm giá đã bị sử dụng rồi!"
 
 #. translators: %s: method
 #. translators: %s: payment method
@@ -6761,7 +6761,7 @@ msgstr "Tạm tính:"
 
 #: includes/abstracts/abstract-wc-order.php:2026
 msgid "Discount:"
-msgstr ""
+msgstr "Giảm giá:"
 
 #: includes/abstracts/abstract-wc-order.php:2041
 #: includes/admin/meta-boxes/views/html-order-items.php:176
@@ -8913,7 +8913,7 @@ msgstr ""
 #: templates/cart/shipping-calculator.php:55
 #: templates/cart/shipping-calculator.php:67
 msgid "State / County"
-msgstr ""
+msgstr "Bang / Hạt"
 
 #: includes/admin/class-wc-admin-profile.php:82
 #: includes/admin/class-wc-admin-profile.php:142
@@ -12088,6 +12088,8 @@ msgid ""
 "Coupon code already exists - customers will use the latest coupon with this "
 "code."
 msgstr ""
+"Mã giảm giá đã tồn tại - khách hàng sẽ sử dụng khuyến mãi gần nhất với mã "
+"này."
 
 #: includes/admin/meta-boxes/class-wc-meta-box-order-actions.php:38
 msgid "Email invoice / order details to customer"
@@ -17172,11 +17174,11 @@ msgstr ""
 
 #: includes/class-wc-ajax.php:229
 msgid "Sorry there was a problem removing this coupon."
-msgstr ""
+msgstr "Rất tiếc, đã có vấn đề khi xóa mã giảm giá này."
 
 #: includes/class-wc-ajax.php:232
 msgid "Coupon has been removed."
-msgstr ""
+msgstr "Mã giảm giá đã được xóa thành công."
 
 #: includes/class-wc-ajax.php:280
 msgid "Sorry, your session has expired."
@@ -17515,7 +17517,7 @@ msgstr ""
 #: includes/class-wc-frontend-scripts.php:558
 #: includes/wc-cart-functions.php:125 includes/wc-template-functions.php:2079
 msgid "View cart"
-msgstr ""
+msgstr "Xem giỏ hàng"
 
 #. translators: %s: product name
 #: includes/class-wc-cart.php:1043
@@ -17598,7 +17600,7 @@ msgstr ""
 #: includes/class-wc-checkout.php:733
 msgctxt "checkout-validation"
 msgid "Billing %s"
-msgstr ""
+msgstr "%s"
 
 #. translators: %1$s: field name, %2$s finder.eircode.ie URL
 #: includes/class-wc-checkout.php:745
@@ -17634,7 +17636,7 @@ msgstr ""
 #: includes/class-wc-checkout.php:795 includes/class-wc-form-handler.php:116
 #: includes/class-wc-form-handler.php:262
 msgid "%s is a required field."
-msgstr ""
+msgstr "%s là mục bắt buộc."
 
 #: includes/class-wc-checkout.php:813 includes/class-wc-form-handler.php:396
 msgid ""
@@ -17835,11 +17837,11 @@ msgstr ""
 
 #: includes/class-wc-coupon.php:929
 msgid "Coupon code applied successfully."
-msgstr ""
+msgstr "Mã giảm giá đã được áp dụng thành công."
 
 #: includes/class-wc-coupon.php:932
 msgid "Coupon code removed successfully."
-msgstr ""
+msgstr "Mã ưu giảm giá được xóa thành công."
 
 #: includes/class-wc-coupon.php:950 includes/class-wc-discounts.php:961
 msgid "Coupon is not valid."
@@ -18838,7 +18840,7 @@ msgstr "Phiếu giảm giá"
 
 #: includes/class-wc-post-types.php:444
 msgid "Coupon"
-msgstr ""
+msgstr "Mã giảm giá"
 
 #: includes/class-wc-post-types.php:445
 msgctxt "Admin menu name"
@@ -19188,7 +19190,7 @@ msgstr ""
 
 #: includes/class-wc-privacy-exporters.php:256
 msgid "Billing Address"
-msgstr ""
+msgstr "Địa chỉ thanh toán"
 
 #: includes/class-wc-privacy-exporters.php:257
 msgid "Shipping Address"
@@ -22724,7 +22726,7 @@ msgstr ""
 #. translators: %s: coupon code
 #: includes/wc-cart-functions.php:264
 msgid "Coupon: %s"
-msgstr ""
+msgstr "Mã giảm giá: %s"
 
 #: includes/wc-cart-functions.php:289
 msgid "Free shipping coupon"
@@ -22732,7 +22734,7 @@ msgstr ""
 
 #: includes/wc-cart-functions.php:293
 msgid "[Remove]"
-msgstr ""
+msgstr "[Xóa]"
 
 #. translators: %s: country name
 #: includes/wc-cart-functions.php:320
