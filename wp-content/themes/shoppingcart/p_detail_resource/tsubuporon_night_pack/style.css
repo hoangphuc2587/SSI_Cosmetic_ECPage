@@ -43,4 +43,19 @@
     font-family: AmaticSCBold;
     font-size: 40px;
     text-transform: uppercase;
+    margin: 25px 0 15px;
+}
+#wrap_content .desc-area .da-content .dac-title {
+    color: #ea5264;
+    font-size: 20px;
+    font-family: robotoBold;
+}
+#wrap_content .desc-area .da-content .dac-quest {
+    font-size: 16px;
+    font-family: robotoLight;
+    font-style: italic;
+}
+#wrap_content .desc-area .da-content p {
+    font-size: 16px;
+    font-family: robotoLight;
 }
