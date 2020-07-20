@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-06-23T22:16:25+00:00\n"
-"PO-Revision-Date: 2020-07-17 11:19+0000\n"
+"PO-Revision-Date: 2020-07-20 02:24+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: woocommerce\n"
 "Language: vi\n"
@@ -6727,7 +6727,7 @@ msgstr ""
 #: includes/legacy/api/v2/class-wc-api-coupons.php:189
 #: includes/legacy/api/v3/class-wc-api-coupons.php:187
 msgid "Invalid coupon code"
-msgstr ""
+msgstr "Mã giảm giá không hợp lệ"
 
 #: includes/abstracts/abstract-wc-order.php:1123
 #: includes/class-wc-ajax.php:1139 includes/class-wc-ajax.php:1202
@@ -17665,7 +17665,7 @@ msgstr ""
 #: includes/class-wc-form-handler.php:536
 #: includes/class-wc-form-handler.php:561
 msgid "Invalid payment method."
-msgstr ""
+msgstr "Phương thức thanh toán không hợp lệ."
 
 #: includes/class-wc-checkout.php:1094
 msgid "We were unable to process your order, please try again."
@@ -17845,7 +17845,7 @@ msgstr "Mã ưu giảm giá được xóa thành công."
 
 #: includes/class-wc-coupon.php:950 includes/class-wc-discounts.php:961
 msgid "Coupon is not valid."
-msgstr ""
+msgstr "Mã giảm giá không hợp lệ."
 
 #. translators: %s: coupon code
 #: includes/class-wc-coupon.php:954 includes/class-wc-discounts.php:585
@@ -17913,6 +17913,8 @@ msgstr ""
 #: includes/class-wc-coupon.php:1023 includes/class-wc-discounts.php:778
 msgid "Sorry, this coupon is not valid for sale items."
 msgstr ""
+"Rất tiếc, mã giảm giá này không có hiệu lực đối với các sản phẩm hiện đang "
+"giảm giá."
 
 #: includes/class-wc-coupon.php:1043
 msgid "Coupon does not exist!"
@@ -18119,7 +18121,7 @@ msgstr[1] ""
 
 #: includes/class-wc-form-handler.php:495
 msgid "Invalid payment gateway."
-msgstr ""
+msgstr "Cổng thanh toán không hợp lệ."
 
 #: includes/class-wc-form-handler.php:508
 msgid "Payment method successfully added."
@@ -20064,11 +20066,11 @@ msgstr ""
 #: includes/data-stores/class-wc-payment-token-data-store.php:44
 #: includes/data-stores/class-wc-payment-token-data-store.php:88
 msgid "Invalid or missing payment token fields."
-msgstr ""
+msgstr "Mã token thanh toán không hợp lệ hoặc bị thiếu."
 
 #: includes/data-stores/class-wc-payment-token-data-store.php:174
 msgid "Invalid payment token."
-msgstr ""
+msgstr "Mã token thanh toán không hợp lệ."
 
 #: includes/data-stores/class-wc-product-data-store-cpt.php:165
 msgid "Invalid product."

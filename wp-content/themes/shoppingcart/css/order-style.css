@@ -1,0 +1,4 @@
+.woocommerce ul.order_details li{
+    margin-bottom: 10px;
+    float: none;
+}
