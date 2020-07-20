@@ -49,7 +49,7 @@ if ( ! is_a( $product, 'WC_Product' ) ) {
 			} ?>
 
 			<h2 style="text-transform: uppercase;" class="sc-grid-product-title"><a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-			<div class="sgpc-short" style="margin-bottom: 5px; color: #555555;"><?php echo $product->get_short_description(); ?></div>
+			<div class="sgpc-short" style="margin-bottom: 10px; color: #555555;"><?php echo $product->get_short_description(); ?></div>
 			<?php if ( $price_html = $product->get_price_html() ) : ?>
 			<span class="price">
 				<?php echo $price_html; ?>
