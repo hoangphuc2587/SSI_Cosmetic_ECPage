@@ -57,10 +57,19 @@ $check_landing_iframe = get_post_meta($product->get_id(), 'landing_page',  true)
 if(is_product() && $check_landing_iframe != "") { ?>
 
 	<div class="iframe-container">
-		<iframe src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/p_detail_landing/<?php echo $check_landing_iframe; ?>" title="Tsubuporon Night Pack"></iframe>
+		<iframe id="iFrame1" src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/p_detail_landing/<?php echo $check_landing_iframe; ?>" title="Tsubuporon Night Pack"></iframe>
     </div>
 	
 <?php } ?>
 
 <?php
 get_footer();
+?>
+<script type="text/javascript">
+    jQuery( document ).ready(function() {
+        jQuery('iframe').load(function() {
+            this.style.height =
+                (this.contentWindow.document.body.offsetHeight + 20) + 'px';
+        });
+    });
+</script>
