@@ -446,3 +446,9 @@ function filter_woocommerce_coupon_is_valid( $true, $instance ) {
 
 //// add the filter
 add_filter( 'woocommerce_coupon_is_valid', 'filter_woocommerce_coupon_is_valid', 10, 2 );
+
+/************** add order css *************************************/
+function add_order_css() {
+    wp_enqueue_style('order-css',  get_template_directory_uri() . '/css/order-style.css');
+}
+add_action('wp_enqueue_scripts', 'add_order_css');
