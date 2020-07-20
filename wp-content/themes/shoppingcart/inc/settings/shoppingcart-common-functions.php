@@ -148,8 +148,11 @@ function shoppingcart_cart_wishlist_icon(){
 	<?php
 		global $current_user;
 		if ( is_user_logged_in() ) {
-			echo 'Hello <a href="'.home_url().'/my-account">' . $current_user->user_login . '</a>';
-		} else {
+			echo 'Xin chào <a href="'.home_url().'/my-account">' . $current_user->user_login . '</a>'; ?>
+			<button type="button" onclick="location.href='<?php echo wp_logout_url(); ?>';">
+				<i class='fa fa-user'></i> Đăng xuất
+			</button>
+	<?php } else {
 	?>
 		<button type="button" onclick="location.href='<?php echo home_url().'/login'; ?>';">
 			<i class='fa fa-lock'></i> Đăng nhập

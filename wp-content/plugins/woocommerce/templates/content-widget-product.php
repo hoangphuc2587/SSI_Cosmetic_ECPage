@@ -35,12 +35,12 @@ if ( ! is_a( $product, 'WC_Product' ) ) {
 		<a href="<?php echo esc_url( get_permalink( $product->get_id() ) ); ?>" alt="<?php the_title_attribute();?>">
 		<!-- <img src="<?php echo esc_url( $image_attribute[0] ); ?>" alt="<?php the_title_attribute();?>"> -->
 		<?php echo $product->get_image(); ?>
-		
+		<div class="btn-quick-view">XEM NHANH</div>
 		</a>
 		<?php  if ( !$product->is_in_stock() ) { ?>
 			<div class="badge-sold-out"><span><?php esc_html_e('Out of Stock','shoppingcart'); ?></span></div>
 		<?php } ?>
-		<div class="btn-quick-view">XEM NHANH</div>
+		<!-- <div class="btn-quick-view">XEM NHANH</div> -->
 	</figure>
 
 	<div class="sc-grid-product-content">
