@@ -79,6 +79,16 @@
 #content .primary-product-detail #main .product .summary .sum-pro-desc ul.spd-lv1 li ul.content-hide {
     list-style: none;
 }
+
+#content .primary-product-detail #main .product .summary .sum-pro-desc ul.spd-lv1 li ul.content-hide li::before {
+    content: "\2022";
+    color: #dea51c;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 25px;
+    margin-left: -10px;
+    margin-right: 10px;
+}
 #content .primary-product-detail #main .product .summary .sum-pro-desc ul.spd-lv1 li .content-hide {
     border-bottom: 1px solid #cccccc;
     padding: 20px 20px 20px 30px;
