@@ -429,26 +429,50 @@ function bbloomer_checkout_save_user_meta( $order_id ) {
 
 }
 
-//// define the woocommerce_coupon_is_valid callback
-function filter_woocommerce_coupon_is_valid( $true, $instance ) {
-    $coupon_id = $instance->get_id();
-    $date_expires = $instance->get_date_expires();
-    $active_coupon  = $instance->get_active_coupon();
-    $is_used = $instance->get_used_coupon();
-
-    if($active_coupon == $true && $is_used != $true){
-        return $true;
-    }else{
-        return false;
-    }
-
-};
-
-//// add the filter
-add_filter( 'woocommerce_coupon_is_valid', 'filter_woocommerce_coupon_is_valid', 10, 2 );
 
 /************** add order css *************************************/
 function add_order_css() {
     wp_enqueue_style('order-css',  get_template_directory_uri() . '/css/order-style.css');
 }
 add_action('wp_enqueue_scripts', 'add_order_css');
+
+///////////////// custom order ///////////////
+
+ add_filter("woocommerce_coupon_is_valid","plugin_coupon_validation",10,2);
+
+ function plugin_coupon_validation($result,$coupon) {
+
+     if($coupon->get_used_coupon() == true){
+         return false;
+     }
+
+     return true;
+  }
+
+ add_filter("woocommerce_coupon_error","plugin_coupon_error_message",10,3);
+
+ function plugin_coupon_error_message($err,$err_code,$coupon) {
+
+      if($coupon->get_used_coupon() == true){
+     	return "Mã giảm giá \" ".$coupon->code."\" đã hết lượt sử dụng.";
+
+     }
+     return $err ;
+  }
+
+  // hide coupon
+ function hide_coupon_field_on_cart( $enabled ) {
+ 	$applied_coupons = WC()->cart->get_applied_coupons();
+
+     if( sizeof($applied_coupons) > 0 ) {
+         foreach ($applied_coupons as $item){
+             WC()->cart->remove_coupon( $item->code );
+         }
+         $enabled = false;
+     }
+
+ 	return $enabled;
+ }
+ add_filter( 'woocommerce_coupons_enabled', 'hide_coupon_field_on_cart' );
+
+
