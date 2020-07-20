@@ -476,3 +476,16 @@ add_action('wp_enqueue_scripts', 'add_order_css');
  add_filter( 'woocommerce_coupons_enabled', 'hide_coupon_field_on_cart' );
 
 
+ add_action('woocommerce_after_checkout_validation',
+ 	'validation_after_checkout_validation');
+
+ function validation_after_checkout_validation( ) {
+    $applied_coupons = WC()->cart->get_applied_coupons();
+    foreach ($$applied_coupons as $coupon) {
+    		if($coupon->get_used_coupon() == true){
+    			wc_add_notice( __( "Mã giảm giá \" ".$coupon->code."\" đã hết lượt sử dụng.", 'woocommerce' ), 'error' );
+
+    		}
+    }
+
+ }
