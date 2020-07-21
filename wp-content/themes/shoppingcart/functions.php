@@ -317,9 +317,16 @@ function shoppingcart_woocommerce_add_to_cart_fragment( $fragments ) {
 	return $fragments;
 }
 
+
+/************** add contact css *************************************/
+function add_contact_css() {
+    wp_enqueue_style('contact-css',  get_template_directory_uri() . '/css/contact-style.css');
+}
+add_action('wp_enqueue_scripts', 'add_contact_css');
+
 /************** add login css *************************************/
 function add_login_css() {
-    wp_enqueue_style('my-script-slug',  get_template_directory_uri() . '/css/login-register-style.css');
+    wp_enqueue_style('login-register-css',  get_template_directory_uri() . '/css/login-register-style.css');
 }
 add_action('wp_enqueue_scripts', 'add_login_css');
 
@@ -602,7 +609,6 @@ register_post_type('contacts', $args);
 add_action('init', 'cw_post_type_contacts');
 
 /*Custom Post type end*/
-
 // Add the custom columns to the book post type:
 add_filter( 'manage_stores_posts_columns', 'set_custom_edit_stores_columns' );
 function set_custom_edit_stores_columns($columns) {
