@@ -493,18 +493,31 @@ add_action('wp_enqueue_scripts', 'add_order_css');
 
  /* Custom Post Type Start */
 function create_posttype() {
-register_post_type( 'stores',
-// CPT Options
-array(
-  'labels' => array(
-   'name' => __( 'stores' ),
-   'singular_name' => __( 'Stores' )
-  ),
-  'public' => true,
-  'has_archive' => false,
-  'rewrite' => array('slug' => 'store'),
- )
-);
+	register_post_type( 'stores',
+	// CPT Options
+	array(
+	  'labels' => array(
+	   'name' => __( 'stores' ),
+	   'singular_name' => __( 'Stores' )
+	  ),
+	  'public' => true,
+	  'has_archive' => false,
+	  'rewrite' => array('slug' => 'store'),
+	 )
+	);
+
+	register_post_type( 'contacts',
+	// CPT Options
+	array(
+	  'labels' => array(
+	   'name' => __( 'contacts' ),
+	   'singular_name' => __( 'Contacts' )
+	  ),
+	  'public' => true,
+	  'has_archive' => false,
+	  'rewrite' => array('slug' => 'contact'),
+	 )
+	);
 }
 // Hooking up our function to theme setup
 add_action( 'init', 'create_posttype' );
@@ -545,5 +558,47 @@ $args = array(
 register_post_type('stores', $args);
 }
 add_action('init', 'cw_post_type_stores');
+
+/*Custom Post type end*/
+
+
+
+/* Custom Post Type Start */
+
+function cw_post_type_contacts() {
+
+$supports = array(
+'title', // post title
+'editor', // post content
+'custom-fields', // custom fields
+);
+
+$labels = array(
+'name' => _x('Liên hệ', 'plural'),
+'singular_name' => _x('Liên hệ', 'singular'),
+'menu_name' => _x('Liên hệ', 'admin menu'),
+'name_admin_bar' => _x('contacts', 'admin bar'),
+'add_new' => _x('Thêm mới', 'add new'),
+'add_new_item' => __('Thêm mới liên hệ'),
+'new_item' => __('Thêm liên hệ'),
+'edit_item' => __('Sửa liên hệ'),
+'view_item' => __('Xem liên hệ'),
+'all_items' => __('Tất cả liên hệ'),
+'search_items' => __('Tìm kiếm liên hệ'),
+'not_found' => __('Không tìm thấy dữ liệu.'),
+);
+
+$args = array(
+'supports' => $supports,
+'labels' => $labels,
+'public' => true,
+'query_var' => true,
+'rewrite' => array('slug' => 'contacts'),
+'has_archive' => true,
+'hierarchical' => false,
+);
+register_post_type('contacts', $args);
+}
+add_action('init', 'cw_post_type_contacts');
 
 /*Custom Post type end*/
