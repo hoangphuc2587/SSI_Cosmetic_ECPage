@@ -35,6 +35,9 @@ button {
 }
 #site-branding .header-right .he-ri-btn button.iws-right-est {
     margin-right: 30px;
+    position: relative;
+    padding-left: 25px;
+    display: none;
 }
 #site-branding .header-right .he-ri-btn button:hover {
     background-image: url("/wp-content/themes/shoppingcart/images/banner_button_active.png");
@@ -57,6 +60,110 @@ button {
 #site-branding .header-right .he-ri-img {
     text-align: center;
     margin-top: 15px;
+}
+#site-branding .header-right .he-ri-btn .my-cart-num {
+    position: absolute;
+    color: #fffef1;
+    background-color: #d42e22;
+    padding: 0px 5px;
+    border-radius: 50%;
+    font-size: 10px;
+    top: 5px;
+    left: 14px;
+}
+
+/* custom button cart in banner START */
+#site-branding .header-right .he-ri-btn .cart-box {
+    height: 38px;
+    margin-left: 24px;
+}
+#site-branding .header-right .he-ri-btn .cart-box .sx-cart-views .my-cart-wrap,
+#site-branding .header-right .he-ri-btn .cart-box div.widget_shopping_cart {
+    display: none;
+}
+#site-branding .header-right .he-ri-btn .cart-box .sx-cart-views a.wcmenucart-contents {
+    padding: 7px 14px;
+    border: 1px solid #eeeeee;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #222222 !important;
+    font-size: 14px;
+    font-family: montserratRegular;
+    line-height: inherit;
+    padding-left: 26px;
+}
+#site-branding .header-right .he-ri-btn .cart-box .sx-cart-views a.wcmenucart-contents i {
+    font-size: inherit;
+    vertical-align: inherit;
+}
+#site-branding .header-right .he-ri-btn .cart-box .sx-cart-views a.wcmenucart-contents .cart-value {
+    left: 14px;
+    top: 5px;
+    background-color: #d42e22;
+    color: #fffef1;
+    line-height: 15px;
+}
+#site-branding .header-right .he-ri-btn .cart-box .sx-cart-views a.wcmenucart-contents:hover {
+    background-image: url("/wp-content/themes/shoppingcart/images/banner_button_active.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: 1px solid #f9be0b;
+}
+/* custom button cart in banner END */
+/* custom button cart in main nav START */
+#sticky-header .header-right .cart-box .sx-cart-views .my-cart-wrap,
+#sticky-header .header-right .cart-box div.widget_shopping_cart {
+    display: none;
+}
+#sticky-header .header-right .cart-box {
+    margin-left: 14px;
+    height: 34px;
+}
+#sticky-header .header-right .cart-box .sx-cart-views a.wcmenucart-contents {
+    line-height: inherit;
+    color: #222222 !important;
+    padding: 5px 10px;
+    border: 1px solid #aaaaaa;
+    border-radius: 4px;
+    font-family: montserratRegular;
+    font-size: 14px;
+    padding-left: 22px;
+}
+#sticky-header .header-right .cart-box .sx-cart-views a.wcmenucart-contents i {
+    font-size: inherit;
+    vertical-align: inherit;
+}
+#sticky-header .header-right .cart-box .sx-cart-views a.wcmenucart-contents span.cart-value {
+    left: 10px;
+    top: 4px;
+    background-color: #d42e22;
+    color: #fffef1;
+    line-height: 15px;
+}
+#sticky-header .header-right .cart-box .sx-cart-views a.wcmenucart-contents:hover {
+    background-image: url("/wp-content/themes/shoppingcart/images/banner_button_active.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: 1px solid #f9be0b;
+}
+/* custom button cart in main nav END */
+
+#sticky-header .header-right .my-cart-num {
+    position: absolute;
+    color: #fffef1;
+    background-color: #d42e22;
+    padding: 0px 5px;
+    border-radius: 50%;
+    font-size: 10px;
+    top: 4px;
+    left: 10px;
+}
+#sticky-header .header-right button.iws-right-est {
+    position: relative;
+    padding-left: 22px;
+    display: none;
 }
 
 /* header left */
