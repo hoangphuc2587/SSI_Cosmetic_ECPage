@@ -110,8 +110,8 @@ add_action ('shoppingcart_cart_wishlist_icon_display','shoppingcart_cart_wishlis
 
 function shoppingcart_cart_wishlist_icon(){
 
-	if ( class_exists( 'woocommerce' ) ) { ?>
-		<!-- <div class="cart-box">
+	if ( class_exists( 'woocommerce' )) { ?>
+		<div class="cart-box">
 			<div class="sx-cart-views">
 				<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="wcmenucart-contents">
 					<i class="fa fa-shopping-cart"></i>
@@ -125,22 +125,22 @@ function shoppingcart_cart_wishlist_icon(){
 			</div>
 			
 			<?php the_widget( 'WC_Widget_Cart', '' ); ?>
-		</div> -->
+		</div>
 		<!-- end .cart-box -->
 	<?php }
 
-	if ( function_exists( 'YITH_WCWL' ) ) {
+	if ( function_exists( 'YITH_WCWL' ) && false) {
 
-		//$wishlist_url = YITH_WCWL()->get_wishlist_url();
+		$wishlist_url = YITH_WCWL()->get_wishlist_url();
 		?>
-		<!-- <div class="wishlist-box">
+		<div class="wishlist-box">
 			<div class="wishlist-wrap">
 				<a class="wishlist-btn" href="<?php echo esc_url( $wishlist_url ); ?>">
 					<i class="fa fa-heart-o"> </i>
 					<span class="wl-counter"><?php echo absint( yith_wcwl_count_products() ); ?></span>
 				</a>
 			</div>
-		</div> -->
+		</div>
 		<!-- end .wishlist-box -->
 
 	<?php } ?>
@@ -150,7 +150,7 @@ function shoppingcart_cart_wishlist_icon(){
 		if ( is_user_logged_in() ) {
 			echo 'Xin chào <a href="'.home_url().'/my-account">' . $current_user->user_login . '</a>'; ?>
 			<button type="button" onclick="location.href='<?php echo wp_logout_url(); ?>';">
-				<i class='fa fa-user'></i> Đăng xuất
+				<i class='fa fa-sign-out'></i> Đăng xuất
 			</button>
 	<?php } else {
 	?>
@@ -163,6 +163,7 @@ function shoppingcart_cart_wishlist_icon(){
 	<?php } ?>
 
 	<button type="button" class="iws-right-est" onclick="location.href='<?php echo home_url().'/cart'; ?>';">
+		<span class="my-cart-num"><?php echo wp_kses_data ( WC()->cart->get_cart_contents_count() ); ?></span>
 		<i class='fa fa-shopping-cart'></i> Giỏ hàng
 	</button>
 	
