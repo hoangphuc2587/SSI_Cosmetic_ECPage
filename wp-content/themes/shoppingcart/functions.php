@@ -317,6 +317,13 @@ function shoppingcart_woocommerce_add_to_cart_fragment( $fragments ) {
 	return $fragments;
 }
 
+
+/************** add contact css *************************************/
+function add_contact_css() {
+    wp_enqueue_style('my-script-slug',  get_template_directory_uri() . '/css/contact-style.css');
+}
+add_action('wp_enqueue_scripts', 'add_contact_css');
+
 /************** add login css *************************************/
 function add_login_css() {
     wp_enqueue_style('my-script-slug',  get_template_directory_uri() . '/css/login-register-style.css');
