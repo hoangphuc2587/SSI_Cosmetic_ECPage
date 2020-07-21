@@ -490,3 +490,60 @@ add_action('wp_enqueue_scripts', 'add_order_css');
     }
 
  }
+
+ /* Custom Post Type Start */
+function create_posttype() {
+register_post_type( 'stores',
+// CPT Options
+array(
+  'labels' => array(
+   'name' => __( 'stores' ),
+   'singular_name' => __( 'Stores' )
+  ),
+  'public' => true,
+  'has_archive' => false,
+  'rewrite' => array('slug' => 'store'),
+ )
+);
+}
+// Hooking up our function to theme setup
+add_action( 'init', 'create_posttype' );
+
+function cw_post_type_stores() {
+
+$supports = array(
+'title', // post title
+'editor', // post content
+'thumbnail', // featured images
+'custom-fields', // custom fields
+);
+
+$labels = array(
+'name' => _x('Cửa hàng', 'plural'),
+'singular_name' => _x('Cửa hàng', 'singular'),
+'menu_name' => _x('Cửa hàng', 'admin menu'),
+'name_admin_bar' => _x('stores', 'admin bar'),
+'add_new' => _x('Thêm mới', 'add new'),
+'add_new_item' => __('Thêm mới cửa hàng'),
+'new_item' => __('Thêm cửa hàng'),
+'edit_item' => __('Sửa cửa hàng'),
+'view_item' => __('Xem cửa hàng'),
+'all_items' => __('Tất cả cửa hàng'),
+'search_items' => __('Tìm kiếm cửa hàng'),
+'not_found' => __('Không tìm thấy dữ liệu.'),
+);
+
+$args = array(
+'supports' => $supports,
+'labels' => $labels,
+'public' => true,
+'query_var' => true,
+'rewrite' => array('slug' => 'stores'),
+'has_archive' => true,
+'hierarchical' => false,
+);
+register_post_type('stores', $args);
+}
+add_action('init', 'cw_post_type_stores');
+
+/*Custom Post type end*/

@@ -36,25 +36,38 @@ get_header(); ?>
 	<div class="wrap">
 		<div class="shoppingcart-grid-widget-wrap five-column-grid area-store-list">
 			<h3 class="widget-title">DANH SÁCH CỬA HÀNG</h3>
-			<?php for($i=0; $i<4; $i++) { ?>
+            <?php
+               query_posts(array(
+				   'post_type' => 'stores',
+				   'post_status' => 'publish',
+				   'order'    => 'ASC'
+			   ));
+            ?>
+
+			<?php while (have_posts()) : the_post(); ?>
+				<?php
+				  $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); 
+				  $link = get_post_meta(get_the_ID() , 'url' , true);				
+				?>
 				<div class="shoppingcart-grid-product">
 					<figure class="sc-grid-product-img">
 						<a href="#">
-							<img src="<?php echo home_url().'/wp-content/themes/shoppingcart/images/home_store.png'; ?>" alt="img">
+							<img src="<?php echo $featured_img_url; ?>" alt="img">
 						</a>
 					</figure>
-					<div class="si-name"><i class="fa fa-heart"></i>&nbsp;&nbsp;SHOP BONITA&nbsp;&nbsp;<i class="fa fa-heart"></i></div>
+					<div class="si-name"><i class="fa fa-heart ml"></i>&nbsp;&nbsp;<?php the_title(); ?>&nbsp;&nbsp;<i class="fa fa-heart"></i></div>
 					<div class="si-cont">
 						<div class="sic-addr">
 							<img src="<?php echo home_url().'/wp-content/themes/shoppingcart/images/icon_map_marker.png'; ?>" alt="img" />
-							389A Lý Thái Tổ, Phường 09, Quận 10, Thành phố Hồ Chí Minh</div>
+							<?php echo get_the_content(); ?>
+						</div>
 						<div class="sic-ws">
 							<img src="<?php echo home_url().'/wp-content/themes/shoppingcart/images/icon_globe.png'; ?>" alt="img" />
-							http://bonitashop.vn/
+							<?php echo $link;?>
 						</div>
 					</div>
 				</div>
-			<?php } ?>
+			<?php endwhile; ?>
 		</div>
 	</div>
 </div>
