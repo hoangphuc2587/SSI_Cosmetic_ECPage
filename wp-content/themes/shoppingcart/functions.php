@@ -602,3 +602,65 @@ register_post_type('contacts', $args);
 add_action('init', 'cw_post_type_contacts');
 
 /*Custom Post type end*/
+
+// Add the custom columns to the book post type:
+add_filter( 'manage_stores_posts_columns', 'set_custom_edit_stores_columns' );
+function set_custom_edit_stores_columns($columns) {
+    $columns = array(
+        'cb' => $columns['cb'],
+        'image' => __( 'Hình ảnh' ),
+        'store_name' => __( 'Tên cửa hàng' ),
+        'content' => __( 'Địa chỉ' ),
+        'url' => __( 'URL' ),
+    );
+
+    return $columns;
+}
+
+add_action( 'manage_stores_posts_custom_column', 'smashing_stores_column', 10, 2);
+function smashing_stores_column( $column, $post_id ) {
+    // Image column
+    if ( 'content' === $column ) {
+        echo get_the_content(null, false, $post_id);
+    }
+    else if ( 'url' === $column ) {
+        echo get_post_meta($post_id, 'url', true);
+    }
+    else if ( 'image' === $column ) {
+        echo get_the_post_thumbnail( $post_id, array(80, 80) );
+    }
+    else if ( 'store_name' === $column ) {
+        echo get_the_title($post_id);
+    }
+}
+
+
+add_filter( 'manage_contacts_posts_columns', 'set_custom_edit_contacts_columns' );
+function set_custom_edit_contacts_columns($columns) {
+    $columns = array(
+        'cb' => $columns['cb'],
+        'name' => __( 'Họ tên' ),
+        'phone' => __( 'Số điện thoại' ),
+        'email' => __( 'Email' ),
+        'content' => __( 'Nội dung câu hỏi' ),
+    );
+
+    return $columns;
+}
+
+add_action( 'manage_contacts_posts_custom_column', 'smashing_contacts_column', 10, 2);
+function smashing_contacts_column( $column, $post_id ) {
+    // Image column
+    if ( 'content' === $column ) {
+        echo get_the_content(null, false, $post_id);
+    }
+    else if ( 'name' === $column ) {
+        echo get_post_meta($post_id, 'name', true);
+    }
+    else if ( 'phone' === $column ) {
+        echo get_post_meta($post_id, 'phone', true);
+    }
+    else if ( 'email' === $column ) {
+        echo get_the_title($post_id);
+    }
+}
