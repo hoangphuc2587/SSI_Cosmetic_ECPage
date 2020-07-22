@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-06-23T22:16:25+00:00\n"
-"PO-Revision-Date: 2020-07-22 04:16+0000\n"
+"PO-Revision-Date: 2020-07-22 06:56+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: woocommerce\n"
 "Language: vi\n"
@@ -32474,7 +32474,7 @@ msgstr "SL"
 
 #: templates/loop/no-products-found.php:21
 msgid "No products were found matching your selection."
-msgstr ""
+msgstr "Không tìm thấy sản phẩm nào."
 
 #: templates/loop/orderby.php:24
 msgid "Shop order"
