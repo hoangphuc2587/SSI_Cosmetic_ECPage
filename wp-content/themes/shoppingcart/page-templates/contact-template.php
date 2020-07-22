@@ -76,7 +76,18 @@ if ($_POST) {
 		<div class="container">
 			<form action="" id="contactForm" method="POST">
 				<h1>LIÊN HỆ</h1>
-				<p class="header-text">Vui lòng điền thông tin bên dưới để gửi câu hỏi về cho chúng tôi</p>
+				<?php
+					if (!empty($success_msg)) {
+						echo "<span class='success-msg'>" . $success_msg . "</span>";
+					} else {
+						if (!empty($error_msg)) {
+							echo "<span class='error-msg-fail'>" . $error_msg . "</span>";
+						} else {
+							echo "<p class='header-text'>Vui lòng điền thông tin bên dưới để gửi câu hỏi về cho chúng tôi</p>";
+						}
+					}
+				?>
+				
 				<br>
 				<div class="row">
 					<div class="col-25">
@@ -180,10 +191,6 @@ if ($_POST) {
 				</div>
 				<div class="row">
 					<input type="submit" class="btnSubmit" value='Đồng ý với "chính sách bảo mật" và gửi câu hỏi'>
-					<?php
-						if (!empty($success_msg)) echo "<span class='success-msg'>" . $success_msg . "</span>";
-						if (!empty($error_msg)) echo "<span class='error-msg-fail'>" . $error_msg . "</span>";
-					?>
 				</div>
 			</form>
 		</div>
