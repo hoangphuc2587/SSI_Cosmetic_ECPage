@@ -106,7 +106,7 @@ if ( post_password_required() ) {
                         ?>
 						<li>
 							<div class="csd-wrap">
-								<div class="lv2-csd-left"><span class="csd-type-list"><?php echo $key < 10 ? '0'.$key : $key?></span></div>
+								<div class="lv2-csd-left"><span class="csd-type-list"><?php echo ($key + 1) < 10 ? '0'.($key+1) : ($key+1)?></span></div>
 								<div class="lv2-csd-right">
 									<?php echo $value;?>
 								</div>
