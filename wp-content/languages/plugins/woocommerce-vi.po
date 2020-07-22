@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-06-23T22:16:25+00:00\n"
-"PO-Revision-Date: 2020-07-22 06:56+0000\n"
+"PO-Revision-Date: 2020-07-22 08:24+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: woocommerce\n"
 "Language: vi\n"
@@ -23633,7 +23633,7 @@ msgstr ""
 
 #: includes/wc-template-functions.php:29
 msgid "Checkout is not available whilst your cart is empty."
-msgstr ""
+msgstr "Không thể thanh toán khi giỏ hàng trống."
 
 #: includes/wc-template-functions.php:905
 msgid "privacy policy"
