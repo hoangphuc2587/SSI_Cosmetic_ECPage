@@ -430,6 +430,13 @@ class WC_Meta_Box_Product_Data {
 		do_action( 'woocommerce_process_product_meta_' . $product_type, $post_id );
 
         update_post_meta( $post_id , 'landing_page', isset( $_POST['landing_page'] ) ? wc_clean( wp_unslash( $_POST['landing_page'] ) ) : null );
+        update_post_meta( $post_id , 'weight', isset( $_POST['weight'] ) ? wc_clean( wp_unslash( $_POST['weight'] ) ) : null );
+        update_post_meta( $post_id , 'dosage', isset( $_POST['dosage'] ) ? wc_clean( wp_unslash( $_POST['dosage'] ) ) : null );
+        update_post_meta( $post_id , 'manufacture', isset( $_POST['manufacture'] ) ? wc_clean( wp_unslash( $_POST['manufacture'] ) ) : null );
+        update_post_meta( $post_id , 'uses', isset( $_POST['uses'] ) ? wc_clean( wp_unslash( $_POST['uses'] ) ) : null );
+        update_post_meta( $post_id , 'component', isset( $_POST['component'] ) ? wc_clean( wp_unslash( $_POST['component'] ) ) : null );
+        update_post_meta( $post_id , 'usage', isset( $_POST['usage'] ) ?  $_POST['usage']  : null );
+        update_post_meta( $post_id , 'note', isset( $_POST['note'] ) ?  $_POST['note']  : null );
 
 		// phpcs:enable WordPress.Security.NonceVerification.Missing
 	}

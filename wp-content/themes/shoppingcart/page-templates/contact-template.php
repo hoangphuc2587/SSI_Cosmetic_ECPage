@@ -2,57 +2,199 @@
 /**
  * Template Name: Contact Template
  *
- * Displays the contact page template.
- *
  * @package Theme Freesia
  * @subpackage ShoppingCart
  * @since ShoppingCart 1.0
  */
+
 get_header();
-	global $shoppingcart_settings;
-	$shoppingcart_settings = wp_parse_args(  get_option( 'shoppingcart_theme_options', array() ),  shoppingcart_get_option_defaults_values() );
-	global $shoppingcart_content_layout;
-	if( $post ) {
-		$layout = get_post_meta( get_queried_object_id(), 'shoppingcart_sidebarlayout', true );
+
+if ($_POST) {
+	$uname 		= isset($_POST['uname']) ? $_POST['uname'] : '';
+	$phone		= isset($_POST['phone']) ? $_POST['phone'] : '';
+	$email 		= isset($_POST['email']) ? $_POST['email'] : '';
+	$content	= isset($_POST['content']) ? $_POST['content'] : '';
+
+	// validation
+	$hasErr = false;
+	if (trim($uname) === '') {
+		$name_err = "Vui lòng nhập họ tên";
+		$hasErr = true;
+	} 
+
+	if (trim($phone) === '') {
+		$phone_err = "Vui lòng nhập số điện thoại";
+		$hasErr = true;
+	} else {
+		// check phone valid
+		if (!isPhoneNumber($phone)) {
+			$phone_err = "Số điện thoại không hợp lệ";
+			$hasErr = true;
+		} 
 	}
-	if( empty( $layout ) || is_archive() || is_search() || is_home() ) {
-		$layout = 'default';
-	} ?>
+
+	if (trim($email) === '') {
+		$email_err = "Vui lòng nhập email";
+		$hasErr = true;
+	} else if (!is_email($email)) {
+		$email_err = "Email không đúng định dạng";
+		$hasErr = true;
+	}
+
+	if (trim($content) === '') {
+		$content_err = "Vui lòng nhập nội dung";
+		$hasErr = true;
+	} 
+
+	$meta_data = array(
+		'name' 	=> $uname, 
+		'phone' => $phone
+	);
+
+	$postarr = array(
+		'post_title' 	=> $email,
+		'post_content'	=> $content,
+		'post_type' 	=> 'contacts',
+		'post_status'	=> 'publish',
+		'meta_input'	=> $meta_data
+	);
+
+	if (!$hasErr) {
+		$result = wp_insert_post($postarr);
+		if (!is_wp_error($result) && $result != 0) {
+			$success_msg = 'Gửi câu hỏi thành công!';
+		} else {
+			$error_msg = 'Gửi câu hỏi không thành công!';
+		}
+	}
+
+}
+?>
+
 <div class="wrap">
-	<div class="contact-form" style="justify-content: center; display: flex;">
-		<main id="main" class="site-main" role="main">
-		<header class="page-header">
-			<h1 class="page-title"><?php the_title();?></h1>
-			<!-- .page-title -->
-			<?php shoppingcart_breadcrumb(); ?><!-- .breadcrumb -->
-		</header><!-- .page-header -->
-		<?php
-		if( have_posts() ) {
-			while( have_posts() ) {
-				the_post();
-				if('' != get_the_content()) : ?>
-		<div class="googlemaps_widget">
-			<div class="maps-container">
-				<?php if ( is_active_sidebar( 'shoppingcart_form_for_contact_page' ) ) :
-				dynamic_sidebar( 'shoppingcart_form_for_contact_page' );
-			endif;  ?>
-			</div>
-		</div> <!-- end .googlemaps_widget -->
-		<?php endif; ?>
-			<div class="entry-content clearfix">
-			<?php 
-			the_content();
-			comments_template();
-				}
-			}
-			else { ?>
-			<h2 class="entry-title"> <?php esc_html_e( 'No Posts Found.', 'shoppingcart' ); ?> </h2>
-			<?php
-			} ?>
-			</div> <!-- end #entry-content -->
-		</main> <!-- end #main -->
-	</div> <!-- #primary -->
-	
+	<div class="contact">
+		<div class="container">
+			<form action="" id="contactForm" method="POST">
+				<h1>LIÊN HỆ</h1>
+				<p class="header-text">Vui lòng điền thông tin bên dưới để gửi câu hỏi về cho chúng tôi</p>
+				<br>
+				<div class="row">
+					<div class="col-25">
+						<label for="uname"><i class="fa fa-heart"></i>&nbsp<b>Họ tên</b></label>
+					</div>
+					<div class="col-75">
+						<input type="text" name="uname" value="<?php echo $uname ?>">
+						<?php
+							if (!empty($name_err)) echo "<span class='error-msg'>" . $name_err . "</span>";
+						?>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-25">
+						<label for="phone"><i class="fa fa-heart"></i>&nbsp<b>Số điện thoại</b></label>
+					</div>
+					<div class="col-75">
+						<input type="text" name="phone" value="<?php echo $phone ?>">
+						<?php
+							if (!empty($phone_err)) echo "<span class='error-msg'>" . $phone_err . "</span>";
+						?>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-25">
+						<label for="email"><i class="fa fa-heart"></i>&nbsp<b>Email</b></label>
+					</div>
+					<div class="col-75">
+						<input type="text" name="email" value="<?php echo $email ?>">
+						<?php
+							if (!empty($email_err)) echo "<span class='error-msg'>" . $email_err . "</span>";
+						?>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-25">
+						<label for="content"><i class="fa fa-heart"></i>&nbsp<b>Nội dung</b></label>
+					</div>
+					<div class="col-75">
+						<textarea name="content" rows="5" ><?php echo $content ?></textarea>
+						<?php
+							if (!empty($content_err)) echo "<span class='error-msg'>" . $content_err . "</span>";
+						?>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-25">
+						<label for="policy"><i class="fa fa-heart"></i>&nbsp<b>Chính sách bảo mật</b></label>
+					</div>
+					<div class="col-75">
+						<div class="policy">
+							<a class="collapsible"><i class="fa fa-angle-up"></i></a>
+							<div class="expand" >
+								<ul>
+									<li>
+										Mục đích thu thập thông tin
+										<div class="policy-info">
+											<p>Việc thu thập dữ liệu khách hàng thực hiện chủ yếu trên Website này.</p>
+											<p>Các thông tin: họ và tên, giới tính, ngày sinh, số điện thoại, email, địa chỉ.</p>
+											<p>Mục đích:</p>
+											<p>① Khách hàng bắt buộc đăng ký tài khoản để mua hàng.</p>
+											<p>② Bán hàng và giao hàng.</p>
+											<p>③ Xác định chính xác phần thanh toán và giao hàng cho khách.</p>
+										</div>
+									</li>
+									<br>
+									<li>
+										Phạm vi sử dụng thông tin
+										<div class="policy-info">
+											<p>- Quản lí việc đặt hàng và giao hàng.</p>
+											<p>- Thông báo về việc giao hàng.</p>
+											<p>- Thực hiện thông báo và cập nhật các hoạt động tiếp thị, khuyến mãi, thông tin sản phẩm...</p>
+											<p>- Giải quyết các yêu cầu, khiếu nại của khách hàng.</p>
+											<p>- Chia sẻ thông tin liên lạc của khách hàng cho bộ phận giao hàng.</p>
+										</div>
+									</li>	
+									<br>
+									<li>
+										Đơn vị quản lí thông tin
+										<div class="policy-info">
+											<p>CARICO CO., LTD</p>
+											<p>579Yonezu-cho, Minami-ku, Hamamatsu-shi, Shizuoka</p>
+											<p>079 2254402</p>
+											<p>com_vn@cari-co.co.jp</p>
+										</div>
+									</li>
+									<br>
+									<li>
+										Cam kết bảo mật thông tin cá nhân
+										<div class="policy-info">
+											<p>- Không sử dụng, không chuyển giao, cung cấp hay tiết lộ thông tin khi không có sự đồng ý của khách hàng. Trừ những trường hợp yêu cầu của các cơ quan pháp luật.</p>
+											<p>- Trường hợp hệ thống bị xâm nhập dẫn đến mất dữ liệu hoặc lộ thông tin khách hàng, chúng tôi có trách nhiệm điều tra xử lí kịp thời và thông báo cho khách hàng được biết.</p>
+											<p>- Chúng tôi không chịu trách nhiệm giải quyết mọi khiếu nại liên quan đến quyền lợi khách hàng nếu xét thấy các thông tin cá nhân của khách hàng cung cấp khi đăng kí ban đầu là không chính xác.</p>
+										</div>
+									</li>
+								</ul>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<input type="submit" class="btnSubmit" value='Đồng ý với "chính sách bảo mật" và gửi câu hỏi'>
+					<?php
+						if (!empty($success_msg)) echo "<span class='success-msg'>" . $success_msg . "</span>";
+						if (!empty($error_msg)) echo "<span class='error-msg-fail'>" . $error_msg . "</span>";
+					?>
+				</div>
+			</form>
+		</div>
+    </div>
 </div><!-- end .wrap -->
+<script>
+	jQuery(".collapsible").click(function() {
+		jQuery(".fa-angle-up").toggleClass("fa-angle-down");
+		jQuery(".expand").toggleClass("collapse");
+	});
+</script>
 <?php
 get_footer();
+?>

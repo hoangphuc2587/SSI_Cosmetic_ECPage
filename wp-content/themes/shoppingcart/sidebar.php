@@ -16,7 +16,7 @@
 	}
 
 if( 'default' == $layout ) { //Settings from customizer
-	if(($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'nosidebar') && ($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'fullwidth')){ ?>
+	if((is_home()||is_front_page())&&($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'nosidebar') && ($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'fullwidth')){ ?>
 
 <aside id="secondary" class="widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Secondary', 'shoppingcart' ); ?>">
 <?php }
@@ -27,7 +27,7 @@ if( 'default' == $layout ) { //Settings from customizer
 	}?>
   <?php 
 	if( 'default' == $layout ) { //Settings from customizer
-		if(($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'nosidebar') && ($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'fullwidth')): ?>
+		if((is_home()||is_front_page())&&($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'nosidebar') && ($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'fullwidth')): ?>
   <?php dynamic_sidebar( 'shoppingcart_main_sidebar' ); ?>
 </aside><!-- end #secondary -->
 <?php endif;

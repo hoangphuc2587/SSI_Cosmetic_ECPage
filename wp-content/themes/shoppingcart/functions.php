@@ -317,9 +317,16 @@ function shoppingcart_woocommerce_add_to_cart_fragment( $fragments ) {
 	return $fragments;
 }
 
+
+/************** add contact css *************************************/
+function add_contact_css() {
+    wp_enqueue_style('contact-css',  get_template_directory_uri() . '/css/contact-style.css');
+}
+add_action('wp_enqueue_scripts', 'add_contact_css');
+
 /************** add login css *************************************/
 function add_login_css() {
-    wp_enqueue_style('my-script-slug',  get_template_directory_uri() . '/css/login-register-style.css');
+    wp_enqueue_style('login-register-css',  get_template_directory_uri() . '/css/login-register-style.css');
 }
 add_action('wp_enqueue_scripts', 'add_login_css');
 
@@ -493,18 +500,31 @@ add_action('wp_enqueue_scripts', 'add_order_css');
 
  /* Custom Post Type Start */
 function create_posttype() {
-register_post_type( 'stores',
-// CPT Options
-array(
-  'labels' => array(
-   'name' => __( 'stores' ),
-   'singular_name' => __( 'Stores' )
-  ),
-  'public' => true,
-  'has_archive' => false,
-  'rewrite' => array('slug' => 'store'),
- )
-);
+	register_post_type( 'stores',
+	// CPT Options
+	array(
+	  'labels' => array(
+	   'name' => __( 'stores' ),
+	   'singular_name' => __( 'Stores' )
+	  ),
+	  'public' => true,
+	  'has_archive' => false,
+	  'rewrite' => array('slug' => 'store'),
+	 )
+	);
+
+	register_post_type( 'contacts',
+	// CPT Options
+	array(
+	  'labels' => array(
+	   'name' => __( 'contacts' ),
+	   'singular_name' => __( 'Contacts' )
+	  ),
+	  'public' => true,
+	  'has_archive' => false,
+	  'rewrite' => array('slug' => 'contact'),
+	 )
+	);
 }
 // Hooking up our function to theme setup
 add_action( 'init', 'create_posttype' );
@@ -547,3 +567,106 @@ register_post_type('stores', $args);
 add_action('init', 'cw_post_type_stores');
 
 /*Custom Post type end*/
+
+
+
+/* Custom Post Type Start */
+
+function cw_post_type_contacts() {
+
+$supports = array(
+'title', // post title
+'editor', // post content
+'custom-fields', // custom fields
+);
+
+$labels = array(
+'name' => _x('Liên hệ', 'plural'),
+'singular_name' => _x('Liên hệ', 'singular'),
+'menu_name' => _x('Liên hệ', 'admin menu'),
+'name_admin_bar' => _x('contacts', 'admin bar'),
+'add_new' => _x('Thêm mới', 'add new'),
+'add_new_item' => __('Thêm mới liên hệ'),
+'new_item' => __('Thêm liên hệ'),
+'edit_item' => __('Sửa liên hệ'),
+'view_item' => __('Xem liên hệ'),
+'all_items' => __('Tất cả liên hệ'),
+'search_items' => __('Tìm kiếm liên hệ'),
+'not_found' => __('Không tìm thấy dữ liệu.'),
+);
+
+$args = array(
+'supports' => $supports,
+'labels' => $labels,
+'public' => true,
+'query_var' => true,
+'rewrite' => array('slug' => 'contacts'),
+'has_archive' => true,
+'hierarchical' => false,
+);
+register_post_type('contacts', $args);
+}
+add_action('init', 'cw_post_type_contacts');
+
+/*Custom Post type end*/
+// Add the custom columns to the book post type:
+add_filter( 'manage_stores_posts_columns', 'set_custom_edit_stores_columns' );
+function set_custom_edit_stores_columns($columns) {
+    $columns = array(
+        'cb' => $columns['cb'],
+        'image' => __( 'Hình ảnh' ),
+        'store_name' => __( 'Tên cửa hàng' ),
+        'content' => __( 'Địa chỉ' ),
+        'url' => __( 'URL' ),
+    );
+
+    return $columns;
+}
+
+add_action( 'manage_stores_posts_custom_column', 'smashing_stores_column', 10, 2);
+function smashing_stores_column( $column, $post_id ) {
+    // Image column
+    if ( 'content' === $column ) {
+        echo get_the_content(null, false, $post_id);
+    }
+    else if ( 'url' === $column ) {
+        echo get_post_meta($post_id, 'url', true);
+    }
+    else if ( 'image' === $column ) {
+        echo get_the_post_thumbnail( $post_id, array(80, 80) );
+    }
+    else if ( 'store_name' === $column ) {
+        echo get_the_title($post_id);
+    }
+}
+
+
+add_filter( 'manage_contacts_posts_columns', 'set_custom_edit_contacts_columns' );
+function set_custom_edit_contacts_columns($columns) {
+    $columns = array(
+        'cb' => $columns['cb'],
+        'name' => __( 'Họ tên' ),
+        'phone' => __( 'Số điện thoại' ),
+        'email' => __( 'Email' ),
+        'content' => __( 'Nội dung câu hỏi' ),
+    );
+
+    return $columns;
+}
+
+add_action( 'manage_contacts_posts_custom_column', 'smashing_contacts_column', 10, 2);
+function smashing_contacts_column( $column, $post_id ) {
+    // Image column
+    if ( 'content' === $column ) {
+        echo get_the_content(null, false, $post_id);
+    }
+    else if ( 'name' === $column ) {
+        echo get_post_meta($post_id, 'name', true);
+    }
+    else if ( 'phone' === $column ) {
+        echo get_post_meta($post_id, 'phone', true);
+    }
+    else if ( 'email' === $column ) {
+        echo get_the_title($post_id);
+    }
+}

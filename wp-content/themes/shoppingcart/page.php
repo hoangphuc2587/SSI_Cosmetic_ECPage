@@ -11,7 +11,7 @@ get_header();
 $shoppingcart_settings = shoppingcart_get_theme_options();
 $shoppingcart_display_page_single_featured_image = $shoppingcart_settings['shoppingcart_display_page_single_featured_image'];?>
 <div class="wrap">
-	<div id="primary" class="content-area">
+	<div id="primary-full" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<header class="page-header">
 				<?php if ( is_front_page()) : ?>
