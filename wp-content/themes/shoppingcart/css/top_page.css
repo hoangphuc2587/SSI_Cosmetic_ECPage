@@ -129,6 +129,7 @@ button {
     font-family: montserratRegular;
     font-size: 14px;
     padding-left: 22px;
+    background-color: #ffffff;
 }
 #sticky-header .header-right .cart-box .sx-cart-views a.wcmenucart-contents i {
     font-size: inherit;

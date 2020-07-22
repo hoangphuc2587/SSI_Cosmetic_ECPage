@@ -28,12 +28,12 @@ $footer_column = $shoppingcart_settings['shoppingcart_footer_column_section'];
 					<div>Hướng dẫn mua hàng</div>
 					<div class="fwar-table">
 						<ul>
-							<li><a href="#"><i class='fa fa-angle-right'></i>Mua hàng</a></li>
-							<li><a href="#"><i class='fa fa-angle-right'></i>Đổi trả hàng</a></li>
+							<li><a href="<?php echo home_url() . '/guide/#gp_muahang' ?>"><i class='fa fa-angle-right'></i>Mua hàng</a></li>
+							<li><a href="<?php echo home_url() . '/guide/#gp_doitra' ?>"><i class='fa fa-angle-right'></i>Đổi trả hàng</a></li>
 						</ul>
 						<ul class="fwart-ul2">
-							<li><a href="#"><i class='fa fa-angle-right'></i>Phí vận chuyển</a></li>
-							<li><a href="#"><i class='fa fa-angle-right'></i>Về Carico</a></li>
+							<li><a href="<?php echo home_url() . '/guide/#gp_vanchuyen' ?>"><i class='fa fa-angle-right'></i>Phí vận chuyển</a></li>
+							<li><a href="<?php echo home_url() . '/about-us/' ?>"><i class='fa fa-angle-right'></i>Về Carico</a></li>
 						</ul>
 						<div></div>
 					</div>

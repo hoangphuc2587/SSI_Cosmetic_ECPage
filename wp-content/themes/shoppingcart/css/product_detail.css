@@ -228,3 +228,11 @@
     border: 0;
     width: 100%;
 }
+
+/* hide banner */
+/* #masthead #site-branding {
+    display: none;
+}
+#masthead #sticky-header-sticky-wrapper {
+    visibility: visible;
+} */

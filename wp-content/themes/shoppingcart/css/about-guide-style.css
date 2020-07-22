@@ -1,0 +1,149 @@
+/* About page ---------------------------------------------------------------- */
+
+#about-us-page .title-page {
+    font-size: 30px;
+    font-family: robotoMedium;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#about-us-page .content-page {
+    width: 79%;
+    margin: 0 auto;
+}
+#about-us-page .content-page .row-item {
+    display: flex;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+#about-us-page .content-page .row-item .row-left {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-family: robotoMedium;
+    width: 32%;
+}
+#about-us-page .content-page .row-item .row-left i {
+    margin-right: 10px;
+}
+#about-us-page .content-page .row-item .row-right {
+    width: 68%;
+    font-size: 18px;
+    font-family: robotoLight;
+}
+#about-us-page .content-page .row-item .row-right .sub-content {
+    font-size: 16px;
+}
+#about-us-page .content-page .row-item .row-right .sub-content .sub-row {
+    margin-bottom: 20px;
+}
+#about-us-page .content-page .row-item .row-right .sub-content .sub-row::before {
+    content: "\2022";
+    color: #e8bd54;
+    font-weight: bold;
+    display: inline-block;
+    width: 13px;
+    margin-left: 0;
+}
+#about-us-page .content-page .row-item .row-right .sub-content .sub-row .sub-row-lv1 {
+    margin-left: 27px;
+}
+#about-us-page .content-page .row-item .row-right .sub-content .sub-row .sub-row-lv2 {
+    margin-left: 37px;
+}
+
+@media only screen and (max-width: 1199px) {
+    #about-us-page .content-page {
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 991px) {
+    #about-us-page .content-page {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 767px) {
+    #about-us-page .content-page .row-item .row-left,
+    #about-us-page .content-page .row-item .row-right {
+        width: 100%;
+    }
+    #about-us-page .content-page .row-item {
+        flex-direction: column;
+    }
+}
+
+/* Guide page ----------------------------------------------------------------- */
+
+#guide-buy-page .title-page {
+    font-size: 30px;
+    font-family: robotoMedium;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 50px;
+}
+#guide-buy-page .content-page {
+    display: flex;
+}
+#guide-buy-page .content-page .content-left {
+    width: 23%;
+    font-size: 18px;
+    font-family: robotoMedium;
+}
+#guide-buy-page .content-page .content-left ul {
+    display: inline-block;
+}
+#guide-buy-page .content-page .content-left ul li {
+    padding: 15px;
+    border-bottom: 1px solid #e7e7e7;
+}
+#guide-buy-page .content-page .content-left ul li:first-child {
+    border-top: 1px solid #e7e7e7;
+}
+#guide-buy-page .content-page .content-left ul li i {
+    margin-right: 12px;
+}
+#guide-buy-page .content-page .content-right {
+    width: 77%;
+}
+#guide-buy-page .content-page .content-right .area-title {
+    font-size: 18px;
+    font-family: robotoMedium;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+#guide-buy-page .content-page .content-right ul li {
+    padding: 15px 15px 15px 0;
+    border-bottom: 1px solid #e7e7e7;
+}
+#guide-buy-page .content-page .content-right ul li:first-child {
+    border-top: 1px solid #e7e7e7;
+}
+#guide-buy-page .content-page .content-right ul li::before {
+    content: "\2022";
+    color: #e8bd54;
+    font-weight: bold;
+    display: inline-block;
+    width: 13px;
+    margin-left: 0;
+}
+#guide-buy-page .content-page .content-right ul li .par-item {
+    padding-left: 15px;
+    margin-bottom: 25px;
+    font-size: 16px;
+    font-family: robotoLight;
+}
+
+@media only screen and (max-width: 767px) {
+    #guide-buy-page .content-page {
+        flex-direction: column;
+    }
+    #guide-buy-page .content-page .content-left,
+    #guide-buy-page .content-page .content-right {
+        width: 100%;
+    }
+    #guide-buy-page .content-page .content-left ul {
+        display: block;
+    }
+}

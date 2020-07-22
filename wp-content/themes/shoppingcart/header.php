@@ -21,7 +21,12 @@ wp_head(); ?>
 <link rel="stylesheet" type="text/css" href="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/fonts/include_fonts.css">
 <link rel="stylesheet" type="text/css" href="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/css/top_page.css">
 <link rel="stylesheet" type="text/css" href="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/css/product_detail.css">
-<script src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/js/top_page.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/css/about-guide-style.css">
+
+<?php //if (is_page_template('page-templates/shoppingcart-template.php')) { ?>
+	<script src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/js/top_page.js"></script>
+<?php //} ?>
+
 <script src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/js/product_detail.js"></script>
 </head>
 <body <?php body_class(); ?>>
