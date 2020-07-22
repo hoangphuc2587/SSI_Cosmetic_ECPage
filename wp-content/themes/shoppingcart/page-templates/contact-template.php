@@ -75,7 +75,7 @@ if ($_POST) {
 	<div class="contact">
 		<div class="container">
 			<form action="" id="contactForm" method="POST">
-				<h1>LIÊN HỆ</h1>
+				<div class="title-page">LIÊN HỆ</div>
 				<?php
 					if (!empty($success_msg)) {
 						echo "<span class='success-msg'>" . $success_msg . "</span>";
@@ -124,7 +124,7 @@ if ($_POST) {
 				</div>
 				<div class="row">
 					<div class="col-25">
-						<label for="content"><i class="fa fa-heart"></i>&nbsp<b>Nội dung</b></label>
+						<label for="content"><i class="fa fa-heart"></i>&nbsp<b>Nội dung câu hỏi</b></label>
 					</div>
 					<div class="col-75">
 						<textarea name="content" rows="5" ><?php echo $content ?></textarea>
