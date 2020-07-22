@@ -23,9 +23,33 @@ wp_head(); ?>
 <link rel="stylesheet" type="text/css" href="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/css/product_detail.css">
 <link rel="stylesheet" type="text/css" href="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/css/about-guide-style.css">
 
-<?php //if (is_page_template('page-templates/shoppingcart-template.php')) { ?>
+<?php
+$GLOBALS['qtsc_sba_instar_top_page'] = false;
+if (is_page_template('page-templates/shoppingcart-template.php')) {
+	$GLOBALS['qtsc_sba_instar_top_page'] = true;
+}
+?>
+
+<?php
+if ($GLOBALS['qtsc_sba_instar_top_page']) {
+?>
+	<style>
+	#sticky-header-sticky-wrapper {
+		visibility: hidden;
+	}
+	</style>
 	<script src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/js/top_page.js"></script>
-<?php //} ?>
+<?php
+} else {
+?>
+	<style>
+	#page #site-content-contain {
+    	margin-top: 50px;
+	}
+	</style>
+<?php
+}
+?>
 
 <script src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/js/product_detail.js"></script>
 </head>

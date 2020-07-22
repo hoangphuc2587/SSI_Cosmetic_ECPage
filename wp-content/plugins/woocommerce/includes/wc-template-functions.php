@@ -1515,9 +1515,9 @@ if ( ! function_exists( 'woocommerce_template_single_rating' ) ) {
 	 * Output the product rating.
 	 */
 	function woocommerce_template_single_rating() {
-		if ( post_type_supports( 'product', 'comments' ) ) {
+		//if ( post_type_supports( 'product', 'comments' ) ) {
 			wc_get_template( 'single-product/rating.php' );
-		}
+		//}
 	}
 }
 if ( ! function_exists( 'woocommerce_template_single_price' ) ) {
@@ -3434,7 +3434,7 @@ function wc_get_stock_html( $product ) {
 function wc_get_rating_html( $rating, $count = 0 ) {
 	$html = '';
 
-	if ( 0 < $rating ) {
+	if ( true ) { // Backup: if ( 0 < $rating ) {
 		/* translators: %s: rating */
 		$label = sprintf( __( 'Rated %s out of 5', 'woocommerce' ), $rating );
 		$html  = '<div class="star-rating" role="img" aria-label="' . esc_attr( $label ) . '">' . wc_get_star_rating_html( $rating, $count ) . '</div>';

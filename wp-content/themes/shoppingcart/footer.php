@@ -64,5 +64,19 @@ $footer_column = $shoppingcart_settings['shoppingcart_footer_column_section'];
 </div><!-- end #page -->
 <?php wp_footer(); ?>
 <script src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/js/product_detail_priority.js"></script>
+
+<?php if (!$GLOBALS['qtsc_sba_instar_top_page']) { ?>
+<script>
+jQuery(document).ready(function(){
+	jQuery("#masthead #sticky-header-sticky-wrapper #sticky-header").addClass("show-nav-un-toppage");
+	jQuery("#masthead #sticky-header-sticky-wrapper").addClass("is-sticky");
+});
+window.onscroll = function() {
+    jQuery("#masthead #sticky-header-sticky-wrapper #sticky-header").addClass("show-nav-un-toppage");
+	jQuery("#masthead #sticky-header-sticky-wrapper").addClass("is-sticky");
+}
+</script>
+<?php } ?>
+
 </body>
 </html>

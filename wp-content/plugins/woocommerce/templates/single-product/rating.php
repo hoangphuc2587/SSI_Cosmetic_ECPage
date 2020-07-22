@@ -34,7 +34,7 @@ if ( true ) : ?>
 
 	<div class="woocommerce-product-rating">
 		<?php echo wc_get_rating_html( $average, $rating_count ); // WPCS: XSS ok. ?>
-		<?php if ( comments_open() ) : ?>
+		<?php if ( true ) : // Backup: if ( comments_open() ) : ?>
 			<?php //phpcs:disable ?>
 			<a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<?php printf( _n( '%s review', '%s reviews', $review_count, 'woocommerce' ), '<span class="count">' . esc_html( $review_count ) . '</span>' ); ?>)</a>
 			<?php // phpcs:enable ?>
