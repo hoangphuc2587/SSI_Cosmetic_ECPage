@@ -3,6 +3,12 @@
     justify-content: center;
 }
 
+.contact .title-page {
+    font-size: 30px;
+    font-family: robotoMedium;
+    text-align: center;
+}
+
 .contact input[type=text], .contact textarea {
     width: 100%;
     padding: 12px;
@@ -25,6 +31,7 @@
 .contact .header-text {
     text-align: center;
     color: red;
+    font-size: 16px;
 }
 
 .contact .policy-info {
@@ -37,6 +44,8 @@
     padding: 12px;
     margin-top: 5px;
     min-height: 50px;
+    font-size: 16px;
+    font-family: robotoLight;
 }
 
 .contact .btnSubmit {
@@ -77,12 +86,14 @@
     float: left;
     width: 25%;
     margin-top: 6px;
+    font-size: 16px;
 }
 
 .contact .col-75 {
     float: left;
     width: 75%;
     margin-top: 6px;
+    font-size: 16px;
 }
 
 .contact ul li::before {
@@ -119,6 +130,7 @@
     margin-top: 20px;
     display: block;
     text-align: center;
+    font-size: 16px;
 }
 
 .contact .error-msg-fail {
@@ -126,6 +138,7 @@
     margin-top: 20px;
     display: block;
     text-align: center;
+    font-size: 16px;
 }
 
 /* Clear floats after the columns */

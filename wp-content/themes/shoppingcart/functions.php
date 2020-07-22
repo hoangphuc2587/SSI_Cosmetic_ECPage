@@ -390,7 +390,7 @@ function custom_abc(){
 
 /*************** add css in shop page **********/
 function add_custom_css() {
-    if( is_shop() ) :
+    if( is_shop() || is_product_category()) :
         wp_enqueue_style( 'shop', get_template_directory_uri() . '/css/custom.css',false,'1.1');
     endif;
 }
@@ -441,6 +441,10 @@ function bbloomer_checkout_save_user_meta( $order_id ) {
 /************** add order css *************************************/
 function add_order_css() {
     wp_enqueue_style('order-css',  get_template_directory_uri() . '/css/order-style.css');
+    if(is_checkout()){
+        wp_enqueue_style('checkout',  get_template_directory_uri() . '/css/checkout.css');
+
+    }
 }
 add_action('wp_enqueue_scripts', 'add_order_css');
 
@@ -457,24 +461,35 @@ add_action('wp_enqueue_scripts', 'add_order_css');
      return true;
   }
 
+
  add_filter("woocommerce_coupon_error","plugin_coupon_error_message",10,3);
 
  function plugin_coupon_error_message($err,$err_code,$coupon) {
+         if( empty($coupon) ) {
+             return "Vui lòng nhập mã giảm giá.";
+
+         }
 
       if($coupon->get_used_coupon() == true){
      	return "Mã giảm giá \" ".$coupon->code."\" đã hết lượt sử dụng.";
 
-     }
+        }
+
+
      return $err ;
   }
 
   // hide coupon
  function hide_coupon_field_on_cart( $enabled ) {
+     if(is_checkout()){
+         $enabled = false;
+     }
  	$applied_coupons = WC()->cart->get_applied_coupons();
 
      if( sizeof($applied_coupons) > 0 ) {
          foreach ($applied_coupons as $item){
              WC()->cart->remove_coupon( $item->code );
+
          }
          $enabled = false;
      }
@@ -482,6 +497,7 @@ add_action('wp_enqueue_scripts', 'add_order_css');
  	return $enabled;
  }
  add_filter( 'woocommerce_coupons_enabled', 'hide_coupon_field_on_cart' );
+
 
 
  add_action('woocommerce_after_checkout_validation',
