@@ -30,21 +30,21 @@ get_header();
             </main><!-- end #main -->
         </div> <!-- #primary -->
 	<?php } else { ?>
-		<div id="primary" class="content-area">
+		<div id="primary-full" class="content-area">
             <main id="main" class="site-main" role="main">
                 <?php woocommerce_content(); ?>
             </main><!-- end #main -->
 		</div> <!-- #primary -->
 	<?php } ?>
 
-<?php 
+<?php
 if( 'default' == $layout ) { //Settings from customizer
-	if((!is_product())&&($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'nosidebar') && ($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'fullwidth')){ ?>
+	if((is_home() || is_front_page())&&($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'nosidebar') && ($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'fullwidth')){ ?>
 <aside id="secondary" class="widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Secondary', 'shoppingcart' ); ?>">
 	<?php }
-} 
+}
 	if( 'default' == $layout ) { //Settings from customizer
-		if((!is_product())&&(!is_shop())&&($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'nosidebar') && ($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'fullwidth')): ?>
+		if((is_home() || is_front_page())&&($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'nosidebar') && ($shoppingcart_settings['shoppingcart_sidebar_layout_options'] != 'fullwidth')): ?>
 		<?php dynamic_sidebar( 'shoppingcart_woocommerce_sidebar' ); ?>
 </aside><!-- end #secondary -->
 <?php endif;
@@ -53,14 +53,20 @@ if( 'default' == $layout ) { //Settings from customizer
 </div><!-- end .wrap -->
 
 <?php
-$check_landing_iframe = get_post_meta($product->get_id(), 'landing_page',  true);
-if(is_product() && $check_landing_iframe != "") { ?>
+if($product) {
+    $check_landing_iframe = get_post_meta($product->get_id(), 'landing_page', true);
+    if (is_product() && $check_landing_iframe != "") { ?>
 
-	<div class="iframe-container">
-		<iframe id="iFrame1" onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));' src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/p_detail_landing/<?php echo $check_landing_iframe; ?>" title="Tsubuporon Night Pack"></iframe>
-    </div>
-	
-<?php } ?>
+        <div class="iframe-container">
+            <iframe id="iFrame1"
+                    onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));'
+                    src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/p_detail_landing/<?php echo $check_landing_iframe; ?>"
+                    title="Tsubuporon Night Pack"></iframe>
+        </div>
+
+    <?php }
+}
+?>
 
 <?php
 get_footer();
