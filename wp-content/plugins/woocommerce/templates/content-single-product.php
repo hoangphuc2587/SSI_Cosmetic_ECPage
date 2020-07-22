@@ -61,39 +61,30 @@ if ( post_password_required() ) {
 		?>
 		<div class="sum-pro-desc">
             <ul class="spd-lv1">
-                <?php if (!empty($product->get_weight())):?>
 				<li>
 					<div class="spd-row">
 						<div class="spdr-left"><i class="fa fa-heart"></i>Trọng lượng</div>
 						<div class="spdr-right"><?php echo $product->get_weight(); ?></div>
 					</div>
 				</li>
-                <?php endif;?>
-                <?php if (!empty($product->get_dosage())):?>
 				<li>
 					<div class="spd-row">
 						<div class="spdr-left"><i class="fa fa-heart"></i>Liều lượng sử dụng</div>
 						<div class="spdr-right"><?php echo $product->get_dosage(); ?></div>
 					</div>
 				</li>
-                <?php endif;?>
-                <?php if (!empty($product->get_manufacture())):?>
 				<li>
 					<div class="spd-row">
 						<div class="spdr-left"><i class="fa fa-heart"></i>Nơi sản xuất</div>
 						<div class="spdr-right"><?php echo $product->get_manufacture(); ?></div>
 					</div>
 				</li>
-                <?php endif;?>
-                <?php if (!empty($product->get_uses())):?>
 				<li>
 					<div class="spd-row">
 						<div class="spdr-left"><i class="fa fa-heart"></i>Công dụng</div>
 						<div class="spdr-right"><?php echo $product->get_uses(); ?></div>
 					</div>
 				</li>
-                <?php endif;?>
-                <?php if (!empty($product->get_usage())):?>
 				<li class="spd-has-child">
 					<div class="spd-row">
 						<div class="spdr-left"><i class="fa fa-heart"></i>Cách sử dụng</div>
@@ -115,8 +106,6 @@ if ( post_password_required() ) {
                         <?php endforeach; ?>
 					</ul>
 				</li>
-                <?php endif;?>
-                <?php if (!empty($product->get_component())):?>
 				<li class="spd-has-child">
 					<div class="spd-row">
 						<div class="spdr-left"><i class="fa fa-heart"></i>Thành phần</div>
@@ -126,8 +115,6 @@ if ( post_password_required() ) {
                     <?php echo $product->get_component(); ?>
 					</div>
 				</li>
-                <?php endif;?>
-                <?php if (!empty($product->get_note())):?>
 				<li class="spd-has-child">
 					<div class="spd-row">
 						<div class="spdr-left"><i class="fa fa-heart"></i>Lưu ý</div>
@@ -142,7 +129,6 @@ if ( post_password_required() ) {
                         <?php endforeach; ?>
 					</ul>
 				</li>
-                <?php endif;?>
 			</ul>
 		</div>
 	</div>
