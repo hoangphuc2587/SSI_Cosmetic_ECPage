@@ -8,6 +8,11 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
+<style>
+    #postdivrich{
+        display:  none !important;
+    }
+</style>
 <div id="general_product_data" class="panel woocommerce_options_panel">
 
 	<div class="options_group show_if_external">
@@ -40,10 +45,78 @@ defined( 'ABSPATH' ) || exit;
 			array(
 				'id'        => '_regular_price',
 				'value'     => $product_object->get_regular_price( 'edit' ),
-				'label'     => __( 'Regular price', 'woocommerce' ) . ' (' . get_woocommerce_currency_symbol() . ')',
+				'label'     => __( 'Regular price', 'woocommerce' ) . ' (VNĐ)',
 				'data_type' => 'price',
 			)
 		);
+
+		woocommerce_wp_text_input(
+			array(
+				'id'        => 'weight',
+                'name'      => 'weight',
+				'value'     => $product_object->get_weight( 'edit' ),
+				'label'     => __( 'Trọng lượng', 'woocommerce' ),
+			)
+		);
+
+        woocommerce_wp_text_input(
+            array(
+                'id'        => 'dosage',
+                'name'      => 'dosage',
+                'value'     => $product_object->get_dosage( 'edit' ),
+                'label'     => __( 'Liều lượng sử dụng', 'woocommerce' ),
+            )
+        );
+
+        woocommerce_wp_text_input(
+            array(
+                'id'        => 'manufacture',
+                'name'      => 'manufacture',
+                'value'     => $product_object->get_manufacture( 'edit' ),
+                'label'     => __( 'Nơi sản xuất', 'woocommerce' ),
+            )
+        );
+
+
+        woocommerce_wp_text_input(
+            array(
+                'id'        => 'uses',
+                'name'      => 'uses',
+                'value'     => $product_object->get_uses( 'edit' ),
+                'label'     => __( 'Công dụng', 'woocommerce' ),
+            )
+        );
+
+        woocommerce_wp_textarea_input(
+            array(
+                'id'        => 'usage',
+                'name'      => 'usage',
+                'value'     => $product_object->get_usage( 'edit' ),
+                'label'     => __( 'Cách sử dụng', 'woocommerce' ),
+                'style'     => 'height: 10rem',
+            )
+        );
+
+        woocommerce_wp_textarea_input(
+            array(
+                'id'        => 'component',
+                'name'      => 'component',
+                'value'     => $product_object->get_component( 'edit' ),
+                'label'     => __( 'Thành phần', 'woocommerce' ),
+                'style'     => 'height: 7rem',
+            )
+        );
+
+        woocommerce_wp_textarea_input(
+            array(
+                'id'        => 'note',
+                'name'      => 'note',
+                'value'     =>  $product_object->get_note( 'edit' ),
+                'label'     => __( 'Lưu ý', 'woocommerce' ),
+                'style'     => 'height: 10rem',
+            )
+        );
+
 
 //		woocommerce_wp_text_input(
 //			array(

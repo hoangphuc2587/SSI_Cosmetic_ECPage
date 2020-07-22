@@ -60,7 +60,90 @@ if ( post_password_required() ) {
 		do_action( 'woocommerce_single_product_summary' );
 		?>
 		<div class="sum-pro-desc">
-			<?php echo $product->get_description(); ?>
+            <ul class="spd-lv1">
+                <?php if (!empty($product->get_weight())):?>
+				<li>
+					<div class="spd-row">
+						<div class="spdr-left"><i class="fa fa-heart"></i>Trọng lượng</div>
+						<div class="spdr-right"><?php echo $product->get_weight(); ?></div>
+					</div>
+				</li>
+                <?php endif;?>
+                <?php if (!empty($product->get_dosage())):?>
+				<li>
+					<div class="spd-row">
+						<div class="spdr-left"><i class="fa fa-heart"></i>Liều lượng sử dụng</div>
+						<div class="spdr-right"><?php echo $product->get_dosage(); ?></div>
+					</div>
+				</li>
+                <?php endif;?>
+                <?php if (!empty($product->get_manufacture())):?>
+				<li>
+					<div class="spd-row">
+						<div class="spdr-left"><i class="fa fa-heart"></i>Nơi sản xuất</div>
+						<div class="spdr-right"><?php echo $product->get_manufacture(); ?></div>
+					</div>
+				</li>
+                <?php endif;?>
+                <?php if (!empty($product->get_uses())):?>
+				<li>
+					<div class="spd-row">
+						<div class="spdr-left"><i class="fa fa-heart"></i>Công dụng</div>
+						<div class="spdr-right"><?php echo $product->get_uses(); ?></div>
+					</div>
+				</li>
+                <?php endif;?>
+                <?php if (!empty($product->get_usage())):?>
+				<li class="spd-has-child">
+					<div class="spd-row">
+						<div class="spdr-left"><i class="fa fa-heart"></i>Cách sử dụng</div>
+						<div class="spdr-right"><i class="fa fa-angle-down"></i></div>
+					</div>
+					<ul class="content-hide spd-lv2-csd">
+                        <?php
+                           $arr_usage = array_values(array_filter(explode(PHP_EOL, $product->get_usage()))) ;
+                           foreach ($arr_usage as $key => $value):
+                        ?>
+						<li>
+							<div class="csd-wrap">
+								<div class="lv2-csd-left"><span class="csd-type-list"><?php echo $key < 10 ? '0'.$key : $key?></span></div>
+								<div class="lv2-csd-right">
+									<?php echo $value;?>
+								</div>
+							</div>
+						</li>
+                        <?php endforeach; ?>
+					</ul>
+				</li>
+                <?php endif;?>
+                <?php if (!empty($product->get_component())):?>
+				<li class="spd-has-child">
+					<div class="spd-row">
+						<div class="spdr-left"><i class="fa fa-heart"></i>Thành phần</div>
+						<div class="spdr-right"><i class="fa fa-angle-down"></i></div>
+					</div>
+					<div class="content-hide thanh-phan">
+                    <?php echo $product->get_component(); ?>
+					</div>
+				</li>
+                <?php endif;?>
+                <?php if (!empty($product->get_note())):?>
+				<li class="spd-has-child">
+					<div class="spd-row">
+						<div class="spdr-left"><i class="fa fa-heart"></i>Lưu ý</div>
+						<div class="spdr-right"><i class="fa fa-angle-down"></i></div>
+					</div>
+					<ul class="content-hide spd-lv2-ly">
+                        <?php
+                           $arr_note = array_values(array_filter(explode(PHP_EOL, $product->get_note()))) ;
+                           foreach ($arr_note as $key => $value):
+                        ?>
+                        <li><?php echo $value;?></li>
+                        <?php endforeach; ?>
+					</ul>
+				</li>
+                <?php endif;?>
+			</ul>
 		</div>
 	</div>
 

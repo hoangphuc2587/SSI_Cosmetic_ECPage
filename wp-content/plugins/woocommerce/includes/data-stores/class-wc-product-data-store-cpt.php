@@ -187,10 +187,48 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 		$this->read_product_data( $product );
 		$this->read_extra_data( $product );
 		$this->read_landing_page ( $product );
+        $this->read_descriptions ( $product );
 		$product->set_object_read( true );
 
 		do_action( 'woocommerce_product_read', $product->get_id() );
 	}
+
+    protected function read_descriptions( &$product ) {
+        $meta_values = get_post_meta( $product->get_id(), 'weight',  true );
+        if ( $meta_values ) {
+            $product->set_weight( $meta_values );
+        }
+
+        $meta_values = get_post_meta( $product->get_id(), 'dosage',  true );
+        if ( $meta_values ) {
+            $product->set_dosage( $meta_values );
+        }
+
+        $meta_values = get_post_meta( $product->get_id(), 'manufacture',  true );
+        if ( $meta_values ) {
+            $product->set_manufacture( $meta_values );
+        }
+
+        $meta_values = get_post_meta( $product->get_id(), 'uses',  true );
+        if ( $meta_values ) {
+            $product->set_uses( $meta_values );
+        }
+
+        $meta_values = get_post_meta( $product->get_id(), 'component',  true );
+        if ( $meta_values ) {
+            $product->set_component( $meta_values );
+        }
+
+        $meta_values = get_post_meta( $product->get_id(), 'usage',  true );
+        if ( $meta_values ) {
+            $product->set_usage( $meta_values );
+        }
+
+        $meta_values = get_post_meta( $product->get_id(), 'note',  true );
+        if ( $meta_values ) {
+            $product->set_note( $meta_values );
+        }
+    }
 
 	/**
 	 * Method to update a product in the database.

@@ -102,7 +102,13 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 		'rating_counts'      => array(),
 		'average_rating'     => 0,
 		'review_count'       => 0,
-        'landing_page'      => '',
+        'landing_page'       => '',
+        'dosage'             => '',
+        'manufacture'        => '',
+        'uses'               => '',
+        'component'          => '',
+        'usage'              => '',
+        'note'               => '',
 	);
 
 	/**
@@ -1007,7 +1013,7 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 * @param float|string $weight Total weight.
 	 */
 	public function set_weight( $weight ) {
-		$this->set_prop( 'weight', '' === $weight ? '' : wc_format_decimal( $weight ) );
+		$this->set_prop( 'weight', $weight );
 	}
 
 	/**
@@ -2036,5 +2042,53 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 
     public function get_landing_page( $context = 'view' ) {
         return $this->get_prop( 'landing_page', $context );
+    }
+
+    public function set_dosage( $dosage ) {
+        $this->set_prop( 'dosage', $dosage);
+    }
+
+    public function get_dosage( $context = 'view' ) {
+        return $this->get_prop( 'dosage', $context );
+    }
+
+    public function set_manufacture( $manufacture) {
+        $this->set_prop( 'manufacture', $manufacture);
+    }
+
+    public function get_manufacture( $context = 'view' ) {
+        return $this->get_prop( 'manufacture', $context );
+    }
+
+    public function set_uses( $context ) {
+        $this->set_prop( 'uses', $context);
+    }
+
+    public function get_uses( $context = 'view' ) {
+        return $this->get_prop( 'uses', $context );
+    }
+
+    public function set_component( $context ) {
+        $this->set_prop( 'component', $context);
+    }
+
+    public function get_component( $context = 'view' ) {
+        return $this->get_prop( 'component', $context );
+    }
+
+    public function set_usage( $context ) {
+        $this->set_prop( 'usage', $context);
+    }
+
+    public function get_usage( $context = 'view' ) {
+        return $this->get_prop( 'usage', $context );
+    }
+
+    public function set_note( $context ) {
+        $this->set_prop( 'note', $context);
+    }
+
+    public function get_note( $context = 'view' ) {
+        return $this->get_prop( 'note', $context );
     }
 }
