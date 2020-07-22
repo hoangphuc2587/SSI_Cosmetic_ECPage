@@ -1,8 +1,8 @@
-
 .contact {
     display: flex;
     justify-content: center;
 }
+
 .contact input[type=text], .contact textarea {
     width: 100%;
     padding: 12px;
@@ -48,10 +48,11 @@
     cursor: pointer;
     font-family: montserratRegular;
     font-size: 14px;
-    color: black;
+    color: unset;
     margin: auto;
     margin-top: 60px;
     font-weight: bold;
+    outline: none; 
 }
 
 .contact .btnSubmit:hover {
@@ -104,6 +105,27 @@
 .contact .collapse {
     display: none;
     overflow: hidden;
+}
+
+.contact .error-msg {
+    color: red;
+    display: block;
+    margin-top: -30px;
+    font-style: italic;
+}
+
+.contact .success-msg {
+    color: green;
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+}
+
+.contact .error-msg-fail {
+    color: red;
+    margin-top: 20px;
+    display: block;
+    text-align: center;
 }
 
 /* Clear floats after the columns */

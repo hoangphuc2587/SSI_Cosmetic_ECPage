@@ -10,22 +10,83 @@
 get_header();
 
 if ($_POST) {
+	$uname 		= isset($_POST['uname']) ? $_POST['uname'] : '';
+	$phone		= isset($_POST['phone']) ? $_POST['phone'] : '';
+	$email 		= isset($_POST['email']) ? $_POST['email'] : '';
+	$content	= isset($_POST['content']) ? $_POST['content'] : '';
+
+	// validation
+	$hasErr = false;
+	if (trim($uname) === '') {
+		$name_err = "Vui lòng nhập họ tên";
+		$hasErr = true;
+	} 
+
+	if (trim($phone) === '') {
+		$phone_err = "Vui lòng nhập số điện thoại";
+		$hasErr = true;
+	} else {
+		// check phone valid
+		if (!isPhoneNumber($phone)) {
+			$phone_err = "Số điện thoại không hợp lệ";
+			$hasErr = true;
+		} 
+	}
+
+	if (trim($email) === '') {
+		$email_err = "Vui lòng nhập email";
+		$hasErr = true;
+	} else if (!is_email($email)) {
+		$email_err = "Email không đúng định dạng";
+		$hasErr = true;
+	}
+
+	if (trim($content) === '') {
+		$content_err = "Vui lòng nhập nội dung";
+		$hasErr = true;
+	} 
+
+	$meta_data = array(
+		'name' 	=> $uname, 
+		'phone' => $phone
+	);
+
+	$postarr = array(
+		'post_title' 	=> $email,
+		'post_content'	=> $content,
+		'post_type' 	=> 'contacts',
+		'post_status'	=> 'publish',
+		'meta_input'	=> $meta_data
+	);
+
+	if (!$hasErr) {
+		$result = wp_insert_post($postarr);
+		if (!is_wp_error($result) && $result != 0) {
+			$success_msg = 'Gửi câu hỏi thành công!';
+		} else {
+			$error_msg = 'Gửi câu hỏi không thành công!';
+		}
+	}
+
 }
 ?>
 
 <div class="wrap">
 	<div class="contact">
 		<div class="container">
-			<form action="" method="POST">
+			<form action="" id="contactForm" method="POST">
 				<h1>LIÊN HỆ</h1>
 				<p class="header-text">Vui lòng điền thông tin bên dưới để gửi câu hỏi về cho chúng tôi</p>
 				<br>
 				<div class="row">
 					<div class="col-25">
-						<label for="name"><i class="fa fa-heart"></i>&nbsp<b>Họ tên</b></label>
+						<label for="uname"><i class="fa fa-heart"></i>&nbsp<b>Họ tên</b></label>
 					</div>
 					<div class="col-75">
-						<input type="text" id="name" name="name" required>
+						<input type="text" name="uname" value="<?php echo $uname ?>">
+						<?php
+							if (!empty($name_err)) echo "<span class='error-msg'>" . $name_err . "</span>";
+						?>
 					</div>
 				</div>
 				<div class="row">
@@ -33,7 +94,10 @@ if ($_POST) {
 						<label for="phone"><i class="fa fa-heart"></i>&nbsp<b>Số điện thoại</b></label>
 					</div>
 					<div class="col-75">
-						<input type="text" id="phone" name="phone" required>
+						<input type="text" name="phone" value="<?php echo $phone ?>">
+						<?php
+							if (!empty($phone_err)) echo "<span class='error-msg'>" . $phone_err . "</span>";
+						?>
 					</div>
 				</div>
 				<div class="row">
@@ -41,7 +105,10 @@ if ($_POST) {
 						<label for="email"><i class="fa fa-heart"></i>&nbsp<b>Email</b></label>
 					</div>
 					<div class="col-75">
-						<input type="text" id="email" name="email" required>
+						<input type="text" name="email" value="<?php echo $email ?>">
+						<?php
+							if (!empty($email_err)) echo "<span class='error-msg'>" . $email_err . "</span>";
+						?>
 					</div>
 				</div>
 				<div class="row">
@@ -49,7 +116,10 @@ if ($_POST) {
 						<label for="content"><i class="fa fa-heart"></i>&nbsp<b>Nội dung</b></label>
 					</div>
 					<div class="col-75">
-						<textarea name="content" rows="5" required></textarea>
+						<textarea name="content" rows="5" ><?php echo $content ?></textarea>
+						<?php
+							if (!empty($content_err)) echo "<span class='error-msg'>" . $content_err . "</span>";
+						?>
 					</div>
 				</div>
 				<div class="row">
@@ -58,8 +128,8 @@ if ($_POST) {
 					</div>
 					<div class="col-75">
 						<div class="policy">
-							<a class="collapsible"><i class="fa fa-angle-down"></i></a>
-							<div class="collapse">
+							<a class="collapsible"><i class="fa fa-angle-up"></i></a>
+							<div class="expand" >
 								<ul>
 									<li>
 										Mục đích thu thập thông tin
@@ -110,31 +180,20 @@ if ($_POST) {
 				</div>
 				<div class="row">
 					<input type="submit" class="btnSubmit" value='Đồng ý với "chính sách bảo mật" và gửi câu hỏi'>
+					<?php
+						if (!empty($success_msg)) echo "<span class='success-msg'>" . $success_msg . "</span>";
+						if (!empty($error_msg)) echo "<span class='error-msg-fail'>" . $error_msg . "</span>";
+					?>
 				</div>
 			</form>
 		</div>
     </div>
 </div><!-- end .wrap -->
 <script>
-	jQuery(".fa").on("click",function(){
-		jQuery(this).toggleClass("fa-angle-down");
-		jQuery(this).toggleClass("fa-angle-up");
-	});	
-
-	var coll = document.getElementsByClassName("collapsible");
-	var i;
-
-	for (i = 0; i < coll.length; i++) {
-		coll[i].addEventListener("click", function() {
-			this.classList.toggle("active");
-			var content = this.nextElementSibling;
-			if (content.style.display === "block") {
-			content.style.display = "none";
-			} else {
-			content.style.display = "block";
-			}
-		});
-	}
+	jQuery(".collapsible").click(function() {
+		jQuery(".fa-angle-up").toggleClass("fa-angle-down");
+		jQuery(".expand").toggleClass("collapse");
+	});
 </script>
 <?php
 get_footer();
