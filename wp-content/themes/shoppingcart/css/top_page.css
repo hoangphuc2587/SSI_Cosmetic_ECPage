@@ -15,7 +15,7 @@ button {
 .top-header > #site-branding {
     background-image: url("/wp-content/themes/shoppingcart/images/banner_bg2.png");
     background-repeat: no-repeat;
-    background-size: contain;
+    /* background-size: contain; */
     padding: 0;
     display: none;
 }
