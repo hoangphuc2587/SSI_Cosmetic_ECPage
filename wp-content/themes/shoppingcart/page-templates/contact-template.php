@@ -72,8 +72,8 @@ if ($_POST) {
 ?>
 
 <div class="wrap">
+	<?php woocommerce_breadcrumb(); ?>
 	<div class="contact">
-		<div class="link"></div>
 		<div class="container">
 			<form action="" id="contactForm" method="POST">
 				<div class="title-page">LIÊN HỆ</div>
