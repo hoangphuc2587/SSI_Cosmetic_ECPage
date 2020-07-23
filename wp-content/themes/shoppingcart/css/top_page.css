@@ -27,11 +27,13 @@ button {
 #site-content-contain nav.woocommerce-breadcrumb a {
     font-size: 16px;
     font-family: robotoLight;
+    color: #222222;
 }
 #site-content-contain nav.woocommerce-breadcrumb span.wcbc-cur {
     font-size: 18px;
     font-family: robotoLight;
     text-decoration: underline;
+    color: #222222;
 }
 
 /* header right */

@@ -154,6 +154,7 @@
     border: 1px solid #2b47dc;
     padding: 30px 30px 15px 50px;
     padding-bottom: 15px;
+    background-color: #f1f6ff;
 }
 #wrap_content .banner-bottom .col-12 {
     padding-bottom: 15px;
@@ -181,7 +182,7 @@
     color: #ea5264;
     margin-bottom: 25px;
 }
-#wrap_content .banner-bottom .bb-button button {
+#wrap_content .banner-bottom .bb-button span {
     width: 80%;
     font-family: robotoMedium;
     font-size: 16px;
@@ -189,6 +190,7 @@
     border: 1px solid #2b47dc;
     padding: 10px;
     background-color: #ffffff;
+    display: inline-block;
 }
 #wrap_content .banner-bottom .bb-right {
     text-align: center;
