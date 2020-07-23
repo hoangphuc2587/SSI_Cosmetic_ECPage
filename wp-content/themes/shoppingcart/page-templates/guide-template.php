@@ -15,7 +15,7 @@ get_header(); ?>
 <!-- <ul class="my-breadcrumb">
 	<li></li>
 </ul> -->
-<?php shoppingcart_breadcrumb(); ?>
+<?php woocommerce_breadcrumb(); ?>
 <div id="guide-buy-page">
 	<div class="title-page" id="gp_muahang">Hướng dẫn mua hàng</div>
 	<div class="content-page">

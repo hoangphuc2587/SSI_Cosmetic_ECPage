@@ -1,5 +1,6 @@
 a {
     outline: none !important;
+    color: #222222 !important;
 }
 a:hover {
     color: #e74054 !important;
@@ -17,6 +18,20 @@ button {
     background-size: contain;
     padding: 0;
     display: none;
+}
+
+/* breadcrumb */
+#site-content-contain nav.woocommerce-breadcrumb {
+    margin-bottom: 15px;
+}
+#site-content-contain nav.woocommerce-breadcrumb a {
+    font-size: 16px;
+    font-family: robotoLight;
+}
+#site-content-contain nav.woocommerce-breadcrumb span.wcbc-cur {
+    font-size: 18px;
+    font-family: robotoLight;
+    text-decoration: underline;
 }
 
 /* header right */

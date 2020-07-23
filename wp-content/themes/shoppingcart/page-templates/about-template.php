@@ -15,7 +15,7 @@ get_header(); ?>
 <!-- <ul class="my-breadcrumb">
 	<li></li>
 </ul> -->
-
+<?php woocommerce_breadcrumb(); ?>
 <div id="about-us-page">
 	<div class="title-page">Về chúng tôi</div>
 	<ul class="content-page">
