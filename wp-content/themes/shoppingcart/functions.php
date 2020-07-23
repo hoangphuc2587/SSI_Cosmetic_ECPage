@@ -686,3 +686,9 @@ function smashing_contacts_column( $column, $post_id ) {
         echo get_the_title($post_id);
     }
 }
+
+add_filter ( 'woocommerce_account_menu_items', 'misha_remove_my_account_links' );
+function misha_remove_my_account_links( $menu_links ){
+	unset( $menu_links['downloads'] ); // remove downloads
+	return $menu_links;
+}

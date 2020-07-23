@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-06-23T22:16:25+00:00\n"
-"PO-Revision-Date: 2020-07-22 08:24+0000\n"
+"PO-Revision-Date: 2020-07-23 04:09+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: woocommerce\n"
 "Language: vi\n"
@@ -8487,7 +8487,7 @@ msgstr ""
 #: includes/admin/class-wc-admin-pointers.php:251
 #: templates/myaccount/orders.php:93
 msgid "Next"
-msgstr ""
+msgstr "Tiếp theo"
 
 #. translators: %s: Product view URL.
 #: includes/admin/class-wc-admin-post-types.php:125
@@ -11564,7 +11564,7 @@ msgstr ""
 #: includes/admin/reports/class-wc-report-stock.php:177
 #: includes/wc-account-functions.php:200
 msgid "Actions"
-msgstr ""
+msgstr "Thao tác"
 
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:145
 msgid "Change status to processing"
@@ -13922,7 +13922,7 @@ msgstr ""
 #: includes/admin/views/html-admin-page-status-logs.php:35
 #: includes/wc-account-functions.php:286
 msgid "View"
-msgstr ""
+msgstr "Xem"
 
 #. translators: %s: product count
 #: includes/admin/reports/class-wc-report-stock.php:154
@@ -17741,7 +17741,7 @@ msgstr "Địa chỉ"
 #. translators: use local order of street name and house number.
 #: includes/class-wc-countries.php:690
 msgid "House number and street name"
-msgstr ""
+msgstr "Số nhà và tên đường"
 
 #: includes/class-wc-countries.php:704
 msgid "Town / City"
@@ -18086,7 +18086,7 @@ msgstr ""
 
 #: includes/class-wc-form-handler.php:277
 msgid "Please fill out all password fields."
-msgstr ""
+msgstr "Vui lòng điền tất cả các trường mật khẩu."
 
 #: includes/class-wc-form-handler.php:280
 msgid "Please enter your current password."
@@ -18098,15 +18098,15 @@ msgstr ""
 
 #: includes/class-wc-form-handler.php:286
 msgid "New passwords do not match."
-msgstr ""
+msgstr "Mật khẩu mới không khớp."
 
 #: includes/class-wc-form-handler.php:289
 msgid "Your current password is incorrect."
-msgstr ""
+msgstr "Mật khẩu hiện tại của bạn không chính xác."
 
 #: includes/class-wc-form-handler.php:330
 msgid "Account details changed successfully."
-msgstr ""
+msgstr "Cập nhật chi tiết tài khoản thành công."
 
 #. translators: %d number of seconds
 #: includes/class-wc-form-handler.php:471
@@ -32516,7 +32516,7 @@ msgstr ""
 
 #: templates/myaccount/downloads.php:40 templates/myaccount/orders.php:101
 msgid "Browse products"
-msgstr ""
+msgstr "Mua hàng"
 
 #: templates/myaccount/downloads.php:42
 msgid "No downloads available yet."
@@ -32554,7 +32554,7 @@ msgstr "Xác nhận mật khẩu"
 
 #: templates/myaccount/form-edit-address.php:46
 msgid "Save address"
-msgstr ""
+msgstr "Lưu địa chỉ"
 
 #: templates/myaccount/form-login.php:54
 msgid "Log in"
@@ -32624,12 +32624,12 @@ msgstr ""
 #: templates/myaccount/my-orders.php:75 templates/myaccount/orders.php:61
 msgid "%1$s for %2$s item"
 msgid_plural "%1$s for %2$s items"
-msgstr[0] ""
+msgstr[0] "%1$s cho %2$s sản phẩm"
 msgstr[1] ""
 
 #: templates/myaccount/orders.php:89
 msgid "Previous"
-msgstr ""
+msgstr "Quay lại"
 
 #: templates/myaccount/orders.php:103
 msgid "No order has been made yet."
@@ -32685,7 +32685,7 @@ msgstr ""
 
 #: templates/order/order-again.php:22
 msgid "Order again"
-msgstr ""
+msgstr "Đặt lại"
 
 #: templates/order/order-details.php:45
 msgid "Order details"
