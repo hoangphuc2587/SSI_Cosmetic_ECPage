@@ -1,0 +1,6 @@
+#sticky-header-sticky-wrapper {
+    visibility: hidden;
+}
+.top-header > #site-branding {
+    display: block;
+}

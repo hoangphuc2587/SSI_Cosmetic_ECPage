@@ -299,14 +299,12 @@ button {
 #sticky-header-sticky-wrapper .main-navigation ul li ul li, #sticky-header-sticky-wrapper .main-navigation ul li ul {
     width: 300px;
 }
-/* #sticky-header-sticky-wrapper {
-    visibility: hidden;
-} */
 #sticky-header #site-branding {
     padding: 10px 15px 10px 0;
 }
 #sticky-header .header-right {
     padding-top: 7px;
+    padding-bottom: 7px;
     font-family: montserratRegular;
     font-size: 14px;
 }
@@ -426,7 +424,7 @@ button {
 #site-content-contain #colophon .site-info {
     background-image: url("/wp-content/themes/shoppingcart/images/footer_bg.png");
     background-position: center;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     background-size: contain;
 }
 #site-content-contain #colophon button.go-to-top .icon-bg {
