@@ -15,9 +15,9 @@ get_header(); ?>
 <!-- <ul class="my-breadcrumb">
 	<li></li>
 </ul> -->
-
+<?php shoppingcart_breadcrumb(); ?>
 <div id="guide-buy-page">
-	<div class="title-page">Hướng dẫn mua hàng</div>
+	<div class="title-page" id="gp_muahang">Hướng dẫn mua hàng</div>
 	<div class="content-page">
 		<div class="content-left">
 			<ul>
@@ -29,7 +29,7 @@ get_header(); ?>
 		<div class="content-right">
 			<ul>
 				<li>
-					<span class="area-title" id="gp_muahang">Cách thức mua hàng</span>
+					<span class="area-title">Cách thức mua hàng</span>
 					<div class="par-item">Tìm kiếm sản phẩm<br>
 					- Tìm từ danh sách sản phẩm<br>
 					- Tìm từ trang TOP</div>
@@ -52,12 +52,12 @@ get_header(); ?>
 					- Chọn cách thức thanh toán (Thanh toán khi giao hàng COD / Chuyển khoản)<br>
 					- Mã phiếu giảm giá (nếu có)</div>
 
-					<div class="par-item">Kiểm tra thông tin ở trang “Thanh toán”<br>
+					<div class="par-item" id="gp_doitra">Kiểm tra thông tin ở trang “Thanh toán”<br>
 					- Kiểm tra thông tin đã nhập<br>
 					- Ấn nút “Đặt hàng”</div>
 				</li>
 				<li>
-					<span class="area-title" id="gp_doitra">Đổi trả</span>
+					<span class="area-title">Đổi trả</span>
 					<div class="par-item">Điều kiện đổi trả<br>
 					- Sản phẩm bị hỏng do lỗi nhà sản xuất<br>
 					- Sản phẩm giao bị sai về mặt hàng, số lượng và mẫu mã sản phẩm so với đơn đặt hàng.</div>
@@ -73,12 +73,12 @@ get_header(); ?>
 					<div class="par-item">Chi phí đổi trả<br>
 					- Chúng tôi chịu hoàn toàn chi phí chỉ với các trường hợp đổi trả hàng thỏa “Điều kiện đổi trả”</div>
 
-					<div class="par-item">Trường hợp không được đổi trả<br>
+					<div class="par-item" id="gp_vanchuyen">Trường hợp không được đổi trả<br>
 					- Chúng tôi từ chối yêu cầu nhận lại hàng đã giao và hoàn tiền với lí do khách hàng thay đổi ý định mua hàng.<br>
 					* Tùy trường hợp, có thể sẽ bị xóa tài khoản thành viên.</div>
 				</li>
 				<li>
-					<span class="area-title" id="gp_vanchuyen">Vận chuyển</span>
+					<span class="area-title">Vận chuyển</span>
 					<div class="par-item">Chi phí vận chuyển</div>
 
 					<div class="par-item">Trong nội thành Tp.HCM: 30.000Đ/ đơn hàng<br>

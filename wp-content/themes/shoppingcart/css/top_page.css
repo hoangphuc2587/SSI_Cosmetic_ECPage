@@ -388,6 +388,9 @@ button {
     font-size: 14px;
     font-family: montserratRegular;
 }
+#site-content-contain #colophon .widget-area .f-wa-right a {
+    color: #222222;
+}
 #site-content-contain #colophon .widget-area .f-wa-right .fwar-table {
     display: flex;
     padding-left: 5px;

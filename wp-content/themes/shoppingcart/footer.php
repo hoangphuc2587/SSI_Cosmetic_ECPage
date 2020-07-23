@@ -20,20 +20,20 @@ $footer_column = $shoppingcart_settings['shoppingcart_footer_column_section'];
 			<div class="widget-area">
 				<div class="f-wa-left">
 					<div class="fwal-logo"><a href="<?php echo home_url(); ?>">
-						<img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/logo_main_menu.png' ?>" alt="img" /></a></div>
+						<img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/logo_main_menu.png'; ?>" alt="img" /></a></div>
 					<div class="fwal-name">CARICO CO.,LTD</div>
 					<div class="fwal-addr">579 Yonezu-cho, Minami-ku, Hamamatsu-city,<br>Shizuoka, Japan</div>
 				</div>
 				<div class="f-wa-right">
-					<div>Hướng dẫn mua hàng</div>
+					<div><a href="<?php echo home_url() . '/guide/'; ?>">Hướng dẫn mua hàng</a></div>
 					<div class="fwar-table">
 						<ul>
-							<li><a href="<?php echo home_url() . '/guide/#gp_muahang' ?>"><i class='fa fa-angle-right'></i>Mua hàng</a></li>
-							<li><a href="<?php echo home_url() . '/guide/#gp_doitra' ?>"><i class='fa fa-angle-right'></i>Đổi trả hàng</a></li>
+							<li><a href="<?php echo home_url() . '/guide/#gp_muahang'; ?>"><i class='fa fa-angle-right'></i>Mua hàng</a></li>
+							<li><a href="<?php echo home_url() . '/guide/#gp_doitra'; ?>"><i class='fa fa-angle-right'></i>Đổi trả hàng</a></li>
 						</ul>
 						<ul class="fwart-ul2">
-							<li><a href="<?php echo home_url() . '/guide/#gp_vanchuyen' ?>"><i class='fa fa-angle-right'></i>Phí vận chuyển</a></li>
-							<li><a href="<?php echo home_url() . '/about-us/' ?>"><i class='fa fa-angle-right'></i>Về Carico</a></li>
+							<li><a href="<?php echo home_url() . '/guide/#gp_vanchuyen'; ?>"><i class='fa fa-angle-right'></i>Phí vận chuyển</a></li>
+							<li><a href="<?php echo home_url() . '/about-us/'; ?>"><i class='fa fa-angle-right'></i>Về Carico</a></li>
 						</ul>
 						<div></div>
 					</div>
