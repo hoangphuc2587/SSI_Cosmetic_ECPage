@@ -177,7 +177,6 @@ class WC_Admin_Menus {
 	 */
 	public function menu_order_count() {
 		global $submenu;
-
 		if ( isset( $submenu['woocommerce'] ) ) {
 			// Remove 'WooCommerce' sub menu item.
 			unset( $submenu['woocommerce'][0] );
@@ -196,6 +195,23 @@ class WC_Admin_Menus {
 				}
 			}
 		}
+
+		if ( isset( $submenu['edit.php?post_type=shop_order'] ) ) {
+            $order_count = apply_filters( 'woocommerce_menu_order_count', wc_processing_order_count() );
+            if ( $order_count ) {
+                foreach ( $submenu['edit.php?post_type=shop_order'] as $key => $menu_item ) {
+                    if ( 0 === strpos( $menu_item[0], _x( 'Orders', 'Admin menu name', 'woocommerce' ) ) ) {
+                        $submenu['edit.php?post_type=shop_order'][ $key ][0] .= ' <span class="awaiting-mod update-plugins count-' . esc_attr( $order_count ) . '"><span class="processing-count">' . number_format_i18n( $order_count ) . '</span></span>'; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+                    }else{
+                        unset($submenu['edit.php?post_type=shop_order'][ $key ]);
+                    }
+                }
+            }
+        }
+
+        if ( isset( $submenu['edit.php?post_type=contacts'] ) ) {
+            unset($submenu['edit.php?post_type=contacts'][ 10 ]);
+        }
 	}
 
 	/**
