@@ -521,9 +521,6 @@ button {
 }
 
 /* content - san pham --------------------------------------------------------------------------- */
-.product-widget-box .shoppingcart-grid-product {
-    padding-left: 50px;
-}
 #site-content-contain #content {
     background-color: #ffffff;
     padding-top: 0;
@@ -550,7 +547,7 @@ button {
     color: #333333;
     font-family: robotoMedium;
 }
-#site-content-contain #content .woocommerce div.product .sc-grid-product-content {
+#site-content-contain #content .woocommerce div.product .sc-grid-product-content { /*xxx*/
     border-top: none;
     padding-right: 29px;
 }
@@ -588,7 +585,7 @@ button {
     font-family: robotoMedium;
     font-size: 16px;
 }
-#site-content-contain #content .woocommerce .sc-grid-product-img {
+#site-content-contain #content .woocommerce .sc-grid-product-img { /*xxx*/
     width: 272px;
     height: 298px;
 }
@@ -599,14 +596,10 @@ button {
 #content .area-store-list .sc-grid-product-img img {
     width: 100%;
 }
-#site-content-contain #content .woocommerce .shoppingcart-grid-widget-wrap {
-    margin-left: -50px;
-    margin-right: -19px;
-}
 .product-widget-box .area-store-list {
     margin-left: -50px;
 }
-#site-content-contain #content .woocommerce .shoppingcart-grid-widget-wrap .shoppingcart-grid-product .sc-grid-product-img a {
+#site-content-contain #content .woocommerce .shoppingcart-grid-widget-wrap .shoppingcart-grid-product .sc-grid-product-img a { /*xxx*/
     display: block;
     position: relative;
     color: #222222 !important;
@@ -630,6 +623,34 @@ button {
 }
 #site-content-contain #content .woocommerce .shoppingcart-grid-widget-wrap .shoppingcart-grid-product:hover .sc-grid-product-img .btn-quick-view {
     display: block;
+}
+
+#site-content-contain #content .woocommerce .shoppingcart-grid-widget-wrap {
+    margin-left: -50px;
+    margin-right: -19px;
+}
+.product-widget-box .shoppingcart-grid-product {
+    padding-left: 50px;
+}
+@media only screen and (max-width: 1300px) {
+    #site-content-contain #content .woocommerce .shoppingcart-grid-widget-wrap {
+        margin-left: -20px;
+        margin-right: 0;
+    }
+    .product-widget-box .shoppingcart-grid-product {
+        padding-left: 20px;
+    }
+    #site-content-contain #content .woocommerce .shoppingcart-grid-widget-wrap .shoppingcart-grid-product .sc-grid-product-img a {
+        width: auto;
+        height: auto;
+    }
+    #site-content-contain #content .woocommerce .sc-grid-product-img {
+        width: auto;
+        height: auto;
+    }
+    #site-content-contain #content .woocommerce div.product .sc-grid-product-content {
+        padding-right: 10px;
+    }
 }
 
 
