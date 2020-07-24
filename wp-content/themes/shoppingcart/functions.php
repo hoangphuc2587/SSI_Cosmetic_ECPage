@@ -692,3 +692,12 @@ function misha_remove_my_account_links( $menu_links ){
 	unset( $menu_links['downloads'] ); // remove downloads
 	return $menu_links;
 }
+
+add_action( 'woocommerce_after_shop_loop_item_title', 'remove_review_star', 4 );
+function remove_review_star(){
+    global $product;
+
+    if( ! ( $product->get_review_count() > 0 ) ) {
+        remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+    }
+}
