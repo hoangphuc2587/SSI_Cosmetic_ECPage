@@ -180,7 +180,7 @@ if ($_POST) {
 			?>
 
 			<div class="gender">
-				<label for="gender" style="margin-right: 30px;"><b>Giới tính</b></label>
+				<label for="gender" class="gender-label"><b>Giới tính</b></label>
 				<input type="radio" id="male" name="gender" value="male" <?php if ($gender === 'male') echo "checked" ?>>
 				<label for="male" style="margin-right: 30px;">Nam</label>
 				<input type="radio" id="female" name="gender" value="female" <?php if ($gender === 'female') echo "checked" ?>>
@@ -191,8 +191,8 @@ if ($_POST) {
 			?>
 
 			<div class="birthday">
-				<label for="birthday"><b>Ngày sinh</b></label>
-				<select id ="day" name = "bd-day" class="birthday-select"></select>
+				<label for="birthday" class="birthday-label"><b>Ngày sinh</b></label>
+				<select id ="day" name = "bd-day" class="birthday-select birthday-day"></select>
 				<input type="hidden" id="old-day" value="<?php echo $day ?>">
 				<select id ="month" name = "bd-month" class="birthday-select" value="<?php echo $month1 ?>" onchange="change_month(this)"></select>
 				<input type="hidden" id="old-month" value="<?php echo $month1 ?>">
