@@ -399,6 +399,10 @@ button {
 #sticky-header-sticky-wrapper .main-navigation ul li ul li, #sticky-header-sticky-wrapper .main-navigation ul li ul{
     width:320px;
 }
+#sticky-header #site-navigation #primary-menu li.menu-item-has-children span.sub-menu-toggle i.fa-plus {
+    display: none;
+}
+
 /* Class hide banner in not top page */
 .show-nav-un-toppage {
     width: 1903px;
@@ -503,6 +507,17 @@ button {
 }
 #colophon > .site-info > .wrap {
     border: none;
+}
+
+@media only screen and (max-width: 1023px) {
+    #colophon .widget-wrap .widget-area {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    #colophon .widget-wrap .widget-area .f-wa-right {
+        padding-top: 0 !important;
+        padding-bottom: 30px;
+    }
 }
 
 /* content - san pham --------------------------------------------------------------------------- */
