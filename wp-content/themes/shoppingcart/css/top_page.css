@@ -13,9 +13,10 @@ button {
     padding: 0;
 }
 .top-header > #site-branding {
-    background-image: url("/wp-content/themes/shoppingcart/images/banner_bg2.png");
+    background-image: url("/wp-content/themes/shoppingcart/images/banner_bg.png");
     background-repeat: no-repeat;
     /* background-size: contain; */
+    background-position: top right;
     padding: 0;
     display: none;
 }
@@ -42,6 +43,7 @@ button {
 /* header right */
 #site-branding .header-right {
     padding-top: 22px;
+    padding-bottom: 20px;
 }
 #site-branding .header-right .he-ri-btn button {
     margin-left: 20px;
@@ -72,17 +74,17 @@ button {
 #site-branding .header-right .he-ri-logo {
     text-align: center;
     margin-top: 20px;
-    display: none;
+    /* display: none; */
 }
 #site-branding .header-right .he-ri-text {
     text-align: center;
     margin-top: 5px;
-    display: none;
+    /* display: none; */
 }
 #site-branding .header-right .he-ri-img {
     text-align: center;
     margin-top: 15px;
-    display: none;
+    /* display: none; */
 }
 #site-branding .header-right .he-ri-btn .my-cart-num {
     position: absolute;

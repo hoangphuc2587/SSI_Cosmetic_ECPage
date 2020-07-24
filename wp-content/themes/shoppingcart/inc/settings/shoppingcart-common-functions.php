@@ -148,7 +148,7 @@ function shoppingcart_cart_wishlist_icon(){
 	<?php
 		global $current_user;
 		if ( is_user_logged_in() ) {
-			echo 'Xin chào <a href="'.home_url().'/my-account">' . $current_user->user_login . '</a>'; ?>
+			echo '<span>Xin chào <a href="'.home_url().'/my-account">' . $current_user->user_login . '</a></span>'; ?>
 			<button type="button" onclick="location.href='<?php echo wp_logout_url(); ?>';">
 				<i class='fa fa-sign-out'></i> Đăng xuất
 			</button>
