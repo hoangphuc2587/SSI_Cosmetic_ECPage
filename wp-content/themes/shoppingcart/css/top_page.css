@@ -24,7 +24,7 @@ button {
     background-color: #ffffff;
 }
 
-/* breadcrumb */
+/* breadcrumb --------------------------------------------------------------------- */
 #site-content-contain nav.woocommerce-breadcrumb {
     margin-bottom: 15px;
 }
@@ -40,7 +40,7 @@ button {
     color: #222222;
 }
 
-/* header right */
+/* header right --------------------------------------------------------------------- */
 #site-branding .header-right {
     padding-top: 22px;
     padding-bottom: 20px;
@@ -136,63 +136,8 @@ button {
     border: 1px solid #f9be0b;
 }
 /* custom button cart in banner END */
-/* custom button cart in main nav START */
-#sticky-header .header-right .cart-box .sx-cart-views .my-cart-wrap,
-#sticky-header .header-right .cart-box div.widget_shopping_cart {
-    display: none;
-}
-#sticky-header .header-right .cart-box {
-    margin-left: 14px;
-    height: 34px;
-}
-#sticky-header .header-right .cart-box .sx-cart-views a.wcmenucart-contents {
-    line-height: inherit;
-    color: #222222 !important;
-    padding: 5px 10px;
-    border: 1px solid #aaaaaa;
-    border-radius: 4px;
-    font-family: montserratRegular;
-    font-size: 14px;
-    padding-left: 22px;
-    background-color: #ffffff;
-}
-#sticky-header .header-right .cart-box .sx-cart-views a.wcmenucart-contents i {
-    font-size: inherit;
-    vertical-align: inherit;
-}
-#sticky-header .header-right .cart-box .sx-cart-views a.wcmenucart-contents span.cart-value {
-    left: 10px;
-    top: 4px;
-    background-color: #d42e22;
-    color: #fffef1;
-    line-height: 15px;
-}
-#sticky-header .header-right .cart-box .sx-cart-views a.wcmenucart-contents:hover {
-    background-image: url("/wp-content/themes/shoppingcart/images/banner_button_active.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    border: 1px solid #f9be0b;
-}
-/* custom button cart in main nav END */
 
-#sticky-header .header-right .my-cart-num {
-    position: absolute;
-    color: #fffef1;
-    background-color: #d42e22;
-    padding: 0px 5px;
-    border-radius: 50%;
-    font-size: 10px;
-    top: 4px;
-    left: 10px;
-}
-#sticky-header .header-right button.iws-right-est {
-    position: relative;
-    padding-left: 22px;
-    display: none;
-}
-
-/* header left */
+/* header left ---------------------------------------------------------------------------- */
 #site-branding #site-detail #site-description {
     display: none;
 }
@@ -300,7 +245,62 @@ button {
     font-family: montserratBold;
 }
 
-/* sticky-header */
+/* sticky-header ---------------------------------------------------------------------------------- */
+/* custom button cart in main nav START */
+#sticky-header .header-right .cart-box .sx-cart-views .my-cart-wrap,
+#sticky-header .header-right .cart-box div.widget_shopping_cart {
+    display: none;
+}
+#sticky-header .header-right .cart-box {
+    margin-left: 14px;
+    height: 34px;
+}
+#sticky-header .header-right .cart-box .sx-cart-views a.wcmenucart-contents {
+    line-height: inherit;
+    color: #222222 !important;
+    padding: 5px 10px;
+    border: 1px solid #aaaaaa;
+    border-radius: 4px;
+    font-family: montserratRegular;
+    font-size: 14px;
+    padding-left: 22px;
+    background-color: #ffffff;
+}
+#sticky-header .header-right .cart-box .sx-cart-views a.wcmenucart-contents i {
+    font-size: inherit;
+    vertical-align: inherit;
+}
+#sticky-header .header-right .cart-box .sx-cart-views a.wcmenucart-contents span.cart-value {
+    left: 10px;
+    top: 4px;
+    background-color: #d42e22;
+    color: #fffef1;
+    line-height: 15px;
+}
+#sticky-header .header-right .cart-box .sx-cart-views a.wcmenucart-contents:hover {
+    background-image: url("/wp-content/themes/shoppingcart/images/banner_button_active.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: 1px solid #f9be0b;
+}
+/* custom button cart in main nav END */
+
+#sticky-header .header-right .my-cart-num {
+    position: absolute;
+    color: #fffef1;
+    background-color: #d42e22;
+    padding: 0px 5px;
+    border-radius: 50%;
+    font-size: 10px;
+    top: 4px;
+    left: 10px;
+}
+#sticky-header .header-right button.iws-right-est {
+    position: relative;
+    padding-left: 22px;
+    display: none;
+}
 #sticky-header-sticky-wrapper .main-navigation ul li ul li, #sticky-header-sticky-wrapper .main-navigation ul li ul {
     width: 300px;
 }
@@ -383,7 +383,68 @@ button {
     background-color: #fffde3;
 }
 
-/* footer */
+#sticky-header #primary-menu > li ul.sub-menu li a{
+    border:0px;
+    border-top: 1px dashed #aaaaaa;
+}
+#sticky-header #primary-menu > li ul.sub-menu li:first-child a{
+    border-top:0px;
+}
+.main-navigation ul li ul li,.main-navigation ul li ul li:before{
+    border:0px!important;
+}
+.main-navigation ul li ul li{
+    padding:0 13px 0 13px;
+}
+#sticky-header-sticky-wrapper .main-navigation ul li ul li, #sticky-header-sticky-wrapper .main-navigation ul li ul{
+    width:320px;
+}
+/* Class hide banner in not top page */
+.show-nav-un-toppage {
+    width: 1903px;
+    position: fixed;
+    top: 0px;
+    z-index: 999;
+}
+@media only screen and (max-width: 980px) {
+    #sticky-header-sticky-wrapper {
+        width:320px;
+        position: fixed;
+        width: 100%;
+        top: 0px;
+        z-index: 9999;
+        background-color: #ffffff;
+        /* display: block; */
+    }
+    /* #sticky-header .header-right {
+        display: block;
+    } */
+}
+@media only screen and (max-width: 767px) {
+    #sticky-header-sticky-wrapper {
+        width:320px;
+        position: fixed;
+        width: 100%;
+        top: 0px;
+        z-index: 9999;
+        background-color: #ffffff;
+        /* display: block; */
+    }
+    #sticky-header-sticky-wrapper .main-header #site-navigation button.menu-toggle {
+        display: none;
+    }
+    #masthead .top-header .catalog-menu-wrap {
+        font-family: montserratMedium;
+    }
+    #masthead .top-header .catalog-menu-wrap nav.catalog-menu h3.catalog-menu-title {
+        font-family: montserratMedium;
+    }
+    #sticky-header .main-header button.show-menu-toggle span.sn-text {
+        font-family: montserratMedium;
+    }
+}
+
+/* footer ---------------------------------------------------------------------- */
 #site-content-contain #colophon .widget-wrap {
     background-color: #fffef0;
 }
@@ -440,8 +501,11 @@ button {
 #site-content-contain #colophon button.go-to-top .back-to-top-text, #site-content-contain #colophon button.go-to-top .back-to-top-icon {
     color: #222222;
 }
+#colophon > .site-info > .wrap {
+    border: none;
+}
 
-/* content - san pham */
+/* content - san pham --------------------------------------------------------------------------- */
 .product-widget-box .shoppingcart-grid-product {
     padding-left: 50px;
 }
@@ -463,7 +527,9 @@ button {
     font-size: 40px;
     text-align: center;
     margin-bottom: 30px;
+    margin-top: 5px;
     font-family: montserratBold;
+    line-height: normal;
 }
 #site-content-contain #content .woocommerce div.product span.price .woocommerce-Price-amount {
     color: #333333;
@@ -552,7 +618,7 @@ button {
 }
 
 
-/* content cua hang */
+/* content - cua hang ------------------------------------------------------------------------------------------- */
 #content .area-store-list .si-name {
     height: 49px;
     background-image: url(/wp-content/themes/shoppingcart/images/ds_cua_hang_h1.png);
@@ -586,31 +652,6 @@ button {
 .area-store-list .shoppingcart-grid-product:hover .si-cont {
     background-color: #f4f4f4;
 }
-#sticky-header #primary-menu > li ul.sub-menu li a{
-    border:0px;
-    border-top: 1px dashed #aaaaaa;
-}
-#sticky-header #primary-menu > li ul.sub-menu li:first-child a{
-    border-top:0px;
-}
-.main-navigation ul li ul li,.main-navigation ul li ul li:before{
-    border:0px!important;
-}
-.main-navigation ul li ul li{
-    padding:0 13px 0 13px;
-}
-#sticky-header-sticky-wrapper .main-navigation ul li ul li, #sticky-header-sticky-wrapper .main-navigation ul li ul{
-    width:320px;
-}
-
-/* Class hide banner in not top page */
-.show-nav-un-toppage {
-    width: 1903px;
-    position: fixed;
-    top: 0px;
-    z-index: 999;
-}
-
 /* stores slider */
 .area-store-list .slick-arrow {
     font-size: 40px;
@@ -636,5 +677,5 @@ button {
     padding-right: 15px;
 }
 .wrap-area-store-list .asl-wrap-item figure {
-    height: 212px;
+    /* height: 212px; */
 }
