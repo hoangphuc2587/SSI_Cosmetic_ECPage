@@ -68,6 +68,6 @@ $footer_column = $shoppingcart_settings['shoppingcart_footer_column_section'];
 <?php if (!$GLOBALS['qtsc_sba_instar_top_page']) { ?>
 	<script src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/js/not-top-page.js"></script>
 <?php } ?>
-
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </body>
 </html>

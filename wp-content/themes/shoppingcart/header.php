@@ -29,6 +29,7 @@ wp_head(); ?>
 <link rel="stylesheet" type="text/css" href="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/css/about-guide-style.css">
 <script src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/js/top_page.js"></script>
 <script src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/js/product_detail.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
 <?php if ($GLOBALS['qtsc_sba_instar_top_page']) { ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/css/only-top-page.css">
