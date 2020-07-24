@@ -441,7 +441,7 @@ function bbloomer_checkout_save_user_meta( $order_id ) {
 /************** add order css *************************************/
 function add_order_css() {
     wp_enqueue_style('order-css',  get_template_directory_uri() . '/css/order-style.css');
-    if(is_checkout()){
+    if(is_checkout()|| is_cart()){
         wp_enqueue_style('checkout',  get_template_directory_uri() . '/css/checkout.css');
 
     }

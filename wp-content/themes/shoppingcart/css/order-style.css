@@ -6,6 +6,12 @@
 .woocommerce ul.products li.product a img{
     max-height: 300px;
 }
-.no-description{
-
+.page-title{
+    font-family: robotoMedium;
+}
+body{
+    font-family: robotoLight;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: robotoMedium;
 }

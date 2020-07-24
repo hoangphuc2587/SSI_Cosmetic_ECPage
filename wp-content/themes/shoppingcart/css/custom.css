@@ -76,6 +76,15 @@ ul.products li.product .woocommerce-loop-product__title:hover{
     font-family: robotoMedium;
     font-size: 18px;
 }
+.page-title{
+    font-family: robotoMedium;
+}
+body{
+    font-family: robotoLight;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: robotoMedium;
+}
 
 @media screen and (max-width: 768px) {woocommerce-loop-product__title
     #main{
