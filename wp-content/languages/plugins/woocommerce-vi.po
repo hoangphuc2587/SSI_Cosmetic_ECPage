@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-06-23T22:16:25+00:00\n"
-"PO-Revision-Date: 2020-07-24 07:35+0000\n"
+"PO-Revision-Date: 2020-07-24 09:55+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: woocommerce\n"
 "Language: vi\n"
@@ -19180,7 +19180,7 @@ msgstr ""
 #: packages/woocommerce-admin/dist/chunks/analytics-report-downloads.70ac0d2cc5bff1ecc84d.js:159
 #: packages/woocommerce-admin/dist/chunks/analytics-report-orders.f2d90c48c3f4b0a88512.js:145
 msgid "Order Number"
-msgstr "Số đơn hàng."
+msgstr "Mã đơn hàng."
 
 #: includes/class-wc-privacy-exporters.php:251
 msgid "Order Date"
@@ -20354,7 +20354,7 @@ msgstr ""
 
 #: includes/emails/class-wc-email-customer-refunded-order.php:89
 msgid "Order Refunded: {order_number}"
-msgstr ""
+msgstr "Đơn hàng trả: {order_number}"
 
 #: includes/emails/class-wc-email-customer-refunded-order.php:230
 msgid "We hope to see you again soon."
@@ -20407,7 +20407,7 @@ msgstr ""
 
 #: includes/emails/class-wc-email-failed-order.php:58
 msgid "[{site_title}]: Order #{order_number} has failed"
-msgstr ""
+msgstr "[{site_title}]: Đơn hàng  #{order_number} không thành công"
 
 #: includes/emails/class-wc-email-failed-order.php:68
 msgid "Order Failed: #{order_number}"
@@ -26292,7 +26292,7 @@ msgstr ""
 #: packages/woocommerce-admin/src/API/Reports/Downloads/Controller.php:218
 #: packages/woocommerce-admin/src/API/Reports/Orders/Controller.php:178
 msgid "Order Number."
-msgstr "Số đơn hàng."
+msgstr "Mã đơn hàng."
 
 #: packages/woocommerce-admin/src/API/Reports/Downloads/Controller.php:224
 msgid "User ID for the downloader."
@@ -29289,7 +29289,7 @@ msgstr ""
 #: packages/woocommerce-rest-api/src/Controllers/Version1/class-wc-rest-orders-v1-controller.php:945
 #: packages/woocommerce-rest-api/src/Controllers/Version2/class-wc-rest-orders-v2-controller.php:858
 msgid "Order number."
-msgstr "Số đơn hàng."
+msgstr "Mã đơn hàng."
 
 #: packages/woocommerce-rest-api/src/Controllers/Version1/class-wc-rest-orders-v1-controller.php:951
 #: packages/woocommerce-rest-api/src/Controllers/Version2/class-wc-rest-orders-v2-controller.php:889
@@ -32205,7 +32205,7 @@ msgstr ""
 
 #: templates/checkout/order-receipt.php:25 templates/checkout/thankyou.php:47
 msgid "Order number:"
-msgstr "Số đơn hàng."
+msgstr "Mã đơn hàng."
 
 #: templates/checkout/order-receipt.php:29 templates/checkout/thankyou.php:52
 msgid "Date:"
@@ -37198,7 +37198,7 @@ msgstr ""
 #: packages/woocommerce-blocks/build/reviews-frontend-legacy.js:6
 #: packages/woocommerce-blocks/build/reviews-frontend.js:6
 msgid "Oops!"
-msgstr ""
+msgstr "Oops!"
 
 #: packages/woocommerce-blocks/assets/js/base/components/block-error-boundary/block-error.js:11
 #: packages/woocommerce-blocks/build/active-filters-frontend.js:6
