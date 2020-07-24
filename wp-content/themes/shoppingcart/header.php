@@ -10,7 +10,12 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <?php
-$shoppingcart_settings = shoppingcart_get_theme_options(); ?>
+$shoppingcart_settings = shoppingcart_get_theme_options();
+$GLOBALS['qtsc_sba_instar_top_page'] = false;
+if (is_page_template('page-templates/shoppingcart-template.php')) {
+	$GLOBALS['qtsc_sba_instar_top_page'] = true;
+}
+?>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -22,36 +27,17 @@ wp_head(); ?>
 <link rel="stylesheet" type="text/css" href="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/css/top_page.css">
 <link rel="stylesheet" type="text/css" href="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/css/product_detail.css">
 <link rel="stylesheet" type="text/css" href="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/css/about-guide-style.css">
-
-<?php
-$GLOBALS['qtsc_sba_instar_top_page'] = false;
-if (is_page_template('page-templates/shoppingcart-template.php')) {
-	$GLOBALS['qtsc_sba_instar_top_page'] = true;
-}
-?>
-
-<?php
-if ($GLOBALS['qtsc_sba_instar_top_page']) {
-?>
-	<style>
-	#sticky-header-sticky-wrapper {
-		visibility: hidden;
-	}
-	</style>
-	<script src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/js/top_page.js"></script>
-<?php
-} else {
-?>
-	<style>
-	#page #site-content-contain {
-    	margin-top: 50px;
-	}
-	</style>
-<?php
-}
-?>
-
+<script src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/js/top_page.js"></script>
 <script src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/js/product_detail.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+<?php if ($GLOBALS['qtsc_sba_instar_top_page']) { ?>
+	<link rel="stylesheet" type="text/css" href="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/css/only-top-page.css">
+	<script src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/js/only-top-page.js"></script>
+<?php } else { ?>
+	<link rel="stylesheet" type="text/css" href="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/css/not-top-page.css">
+<?php } ?>
+
 </head>
 <body <?php body_class(); ?>>
 	<?php 

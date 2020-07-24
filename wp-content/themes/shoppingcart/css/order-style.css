@@ -3,3 +3,6 @@
     float: none;
     border:0px;
 }
+.woocommerce ul.products li.product a img{
+    max-height: 300px;
+}

@@ -13,11 +13,15 @@ button {
     padding: 0;
 }
 .top-header > #site-branding {
-    background-image: url("/wp-content/themes/shoppingcart/images/banner_bg2.png");
+    background-image: url("/wp-content/themes/shoppingcart/images/banner_bg_new.png");
     background-repeat: no-repeat;
     /* background-size: contain; */
+    background-position: top right;
     padding: 0;
     display: none;
+}
+#page {
+    background-color: #ffffff;
 }
 
 /* breadcrumb */
@@ -39,6 +43,7 @@ button {
 /* header right */
 #site-branding .header-right {
     padding-top: 22px;
+    padding-bottom: 20px;
 }
 #site-branding .header-right .he-ri-btn button {
     margin-left: 20px;
@@ -69,17 +74,17 @@ button {
 #site-branding .header-right .he-ri-logo {
     text-align: center;
     margin-top: 20px;
-    display: none;
+    /* display: none; */
 }
 #site-branding .header-right .he-ri-text {
     text-align: center;
     margin-top: 5px;
-    display: none;
+    /* display: none; */
 }
 #site-branding .header-right .he-ri-img {
     text-align: center;
     margin-top: 15px;
-    display: none;
+    /* display: none; */
 }
 #site-branding .header-right .he-ri-btn .my-cart-num {
     position: absolute;
@@ -299,14 +304,12 @@ button {
 #sticky-header-sticky-wrapper .main-navigation ul li ul li, #sticky-header-sticky-wrapper .main-navigation ul li ul {
     width: 300px;
 }
-/* #sticky-header-sticky-wrapper {
-    visibility: hidden;
-} */
 #sticky-header #site-branding {
     padding: 10px 15px 10px 0;
 }
 #sticky-header .header-right {
     padding-top: 7px;
+    padding-bottom: 7px;
     font-family: montserratRegular;
     font-size: 14px;
 }
@@ -426,7 +429,7 @@ button {
 #site-content-contain #colophon .site-info {
     background-image: url("/wp-content/themes/shoppingcart/images/footer_bg.png");
     background-position: center;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     background-size: contain;
 }
 #site-content-contain #colophon button.go-to-top .icon-bg {
@@ -445,6 +448,7 @@ button {
 #site-content-contain #content {
     background-color: #ffffff;
     padding-top: 0;
+    min-height: 45vh;
 }
 #site-content-contain #content .product-widget-wrap .widget {
     margin-bottom: 60px;
@@ -455,7 +459,7 @@ button {
 #site-content-contain #content .woocommerce div.product {
     margin-bottom: 40px;
 }
-#site-content-contain #content .woocommerce h3.widget-title, #content .area-store-list h3.widget-title {
+#site-content-contain #content .woocommerce h3.widget-title, #content h3.area-store-list-title {
     font-size: 40px;
     text-align: center;
     margin-bottom: 30px;
@@ -557,7 +561,7 @@ button {
     background-position: center;
     margin-left: -10px;
     margin-right: -10px;
-    margin-top: -9px;
+    margin-top: -11px;
     padding-top: 17px;
     text-align: center;
     font-family: robotoBold;
@@ -606,6 +610,31 @@ button {
     top: 0px;
     z-index: 999;
 }
-#page {
-    background-color: #ffffff;
+
+/* stores slider */
+.area-store-list .slick-arrow {
+    font-size: 40px;
+    cursor: pointer;
+    position: absolute;
+    top: calc(50% - 40px);
+    z-index: 999;
+}
+.area-store-list .slick-arrow:hover {
+    color: #e74054;
+}
+.area-store-list .fa-chevron-circle-left {
+    left: 65px;
+}
+.area-store-list .fa-chevron-circle-right {
+    right: 12px;
+}
+.wrap-area-store-list {
+    overflow: hidden;
+}
+.wrap-area-store-list .asl-wrap-item {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.wrap-area-store-list .asl-wrap-item figure {
+    height: 212px;
 }

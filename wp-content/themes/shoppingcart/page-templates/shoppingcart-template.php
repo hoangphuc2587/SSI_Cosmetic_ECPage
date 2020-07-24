@@ -33,9 +33,9 @@ get_header(); ?>
 </div> <!-- end .product-widget-box -->
 
 <div class="product-widget-box">
-	<div class="wrap">
+	<div class="wrap wrap-area-store-list">
+		<h3 class="area-store-list-title">DANH SÁCH CỬA HÀNG</h3>
 		<div class="shoppingcart-grid-widget-wrap five-column-grid area-store-list">
-			<h3 class="widget-title">DANH SÁCH CỬA HÀNG</h3>
             <?php
                query_posts(array(
 				   'post_type' => 'stores',
@@ -50,6 +50,8 @@ get_header(); ?>
 				  $link = get_post_meta(get_the_ID() , 'url' , true);				
 				?>
 				<div class="shoppingcart-grid-product">
+
+				<div class="asl-wrap-item">
 					<figure class="sc-grid-product-img">
 						<a href="#">
 							<img src="<?php echo $featured_img_url; ?>" alt="img">
@@ -66,6 +68,9 @@ get_header(); ?>
 							<?php echo $link;?>
 						</div>
 					</div>
+				</div>
+
+
 				</div>
 			<?php endwhile; ?>
 		</div>

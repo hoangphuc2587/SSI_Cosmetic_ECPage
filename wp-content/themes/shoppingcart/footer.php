@@ -66,17 +66,8 @@ $footer_column = $shoppingcart_settings['shoppingcart_footer_column_section'];
 <script src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/js/product_detail_priority.js"></script>
 
 <?php if (!$GLOBALS['qtsc_sba_instar_top_page']) { ?>
-<script>
-jQuery(document).ready(function(){
-	jQuery("#masthead #sticky-header-sticky-wrapper #sticky-header").addClass("show-nav-un-toppage");
-	jQuery("#masthead #sticky-header-sticky-wrapper").addClass("is-sticky");
-});
-window.onscroll = function() {
-    jQuery("#masthead #sticky-header-sticky-wrapper #sticky-header").addClass("show-nav-un-toppage");
-	jQuery("#masthead #sticky-header-sticky-wrapper").addClass("is-sticky");
-}
-</script>
+	<script src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/js/not-top-page.js"></script>
 <?php } ?>
-
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </body>
 </html>

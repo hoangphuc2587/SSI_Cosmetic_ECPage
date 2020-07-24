@@ -1,7 +1,6 @@
 jQuery(document).ready(function(){
     jQuery("#masthead #site-branding #site-detail .stm-menu-lv1 li.menu-item-has-children > a").attr('href', 'javascript:void(0)');
     jQuery("#masthead #site-branding #site-detail .stm-menu-lv1 .menu-item-has-children > ul").css("display", "none");
-    jQuery(".top-header > #site-branding").css("display", "block");
 
     jQuery("#masthead #site-branding #site-detail .stm-menu-lv1 .menu-item-has-children > a").click(function(){
         var menu_display = jQuery("#masthead #site-branding #site-detail .stm-menu-lv1 .menu-item-has-children > ul").css("display");
@@ -17,14 +16,43 @@ jQuery(document).ready(function(){
         }
     });
 
+jQuery('.area-store-list').slick({
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    nextArrow: '<i class="fa fa-chevron-circle-right"></i>',
+    prevArrow: '<i class="fa fa-chevron-circle-left"></i>',
+    responsive: [
+    {
+        breakpoint: 1024,
+        settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: false
+        }
+    },
+    {
+        breakpoint: 600,
+        settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+        }
+    },
+    {
+        breakpoint: 480,
+        settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+        }
+    }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+    ]
 });
 
-window.onscroll = function() {
-    var x = window.pageYOffset;
-    if (x > 689) {
-        jQuery("#masthead #sticky-header-sticky-wrapper").css("visibility", "visible");
-        jQuery("#masthead #sticky-header-sticky-wrapper #primary-menu li.menu-item-has-children > a").attr('href', 'javascript:void(0)');
-    } else {
-        jQuery("#masthead #sticky-header-sticky-wrapper").css("visibility", "hidden");
-    }
-}
+});
+
