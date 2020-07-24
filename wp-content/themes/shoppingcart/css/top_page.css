@@ -13,7 +13,7 @@ button {
     padding: 0;
 }
 .top-header > #site-branding {
-    background-image: url("/wp-content/themes/shoppingcart/images/banner_bg.png");
+    background-image: url("/wp-content/themes/shoppingcart/images/banner_bg_new.png");
     background-repeat: no-repeat;
     /* background-size: contain; */
     background-position: top right;
