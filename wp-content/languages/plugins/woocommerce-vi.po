@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-06-23T22:16:25+00:00\n"
-"PO-Revision-Date: 2020-07-24 05:15+0000\n"
+"PO-Revision-Date: 2020-07-24 07:35+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: woocommerce\n"
 "Language: vi\n"
@@ -23713,7 +23713,7 @@ msgstr "Tạm tính"
 #: includes/wc-template-functions.php:2181
 msgctxt "breadcrumb"
 msgid "Home"
-msgstr ""
+msgstr "Trang chủ"
 
 #: includes/wc-template-functions.php:2240
 msgid "Place order"
