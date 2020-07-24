@@ -446,6 +446,7 @@ button {
 #site-content-contain #content {
     background-color: #ffffff;
     padding-top: 0;
+    min-height: 45vh;
 }
 #site-content-contain #content .product-widget-wrap .widget {
     margin-bottom: 60px;
