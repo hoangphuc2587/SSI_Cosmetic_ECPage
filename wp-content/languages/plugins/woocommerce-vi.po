@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-06-23T22:16:25+00:00\n"
-"PO-Revision-Date: 2020-07-23 04:09+0000\n"
+"PO-Revision-Date: 2020-07-23 08:38+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: woocommerce\n"
 "Language: vi\n"
@@ -23705,7 +23705,7 @@ msgstr "Tạm tính"
 #: includes/wc-template-functions.php:2181
 msgctxt "breadcrumb"
 msgid "Home"
-msgstr ""
+msgstr "Trang chủ"
 
 #: includes/wc-template-functions.php:2240
 msgid "Place order"
@@ -32496,7 +32496,7 @@ msgstr[1] ""
 msgctxt "with first and last result"
 msgid "Showing %1$d&ndash;%2$d of %3$d result"
 msgid_plural "Showing %1$d&ndash;%2$d of %3$d results"
-msgstr[0] ""
+msgstr[0] "Hiển thị %1$d&ndash;%2$d của %3$d kết quả"
 msgstr[1] ""
 
 #. translators: 1: user display name 2: logout url
