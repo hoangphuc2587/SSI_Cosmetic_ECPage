@@ -37,7 +37,7 @@ class WC_Meta_Box_Order_Actions {
 			array(
 				'send_order_details'              => __( 'Email invoice / order details to customer', 'woocommerce' ),
 				'send_order_details_admin'        => __( 'Resend new order notification', 'woocommerce' ),
-				'regenerate_download_permissions' => __( 'Regenerate download permissions', 'woocommerce' ),
+//				'regenerate_download_permissions' => __( 'Regenerate download permissions', 'woocommerce' ),
 			)
 		);
 		?>
