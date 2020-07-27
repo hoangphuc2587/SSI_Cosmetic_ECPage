@@ -37,6 +37,10 @@
     font-family: robotoMedium;
     padding: 15px;
 }
+#content .primary-product-detail #main .product .summary .cart .button:hover {
+    border: 1px solid #e74054;
+    color: #e74054;
+}
 #content .primary-product-detail #main .product .summary .woocommerce-product-rating {
     margin-bottom: 5px;
 }
@@ -149,7 +153,13 @@
     display: none;
 }
 #content .primary-product-detail #main .product .summary .cart .quantity {
-    display: none;
+    /* display: none; */
+    margin-bottom: 15px;
+}
+#content .primary-product-detail #main .product .summary .cart .quantity::before {
+    content: "Số lượng";
+    font-size: 16px;
+    font-family: robotoMedium;
 }
 
 /* detail left (product gallery) */

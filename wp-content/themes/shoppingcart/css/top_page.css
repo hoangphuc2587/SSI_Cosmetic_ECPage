@@ -24,6 +24,14 @@ button {
     background-color: #ffffff;
 }
 
+.banner-for-small-device {
+    display: none;
+    /* margin-top: 51px; */
+}
+.banner-for-small-device img {
+    width: 100%;
+}
+
 /* breadcrumb --------------------------------------------------------------------- */
 #site-content-contain nav.woocommerce-breadcrumb {
     margin-bottom: 15px;
@@ -43,7 +51,7 @@ button {
 /* header right --------------------------------------------------------------------- */
 #site-branding .header-right {
     padding-top: 22px;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
 }
 #site-branding .header-right .he-ri-btn button {
     margin-left: 20px;
@@ -136,6 +144,19 @@ button {
     border: 1px solid #f9be0b;
 }
 /* custom button cart in banner END */
+@media only screen and (max-width: 770px) {
+    #site-branding .header-right .he-ri-img {
+        max-width: 457px;
+    }
+}
+@media only screen and (max-width: 435px) {
+    #site-branding .header-right .he-ri-btn .cart-box {
+        margin-left: 4px;
+    }
+    #site-branding .header-right .he-ri-btn button {
+        margin-left: 0;
+    }
+}
 
 /* header left ---------------------------------------------------------------------------- */
 #site-branding #site-detail #site-description {
@@ -156,7 +177,7 @@ button {
     padding-bottom: 20px;
     min-width: 280px;
     max-height: 697px;
-    min-height: 689px;
+    /* min-height: 689px; */
     position: relative;
 }
 #site-branding .wrap #site-detail .site-title-menu ul.stm-menu-lv1 {
@@ -230,9 +251,10 @@ button {
 }
 #site-branding .wrap #site-detail .carico-co-ltd {
     font-size: 21px;
-    position: absolute;
+    /* position: absolute;
     bottom: 20px;
-    width: 100%;
+    width: 100%; */
+    margin-top: 20px;
     text-align: center;
     font-family: montserratSemiBold;
 }
@@ -448,6 +470,25 @@ button {
     }
 }
 
+/* Hamburger menu----------------------------------------------------------------------- */
+#masthead .top-header .header-catalog-menu-wrap .catalog-menu-box {
+    max-width: 100%;
+    width: 100%;
+}
+#masthead .top-header .header-catalog-menu-wrap .catalog-menu-box .catalog-menu-wrap {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#masthead .top-header .header-catalog-menu-wrap .catalog-menu-box .catalog-menu-wrap .hide-menu-toggle {
+    right: 0;
+}
+@media only screen and (max-width: 480px) {
+    #masthead .top-header .header-catalog-menu-wrap .catalog-menu-box {
+        padding-right: 3px;
+    }
+}
+
 /* footer ---------------------------------------------------------------------- */
 #site-content-contain #colophon .widget-wrap {
     background-color: #fffef0;
@@ -640,6 +681,9 @@ button {
     .product-widget-box .shoppingcart-grid-product {
         padding-left: 20px;
     }
+    .area-store-list .shoppingcart-grid-product {
+        padding-left: 50px;
+    }
     #site-content-contain #content .woocommerce .shoppingcart-grid-widget-wrap .shoppingcart-grid-product .sc-grid-product-img a {
         width: auto;
         height: auto;
@@ -655,6 +699,16 @@ button {
 
 
 /* content - cua hang ------------------------------------------------------------------------------------------- */
+@media only screen and (max-width: 520px) {
+    #content h3.area-store-list-title {
+        font-size: 30px;
+    }
+}
+@media only screen and (max-width: 390px) {
+    #content h3.area-store-list-title {
+        font-size: 20px;
+    }
+}
 #content .area-store-list .si-name {
     height: 49px;
     background-image: url(/wp-content/themes/shoppingcart/images/ds_cua_hang_h1.png);

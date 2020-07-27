@@ -53,7 +53,7 @@ get_header(); ?>
 
 				<div class="asl-wrap-item">
 					<figure class="sc-grid-product-img">
-						<a href="#">
+						<a href="javascript:void(0)" style="cursor: auto;">
 							<img src="<?php echo $featured_img_url; ?>" alt="img">
 						</a>
 					</figure>

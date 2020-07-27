@@ -4,3 +4,21 @@
 .top-header > #site-branding {
     display: block;
 }
+
+@media only screen and (max-width: 767px) {
+    #site-branding .wrap #site-detail {
+        display: none;
+    }
+    .banner-for-small-device {
+        display: block;
+        margin-top: 51px;
+    }
+    .top-header > #site-branding {
+        background-image: none;
+    }
+    #site-branding .header-right .he-ri-logo,
+    #site-branding .header-right .he-ri-text,
+    #site-branding .header-right .he-ri-img {
+        display: none;
+    }
+}

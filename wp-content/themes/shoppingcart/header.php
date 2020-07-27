@@ -33,7 +33,6 @@ wp_head(); ?>
 
 <?php if ($GLOBALS['qtsc_sba_instar_top_page']) { ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/css/only-top-page.css">
-	<script src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/js/only-top-page.js"></script>
 <?php } else { ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/css/not-top-page.css">
 <?php } ?>
@@ -90,6 +89,8 @@ wp_head(); ?>
 					</div> <!-- end .top-bar -->
 				<?php endif;
 			} ?>
+
+			<div class="banner-for-small-device"><img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/banner_bg2.png' ?>" alt="image"></div>
 
 			<div id="site-branding">
 				<div class="wrap">

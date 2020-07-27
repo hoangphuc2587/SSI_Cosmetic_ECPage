@@ -16,6 +16,8 @@ jQuery(document).ready(function(){
         }
     });
 
+    jQuery("#masthead .top-header .header-catalog-menu-wrap .catalog-menu-box .catalog-menu-wrap nav.catalog-menu ul.cat-nav-menu  li.menu-item-has-children > a").attr("href", "javascript:void(0)");
+
 jQuery('.area-store-list').slick({
     dots: false,
     infinite: true,
@@ -55,4 +57,3 @@ jQuery('.area-store-list').slick({
 });
 
 });
-
