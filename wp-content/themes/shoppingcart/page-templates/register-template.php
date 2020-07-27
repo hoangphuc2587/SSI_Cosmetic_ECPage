@@ -119,14 +119,14 @@ if ($_POST) {
 
 			<div class="customer-name">
 				<div class="lastname-field">
-					<label for="lastname"><b>Họ</b></label>
+					<label for="lastname"><b>Họ</b><span class="required-icon"> *</span></label>
 					<input type="text" name="lastname" id="lastname" placeholder="Nguyen" value="<?php echo $lastname ?>">
 					<?php
 						if (!empty($lastname_err)) echo "<span class='error-msg'>" . $lastname_err . "</span>";
 					?>
 				</div>
 				<div>
-					<label for="firstname"><b>Tên</b></label>
+					<label for="firstname"><b>Tên</b><span class="required-icon"> *</span></label>
 					<input type="text" name="firstname" id="firstname" placeholder="Van A" value="<?php echo $firstname ?>">
 					<?php
 						if (!empty($firstname_err)) echo "<span class='error-msg'>" . $firstname_err . "</span>";
@@ -134,7 +134,7 @@ if ($_POST) {
 				</div>
 			</div>
 
-			<label for="username"><b>Tên đăng nhập</b></label>
+			<label for="username"><b>Tên đăng nhập</b><span class="required-icon"> *</span></label>
 			<input type="text" name="username" id="username" placeholder="Nhập tên đăng nhập" value="<?php echo $username ?>">
 			<?php
 				if (is_wp_error($result) && $result->get_error_code() == 'empty_user_login') {
@@ -150,7 +150,7 @@ if ($_POST) {
 				}
 			?>
 
-			<label for="email"><b>Email</b></label>
+			<label for="email"><b>Email</b><span class="required-icon"> *</span></label>
 			<input type="text" name="email" id="email" placeholder="Nhập email" value="<?php echo $email ?>">
 			<?php
 				if (is_wp_error($result) && $result->get_error_code() == 'existing_user_email') {
@@ -161,13 +161,13 @@ if ($_POST) {
 				
 			?>
 
-			<label for="phone"><b>SĐT</b></label>
+			<label for="phone"><b>SĐT</b><span class="required-icon"> *</span></label>
 			<input type="text" name="phone" id="phone" placeholder="Nhập số điện thoại" value="<?php echo $phone ?>">
 			<?php
 				if (!empty($phone_err)) echo "<span class='error-msg'>" . $phone_err . "</span>";
 			?>
 
-			<label for="password"><b>Mật khẩu</b></label>
+			<label for="password"><b>Mật khẩu</b><span class="required-icon"> *</span></label>
 			<input type="password" name="password" id="password" placeholder="Nhập mật khẩu" value="<?php echo $password ?>">
 			<?php
 				if (!empty($password_err)) echo "<span class='error-msg'>" . $password_err . "</span>";
@@ -180,7 +180,7 @@ if ($_POST) {
 			?>
 
 			<div class="gender">
-				<label for="gender" class="gender-label"><b>Giới tính</b></label>
+				<label for="gender" class="gender-label"><b>Giới tính</b><span class="required-icon"> *</span></label>
 				<input type="radio" id="male" name="gender" value="male" <?php if ($gender === 'male') echo "checked" ?>>
 				<label for="male" style="margin-right: 30px;">Nam</label>
 				<input type="radio" id="female" name="gender" value="female" <?php if ($gender === 'female') echo "checked" ?>>
@@ -191,7 +191,7 @@ if ($_POST) {
 			?>
 
 			<div class="birthday">
-				<label for="birthday" class="birthday-label"><b>Ngày sinh</b></label>
+				<label for="birthday" class="birthday-label"><b>Ngày sinh</b><span class="required-icon"> *</span></label>
 				<select id ="day" name = "bd-day" class="birthday-select birthday-day"></select>
 				<input type="hidden" id="old-day" value="<?php echo $day ?>">
 				<select id ="month" name = "bd-month" class="birthday-select" value="<?php echo $month1 ?>" onchange="change_month(this)"></select>

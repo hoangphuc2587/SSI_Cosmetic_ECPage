@@ -69,6 +69,10 @@
   margin-bottom: 30px;
 }
 
+.register .required-icon {
+  color: red;
+}
+
 @media screen and (max-width: 420px) {
   .register .birthday-select {
     margin-left: 10px;

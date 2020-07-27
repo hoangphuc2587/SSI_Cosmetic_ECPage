@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-06-23T22:16:25+00:00\n"
-"PO-Revision-Date: 2020-07-24 09:55+0000\n"
+"PO-Revision-Date: 2020-07-27 04:01+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: woocommerce\n"
 "Language: vi\n"
@@ -18065,7 +18065,7 @@ msgstr "Vui lòng nhập chính xác mã bưu điện/mã vùng."
 
 #: includes/class-wc-form-handler.php:191
 msgid "Address changed successfully."
-msgstr ""
+msgstr "Cập nhật địa chỉ thành công."
 
 #: includes/class-wc-form-handler.php:245
 msgid "Display name cannot be changed to email address due to privacy concern."
