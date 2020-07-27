@@ -441,7 +441,7 @@ function bbloomer_checkout_save_user_meta( $order_id ) {
 /************** add order css *************************************/
 function add_order_css() {
     wp_enqueue_style('order-css',  get_template_directory_uri() . '/css/order-style.css');
-    if(is_checkout()){
+    if(is_checkout()|| is_cart()){
         wp_enqueue_style('checkout',  get_template_directory_uri() . '/css/checkout.css');
 
     }
@@ -700,4 +700,15 @@ function remove_review_star(){
     if( ! ( $product->get_review_count() > 0 ) ) {
         remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
     }
+
+}
+add_filter( 'woocommerce_short_description', 'filter_woocommerce_short_description', 10, 1 );
+function filter_woocommerce_short_description( $post_excerpt ) {
+    if(!$post_excerpt){
+        $post_excerpt = '<div class="woocommerce-product-details__short-description"><p></p></div>';
+
+    }
+
+
+    return $post_excerpt;
 }

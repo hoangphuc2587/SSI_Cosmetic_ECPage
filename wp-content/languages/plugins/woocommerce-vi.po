@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-06-23T22:16:25+00:00\n"
-"PO-Revision-Date: 2020-07-24 07:35+0000\n"
+"PO-Revision-Date: 2020-07-27 05:50+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: woocommerce\n"
 "Language: vi\n"
@@ -11568,15 +11568,15 @@ msgstr "Thao tác"
 
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:145
 msgid "Change status to processing"
-msgstr ""
+msgstr "Đổi trạng thái sang đang xử lý"
 
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:146
 msgid "Change status to on-hold"
-msgstr ""
+msgstr "Đổi trạng thái sang đang chờ"
 
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:147
 msgid "Change status to completed"
-msgstr ""
+msgstr "Đổi trạng thái sang hoàn tất"
 
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:150
 msgid "Remove personal data"
@@ -11690,11 +11690,11 @@ msgstr "Đang chờ"
 
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:563
 msgid "Change order status to on-hold"
-msgstr ""
+msgstr "Thay đổi trạng thái đơn hàng thành đang chờ"
 
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:572
 msgid "Change order status to processing"
-msgstr ""
+msgstr "Thay đổi trạng thái đơn hàng thành đang xử lý"
 
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:580
 msgid "Completed"
@@ -11702,11 +11702,11 @@ msgstr "Hoàn tất"
 
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:581
 msgid "Change order status to completed"
-msgstr ""
+msgstr "Thay đổi trạng thái đơn hàng thành hoàn tất"
 
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:588
 msgid "Change status: "
-msgstr ""
+msgstr "Thay đổi trạng thái"
 
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:635
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:636
@@ -11758,13 +11758,13 @@ msgstr ""
 
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:682
 msgid "Order status changed by bulk edit:"
-msgstr ""
+msgstr "Trạng thái đơn hàng thay đổi bằng cách chỉnh sửa hàng loạt:"
 
 #. translators: %d: orders count
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:723
 msgid "%d order status changed."
 msgid_plural "%d order statuses changed."
-msgstr[0] ""
+msgstr[0] "%d trạng thái đơn hàng đã được thay đổi"
 msgstr[1] ""
 
 #. translators: %d: orders count
@@ -12093,11 +12093,11 @@ msgstr ""
 
 #: includes/admin/meta-boxes/class-wc-meta-box-order-actions.php:38
 msgid "Email invoice / order details to customer"
-msgstr ""
+msgstr "Email hóa đơn / chi tiết đặt hàng cho khách hàng"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-order-actions.php:39
 msgid "Resend new order notification"
-msgstr ""
+msgstr "Gửi lại thông báo đơn hàng mới"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-order-actions.php:40
 msgid "Regenerate download permissions"
@@ -12474,7 +12474,7 @@ msgstr "SL"
 #: packages/woocommerce-admin/dist/chunks/13.30a43bc4e07111ea05c9.js:171
 #: packages/woocommerce-admin/dist/chunks/analytics-report-orders.f2d90c48c3f4b0a88512.js:171
 msgid "Coupon(s)"
-msgstr ""
+msgstr "Phiếu giảm giá"
 
 #: includes/admin/meta-boxes/views/html-order-items.php:147
 msgid "Items Subtotal:"
@@ -12482,7 +12482,7 @@ msgstr "Tổng tiền sản phẩm:"
 
 #: includes/admin/meta-boxes/views/html-order-items.php:155
 msgid "Coupon(s):"
-msgstr ""
+msgstr "Giảm giá:"
 
 #: includes/admin/meta-boxes/views/html-order-items.php:164
 msgid "Fees:"
@@ -12499,7 +12499,7 @@ msgstr ""
 
 #: includes/admin/meta-boxes/views/html-order-items.php:231
 msgid "Refunded"
-msgstr ""
+msgstr "Hoàn trả"
 
 #: includes/admin/meta-boxes/views/html-order-items.php:239
 msgid "Net Total"
@@ -18065,7 +18065,7 @@ msgstr "Vui lòng nhập chính xác mã bưu điện/mã vùng."
 
 #: includes/class-wc-form-handler.php:191
 msgid "Address changed successfully."
-msgstr ""
+msgstr "Cập nhật địa chỉ thành công."
 
 #: includes/class-wc-form-handler.php:245
 msgid "Display name cannot be changed to email address due to privacy concern."
@@ -18441,7 +18441,7 @@ msgstr ""
 #. translators: 1: old order status 2: new order status
 #: includes/class-wc-order.php:367
 msgid "Order status changed from %1$s to %2$s."
-msgstr ""
+msgstr "Trạng thái đơn hàng đã được thay đổi từ %1$s sang %2$s."
 
 #. translators: %s: new order status
 #: includes/class-wc-order.php:391
@@ -18979,7 +18979,7 @@ msgstr "Hoàn tiền"
 #: includes/class-wc-post-types.php:542
 msgid "Refunded <span class=\"count\">(%s)</span>"
 msgid_plural "Refunded <span class=\"count\">(%s)</span>"
-msgstr[0] ""
+msgstr[0] "Hoàn trả <span class=\"count\">(%s)</span>"
 msgstr[1] ""
 
 #: includes/class-wc-post-types.php:545 includes/wc-order-functions.php:101
@@ -19180,7 +19180,7 @@ msgstr ""
 #: packages/woocommerce-admin/dist/chunks/analytics-report-downloads.70ac0d2cc5bff1ecc84d.js:159
 #: packages/woocommerce-admin/dist/chunks/analytics-report-orders.f2d90c48c3f4b0a88512.js:145
 msgid "Order Number"
-msgstr "Số đơn hàng."
+msgstr "Mã đơn hàng."
 
 #: includes/class-wc-privacy-exporters.php:251
 msgid "Order Date"
@@ -20354,7 +20354,7 @@ msgstr ""
 
 #: includes/emails/class-wc-email-customer-refunded-order.php:89
 msgid "Order Refunded: {order_number}"
-msgstr ""
+msgstr "Đơn hàng trả: {order_number}"
 
 #: includes/emails/class-wc-email-customer-refunded-order.php:230
 msgid "We hope to see you again soon."
@@ -20407,7 +20407,7 @@ msgstr ""
 
 #: includes/emails/class-wc-email-failed-order.php:58
 msgid "[{site_title}]: Order #{order_number} has failed"
-msgstr ""
+msgstr "[{site_title}]: Đơn hàng  #{order_number} không thành công"
 
 #: includes/emails/class-wc-email-failed-order.php:68
 msgid "Order Failed: #{order_number}"
@@ -26292,7 +26292,7 @@ msgstr ""
 #: packages/woocommerce-admin/src/API/Reports/Downloads/Controller.php:218
 #: packages/woocommerce-admin/src/API/Reports/Orders/Controller.php:178
 msgid "Order Number."
-msgstr "Số đơn hàng."
+msgstr "Mã đơn hàng."
 
 #: packages/woocommerce-admin/src/API/Reports/Downloads/Controller.php:224
 msgid "User ID for the downloader."
@@ -29289,7 +29289,7 @@ msgstr ""
 #: packages/woocommerce-rest-api/src/Controllers/Version1/class-wc-rest-orders-v1-controller.php:945
 #: packages/woocommerce-rest-api/src/Controllers/Version2/class-wc-rest-orders-v2-controller.php:858
 msgid "Order number."
-msgstr "Số đơn hàng."
+msgstr "Mã đơn hàng."
 
 #: packages/woocommerce-rest-api/src/Controllers/Version1/class-wc-rest-orders-v1-controller.php:951
 #: packages/woocommerce-rest-api/src/Controllers/Version2/class-wc-rest-orders-v2-controller.php:889
@@ -32205,7 +32205,7 @@ msgstr ""
 
 #: templates/checkout/order-receipt.php:25 templates/checkout/thankyou.php:47
 msgid "Order number:"
-msgstr "Số đơn hàng."
+msgstr "Mã đơn hàng."
 
 #: templates/checkout/order-receipt.php:29 templates/checkout/thankyou.php:52
 msgid "Date:"
@@ -37198,7 +37198,7 @@ msgstr ""
 #: packages/woocommerce-blocks/build/reviews-frontend-legacy.js:6
 #: packages/woocommerce-blocks/build/reviews-frontend.js:6
 msgid "Oops!"
-msgstr ""
+msgstr "Oops!"
 
 #: packages/woocommerce-blocks/assets/js/base/components/block-error-boundary/block-error.js:11
 #: packages/woocommerce-blocks/build/active-filters-frontend.js:6
