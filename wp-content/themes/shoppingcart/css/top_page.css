@@ -136,6 +136,13 @@ button {
     color: #fffef1;
     line-height: 15px;
 }
+#site-branding .header-right .he-ri-btn .cart-box .sx-cart-views a.wcmenucart-contents span.cvalue-plus {
+    position: absolute;
+    left: 27px;
+    top: 0;
+    color: #d42e22;
+    line-height: 15px;
+}
 #site-branding .header-right .he-ri-btn .cart-box .sx-cart-views a.wcmenucart-contents:hover {
     background-image: url("/wp-content/themes/shoppingcart/images/banner_button_active.png");
     background-repeat: no-repeat;
@@ -297,6 +304,13 @@ button {
     top: 4px;
     background-color: #d42e22;
     color: #fffef1;
+    line-height: 15px;
+}
+#sticky-header .header-right .cart-box .sx-cart-views a.wcmenucart-contents span.cvalue-plus {
+    position: absolute;
+    left: 24px;
+    top: 0;
+    color: #d42e22;
     line-height: 15px;
 }
 #sticky-header .header-right .cart-box .sx-cart-views a.wcmenucart-contents:hover {
@@ -765,7 +779,4 @@ button {
 .wrap-area-store-list .asl-wrap-item {
     padding-left: 15px;
     padding-right: 15px;
-}
-.wrap-area-store-list .asl-wrap-item figure {
-    /* height: 212px; */
 }
