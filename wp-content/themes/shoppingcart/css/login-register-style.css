@@ -84,7 +84,7 @@
 
 @media screen and (max-width: 400px) {
   .register .birthday-select {
-    margin-left: 5px;
+    margin-left: 0px;
   }
   .register .birthday-day {
     margin-left: 20px;
