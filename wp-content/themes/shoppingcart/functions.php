@@ -717,3 +717,13 @@ function filter_woocommerce_short_description( $post_excerpt ) {
 
     return $post_excerpt;
 }
+
+add_filter( 'woocommerce_shipping_fields' , 'custom_override_shipping_fields' );
+function custom_override_shipping_fields( $fields ) {
+    unset($fields['shipping_country']);
+    unset($fields['shipping']['shipping_company']);
+    unset($fields['shipping']['shipping_address_2']);
+    unset($fields['shipping']['shipping_state']);
+    unset($fields['shipping']['shipping_postcode']);
+    return $fields;
+}
