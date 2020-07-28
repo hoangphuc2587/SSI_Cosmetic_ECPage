@@ -63,6 +63,7 @@
     font-weight: bold;
     outline: none; 
     white-space: normal;
+    text-transform: uppercase;
 }
 
 .contact .btnSubmit:hover {
