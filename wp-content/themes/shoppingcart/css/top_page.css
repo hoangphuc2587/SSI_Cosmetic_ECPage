@@ -573,6 +573,9 @@ button {
         padding-top: 0 !important;
         padding-bottom: 30px;
     }
+    #site-content-contain #colophon .widget-area .f-wa-right .fwar-table .fwart-ul2 {
+        margin-right: 0;
+    }
 }
 
 /* content - san pham --------------------------------------------------------------------------- */
