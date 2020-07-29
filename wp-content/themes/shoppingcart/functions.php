@@ -727,3 +727,11 @@ function custom_override_shipping_fields( $fields ) {
     unset($fields['shipping']['shipping_postcode']);
     return $fields;
 }
+
+// Remove "(optional)" from our non required fields
+add_filter( 'woocommerce_form_field' , 'remove_optional_fields_label', 10, 4 );
+function remove_optional_fields_label( $field, $key, $args, $value ) {
+	$optional = '&nbsp;<span class="optional">(' . esc_html__( 'optional', 'woocommerce' ) . ')</span>';
+	$field = str_replace( $optional, '', $field );
+    return $field;
+}
