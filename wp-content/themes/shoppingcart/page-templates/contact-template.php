@@ -190,7 +190,7 @@ if ($_POST) {
 						</div>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row text-center">
                     <button type="submit" class="btnSubmit" >Đồng ý với "chính sách bảo mật" và gửi câu hỏi</button>
 				</div>
 			</form>
