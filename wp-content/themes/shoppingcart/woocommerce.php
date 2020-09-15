@@ -18,7 +18,7 @@ get_header();
 	} ?>
 <div class="wrap">
     <?php if(is_shop()) { ?>
-        <div id="primary-full" class="content-area">
+        <div id="primary-full" class="content-area product-list-page">
             <main id="main" class="site-main" role="main">
                 <?php woocommerce_content(); ?>
             </main><!-- end #main -->
@@ -58,7 +58,7 @@ if($product) {
     if (is_product() && $check_landing_iframe != "") { ?>
 
         <div class="iframe-container">
-            <iframe id="iFrame1"
+            <iframe id="iFrame1" name="temp_iframe"
                     onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));'
                     src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/p_detail_landing/<?php echo $check_landing_iframe; ?>"
                     title="Tsubuporon Night Pack"></iframe>

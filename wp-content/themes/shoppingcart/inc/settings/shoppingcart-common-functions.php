@@ -121,7 +121,7 @@ function shoppingcart_cart_wishlist_icon(){
 					<?php } else { ?>
 						<span class="cart-value"><?php echo wp_kses_data ( WC()->cart->get_cart_contents_count() ); ?></span>
 					<?php } ?>
-					Giỏ hàng
+					<span class="cb-a-text">Giỏ hàng</span>
 				</a>
 				<div class="my-cart-wrap">
 					<div class="my-cart"><?php esc_html_e('Total', 'shoppingcart'); ?></div>
@@ -160,10 +160,10 @@ function shoppingcart_cart_wishlist_icon(){
 	<?php } else {
 	?>
 		<button type="button" onclick="location.href='<?php echo home_url().'/login'; ?>';">
-			<i class='fa fa-lock'></i> Đăng nhập
+			<i class='fa fa-lock'></i> <span class="main-btn-dn-text">Đăng nhập</span>
 		</button>
 		<button type="button" onclick="location.href='<?php echo home_url().'/register'; ?>';">
-			<i class='fa fa-user'></i> Đăng ký
+			<i class='fa fa-user'></i> <span class="main-btn-dk-text">Đăng ký</span>
 		</button>
 	<?php } ?>
 

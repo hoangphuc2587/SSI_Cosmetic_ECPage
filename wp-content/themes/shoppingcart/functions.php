@@ -308,7 +308,7 @@ function shoppingcart_woocommerce_add_to_cart_fragment( $fragments ) {
 					<?php } else { ?>
 						<span class="cart-value"><?php echo wp_kses_data ( WC()->cart->get_cart_contents_count() ); ?></span>
 					<?php } ?>
-					Giỏ hàng
+					<span class="cb-a-text">Giỏ hàng</span>
 				</a>
 				<div class="my-cart-wrap">
 					<div class="my-cart"><?php esc_html_e('Total', 'shoppingcart'); ?></div>

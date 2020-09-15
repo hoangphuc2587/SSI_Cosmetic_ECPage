@@ -1,6 +1,6 @@
 jQuery(document).ready(function(){
     jQuery("#masthead #site-branding #site-detail .stm-menu-lv1 li.menu-item-has-children > a").attr('href', 'javascript:void(0)');
-    jQuery("#masthead #site-branding #site-detail .stm-menu-lv1 .menu-item-has-children > ul").css("display", "none");
+    //jQuery("#masthead #site-branding #site-detail .stm-menu-lv1 .menu-item-has-children > ul").css("display", "none");
 
     jQuery("#masthead #site-branding #site-detail .stm-menu-lv1 .menu-item-has-children > a").click(function(){
         var menu_display = jQuery("#masthead #site-branding #site-detail .stm-menu-lv1 .menu-item-has-children > ul").css("display");

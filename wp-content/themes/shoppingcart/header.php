@@ -23,6 +23,7 @@ if (is_page_template('page-templates/shoppingcart-template.php')) {
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php endif;
 wp_head(); ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/fonts/include_fonts.css">
 <link rel="stylesheet" type="text/css" href="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/css/top_page.css">
 <link rel="stylesheet" type="text/css" href="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/css/product_detail.css">
@@ -90,7 +91,7 @@ wp_head(); ?>
 				<?php endif;
 			} ?>
 
-			<div class="banner-for-small-device"><img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/banner_bg2.png' ?>" alt="image"></div>
+			<div class="banner-for-small-device"><img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/banner_bg_sp2.png' ?>" alt="image"></div>
 
 			<div id="site-branding">
 				<div class="wrap">
@@ -163,8 +164,9 @@ wp_head(); ?>
 								$menu_object = get_term( $locations['catalog-menu'], 'nav_menu' );
 							?>
 
-								<button class="show-menu-toggle" type="button">	
-								<span class="bars"></span>		
+								<button class="show-menu-toggle" type="button">
+									<img class="icon-hbg" src="<?php echo home_url() . "/wp-content/themes/shoppingcart/images/hbg_icon.png"; ?>" alt="img">
+									<!-- <span class="bars"></span>		 -->
 									<span class="sn-text"><?php echo esc_attr($menu_object->name);  ?></span>
 								</button>
 
@@ -189,6 +191,8 @@ wp_head(); ?>
 								</button><!-- end .menu-toggle -->
 								<?php wp_page_menu(array('menu_class' => 'menu', 'items_wrap'     => '<ul id="primary-menu" class="menu nav-menu">%3$s</ul>'));
 								} ?>
+
+								<a style="display: inline; padding: 0;" href="<?php echo home_url(); ?>"><img class="logo-sp" src="<?php echo home_url() . "/wp-content/themes/shoppingcart/images/logo_sp.png"; ?>" alt="img"></a>
 							</nav> <!-- end #site-navigation -->
 
 						<?php } ?>

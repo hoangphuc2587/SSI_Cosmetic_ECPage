@@ -6,3 +6,82 @@
         margin-top: 70px;
     }
 }
+
+@media only screen and (max-width: 767px) {
+    #sticky-header .header-right {
+        display: block !important;
+    }
+    #sticky-header .wrap {
+        height: 53px !important;
+    }
+
+    #sticky-header .header-right .cart-box {
+        position: fixed;
+        top: 8px;
+        right: 65px;
+        z-index: 10000;
+    }
+    #sticky-header .header-right .cart-box a.wcmenucart-contents {
+        height: 40px;
+        width: 48px;
+        border: 1px solid #666666 !important;
+        border-radius: unset !important;
+    }
+    #sticky-header .header-right .cart-box a.wcmenucart-contents i.fa {
+        font-size: 20px;
+        position: absolute;
+        left: 16px;
+    }
+    #sticky-header .header-right .cart-box .cb-a-text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        font-size: 7px;
+        width: 100%;
+    }
+    #sticky-header .header-right  .cart-box span.cart-value {
+        left: 5px !important;
+    }
+    
+    #sticky-header .header-right > button:nth-child(3) {
+        position: fixed;
+        top: 8px;
+        right: 120px;
+        z-index: 10000;
+        height: 40px;
+        width: 48px;
+        border: 1px solid #666666 !important;
+        border-radius: unset !important;
+    }
+    #sticky-header .header-right > button:nth-child(3) i.fa {
+        font-size: 20px;
+    }
+    #sticky-header .header-right > button:nth-child(3) span.main-btn-dk-text {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        font-size: 7px;
+        width: 100%;
+    }
+
+    #sticky-header .header-right > button:nth-child(2) {
+        position: fixed;
+        top: 8px;
+        right: 175px;
+        z-index: 10000;
+        height: 40px;
+        width: 48px;
+        border: 1px solid #666666 !important;
+        border-radius: unset !important;
+    }
+    #sticky-header .header-right > button:nth-child(2) i.fa {
+        font-size: 20px;
+    }
+    #sticky-header .header-right > button:nth-child(2) span.main-btn-dn-text {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        font-size: 7px;
+        width: 100%;
+    }
+}

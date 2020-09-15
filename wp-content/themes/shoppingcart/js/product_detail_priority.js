@@ -42,6 +42,15 @@ jQuery(document).ready(function(){
         }
     });
 
+    // jQuery('.iframe-container #iFrame1').contents().find('.tsubuporon_night_pack_ldp .bb-button span').click(function() {
+    //     alert('click');
+    // });
+
+    // jQuery('[name=temp_iframe]').contents().find('.tsubuporon_night_pack_ldp .bb-button span').click(function() {
+    //     alert('clicked');
+    //    jQuery("input[name='add-to-cart']").click();
+    // });
+
 });
 
 function getTranslate3dX(el){
