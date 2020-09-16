@@ -58,10 +58,10 @@ if($product) {
     if (is_product() && $check_landing_iframe != "") { ?>
 
         <div class="iframe-container">
-            <iframe id="iFrame1" name="temp_iframe"
+            <iframe id="iFrame1"
                     onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));'
                     src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/p_detail_landing/<?php echo $check_landing_iframe; ?>"
-                    title="Tsubuporon Night Pack"></iframe>
+                    title="Landing page"></iframe>
         </div>
 
     <?php }
@@ -71,3 +71,16 @@ if($product) {
 <?php
 get_footer();
 ?>
+
+<script type="text/javascript">
+    jQuery("#iFrame1").on("load", function(){
+        
+      jQuery(this).contents().find('.bb-button span').click(function(){
+        jQuery('[name=add-to-cart]').trigger("click");
+      });
+    });
+
+    jQuery("#iFrame1").contents().find('.bb-button span').click(function(){
+        jQuery('[name=add-to-cart]').trigger("click");
+    });
+</script>

@@ -27,9 +27,62 @@ button {
 .banner-for-small-device {
     display: none;
     /* margin-top: 51px; */
+    background-image: url("/wp-content/themes/shoppingcart/images/banner_bg_sp.png");
+    /* background-repeat: no-repeat; */
+    /* background-size: contain; */
+    /* background-position: left top; */
+    /* width: 750px; */
+    height: 357px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
-.banner-for-small-device img {
+.banner-for-small-device .bfsd-img {
+    /* text-align: center; */
+    margin-top: 16px;
+    /* display: none; */
+    width: 442px;
+    height: 324px;
+    border: 1px solid #f9be0b;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    position: relative;
+}
+.banner-for-small-device .bfsd-img .bfsdi-txt1 {
+    position: absolute;
+    top: -12px;
     width: 100%;
+    text-align: center;
+}
+.banner-for-small-device .bfsd-img .bfsdi-txt2 {
+    margin-top: 28px;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.banner-for-small-device .bfsd-img .bfsdi-txt3 {
+    margin-top: 7px;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.banner-for-small-device .bfsd-img .bfsdi-product {
+    display: flex;
+    margin-top: 11px;
+}
+.banner-for-small-device .bfsd-img .bfsdi-product .bfsdip-l {
+    width: 53.5%;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 15px;
+    padding-right: 7px;
+    justify-content: center;
+}
+.banner-for-small-device .bfsd-img .bfsdi-product .bfsdip-r {
+    width: 46.5%;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 7px;
+    padding-right: 15px;
 }
 
 /* breadcrumb --------------------------------------------------------------------- */
@@ -91,8 +144,34 @@ button {
 }
 #site-branding .header-right .he-ri-img {
     text-align: center;
-    margin-top: 15px;
+    margin-top: 32px;
     /* display: none; */
+    width: 457px;
+    height: 334px;
+    border: 1px solid #f9be0b;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    position: relative;
+}
+#site-branding .header-right .he-ri-img .hri-txt1 {
+    position: absolute;
+    top: -17px;
+    width: 100%;
+    text-align: center;
+}
+#site-branding .header-right .he-ri-img .hri-txt2 {
+    margin-top: 22px;
+}
+#site-branding .header-right .he-ri-img .hri-txt3 {
+    margin-top: 7px;
+}
+#site-branding .header-right .he-ri-img .hri-product {
+    display: flex;
+    margin-top: 11px;
+}
+#site-branding .header-right .he-ri-img .hri-product .hrip-l, #site-branding .header-right .he-ri-img .hri-product .hrip-r {
+    width: 50%;
+    text-align: center;
 }
 #site-branding .header-right .he-ri-btn .my-cart-num {
     position: absolute;
@@ -886,27 +965,22 @@ button {
 }
 
 /* fix shop page (product list) START */
-.product-list-page {
-    margin-top: -50px;
-}
-@media only screen and (max-width: 1158px) {
-    .product-list-page {
-        margin-top: -55px;
-    }
+.product-list-page #main div.page-description {
+    display: none;
 }
 @media only screen and (max-width: 980px) {
     .product-list-page {
-        margin-top: -20px;
+        margin-top: 100px;
     }
 }
 @media only screen and (max-width: 768px) {
     .product-list-page {
-        margin-top: -70px;
+        margin-top: 0;
     }
 }
 @media only screen and (max-width: 600px) {
     .product-list-page {
-        margin-top: -110px;
+        margin-top: -45px;
     }
 }
 /* fix shop page (product list) END */

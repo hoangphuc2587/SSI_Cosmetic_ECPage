@@ -91,7 +91,27 @@ wp_head(); ?>
 				<?php endif;
 			} ?>
 
-			<div class="banner-for-small-device"><img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/banner_bg_sp2.png' ?>" alt="image"></div>
+			<div class="banner-for-small-device">
+				<div class="bfsd-img">
+					<div class="bfsdi-txt1">
+						<img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/banner_product_txt1sp.png' ?>" alt="img" />
+					</div>
+					<div class="bfsdi-txt2">
+						<img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/banner_product_txt2sp.png' ?>" alt="img" />
+					</div>
+					<div class="bfsdi-txt3">
+						<img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/banner_product_txt3.png' ?>" alt="img" />
+					</div>
+					<div class="bfsdi-product">
+						<div class="bfsdip-l">
+							<img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/banner_product_1.png' ?>" alt="img" />
+						</div>
+						<div class="bfsdip-r">
+							<img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/banner_product_2.png' ?>" alt="img" />
+						</div>
+					</div>
+				</div>
+			</div>
 
 			<div id="site-branding">
 				<div class="wrap">
@@ -121,7 +141,25 @@ wp_head(); ?>
 						<div class="he-ri-btn"><?php do_action ('shoppingcart_cart_wishlist_icon_display'); ?></div>
 						<div class="he-ri-logo"><img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/banner_logo.png' ?>" alt="img" /></div>
 						<div class="he-ri-text"><img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/banner_text.png' ?>" alt="img" /></div>
-						<div class="he-ri-img"><img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/banner_product.png' ?>" alt="img" /></div>
+						<div class="he-ri-img">
+							<div class="hri-txt1">
+								<img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/banner_product_txt1.png' ?>" alt="img" />
+							</div>
+							<div class="hri-txt2">
+								<img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/banner_product_txt2.png' ?>" alt="img" />
+							</div>
+							<div class="hri-txt3">
+								<img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/banner_product_txt3.png' ?>" alt="img" />
+							</div>
+							<div class="hri-product">
+								<div class="hrip-l">
+									<img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/banner_product_1.png' ?>" alt="img" />
+								</div>
+								<div class="hrip-r">
+									<img src="<?php echo home_url() . '/wp-content/themes/shoppingcart/images/banner_product_2.png' ?>" alt="img" />
+								</div>
+							</div>
+						</div>
 
 					</div> <!-- end .header-right -->
 				</div><!-- end .wrap -->	
@@ -283,7 +321,7 @@ wp_head(); ?>
 </header> <!-- end #masthead -->
 
 <!-- Main Page Start ============================================= -->
-<div id="site-content-contain"class="site-content-contain">
+<div id="site-content-contain" class="site-content-contain<?php if(is_shop()) { echo ' scc-product-list-page'; } ?>">
 	<div id="content" class="site-content">
 	<?php
 	

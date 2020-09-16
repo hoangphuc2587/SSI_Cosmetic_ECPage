@@ -191,7 +191,7 @@
     padding: 10px;
     background-color: #ffffff;
     display: inline-block;
-    /* cursor: pointer; */
+    cursor: pointer;
 }
 #wrap_content .banner-bottom .bb-right {
     text-align: center;

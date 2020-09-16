@@ -10,8 +10,10 @@
         display: none;
     }
     .banner-for-small-device {
-        display: block;
+        /* display: block; */
         margin-top: 54px;
+        display: flex;
+        flex-direction: row-reverse;
     }
     .top-header > #site-branding {
         background-image: none;
