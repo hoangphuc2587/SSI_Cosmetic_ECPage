@@ -100,12 +100,24 @@ if ($_POST) {
 		'gender'		=> $gender,
 		'birthday'		=> $day . "/" . $month1 . "/" . $year,
 	);
-
+    $args = array(
+        'user_login' 	=> $username,
+        'user_email' 	=> $email,
+        'user_pass' 	=> $password,
+        'user_phone'	=> $phone,
+        'role' 			=> 'customer',
+        'first_name'	=> $firstname,
+        'last_name'		=> $lastname,
+        'gender'		=> $gender,
+        'birthday'		=> $day . "/" . $month1 . "/" . $year,
+    );
 	if (!$hasErr) {
-		$result = wp_insert_user($userdata);
-		if (!is_wp_error($result) && $result) {
+
+        $result =   wc_create_new_customer($email,$username,$password,$args);
+            if (!is_wp_error($result) && $result) {
 			echo "<script>window.location = '".site_url()."/login'</script>";
-		} 
+		}
+
 	}
 }
 ?>
