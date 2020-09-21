@@ -735,3 +735,14 @@ function remove_optional_fields_label( $field, $key, $args, $value ) {
 	$field = str_replace( $optional, '', $field );
     return $field;
 }
+
+/************** Redirect from my-account page to login page if user not login *************************************/
+function custom_redirect() {
+    global $wp;
+
+    if( !is_user_logged_in() && $wp->request == 'my-account' ) {
+        wp_redirect( site_url( 'login' ) );
+        exit;
+    }
+}
+add_action ('template_redirect', 'custom_redirect');

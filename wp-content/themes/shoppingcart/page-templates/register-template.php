@@ -113,7 +113,7 @@ if ($_POST) {
     );
 	if (!$hasErr) {
 
-        $result =   wc_create_new_customer($email,$username,$password,$args);
+        $result = wc_create_new_customer($email, $username, $password, $args);
             if (!is_wp_error($result) && $result) {
 			echo "<script>window.location = '".site_url()."/login'</script>";
 		}
@@ -149,24 +149,21 @@ if ($_POST) {
 			<label for="username"><b>Tên đăng nhập</b><span class="required-icon"> *</span></label>
 			<input type="text" name="username" id="username" placeholder="Nhập tên đăng nhập" value="<?php echo $username ?>">
 			<?php
-				if (is_wp_error($result) && $result->get_error_code() == 'empty_user_login') {
+				if (is_wp_error($result) && $result->get_error_code() == 'registration-error-invalid-username') {
 					echo "<span class='error-msg'>Vui lòng nhập tên đăng nhập</span>";
 				} else {
 					if (!empty($username_err)) echo "<span class='error-msg'>" . $username_err . "</span>";
 				}
-				if (is_wp_error($result) && $result->get_error_code() == 'user_login_too_long') {
-					echo "<span class='error-msg'>Username không được quá 60 ký tự</span>";
-				}
-				if (is_wp_error($result) && $result->get_error_code() == 'existing_user_login') {
-					echo "<span class='error-msg'>Rất tiếc, Tên đăng nhập đã tồn tại!</span>";
+				if (is_wp_error($result) && $result->get_error_code() == 'registration-error-username-exists') {
+					echo "<span class='error-msg'>Xin lỗi, Tên đăng nhập đã tồn tại!</span>";
 				}
 			?>
 
 			<label for="email"><b>Email</b><span class="required-icon"> *</span></label>
 			<input type="text" name="email" id="email" placeholder="Nhập email" value="<?php echo $email ?>">
 			<?php
-				if (is_wp_error($result) && $result->get_error_code() == 'existing_user_email') {
-					echo "<span class='error-msg'>Rất tiếc, Email đã tồn tại!</span>";
+				if (is_wp_error($result) && $result->get_error_code() == 'registration-error-email-exists') {
+					echo "<span class='error-msg'>Xin lỗi, Email đã tồn tại!</span>";
 				} else {
 					if (!empty($email_err)) echo "<span class='error-msg'>" . $email_err . "</span>";
 				}
