@@ -65,7 +65,7 @@ get_header(); ?>
 						</div>
 						<div class="sic-ws">
 							<img src="<?php echo home_url().'/wp-content/themes/shoppingcart/images/icon_globe.png'; ?>" alt="img" />
-							<?php echo $link;?>
+							<a href="<?php echo $link;?>"><?php echo $link; ?></a>
 						</div>
 					</div>
 				</div>

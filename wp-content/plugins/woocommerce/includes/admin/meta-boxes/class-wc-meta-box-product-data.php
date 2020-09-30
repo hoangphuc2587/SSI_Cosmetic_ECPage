@@ -436,7 +436,8 @@ class WC_Meta_Box_Product_Data {
         update_post_meta( $post_id , 'uses', isset( $_POST['uses'] ) ? wc_clean( wp_unslash( $_POST['uses'] ) ) : null );
         update_post_meta( $post_id , 'component', isset( $_POST['component'] ) ? wc_clean( wp_unslash( $_POST['component'] ) ) : null );
         update_post_meta( $post_id , 'usage', isset( $_POST['usage'] ) ?  $_POST['usage']  : null );
-        update_post_meta( $post_id , 'note', isset( $_POST['note'] ) ?  $_POST['note']  : null );
+		update_post_meta( $post_id , 'note', isset( $_POST['note'] ) ?  $_POST['note']  : null );
+		update_post_meta( $post_id , 'order', isset( $_POST['order'] ) ?  $_POST['order']  : null );
 
 		// phpcs:enable WordPress.Security.NonceVerification.Missing
 	}

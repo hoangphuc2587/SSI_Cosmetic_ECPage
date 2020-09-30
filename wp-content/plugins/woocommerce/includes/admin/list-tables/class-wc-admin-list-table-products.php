@@ -127,6 +127,7 @@ class WC_Admin_List_Table_Products extends WC_Admin_List_Table {
 		$show_columns['price']       = __( 'Price', 'woocommerce' );
 		$show_columns['product_cat'] = __( 'Categories', 'woocommerce' );
 		$show_columns['product_tag'] = __( 'Tags', 'woocommerce' );
+		$show_columns['order'] = __( 'Thứ tự', 'woocommerce' );
 		$show_columns['featured']    = '<span class="wc-featured parent-tips" data-tip="' . esc_attr__( 'Featured', 'woocommerce' ) . '">' . __( 'Featured', 'woocommerce' ) . '</span>';
 		$show_columns['date']        = __( 'Date', 'woocommerce' );
 
@@ -214,6 +215,13 @@ class WC_Admin_List_Table_Products extends WC_Admin_List_Table {
 	 */
 	protected function render_price_column() {
 		echo $this->object->get_price_html() ? wp_kses_post( $this->object->get_price_html() ) : '<span class="na">&ndash;</span>';
+	}
+
+	/**
+	 * Render columm: order.
+	 */
+	protected function render_order_column() {
+		echo $this->object->get_order_html() ? wp_kses_post( $this->object->get_order_html() ) : '<span class="na">&ndash;</span>';
 	}
 
 	/**

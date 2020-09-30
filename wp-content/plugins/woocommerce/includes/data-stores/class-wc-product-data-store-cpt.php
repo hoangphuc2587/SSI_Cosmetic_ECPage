@@ -227,6 +227,11 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
         $meta_values = get_post_meta( $product->get_id(), 'note',  true );
         if ( $meta_values ) {
             $product->set_note( $meta_values );
+		}
+		
+		$meta_values = get_post_meta( $product->get_id(), 'order',  true );
+        if ( $meta_values ) {
+            $product->set_order( $meta_values );
         }
     }
 

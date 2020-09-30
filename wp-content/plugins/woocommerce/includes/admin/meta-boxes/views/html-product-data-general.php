@@ -115,6 +115,15 @@ defined( 'ABSPATH' ) || exit;
                 'label'     => __( 'Lưu ý', 'woocommerce' ),
                 'style'     => 'height: 10rem',
             )
+		);
+		
+		woocommerce_wp_text_input(
+            array(
+                'id'        => 'order',
+                'name'      => 'order',
+                'value'     => $product_object->get_order( 'edit' ),
+                'label'     => __( 'Thứ tự', 'woocommerce' ),
+            )
         );
 
 

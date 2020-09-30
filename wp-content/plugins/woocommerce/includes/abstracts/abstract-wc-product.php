@@ -108,7 +108,8 @@ class WC_Product extends WC_Abstract_Legacy_Product {
         'uses'               => '',
         'component'          => '',
         'usage'              => '',
-        'note'               => '',
+		'note'               => '',
+		'order'               => '',
 	);
 
 	/**
@@ -1774,6 +1775,25 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 		return apply_filters( 'woocommerce_get_price_html', $price, $this );
 	}
 
+		/**
+	 * Returns the price in html format.
+	 *
+	 * @param string $deprecated Deprecated param.
+	 *
+	 * @return string
+	 */
+	public function get_order_html( $deprecated = '' ) {
+		// if ( '' === $this->get_price() ) {
+		// 	$price = apply_filters( 'woocommerce_empty_price_html', '', $this );
+		// } elseif ( $this->is_on_sale() ) {
+		// 	$price = wc_format_sale_price( wc_get_price_to_display( $this, array( 'price' => $this->get_regular_price() ) ), wc_get_price_to_display( $this ) ) . $this->get_price_suffix();
+		// } else {
+		// 	$price = wc_price( wc_get_price_to_display( $this ) ) . $this->get_price_suffix();
+		// }
+
+		return apply_filters( 'woocommerce_get_order_html', $this->get_order(), $this );
+	}
+
 	/**
 	 * Get product name with SKU or ID. Used within admin.
 	 *
@@ -2090,5 +2110,12 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 
     public function get_note( $context = 'view' ) {
         return $this->get_prop( 'note', $context );
+	}
+	
+	public function set_order( $context ) {
+        $this->set_prop( 'order', $context);
+    }
+    public function get_order( $context = 'view' ) {
+        return $this->get_prop( 'order', $context );
     }
 }

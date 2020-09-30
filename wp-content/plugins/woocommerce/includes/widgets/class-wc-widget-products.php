@@ -93,6 +93,9 @@ class WC_Widget_Products extends WC_Widget {
 		$show                        = ! empty( $instance['show'] ) ? sanitize_title( $instance['show'] ) : $this->settings['show']['std'];
 		$orderby                     = ! empty( $instance['orderby'] ) ? sanitize_title( $instance['orderby'] ) : $this->settings['orderby']['std'];
 		$order                       = ! empty( $instance['order'] ) ? sanitize_title( $instance['order'] ) : $this->settings['order']['std'];
+		$orderby = 'order';
+		$order = 'asc';
+		
 		$product_visibility_term_ids = wc_get_product_visibility_term_ids();
 
 		$query_args = array(
@@ -164,6 +167,10 @@ class WC_Widget_Products extends WC_Widget {
 				$query_args['meta_key'] = 'total_sales'; // WPCS: slow query ok.
 				$query_args['orderby']  = 'meta_value_num';
 				break;
+			case 'order':
+				$query_args['meta_key'] = 'order';
+				$query_args['orderby']  = 'meta_value_num';
+				break;
 			default:
 				$query_args['orderby'] = 'date';
 		}
@@ -186,7 +193,7 @@ class WC_Widget_Products extends WC_Widget {
 
 		ob_start();
 
-		$products = $this->get_products( $args, $instance );
+		$products = $this->get_products( $args, $instance ); //echo '<pre>'; var_dump($products); die;
 		if ( $products && $products->have_posts() ) {
 			$this->widget_start( $args, $instance );
 

@@ -44,7 +44,7 @@ $footer_column = $shoppingcart_settings['shoppingcart_footer_column_section'];
 	<?php } ?>
 	<div class="site-info">
 	<div class="wrap">
-			<img src="<?php echo home_url().'/wp-content/themes/shoppingcart/images/footer_bct.png'; ?>" alt="img" />
+			<img style="visibility: hidden;" src="<?php echo home_url().'/wp-content/themes/shoppingcart/images/footer_bct.png'; ?>" alt="img" />
 			<div style="clear:both;"></div>
 		</div> <!-- end .wrap -->
 	</div> <!-- end .site-info -->
@@ -71,5 +71,8 @@ $footer_column = $shoppingcart_settings['shoppingcart_footer_column_section'];
 	<script src="<?php echo home_url(); ?>/wp-content/themes/shoppingcart/js/only-top-page.js"></script>
 <?php } ?>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+	window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-179313110-1');
+</script>
 </body>
 </html>
