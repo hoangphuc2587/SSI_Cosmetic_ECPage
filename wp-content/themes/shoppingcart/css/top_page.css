@@ -799,11 +799,13 @@ button {
 }
 #site-content-contain #content .woocommerce div.product .sc-grid-product-content .sgpc-short {
     font-family: robotoLight;
+    margin-bottom: 10px; 
+    color: #555;
     font-size: 16px;
+    display: -webkit-box;
     height: 50px;
     -webkit-line-clamp: 2;
     overflow: hidden;
-    display: -webkit-box;
     -webkit-box-orient: vertical;
 }
 #site-content-contain #content .woocommerce div.product span.price .woocommerce-Price-amount .woocommerce-Price-currencySymbol {

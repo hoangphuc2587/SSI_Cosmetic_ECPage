@@ -30,17 +30,16 @@ ul.products li.product .woocommerce-loop-product__title{
 ul.products li.product .woocommerce-loop-product__title:hover{
     color: #e74054 !important;
 }
-.woocommerce-product-details__short-description p{
+.woocommerce-product-details__short-description{
     font-family: robotoLight;
+    margin-bottom: 10px; 
+    color: #555;
     font-size: 16px;
-    /*margin-bottom: 5px;*/
-    color: #555555;
-    height: 53px;
     display: -webkit-box;
-    -webkit-box-orient: vertical;
+    height: 50px;
     -webkit-line-clamp: 2;
     overflow: hidden;
-    margin: 5px 0 5px;
+    -webkit-box-orient: vertical;
 }
 .archive-imgae-wrap{
     position: relative;

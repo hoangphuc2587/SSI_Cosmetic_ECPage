@@ -27,6 +27,8 @@ if ( ! $short_description ) {
 	return;
 }
 
+$short_description = strip_tags($short_description); // disable html tags in paragragh
+
 ?>
 <div class="woocommerce-product-details__short-description">
 	<?php echo $short_description; // WPCS: XSS ok. ?>

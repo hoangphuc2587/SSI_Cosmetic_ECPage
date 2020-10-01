@@ -636,7 +636,8 @@ function set_custom_edit_stores_columns($columns) {
     $columns = array(
         'cb' => $columns['cb'],
         'image' => __( 'Hình ảnh' ),
-        'store_name' => __( 'Tên cửa hàng' ),
+		'store_name' => __( 'Tên cửa hàng' ),
+		'order' => __( 'Thứ tự' ),
         'content' => __( 'Địa chỉ' ),
         'url' => __( 'URL' ),
     );
@@ -652,6 +653,9 @@ function smashing_stores_column( $column, $post_id ) {
     }
     else if ( 'url' === $column ) {
         echo get_post_meta($post_id, 'url', true);
+	}
+	else if ( 'order' === $column ) {
+        echo get_post_meta($post_id, 'order', true);
     }
     else if ( 'image' === $column ) {
         echo get_the_post_thumbnail( $post_id, array(80, 80) );

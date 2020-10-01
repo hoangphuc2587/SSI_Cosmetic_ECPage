@@ -37,11 +37,13 @@ get_header(); ?>
 		<h3 class="area-store-list-title">DANH SÁCH CỬA HÀNG</h3>
 		<div class="shoppingcart-grid-widget-wrap five-column-grid area-store-list">
             <?php
-               query_posts(array(
-				   'post_type' => 'stores',
-				   'post_status' => 'publish',
-				   'order'    => 'ASC'
-			   ));
+               	query_posts(array(
+					'post_type' => 'stores',
+					'post_status' => 'publish',
+					'order'     => 'ASC',
+					'meta_key' => 'order',
+					'orderby' => 'meta_value',
+				))
             ?>
 
 			<?php while (have_posts()) : the_post(); ?>
