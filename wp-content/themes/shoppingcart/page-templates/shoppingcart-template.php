@@ -42,7 +42,7 @@ get_header(); ?>
 					'post_status' => 'publish',
 					'order'     => 'ASC',
 					'meta_key' => 'order',
-					'orderby' => 'meta_value',
+					'orderby' => 'meta_value_num',
 				))
             ?>
 

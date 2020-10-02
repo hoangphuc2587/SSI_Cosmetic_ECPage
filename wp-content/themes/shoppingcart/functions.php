@@ -741,6 +741,7 @@ function remove_optional_fields_label( $field, $key, $args, $value ) {
 }
 
 /************** Redirect from my-account page to login page if user not login *************************************/
+add_action ('template_redirect', 'custom_redirect');
 function custom_redirect() {
     global $wp;
 
@@ -749,4 +750,23 @@ function custom_redirect() {
         exit;
     }
 }
-add_action ('template_redirect', 'custom_redirect');
+
+add_filter( 'woocommerce_get_catalog_ordering_args', 'misha_custom_product_sorting' );
+ 
+function misha_custom_product_sorting( $args ) {
+ 
+	// Sort alphabetically
+	// if ( isset( $_GET['orderby'] ) && 'title' === $_GET['orderby'] ) {
+	// 	$args['orderby'] = 'title';
+	// 	$args['order'] = 'asc';
+	// }
+ 
+	// Show products in stock first
+	if( !isset( $_GET['orderby'] ) || 'menu_order' === $_GET['orderby']) {
+		$args['meta_key'] = 'order';
+		$args['orderby'] = array( 'meta_value_num' => 'ASC' );
+	}
+ 
+	return $args;
+ 
+}
