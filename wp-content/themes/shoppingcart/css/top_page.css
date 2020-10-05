@@ -830,8 +830,9 @@ button {
     height: 298px;
 }
 #site-content-contain #content .woocommerce .sc-grid-product-img img {
-    width: 100%;
-    height: 100%;
+    width: 272px;
+    height: 298px;
+    object-fit: cover;
 }
 #content .area-store-list .sc-grid-product-img img {
     width: 100%;

@@ -64,6 +64,9 @@ ul.products li.product .woocommerce-loop-product__title:hover{
 .woocommerce ul.products li.product a img {
     display: block;
     transition: all ease 0.5s;
+    /* width: 272px; */
+    height: 298px;
+    object-fit: cover;
 }
 
 .woocommerce ul.products li.product .archive-imgae-wrap:hover img {
