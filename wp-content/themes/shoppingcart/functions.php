@@ -740,7 +740,7 @@ function remove_optional_fields_label( $field, $key, $args, $value ) {
     return $field;
 }
 
-/************** Redirect from my-account page to login page if user not login *************************************/
+/************** Redirect from my-account page to login page if user not login *************************/
 add_action ('template_redirect', 'custom_redirect');
 function custom_redirect() {
     global $wp;
@@ -751,22 +751,51 @@ function custom_redirect() {
     }
 }
 
+/************** Sorting product by order *************************/
 add_filter( 'woocommerce_get_catalog_ordering_args', 'misha_custom_product_sorting' );
- 
 function misha_custom_product_sorting( $args ) {
- 
-	// Sort alphabetically
-	// if ( isset( $_GET['orderby'] ) && 'title' === $_GET['orderby'] ) {
-	// 	$args['orderby'] = 'title';
-	// 	$args['order'] = 'asc';
-	// }
- 
-	// Show products in stock first
+	// Show products sort by order
 	if( !isset( $_GET['orderby'] ) || 'menu_order' === $_GET['orderby']) {
 		$args['meta_key'] = 'order';
 		$args['orderby'] = array( 'meta_value_num' => 'ASC' );
 	}
- 
 	return $args;
- 
+}
+
+
+/************** Hide edit slug button when edit product *************************/
+add_action('admin_head', 'posttype_admin_css');
+function posttype_admin_css() {
+	global $post_type;
+	global $action;
+	if ($post_type == 'product' && $action == 'edit') {
+		echo '<style type="text/css">#edit-slug-buttons{display: none;}</style>';
+	}
+}
+
+
+/************** Change slug input to readonly when quick edit *************************/
+add_action( 'admin_head-edit.php', 'custom_quick_edit' );
+function custom_quick_edit() {    
+    global $current_screen;
+    if( 'edit-product' != $current_screen->id )
+        return;
+    ?>
+    <script type="text/javascript">         
+        jQuery(document).ready( function($) {
+            $('span:contains("Slug")').each(function (i) {
+                $(this).parent().find("input").attr('readonly', true);;
+            });
+            $('span:contains("Password")').each(function (i) {
+                $(this).parent().parent().remove();
+            });
+            // $('span:contains("Date")').each(function (i) {
+            //     $(this).parent().remove();
+            // });
+            // $('.inline-edit-date').each(function (i) {
+            //     $(this).remove();
+            // });
+        });    
+    </script>
+    <?php
 }
