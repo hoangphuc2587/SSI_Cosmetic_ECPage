@@ -762,8 +762,8 @@ function misha_custom_product_sorting( $args ) {
 	return $args;
 }
 
-
 /************** Hide edit slug button when edit product *************************/
+/*
 add_action('admin_head', 'posttype_admin_css');
 function posttype_admin_css() {
 	global $post_type;
@@ -772,9 +772,10 @@ function posttype_admin_css() {
 		echo '<style type="text/css">#edit-slug-buttons{display: none;}</style>';
 	}
 }
-
+*/
 
 /************** Change slug input to readonly when quick edit *************************/
+/*
 add_action( 'admin_head-edit.php', 'custom_quick_edit' );
 function custom_quick_edit() {    
     global $current_screen;
@@ -799,3 +800,4 @@ function custom_quick_edit() {
     </script>
     <?php
 }
+*/
