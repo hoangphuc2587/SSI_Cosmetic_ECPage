@@ -54,7 +54,7 @@ get_header(); ?>
 				<div class="shoppingcart-grid-product">
 
 				<div class="asl-wrap-item">
-					<figure class="sc-grid-product-img">
+					<figure class="sc-grid-store-img">
 						<a href="javascript:void(0)" style="cursor: auto;">
 							<img src="<?php echo $featured_img_url; ?>" alt="img">
 						</a>
