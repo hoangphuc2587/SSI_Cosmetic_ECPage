@@ -22,15 +22,15 @@
 #content .flex-viewport {
     height: 450px !important;
 }
-#content .wp-post-image {
-    max-height: 450px;
-    width: auto;
-}
-#content .flex-active-slide {
+#content .woocommerce-product-gallery__image {
     height: 450px !important;
     display: flex !important;
     justify-content: center;
     align-items: center;
+}
+#content .woocommerce-product-gallery__image img {
+    height: 450px;
+    width: auto;
 }
 #content .primary-product-detail #main .product .woocommerce-product-gallery ol.flex-control-nav li {
     max-height: 200px;
@@ -43,8 +43,16 @@
     max-height: 200px;
     width: auto;
 }
+@media only screen and (max-width: 1024px) {
+    #content .primary-product-detail #main .product .woocommerce-product-gallery ol.flex-control-nav li {
+        max-height: 152px;
+    }
+    #content .primary-product-detail #main .product .woocommerce-product-gallery ol.flex-control-nav li img {
+        max-height: 152px;
+    }
+}
 @media only screen and (max-width: 875px) {
-    #content .flex-viewport, #content .flex-active-slide, #content .wp-post-image {
+    #content .flex-viewport, #content .flex-active-slide, #content .woocommerce-product-gallery__image img {
         height: 400px !important;
     }
 }
@@ -59,12 +67,32 @@
     }
 }
 @media only screen and (max-width: 430px) {
-    #content .flex-viewport, #content .flex-active-slide, #content .wp-post-image {
+    #content .flex-viewport, #content .flex-active-slide, #content .woocommerce-product-gallery__image img {
         height: 394px !important;
+    }
+    #content .primary-product-detail #main .product .woocommerce-product-gallery ol.flex-control-nav li {
+        max-height: 126px;
+    }
+    #content .primary-product-detail #main .product .woocommerce-product-gallery ol.flex-control-nav li img {
+        max-height: 126px;
+    }
+}
+@media only screen and (max-width: 375px) {
+    #content .primary-product-detail #main .product .woocommerce-product-gallery ol.flex-control-nav li {
+        max-height: 96px;
+    }
+    #content .primary-product-detail #main .product .woocommerce-product-gallery ol.flex-control-nav li img {
+        max-height: 96px;
     }
 }
 @media only screen and (max-width: 330px) {
-    #content .flex-viewport, #content .flex-active-slide, #content .wp-post-image {
+    #content .primary-product-detail #main .product .woocommerce-product-gallery ol.flex-control-nav li {
+        max-height: 83px;
+    }
+    #content .primary-product-detail #main .product .woocommerce-product-gallery ol.flex-control-nav li img {
+        max-height: 83px;
+    }
+    #content .flex-viewport, #content .flex-active-slide, #content .woocommerce-product-gallery__image img {
         height: 270px !important;
     }
 }
