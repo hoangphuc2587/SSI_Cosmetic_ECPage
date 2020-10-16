@@ -38,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							}
 							?>
 						</div>
-						<table border="0" cellpadding="0" cellspacing="0" width="600" id="template_container">
+						<table border="0" cellpadding="0" cellspacing="0" width="800" id="template_container">
 							<tr>
 								<td align="center" valign="top">
 									<!-- Header -->
@@ -55,7 +55,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<tr>
 								<td align="center" valign="top">
 									<!-- Body -->
-									<table border="0" cellpadding="0" cellspacing="0" width="600" id="template_body">
+									<table border="0" cellpadding="0" cellspacing="0" width="800" id="template_body">
 										<tr>
 											<td valign="top" id="body_content">
 												<!-- Content -->

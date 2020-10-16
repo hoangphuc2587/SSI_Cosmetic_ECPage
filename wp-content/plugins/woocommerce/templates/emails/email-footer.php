@@ -20,6 +20,23 @@ defined( 'ABSPATH' ) || exit;
 															</div>
 														</td>
 													</tr>
+													<tr>
+														<td>
+															 <div class="companay_info" style="font-style: italic;">
+															    Mọi thắc mắc vui lòng liên hệ thông tin bên dưới<br/>
+															    >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><br/>
+															    CARICO CO., LTD<br/>
+															    TEL: 079.225.4402<br/>
+															    Email:com_vn@cari-co.co.jp<br/>
+															    URL: http://cari-co.co.jp<br/>
+															    Address :<br/>
+															    ■HCM office: Tầng4,8a / a9 Thái Văn Lung, Bến Nghé, Quận 1, Hồ Chí Minh, Việt Nam<br/>
+															    ■JP office: 579 Yonezu-cho, Minami-ku, Hamamatsu City, Shizuoka Prefecture<br/>
+															    >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+															</div>
+														</td> 
+													</tr>	
 												</table>
 												<!-- End Content -->
 											</td>
@@ -30,7 +47,7 @@ defined( 'ABSPATH' ) || exit;
 							</tr>
 						</table>
 					</td>
-				</tr>
+				</tr>				
 				<tr>
 					<td align="center" valign="top">
 						<!-- Footer -->

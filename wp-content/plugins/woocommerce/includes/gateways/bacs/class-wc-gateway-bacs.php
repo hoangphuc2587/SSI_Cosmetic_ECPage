@@ -246,7 +246,7 @@ class WC_Gateway_BACS extends WC_Payment_Gateway {
 		if ( $this->instructions ) {
 			echo wp_kses_post( wpautop( wptexturize( wp_kses_post( $this->instructions ) ) ) );
 		}
-		$this->bank_details( $order_id );
+		// $this->bank_details( $order_id );
 
 	}
 
@@ -298,9 +298,15 @@ class WC_Gateway_BACS extends WC_Payment_Gateway {
 			foreach ( $bacs_accounts as $bacs_account ) {
 				$bacs_account = (object) $bacs_account;
 
-				if ( $bacs_account->account_name ) {
-					$account_html .= '<h3 class="wc-bacs-bank-details-account-name">' . wp_kses_post( wp_unslash( $bacs_account->account_name ) ) . ':</h3>' . PHP_EOL;
-				}
+				// if ( $bacs_account->account_name ) {
+				// 	$account_html .= '<h3 class="wc-bacs-bank-details-account-name">' . wp_kses_post( wp_unslash( $bacs_account->account_name ) ) . ':</h3>' . PHP_EOL;
+				// }
+
+				$account_html .= '<p>'. PHP_EOL;
+				$account_html .= 'Quý khách vui lòng thanh toán tiền theo thông tin tài khoản bên dưới.<br/>'. PHP_EOL;
+                $account_html .= 'Quý khách vui lòng ghi rõ tên và mã số đơn hàng mà chúng tôi đã gửi trong mail này cho quý khách.<br/>'. PHP_EOL;
+                $account_html .= 'Sau khi nhận được thông báo chuyển khoản, chúng tôi sẽ thực hiện giao hàng trong thời gian 2 ngày làm việc.'. PHP_EOL;
+				$account_html .= '</p>'. PHP_EOL;
 
 				$account_html .= '<ul class="wc-bacs-bank-details order_details bacs_details">' . PHP_EOL;
 
@@ -308,24 +314,28 @@ class WC_Gateway_BACS extends WC_Payment_Gateway {
 				$account_fields = apply_filters(
 					'woocommerce_bacs_account_fields',
 					array(
-						'bank_name'      => array(
-							'label' => __( 'Bank', 'woocommerce' ),
-							'value' => $bacs_account->bank_name,
-						),
 						'account_number' => array(
 							'label' => __( 'Account number', 'woocommerce' ),
 							'value' => $bacs_account->account_number,
 						),
+						'account_name'      => array(
+							'label' => 'Tên tài khoản',
+							'value' => $bacs_account->account_name,
+						),
+						'bank_name'      => array(
+							'label' => __( 'Bank', 'woocommerce' ),
+							'value' => $bacs_account->bank_name,
+						),						
 						'sort_code'      => array(
 							'label' => $sortcode,
 							'value' => $bacs_account->sort_code,
 						),
 						'iban'           => array(
-							'label' => __( 'IBAN', 'woocommerce' ),
+							'label' => 'Chi nhánh',
 							'value' => $bacs_account->iban,
 						),
 						'bic'            => array(
-							'label' => __( 'BIC', 'woocommerce' ),
+							'label' => 'Tỉnh thành',
 							'value' => $bacs_account->bic,
 						),
 					),
@@ -343,7 +353,7 @@ class WC_Gateway_BACS extends WC_Payment_Gateway {
 			}
 
 			if ( $has_details ) {
-				echo '<section class="woocommerce-bacs-bank-details"><h2 class="wc-bacs-bank-details-heading">' . esc_html__( 'Our bank details', 'woocommerce' ) . '</h2>' . wp_kses_post( PHP_EOL . $account_html ) . '</section>';
+				echo '<section class="woocommerce-bacs-bank-details"><h2 class="wc-bacs-bank-details-heading">' . esc_html__( 'Thông tin ngân hàng', 'woocommerce' ) . '</h2>' . wp_kses_post( PHP_EOL . $account_html ) . '</section>';
 			}
 		}
 
