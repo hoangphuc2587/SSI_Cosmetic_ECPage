@@ -32,8 +32,6 @@ jQuery(document).ready(function ($) {
     if (jQuery('.__fsw_city').length > 0) {
         var listInHCM = [1442, 1443 ,1444, 1446, 1447, 1452, 1457, 1462];       
         var listRoundHCM = [204 ,205, 211, 239];
-        var city_id = parseInt(jQuery("#billing_state").val());
-        var district_id = parseInt(jQuery("#billing_city").val());
         var fee_20_k = "20.000";
         var fee_30_k = "30.000";
         var fee_35_k = "35.000";        
@@ -42,7 +40,9 @@ jQuery(document).ready(function ($) {
           function() 
           {
             //do something special
-            if (city_id != ""){
+            if (jQuery("#billing_state").val() != ""){
+                var city_id = parseInt(jQuery("#billing_state").val());
+                var district_id = parseInt(jQuery("#billing_city").val());
                 if (city_id == 202){
                     if (listInHCM.includes(district_id)){
                         jQuery("#fee_shipping").html(fee_20_k);
@@ -63,6 +63,7 @@ jQuery(document).ready(function ($) {
                     jQuery("#free_shipping").val(fee_30_k.replaceAll(".",""));
                 }
                 else{
+                    alert(1);
                     jQuery("#fee_shipping").html(fee_35_k);
                     var total_order_ship = total_order + parseInt(fee_35_k.replaceAll(".",""));
                     jQuery("#total_price").html(number_format(total_order_ship , 0 , ',', '.')); 
