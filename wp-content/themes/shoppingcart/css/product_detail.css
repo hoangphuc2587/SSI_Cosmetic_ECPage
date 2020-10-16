@@ -61,6 +61,7 @@
         font-size: 27px;
     }
 }
+
 @media only screen and (max-width: 575px) {
     #content .primary-product-detail #main .product .summary .product_title {
         font-size: 24px;
@@ -146,6 +147,7 @@
 #content .primary-product-detail #main .product .summary .sum-pro-desc ul.spd-lv1 li .spd-row .spdr-left {
     font-size: 18px;
     font-family: robotoMedium;
+    width: 60%;
 }
 #content .primary-product-detail #main .product .summary .sum-pro-desc ul.spd-lv1 li .spd-row .spdr-right {
     font-size: 18px;
@@ -330,3 +332,16 @@ article#page-7 .entry-content .woocommerce form.woocommerce-cart-form table.cart
 #masthead #sticky-header-sticky-wrapper {
     visibility: visible;
 } */
+
+@media only screen and (max-width: 767px) {
+    #content .primary-product-detail #main .product .summary .sum-pro-desc ul.spd-lv1 li .spd-row .spdr-left {
+    font-size: 18px;
+    font-family: robotoMedium;
+    width: 130%;
+   }
+   #content .primary-product-detail #main .product .summary .sum-pro-desc ul.spd-lv1 li .spd-row .spdr-right {
+    font-size: 18px;
+    font-family: robotoLight;
+    width: 100%;    
+   }
+}
