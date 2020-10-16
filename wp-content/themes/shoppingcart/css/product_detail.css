@@ -19,6 +19,35 @@
     text-transform: uppercase;
     margin-bottom: 0;
 }
+#content .flex-viewport {
+    height: 450px !important;
+}
+#content .wp-post-image {
+    max-height: 450px;
+    width: auto;
+}
+#content .flex-active-slide {
+    height: 450px !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+#content .primary-product-detail #main .product .woocommerce-product-gallery ol.flex-control-nav li {
+    max-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content .primary-product-detail #main .product .woocommerce-product-gallery ol.flex-control-nav li img {
+    max-height: 200px;
+    width: auto;
+}
+@media only screen and (max-width: 875px) {
+    #content .flex-viewport, #content .flex-active-slide, #content .wp-post-image {
+        height: 400px !important;
+    }
+}
 @media only screen and (max-width: 767px) {
     #content .primary-product-detail #main .product .summary .product_title {
         font-size: 27px;
@@ -29,6 +58,17 @@
         font-size: 24px;
     }
 }
+@media only screen and (max-width: 430px) {
+    #content .flex-viewport, #content .flex-active-slide, #content .wp-post-image {
+        height: 394px !important;
+    }
+}
+@media only screen and (max-width: 330px) {
+    #content .flex-viewport, #content .flex-active-slide, #content .wp-post-image {
+        height: 270px !important;
+    }
+}
+
 #content .primary-product-detail #main .product .summary .price .amount {
     color: #dd0000;
     font-size: 24px;
