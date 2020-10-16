@@ -32,8 +32,8 @@ jQuery(document).ready(function ($) {
     if (jQuery('.__fsw_city').length > 0) {
         var listInHCM = [1442, 1443 ,1444, 1446, 1447, 1452, 1457, 1462];       
         var listRoundHCM = [204 ,205, 211, 239];
-        var city_id = jQuery("#billing_state").val();
-        var district_id = jQuery("#billing_city").val();
+        var city_id = parseInt(jQuery("#billing_state").val());
+        var district_id = parseInt(jQuery("#billing_city").val());
         var fee_20_k = "20.000";
         var fee_30_k = "30.000";
         var fee_35_k = "35.000";        
