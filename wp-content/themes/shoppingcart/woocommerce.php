@@ -30,7 +30,7 @@ get_header();
             </main><!-- end #main -->
         </div> <!-- #primary -->
 	<?php } else { ?>
-		<div id="primary-full" class="content-area">
+		<div id="primary-full" class="content-area product-list-page">
             <main id="main" class="site-main" role="main">
                 <?php woocommerce_content(); ?>
             </main><!-- end #main -->
