@@ -97,6 +97,14 @@ defined( 'ABSPATH' ) || exit;
 			<?php endif; ?>
 		<?php endif; ?>
 
+		<tr class="order-shipping">
+			<th><?php esc_html_e( 'Phí giao hàng', 'woocommerce' ); ?></th>
+			<td>
+				<span class="woocommerce-Price-amount amount" id="fee_shipping">0</span>			
+				<input type="hidden" name="free_shipping" id="free_shipping" value="">
+			</td>
+		</tr>
+
 		<?php do_action( 'woocommerce_review_order_before_order_total' ); ?>
 
 		<tr class="order-total">

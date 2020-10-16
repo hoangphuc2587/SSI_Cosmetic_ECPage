@@ -59,10 +59,14 @@ defined( 'ABSPATH' ) || exit;
 						<strong><?php echo $order->get_billing_email(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></strong>
 					</li>
 				<?php endif; ?>
-
+                <?php
+                  $total = number_format($order->get_meta('free_shipping') + $order->total, 0 ,',', '.') ;
+                ?>
 				<li class="woocommerce-order-overview__total total">
 					<?php esc_html_e( 'Total:', 'woocommerce' ); ?>
-					<strong><?php echo $order->get_formatted_order_total(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></strong>
+					<strong>
+						<span class="woocommerce-Price-amount amount"><?php echo $total;?></span>
+						<?php //echo $order->get_formatted_order_total(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></strong>
 				</li>
 
 				<?php if ( $order->get_payment_method_title() ) : ?>
@@ -76,7 +80,7 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php endif; ?>
 
-		<?php do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() ); ?>
+		<?php //do_action( 'woocommerce_thankyou_' . $order->get_payment_method(), $order->get_id() ); ?>
 		<?php do_action( 'woocommerce_thankyou', $order->get_id() ); ?>
 
 	<?php else : ?>

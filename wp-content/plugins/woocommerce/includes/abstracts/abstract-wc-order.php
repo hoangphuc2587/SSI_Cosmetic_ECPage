@@ -2036,12 +2036,14 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 	 * @param string $tax_display Excl or incl tax display mode.
 	 */
 	protected function add_order_item_totals_shipping_row( &$total_rows, $tax_display ) {
-		if ( $this->get_shipping_method() ) {
+		// if ( $this->get_shipping_method() ) {
+		    $order = wc_get_order( $this->get_id() );
+		    $free_shipping = number_format($order->get_meta('free_shipping'), 0 ,',', '.') ;
 			$total_rows['shipping'] = array(
-				'label' => __( 'Shipping:', 'woocommerce' ),
-				'value' => $this->get_shipping_to_display( $tax_display ),
+				'label' => __( 'Phí giao hàng:', 'woocommerce' ),
+				'value' =>  '<span class="woocommerce-Price-amount amount">'.$free_shipping.'</span>'//$this->get_shipping_to_display( $tax_display ),
 			);
-		}
+		// }
 	}
 
 	/**
@@ -2098,9 +2100,13 @@ abstract class WC_Abstract_Order extends WC_Abstract_Legacy_Order {
 	 * @param string $tax_display Excl or incl tax display mode.
 	 */
 	protected function add_order_item_totals_total_row( &$total_rows, $tax_display ) {
+
+        $order = wc_get_order( $this->get_id() );       
+		$total = number_format($order->get_meta('free_shipping') + $order->total, 0 ,',', '.') ;
+
 		$total_rows['order_total'] = array(
 			'label' => __( 'Total:', 'woocommerce' ),
-			'value' => $this->get_formatted_order_total( $tax_display ),
+			'value' => '<span class="woocommerce-Price-amount amount">'.$total.'</span>'//$this->get_formatted_order_total( $tax_display ),
 		);
 	}
 

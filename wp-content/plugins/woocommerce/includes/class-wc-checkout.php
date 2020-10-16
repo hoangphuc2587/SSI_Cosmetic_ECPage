@@ -378,6 +378,8 @@ class WC_Checkout {
 			$order->set_payment_method( isset( $available_gateways[ $data['payment_method'] ] ) ? $available_gateways[ $data['payment_method'] ] : $data['payment_method'] );
 			$this->set_data_from_cart( $order );
 
+			$order->update_meta_data("free_shipping", isset( $data['free_shipping'] ) ? $data['free_shipping'] : 0 );
+
 			/**
 			 * Action hook to adjust order before save.
 			 *
@@ -657,6 +659,8 @@ class WC_Checkout {
 			'shipping_method'                    => isset( $_POST['shipping_method'] ) ? wc_clean( wp_unslash( $_POST['shipping_method'] ) ) : '', // WPCS: input var ok, CSRF ok.
 			'ship_to_different_address'          => ! empty( $_POST['ship_to_different_address'] ) && ! wc_ship_to_billing_address_only(), // WPCS: input var ok, CSRF ok.
 			'woocommerce_checkout_update_totals' => isset( $_POST['woocommerce_checkout_update_totals'] ), // WPCS: input var ok, CSRF ok.
+			'free_shipping'                    => isset( $_POST['free_shipping'] ) ? wc_clean( wp_unslash( $_POST['free_shipping'] ) ) : '',			
+
 		);
 		foreach ( $this->get_checkout_fields() as $fieldset_key => $fieldset ) {
 			if ( $this->maybe_skip_fieldset( $fieldset_key, $data ) ) {
@@ -1108,6 +1112,9 @@ class WC_Checkout {
 
 			$errors      = new WP_Error();
 			$posted_data = $this->get_posted_data();
+
+			// echo '<pre>',print_r($posted_data,1),'</pre>';
+			// die;
 
 			// Update session for customer and totals.
 			$this->update_session( $posted_data );

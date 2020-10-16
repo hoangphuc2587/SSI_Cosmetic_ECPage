@@ -294,7 +294,7 @@ class WC_Cart extends WC_Legacy_Cart {
 	 */
 	public function get_total( $context = 'view' ) {
 		$total = apply_filters( 'woocommerce_cart_' . __FUNCTION__, $this->get_totals_var( 'total' ) );
-		return 'view' === $context ? apply_filters( 'woocommerce_cart_total', wc_price( $total ) ) : $total;
+		return 'view' === $context ? apply_filters( 'woocommerce_cart_total', '<span class="woocommerce-Price-amount amount" id="total_price">' . number_format( $total, 0 , ',', ".") . '</span>' ) : $total;
 	}
 
 	/**
