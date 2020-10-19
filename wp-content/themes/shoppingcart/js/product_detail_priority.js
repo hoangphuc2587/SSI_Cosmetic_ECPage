@@ -11,35 +11,25 @@ jQuery(document).ready(function(){
 
     jQuery("#content .primary-product-detail #main .product .woocommerce-product-gallery .flex-viewport")
     .append('<img class="pdetail-nav-r" src="/wp-content/themes/shoppingcart/images/pdetail_nav_r.png" alt="img" />');
+    var isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i);
+    if (!isMobile) {
+        jQuery("#content .primary-product-detail #main .product .woocommerce-product-gallery .flex-viewport .pdetail-nav-r").click(function(e){
+            e.preventDefault();
+            var active_img = jQuery("#content .primary-product-detail #main .product .woocommerce-product-gallery .flex-control-nav").find("img.flex-active");              
+            if(active_img.parent().next().find("img").attr("src") != undefined) {
+                active_img.parent().next().find("img").click();
+            }
+        });
 
-    jQuery("#content .primary-product-detail #main .product .woocommerce-product-gallery .flex-viewport .pdetail-nav-r").click(function(){
-        var active_img = jQuery("#content .primary-product-detail #main .product .woocommerce-product-gallery .flex-control-nav").find("img.flex-active");
-        jQuery("#content .primary-product-detail #main .product .woocommerce-product-gallery .flex-control-nav img").removeClass("flex-active");
-        if(active_img.parent().next().children("img").attr("src") == undefined) {            
-            active_img.addClass("flex-active");
-            jQuery(".pdetail-nav-r").attr("disabled", true);
-        } else {
-            active_img.parent().next().children("img").click();            
-        }
-    });
-
-    jQuery("#content .primary-product-detail #main .product .woocommerce-product-gallery .flex-viewport .pdetail-nav-l").click(function(){
-        var active_img = jQuery("#content .primary-product-detail #main .product .woocommerce-product-gallery .flex-control-nav").find("img.flex-active");
-        jQuery("#content .primary-product-detail #main .product .woocommerce-product-gallery .flex-control-nav img").removeClass("flex-active");
-        if(active_img.parent().prev().children("img").attr("src") == undefined) {
-            active_img.addClass("flex-active");
-            jQuery(".pdetail-nav-l").attr("disabled", true);
-        } else {
-            active_img.parent().prev().children("img").click();           
-        }
-    });
-
+        jQuery("#content .primary-product-detail #main .product .woocommerce-product-gallery .flex-viewport .pdetail-nav-l").click(function(e){
+            e.preventDefault();
+            var active_img = jQuery("#content .primary-product-detail #main .product .woocommerce-product-gallery .flex-control-nav").find("img.flex-active");
+            if(active_img.parent().prev().find("img").attr("src") != undefined) {
+                active_img.parent().prev().find("img").click();
+            }
+        });
+    }else{
+        jQuery(".pdetail-nav-r").css("display","none");
+        jQuery(".pdetail-nav-l").css("display","none");
+    }
 });
-
-function getTranslate3dX(el){
-    var matrix = el.css('transform').replace(/[^0-9\-.,]/g, '').split(',');
-    var x = matrix[12] || matrix[4];
-    //var y = matrix[13] || matrix[5];
-
-    return x;
-};
