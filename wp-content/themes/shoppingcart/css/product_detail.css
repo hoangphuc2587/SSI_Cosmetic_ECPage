@@ -159,6 +159,7 @@
 #content .primary-product-detail #main .product .summary .sum-pro-desc ul.spd-lv1 li .spd-row .spdr-right i.fa {
     margin-right: 20px;
     font-weight: bold;
+    float: right;
 }
 #content .primary-product-detail #main .product .summary .sum-pro-desc ul.spd-lv1 li ul.content-hide {
     list-style: none;
