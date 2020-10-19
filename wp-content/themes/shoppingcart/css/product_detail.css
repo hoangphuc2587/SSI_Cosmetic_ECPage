@@ -41,7 +41,8 @@
 
 #content .primary-product-detail #main .product .woocommerce-product-gallery ol.flex-control-nav li img {
     max-height: 200px;
-    width: auto;
+    width: 100%;
+    min-height: 200px;
 }
 @media only screen and (max-width: 767px) {
     #content .primary-product-detail #main .product .woocommerce-product-gallery ol.flex-control-nav li {
@@ -55,8 +56,10 @@
     #content .primary-product-detail #main .product .woocommerce-product-gallery ol.flex-control-nav li {
         /*max-height: 152px;*/
     }
-    #content .primary-product-detail #main .product .woocommerce-product-gallery ol.flex-control-nav li img {
+    #content .primary-product-detail #main .product .woocommerce-product-gallery ol.flex-control-nav li img {       
         max-height: 200px;
+        min-height: 200px;
+        width: 100%;
     }
 }
 @media only screen and (max-width: 875px) {
@@ -86,7 +89,9 @@
         /*max-height: 126px;*/
     }
     #content .primary-product-detail #main .product .woocommerce-product-gallery ol.flex-control-nav li img {
-        max-height: 126px;
+        max-height: 126px;          
+        min-height: 126px;
+        width: 100%;
     }
     #content .woocommerce-product-gallery__image {
     height: 394px !important;
@@ -98,6 +103,8 @@
     }
     #content .primary-product-detail #main .product .woocommerce-product-gallery ol.flex-control-nav li img {
         max-height: 96px;
+        width: 100%;
+        min-height: 96px;
     }
     #content .woocommerce-product-gallery__image {
        height: 350px !important;
@@ -113,6 +120,8 @@
     }
     #content .primary-product-detail #main .product .woocommerce-product-gallery ol.flex-control-nav li img {
         max-height: 83px;
+        width: 100%;
+        min-height: 83px;
     }
     #content .flex-viewport, #content .flex-active-slide, #content .woocommerce-product-gallery__image img {
         height: 270px !important;
