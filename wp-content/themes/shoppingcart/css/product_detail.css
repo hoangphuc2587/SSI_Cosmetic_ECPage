@@ -368,4 +368,15 @@ article#page-7 .entry-content .woocommerce form.woocommerce-cart-form table.cart
     font-family: robotoLight;
     width: 100%;    
    }
+
+   span.info-user-login{
+        position: fixed;
+        top: 15px;
+        z-index: 10000;
+        right: 175px;
+   }
+
+   #sticky-header .header-right button, #site-branding .header-right .he-ri-btn button{
+      font-size: 18px;
+   }
 }

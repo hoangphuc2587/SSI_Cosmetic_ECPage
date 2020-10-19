@@ -809,3 +809,11 @@ add_filter( 'woocommerce_get_image_size_gallery_thumbnail', function( $size ) {
         'crop'   => 0,
     );
 } );
+
+function hide_admin_bar_from_front_end(){
+  if (is_blog_admin()) {
+    return true;
+  }
+  return false;
+}
+add_filter( 'show_admin_bar', 'hide_admin_bar_from_front_end' );
