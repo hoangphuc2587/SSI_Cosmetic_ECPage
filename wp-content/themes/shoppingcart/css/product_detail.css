@@ -292,7 +292,6 @@ article#page-7 .entry-content .woocommerce form.woocommerce-cart-form table.cart
     top: calc(50% - 20px);
     left: 10px;
     cursor: pointer;
-    z-index: 9999;
 }
 #content .primary-product-detail #main .product .woocommerce-product-gallery .flex-viewport .pdetail-nav-r {
     position: absolute;
