@@ -15,15 +15,11 @@ jQuery(document).ready(function(){
     jQuery("#content .primary-product-detail #main .product .woocommerce-product-gallery .flex-viewport .pdetail-nav-r").click(function(){
         var active_img = jQuery("#content .primary-product-detail #main .product .woocommerce-product-gallery .flex-control-nav").find("img.flex-active");
         jQuery("#content .primary-product-detail #main .product .woocommerce-product-gallery .flex-control-nav img").removeClass("flex-active");
-        if(active_img.parent().next().children("img").attr("src") == undefined) {
+        if(active_img.parent().next().children("img").attr("src") == undefined) {            
             active_img.addClass("flex-active");
+            jQuery(".pdetail-nav-r").attr("disabled", true);
         } else {
-            active_img.parent().next().children("img").addClass("flex-active");
-
-            var ele_tran = jQuery("#content .primary-product-detail #main .product .woocommerce-product-gallery .flex-viewport figure");
-            var cur_tran = getTranslate3dX(ele_tran);
-            cur_tran = parseInt(cur_tran) - 622;
-            ele_tran.css('transform','translate3d('+cur_tran+'px, 0px, 0px)');
+            active_img.parent().next().children("img").click();            
         }
     });
 
@@ -32,13 +28,9 @@ jQuery(document).ready(function(){
         jQuery("#content .primary-product-detail #main .product .woocommerce-product-gallery .flex-control-nav img").removeClass("flex-active");
         if(active_img.parent().prev().children("img").attr("src") == undefined) {
             active_img.addClass("flex-active");
+            jQuery(".pdetail-nav-l").attr("disabled", true);
         } else {
-            active_img.parent().prev().children("img").addClass("flex-active");
-
-            var ele_tran = jQuery("#content .primary-product-detail #main .product .woocommerce-product-gallery .flex-viewport figure");
-            var cur_tran = getTranslate3dX(ele_tran);
-            cur_tran = parseInt(cur_tran) + 622;
-            ele_tran.css('transform','translate3d('+cur_tran+'px, 0px, 0px)');
+            active_img.parent().prev().children("img").click();           
         }
     });
 
