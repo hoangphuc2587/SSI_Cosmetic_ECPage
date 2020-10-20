@@ -63,7 +63,6 @@ jQuery(document).ready(function ($) {
                     jQuery("#free_shipping").val(fee_30_k.replaceAll(".",""));
                 }
                 else{
-                    alert(1);
                     jQuery("#fee_shipping").html(fee_35_k);
                     var total_order_ship = total_order + parseInt(fee_35_k.replaceAll(".",""));
                     jQuery("#total_price").html(number_format(total_order_ship , 0 , ',', '.')); 
