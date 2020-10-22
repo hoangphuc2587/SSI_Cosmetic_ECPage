@@ -81,20 +81,17 @@ get_header(); ?>
 					<span class="area-title">Vận chuyển</span>
 					<div class="par-item">Chi phí vận chuyển</div>
 
-					<div class="par-item">Trong nội thành Tp.HCM: 30.000Đ/ đơn hàng<br>
-					- Trừ các quận ABC</div>
+					<div class="par-item">Nội thành Tp.HCM: 20.000Đ/ đơn hàng<br>
+					- Gồm các quận: 1, 2, 3, 4, 5, 10, Phú Nhuận, Bình Thạnh</div>
 
-					<div class="par-item">Trong nội thành Hà Nội: 40.000Đ/ đơn hàng<br>
-					- Trừ các quận ABC</div>
+					<div class="par-item">Ngoại thành Tp.HCM: 30.000Đ/ đơn hàng<br>
+					- Gồm các quận: 6, 7, 8, 9, 11, 12, Tân Bình, Tân Phú, Bình Tân, Bình Chánh, Cần Giờ, Gò Vấp, Thủ Đức</div>
 
-					<div class="par-item">Khu vực khác<br>
-					- Đà Nẵng<br>
-					- Hải Phòng<br>
-					- .......</div>
+					<div class="par-item">Các tỉnh gần Tp.HCM: 30.000Đ/ đơn hàng<br>
+					- Gồm các tỉnh: Bình Dương, Đồng Nai, Bình Phước, Long An</div>
 
-					<div class="par-item">Miễn phí vận chuyển<br>
-					- Với các đơn hàng trên 500.000Đ<br>
-					- Đang trong chương trình miễn phí giao hàng</div>
+					<div class="par-item">Các khu vực khác: 35.000Đ/ đơn hàng<br>
+
 				</li>
 			</ul>
 		</div>
