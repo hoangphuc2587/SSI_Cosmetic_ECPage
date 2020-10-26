@@ -41,22 +41,5 @@ do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 if ( $additional_content ) {
 	echo wp_kses_post( wpautop( wptexturize( $additional_content ) ) );
 }
-?>
-    <!--add mail custom-->
-    <div class="companay_info" style="font-style: italic;">
-
-        Mọi thắc mắc vui lòng liên hệ thông tin bên dưới<br/>
-        >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><br/>
-        CARICO CO., LTD<br/>
-        TEL: 079.225.4402<br/>
-        Email:com_vn@cari-co.co.jp<br/>
-        URL: http://cari-co.co.jp<br/>
-        Address :<br/>
-        ■HCM office: Tầng4,8a / a9 Thái Văn Lung, Bến Nghé, Quận 1, Hồ Chí Minh, Việt Nam<br/>
-        ■JP office: 579 Yonezu-cho, Minami-ku, Hamamatsu City, Shizuoka Prefecture<br/>
-        >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-    </div>
-<?php
 
 do_action( 'woocommerce_email_footer', $email );
