@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) || exit;
 														</td>
 													</tr>
 													<tr>
-														<td style="padding-top: 0;">
+														<td style="padding-top: 0px !important;">
 															 <div class="companay_info" style="font-style: italic;">
 															    Mọi thắc mắc vui lòng liên hệ thông tin bên dưới<br/>
 															    >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><br/>
