@@ -5,12 +5,12 @@ msgstr ""
 "Project-Id-Version: WooCommerce 4.2.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woocommerce\n"
 "Last-Translator: admin\n"
-"Language-Team: Tiếng Việt\n"
+"Language-Team: Vietnamese\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-06-23T22:16:25+00:00\n"
-"PO-Revision-Date: 2020-07-27 05:50+0000\n"
+"PO-Revision-Date: 2020-10-29 09:10+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: woocommerce\n"
 "Language: vi\n"
@@ -32245,7 +32245,7 @@ msgstr ""
 
 #: templates/checkout/thankyou.php:42 templates/checkout/thankyou.php:84
 msgid "Thank you. Your order has been received."
-msgstr "Cảm ơn bạn. Đơn hàng của bạn đã được nhận."
+msgstr "Đơn hàng của bạn đã được đặt thành công."
 
 #: templates/checkout/thankyou.php:58
 msgid "Email:"
