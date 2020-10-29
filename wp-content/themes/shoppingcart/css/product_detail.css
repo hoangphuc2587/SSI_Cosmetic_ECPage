@@ -66,9 +66,9 @@
     }
 }
 @media only screen and (max-width: 767px) {
-    #content .primary-product-detail {
+    /* #content .primary-product-detail {
         padding: 0px 9px;
-    }
+    } */
     #content .primary-product-detail #main .product .summary .product_title {
         font-size: 27px;
     }
@@ -177,6 +177,7 @@
 #content .primary-product-detail #main .product .summary .sum-pro-desc ul.spd-lv1 li .spd-row .spdr-right {
     font-size: 18px;
     font-family: robotoLight;
+    width: 100%;
 }
 #content .primary-product-detail #main .product .summary .sum-pro-desc ul.spd-lv1 li .spd-row .spdr-left i.fa-heart {
     margin-right: 10px;
