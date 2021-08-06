@@ -403,12 +403,61 @@ class WC_Product_Data_Store_CPT extends WC_Data_Store_WP implements WC_Object_Da
 			$set_props[ $prop ] = maybe_unserialize( $meta_value ); // get_post_meta only unserializes single values.
 		}
 
+		$regular_price  = isset( $post_meta_values[ '_regular_price' ][0] ) ? $post_meta_values[ '_regular_price' ][0] : 0;		
+
+		$discount_1  = isset( $post_meta_values[ 'discount_1' ][0] ) ? $post_meta_values[ 'discount_1' ][0] : 1;
+		$from_campaign_1  = isset( $post_meta_values[ 'from_campaign_1' ][0] ) ? $post_meta_values[ 'from_campaign_1' ][0] : null;
+		$to_campaign_1  = isset( $post_meta_values[ 'to_campaign_1' ][0] ) ? $post_meta_values[ 'to_campaign_1' ][0] : null;
+
+		$discount_2  = isset( $post_meta_values[ 'discount_2' ][0] ) ? $post_meta_values[ 'discount_2' ][0] : 1;
+		$from_campaign_2  = isset( $post_meta_values[ 'from_campaign_2' ][0] ) ? $post_meta_values[ 'from_campaign_2' ][0] : null;
+		$to_campaign_2  = isset( $post_meta_values[ 'to_campaign_2' ][0] ) ? $post_meta_values[ 'to_campaign_2' ][0] : null;
+
+		$discount_3  = isset( $post_meta_values[ 'discount_3' ][0] ) ? $post_meta_values[ 'discount_3' ][0] : 1;
+		$from_campaign_3  = isset( $post_meta_values[ 'from_campaign_3' ][0] ) ? $post_meta_values[ 'from_campaign_3' ][0] : null;
+		$to_campaign_3  = isset( $post_meta_values[ 'to_campaign_3' ][0] ) ? $post_meta_values[ 'to_campaign_3' ][0] : null;				
+
+
+		$price    =  $regular_price;
+        if (!empty($from_campaign_1) && !empty($to_campaign_1) && $this->isCampaign($from_campaign_1,$to_campaign_1)){
+        	$price    =  $regular_price - $regular_price*$discount_1/100;
+        }
+
+        if (!empty($from_campaign_2) && !empty($to_campaign_2) && $this->isCampaign($from_campaign_2,$to_campaign_2)){
+        	$price    =  $regular_price - $regular_price*$discount_2/100;
+        }
+
+        if (!empty($from_campaign_3) && !empty($to_campaign_3) && $this->isCampaign($from_campaign_3,$to_campaign_3)){
+        	$price    =  $regular_price - $regular_price*$discount_3/100;
+        }                
+
+        $set_props['price'] = maybe_unserialize( $price );		
+
 		$set_props['category_ids']      = $this->get_term_ids( $product, 'product_cat' );
 		$set_props['tag_ids']           = $this->get_term_ids( $product, 'product_tag' );
 		$set_props['shipping_class_id'] = current( $this->get_term_ids( $product, 'product_shipping_class' ) );
 		$set_props['gallery_image_ids'] = array_filter( explode( ',', $set_props['gallery_image_ids'] ) );
 
 		$product->set_props( $set_props );
+	}
+
+	protected function isCampaign($from , $to){
+		$year  = substr($from,0,4);
+		$month = substr($from,4,2);
+		$day   = substr($from,6);
+		$from = $year.'-'.$month.'-'.$day;
+
+		$year  = substr($to,0,4);
+		$month = substr($to,4,2);
+		$day   = substr($to,6);
+		$to = $year.'-'.$month.'-'.$day;
+
+		$now = date('Y-m-d');
+
+		if (strtotime($now) >=  strtotime($from) && strtotime($now) <=  strtotime($to)){
+			return true;
+		}
+		return false;
 	}
 
 	/**

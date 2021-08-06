@@ -1522,7 +1522,7 @@ class WC_Product extends WC_Abstract_Legacy_Product {
 	 * @return bool
 	 */
 	public function is_on_sale( $context = 'view' ) {
-		if ( '' !== (string) $this->get_sale_price( $context ) && $this->get_regular_price( $context ) > $this->get_sale_price( $context ) ) {
+		if ( '' !== (string) $this->get_price( $context ) && $this->get_regular_price( $context ) > $this->get_price( $context ) ) {
 			$on_sale = true;
 
 			if ( $this->get_date_on_sale_from( $context ) && $this->get_date_on_sale_from( $context )->getTimestamp() > time() ) {

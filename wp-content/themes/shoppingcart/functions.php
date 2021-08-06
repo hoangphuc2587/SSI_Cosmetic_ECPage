@@ -817,3 +817,35 @@ function hide_admin_bar_from_front_end(){
   return false;
 }
 add_filter( 'show_admin_bar', 'hide_admin_bar_from_front_end' );
+
+
+
+function new_modify_user_table( $column ) {
+    $column['order'] = 'Orders';
+    return $column;
+}
+add_filter( 'manage_users_columns', 'new_modify_user_table' );
+
+function new_modify_user_table_row( $val, $column_name, $user_id ) {
+    switch ($column_name) {
+        case 'order' :
+			$args = array(
+				'post_type' => 'shop_order',
+			    'post_status' => array( 'wc-pending', 'wc-processing', 'wc-on-hold' , 'wc-shipping', 'wc-shipped', 'wc-completed', 'wc-cancelled', 'wc-refunded', 'wc-failed'),
+			    'meta_query' => array(
+			        array(
+			            'key'     => '_customer_user',
+			            'value'   => $user_id,
+			            'compare' => '=',
+			        ),
+			    ),
+
+			);
+            $query = new WP_Query( $args );
+            $total = $query->found_posts;
+            return $total > 0 ? '<a href="edit.php?post_status=all&post_type=shop_order&action=-1&m=0&_customer_user='.$user_id.'&filter_action=Filter&paged=1&action2=-1" class="edit">'.$query->found_posts.'</a>' : $total;
+        default:
+    }
+    return $val;
+}
+add_filter( 'manage_users_custom_column', 'new_modify_user_table_row', 10, 3 );

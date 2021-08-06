@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2020-06-23T22:16:25+00:00\n"
-"PO-Revision-Date: 2020-10-29 09:10+0000\n"
+"PO-Revision-Date: 2021-08-05 09:08+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: woocommerce\n"
 "Language: vi\n"
@@ -32160,7 +32160,7 @@ msgstr ""
 
 #: templates/checkout/form-checkout.php:26
 msgid "You must be logged in to checkout."
-msgstr ""
+msgstr "Bạn phải đăng nhập để thanh toán."
 
 #: templates/checkout/form-checkout.php:54
 msgid "Your order"
@@ -32180,11 +32180,11 @@ msgstr "Nếu bạn có mã giảm giá, vui lòng điền vào phía bên dư�
 
 #: templates/checkout/form-login.php:26
 msgid "Returning customer?"
-msgstr ""
+msgstr "Đã có tài khoản ?"
 
 #: templates/checkout/form-login.php:26
 msgid "Click here to login"
-msgstr ""
+msgstr "Nhấn vào đây để đăng nhập"
 
 #: templates/checkout/form-login.php:32
 msgid ""
