@@ -782,9 +782,14 @@ button {
     line-height: normal;
 }
 #site-content-contain #content .woocommerce div.product span.price .woocommerce-Price-amount {
-    color: #333333;
+    color: #dd0000;
     font-family: robotoMedium;
 }
+
+#site-content-contain #content .woocommerce div.product span.price del .woocommerce-Price-amount{
+    font-size: 14px;
+}
+
 #site-content-contain #content .woocommerce div.product .sc-grid-product-content { /*xxx*/
     border-top: none;
     padding-right: 29px;

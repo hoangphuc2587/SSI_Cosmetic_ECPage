@@ -3030,6 +3030,30 @@ html[xmlns] .brand-slider .slides {
 	right: -30px;
 }
 
+.sc-grid-product-img .onsale-top {
+  color: #fff;
+  font-size: 14px;
+  position: absolute;
+  top: 0px;
+  right: 0;
+  z-index: 1;
+  text-transform: uppercase;
+  padding-right: 0px;
+  padding-top: 2px;
+}
+
+.sc-grid-product-img .onsale-top:before {
+	content: "";
+	background-color: #dd0000;
+	width: 80px;
+	height: 105px;
+	transform: rotate(-60deg);
+	position: absolute;
+	z-index: -1;
+	top: -62px;
+	right: -30px;
+}
+
 .sc-grid-product-content {
 	text-align: center;
 	background-color: #fff;
@@ -3051,7 +3075,7 @@ html[xmlns] .brand-slider .slides {
 }
 
 .shoppingcart-grid-product .price del .woocommerce-Price-amount.amount {
-	color: #999;
+	color: #999 !important;
 	margin-left: 5px;
 }
 
@@ -4767,7 +4791,7 @@ div.bbp-template-notice, div.indicator-hint {
 
 .archive.woocommerce span.onsale {
 	background-color: transparent;
-	font-size: 13px;
+	font-size: 14px;
 }
 
 .archive.woocommerce ul.products li.product .onsale {
@@ -4777,7 +4801,7 @@ div.bbp-template-notice, div.indicator-hint {
 
 .archive.woocommerce span.onsale:before {
 	content: "";
-	background-color: #f77426;
+	background-color: #dd0000;
 	width: 80px;
 	height: 105px;
 	transform: rotate(-60deg);

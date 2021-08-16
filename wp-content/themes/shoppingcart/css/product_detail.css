@@ -128,6 +128,12 @@
     font-size: 24px;
     font-family: robotoMedium;
 }
+
+#content .primary-product-detail #main .product .summary .price del .amount{
+    color: #999;
+    font-size: 18px;
+}
+
 #content .primary-product-detail #main .product .summary .price {
     margin-bottom: 12px;
 }
@@ -383,4 +389,17 @@ article#page-7 .entry-content .woocommerce form.woocommerce-cart-form table.cart
    #sticky-header .header-right button, #site-branding .header-right .he-ri-btn button{
       font-size: 18px;
    }
+}
+
+.woocommerce span.onsale {
+    background-color: #dd0000;
+    font-size: 16px;
+    font-weight: 500;
+    left: 0px;
+    min-height: 2em;
+    min-width: 2.2em;
+    padding: 0.402em;
+    top: 0px;
+    border-radius: 0;
+    line-height: unset;
 }

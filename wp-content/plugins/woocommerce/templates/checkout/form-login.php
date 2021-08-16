@@ -21,16 +21,73 @@ if ( is_user_logged_in() || 'no' === get_option( 'woocommerce_enable_checkout_lo
 	return;
 }
 
-?>
-<div class="woocommerce-form-login-toggle">
-	<?php wc_print_notice( apply_filters( 'woocommerce_checkout_login_message', esc_html__( 'Returning customer?', 'woocommerce' ) ) . ' <a href="'.home_url().'/login'.'" class="showlogin2">' . esc_html__( 'Click here to login', 'woocommerce' ) . '</a>', 'notice' ); ?>
-</div>
-<?php
+global $user_ID;
 
-woocommerce_login_form(
-	array(
-		'message'  => esc_html__( 'If you have shopped with us before, please enter your details below. If you are a new customer, please proceed to the Billing section.', 'woocommerce' ),
-		'redirect' => wc_get_checkout_url(),
-		'hidden'   => true,
-	)
-);
+if (!$user_ID) {
+    // user in logged out state
+    if ($_POST) {
+
+        $username = isset($_POST['username']) ? $_POST['username'] : '';
+        $password = isset($_POST['password']) ? $_POST['password'] : '';
+
+        $login_array = array();
+        $login_array['user_login'] = $username;
+        $login_array['user_password'] = $password;
+        
+        $verify_user = wp_signon($login_array, true);
+        if (!is_wp_error($verify_user)) {
+            if (in_array('administrator', (array) $verify_user->roles)) {
+                echo "<script>window.location = '".site_url()."/wp-admin'</script>";
+            } else {
+                echo "<script>window.location = '".site_url()."/checkout'</script>";
+            }
+            
+        } else {
+            // echo "<script>alert('Tên đăng nhập hoặc mật khẩu không đúng.')</script>";
+        }
+    
+    } 
+    get_header();
+    ?>
+    <style type="text/css">
+        .page-header{
+            display: none !important;
+        }
+
+        #content{
+            padding-bottom: 0px !important;
+        }
+
+    </style>
+    <div class="wrap">
+        <div class="login">
+            <form action="" class="form-login" id="loginForm" method="POST">
+                <h5 style="color:#ff0000;text-align: center;font-size: 16px;">Bạn phải đăng nhập để thanh toán.</h5>
+                <h1>Đăng nhập</h1>
+                <?php
+                    if (is_wp_error($verify_user)) {
+                        echo "<p class='error-msg'>Tên đăng nhập, email hoặc mật khẩu không chính xác!</p>";
+                    }
+                ?>
+                <hr>
+
+                <label for="username"><b>Tên đăng nhập hoặc Email</b></label>
+                <input type="text" name="username" id="username" value="<?php echo $username ?>">
+
+                <label for="password"><b>Mật khẩu</b></label>
+                <input type="password" name="password" id="password" value="<?php echo $password ?>">
+
+                <input type="submit" id="btn-submit" value="Đăng nhập">
+                <p>Bạn chưa có tài khoản? <a href="/register">Đăng ký</a>.</p>
+            </form>
+        </div>
+    </div><!-- end .wrap -->    
+    <?php
+    get_footer();
+
+    
+} else {
+    // user in logged in state
+    echo "<script>window.location = '".site_url()."/checkout'</script>";
+}
+

@@ -81,7 +81,7 @@ ul.products li.product .woocommerce-loop-product__title:hover{
 }
 
 .woocommerce-Price-amount.amount{
-    color: #333333;
+    color: #dd0000;
     font-family: robotoMedium;
     font-size: 18px;
 }
