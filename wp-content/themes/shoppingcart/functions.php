@@ -822,6 +822,7 @@ add_filter( 'show_admin_bar', 'hide_admin_bar_from_front_end' );
 
 function new_modify_user_table( $column ) {
     $column['order'] = 'Orders';
+    $column['date'] = 'Date';
     return $column;
 }
 add_filter( 'manage_users_columns', 'new_modify_user_table' );
@@ -844,8 +845,20 @@ function new_modify_user_table_row( $val, $column_name, $user_id ) {
             $query = new WP_Query( $args );
             $total = $query->found_posts;
             return $total > 0 ? '<a href="edit.php?post_status=all&post_type=shop_order&action=-1&m=0&_customer_user='.$user_id.'&filter_action=Filter&paged=1&action2=-1" class="edit">'.$query->found_posts.'</a>' : $total;
+        case 'date' :
+            $udata = get_userdata( $user_id );
+            $registered = date( 'Y-m-d H:i:s',strtotime($udata->user_registered));
+            return  $registered;
+
         default:
     }
     return $val;
 }
 add_filter( 'manage_users_custom_column', 'new_modify_user_table_row', 10, 3 );
+
+function change_user_order($args){
+    $args["orderby"] = "user_registered";
+    $args["order"] = "DESC";
+    return $args;
+}
+add_filter("users_list_table_query_args","change_user_order");

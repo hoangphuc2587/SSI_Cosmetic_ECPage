@@ -121,6 +121,7 @@ class WC_Admin_List_Table_Orders extends WC_Admin_List_Table {
 		$show_columns['order_number']     = __( 'Order', 'woocommerce' );
 		$show_columns['order_date']       = __( 'Date', 'woocommerce' );
 		$show_columns['order_status']     = __( 'Status', 'woocommerce' );
+		$show_columns['total_item']     = __( 'Items', 'woocommerce' );
 		$show_columns['billing_address']  = __( 'Billing', 'woocommerce' );
 		$show_columns['shipping_address'] = __( 'Ship to', 'woocommerce' );
 		$show_columns['order_total']      = __( 'Total', 'woocommerce' );
@@ -277,6 +278,20 @@ class WC_Admin_List_Table_Orders extends WC_Admin_List_Table {
 			echo wp_kses_post( $this->object->get_formatted_order_total() );
 		}
 	}
+
+	/**
+	 * Render columm: total_item.
+	 */
+	protected function render_total_item_column() {
+		$line_items = $this->object->get_items();
+		$qty = 0;
+		foreach ( $line_items as $item_id => $item ) {
+			$qty += $item->get_quantity();
+		}
+		echo $qty;
+	}
+
+	
 
 	/**
 	 * Render columm: wc_actions.
