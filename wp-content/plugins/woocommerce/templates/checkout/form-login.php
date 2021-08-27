@@ -25,6 +25,10 @@ global $user_ID;
 
 if (!$user_ID) {
     // user in logged out state
+    if (!session_id()) {
+    session_start();
+    }
+    $_SESSION['link_redirect_after_login'] = 1;
     if ($_POST) {
 
         $username = isset($_POST['username']) ? $_POST['username'] : '';
@@ -41,6 +45,7 @@ if (!$user_ID) {
             } else {
                 echo "<script>window.location = '".site_url()."/checkout'</script>";
             }
+            unset($_SESSION['link_redirect_after_login']);
             
         } else {
             // echo "<script>alert('Tên đăng nhập hoặc mật khẩu không đúng.')</script>";

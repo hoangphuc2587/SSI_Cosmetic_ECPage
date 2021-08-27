@@ -10,6 +10,9 @@
 global $user_ID;
 
 if (!$user_ID) {
+	if (!session_id()) {
+        session_start();
+    }	
 	// user in logged out state
 	if ($_POST) {
 
@@ -19,14 +22,20 @@ if (!$user_ID) {
 		$login_array = array();
 		$login_array['user_login'] = $username;
 		$login_array['user_password'] = $password;
+
+		$page_redirect = 'my-account';
+		if (isset($_SESSION['link_redirect_after_login']) && $_SESSION['link_redirect_after_login'] == 1){
+            $page_redirect = 'checkout';
+		}
 		
 		$verify_user = wp_signon($login_array, true);
 		if (!is_wp_error($verify_user)) {
 			if (in_array('administrator', (array) $verify_user->roles)) {
 				echo "<script>window.location = '".site_url()."/wp-admin'</script>";
 			} else {
-				echo "<script>window.location = '".site_url()."/my-account'</script>";
+				echo "<script>window.location = '".site_url()."/".$page_redirect."'</script>";
 			}
+			unset($_SESSION['link_redirect_after_login']);
 			
 		} else {
 			// echo "<script>alert('Tên đăng nhập hoặc mật khẩu không đúng.')</script>";
