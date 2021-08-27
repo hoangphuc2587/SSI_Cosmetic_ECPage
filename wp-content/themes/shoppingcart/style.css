@@ -3031,15 +3031,15 @@ html[xmlns] .brand-slider .slides {
 }
 
 .sc-grid-product-img .onsale-top {
-  color: #fff;
-  font-size: 20px;
-  position: absolute;
-  top: 0px;
-  left: 0;
-  z-index: 1;
-  text-transform: uppercase;
-  padding: 1.3em 1.2em;
-  font-weight: 700;
+    color: #fff;
+    font-size: 42px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    z-index: 1;
+    text-transform: uppercase;
+    padding: 0.3em 0.05em;
+    font-weight: 700;
    
 }
 
@@ -4798,11 +4798,12 @@ div.bbp-template-notice, div.indicator-hint {
 }
 
 .archive.woocommerce ul.products li.product .onsale {
-  top: 0;
-  left: 0;
-  padding: 1.5em 1.2em;
-  text-align: left;
-  margin: 0;
+    top: 0;
+    left: 0;
+    padding: 0.5em 0.05em;
+    text-align: left;
+    margin: 0;
+    font-size: 42px;
 }
 
 .archive.woocommerce span.onsale:before {

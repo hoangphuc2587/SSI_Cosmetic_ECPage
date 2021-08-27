@@ -393,15 +393,16 @@ article#page-7 .entry-content .woocommerce form.woocommerce-cart-form table.cart
 
 .woocommerce span.onsale {
     background-color: transparent;
-    font-size: 28px;
+    font-size: 40px;
     font-weight: 700;
     left: 0px;
     min-height: 2em;
-    min-width: 2.2em;
-    padding: 1.9em 1em;
+    min-width: 4em;
+    padding: 1em 0.4em;
     top: 0px;
     border-radius: 0;
     line-height: unset;
+    text-align: left;
 }
 
 .woocommerce span.onsale:before {
