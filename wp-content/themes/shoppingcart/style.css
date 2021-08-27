@@ -3032,7 +3032,7 @@ html[xmlns] .brand-slider .slides {
 
 .sc-grid-product-img .onsale-top {
   color: #fff;
-  font-size: 14px;
+  font-size: 20px;
   position: absolute;
   top: 0px;
   right: 0;
@@ -3044,14 +3044,14 @@ html[xmlns] .brand-slider .slides {
 
 .sc-grid-product-img .onsale-top:before {
 	content: "";
-	background-color: #dd0000;
-	width: 80px;
-	height: 105px;
-	transform: rotate(-60deg);
-	position: absolute;
-	z-index: -1;
-	top: -62px;
-	right: -30px;
+  background-color: #dd0000;
+  width: 125px;
+  height: 122px;
+  transform: rotate(-60deg);
+  position: absolute;
+  z-index: -1;
+  top: -84px;
+  right: -41px;
 }
 
 .sc-grid-product-content {
@@ -4791,24 +4791,24 @@ div.bbp-template-notice, div.indicator-hint {
 
 .archive.woocommerce span.onsale {
 	background-color: transparent;
-	font-size: 14px;
+	font-size: 20px;
 }
 
 .archive.woocommerce ul.products li.product .onsale {
-	top: 5px;
+	top: 8px;
 	right: 0;
 }
 
 .archive.woocommerce span.onsale:before {
 	content: "";
-	background-color: #dd0000;
-	width: 80px;
-	height: 105px;
-	transform: rotate(-60deg);
-	position: absolute;
-	z-index: -1;
-	top: -70px;
-	right: -10px;
+  background-color: #dd0000;
+  width: 132px;
+  height: 131px;
+  transform: rotate(-60deg);
+  position: absolute;
+  z-index: -1;
+  top: -88px;
+  right: -41px;
 }
 
 .woocommerce ul.products li.product .star-rating {

@@ -55,7 +55,7 @@ $discount = ($regular_price - $price)/$regular_price*100 *(-1);
 			<h2 style="text-transform: uppercase;" class="sc-grid-product-title"><a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			<div class="sgpc-short"><?php echo strip_tags($product->get_short_description()); ?></div>
 			<?php if ( $price_html = $product->get_price_html() ) : ?>
-			<span class="price">
+			<span class="price <?php echo $product->is_on_sale() ? 'price-sale' : ''?>">
 				<?php echo $price_html; ?>
 			</span>
 			<?php endif; ?>

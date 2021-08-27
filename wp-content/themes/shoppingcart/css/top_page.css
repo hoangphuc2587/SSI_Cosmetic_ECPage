@@ -782,8 +782,12 @@ button {
     line-height: normal;
 }
 #site-content-contain #content .woocommerce div.product span.price .woocommerce-Price-amount {
-    color: #dd0000;
+    color: #333333;
     font-family: robotoMedium;
+}
+
+#site-content-contain #content .woocommerce div.product span.price-sale .woocommerce-Price-amount{
+   color:  #dd0000;
 }
 
 #site-content-contain #content .woocommerce div.product span.price del .woocommerce-Price-amount{
