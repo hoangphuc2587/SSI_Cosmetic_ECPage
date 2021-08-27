@@ -645,8 +645,11 @@ class WC_Discounts {
 	 * @return bool
 	 */
 	protected function validate_coupon_expiry_date( $coupon ) {
-		if ( $coupon->get_date_expires() && apply_filters( 'woocommerce_coupon_validate_expiry_date', time() > $coupon->get_date_expires()->getTimestamp(), $coupon, $this ) ) {
-			throw new Exception( __( 'This coupon has expired.', 'woocommerce' ), 107 );
+		$now = strtotime(date("Y-m-d"));
+		$date = $coupon->get_date_expires();
+		$t = strtotime($date->format('Y-m-d'));
+		if ( $coupon->get_date_expires() && apply_filters( 'woocommerce_coupon_validate_expiry_date', $now > $t, $coupon, $this ) ) {
+			throw new Exception( __( 'This coupon has expired.' , 'woocommerce' ), 107 );
 		}
 
 		return true;

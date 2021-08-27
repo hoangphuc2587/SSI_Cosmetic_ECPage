@@ -344,8 +344,11 @@ add_action('wp_logout', 'redirect_to_custom_login_page');
 
 /************** to check phone number valid or not *************************************/
 function isPhoneNumber($phone) {
-	if (preg_match("/^(03[2-9]|05[6|8|9]|07[0|6-9]|08[1-9]|09[0-9])+([0-9]{7})$/", $phone)) {
-		return true;
+	// if (preg_match("/^(03[2-9]|05[6|8|9]|07[0|6-9]|08[1-9]|09[0-9])+([0-9]{7})$/", $phone)) {
+	// 	return true;
+	// }
+	if (strlen($phone) >= 6){
+	    return true;
 	}
 	return false;
 }

@@ -53,7 +53,7 @@ if ($_POST) {
 	} else {
 		// check phone valid
 		if (!isPhoneNumber($phone)) {
-			$phone_err = "Số điện thoại không hợp lệ";
+			$phone_err = "Nhập ít nhất 6 chữ số";
 			$hasErr = true;
 		} else {
 			// check phone existed

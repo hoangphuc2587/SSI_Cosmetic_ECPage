@@ -26,7 +26,7 @@ if ( ! is_a( $product, 'WC_Product' ) ) {
 
 $price =  $product->get_price();
 $regular_price =  $product->get_regular_price();
-$discount = ($regular_price - $price)/$regular_price*100 *(-1);
+$discount = ($regular_price - $price)/$regular_price*100;
 
 ?>
 <div <?php post_class('shoppingcart-grid-product'); ?>>
@@ -34,7 +34,7 @@ $discount = ($regular_price - $price)/$regular_price*100 *(-1);
 
 	<figure class="sc-grid-product-img">
 		<?php if ( $product->is_on_sale() ) { ?>
-			<?php echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale-top">' . $discount . '% &nbsp;</span>', $post, $product ); ?>
+			<?php echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale-top">' . $discount . '</span>', $post, $product ); ?>
 		<?php } ?>
 		<a href="<?php echo esc_url( get_permalink( $product->get_id() ) ); ?>" alt="<?php the_title_attribute();?>">
 		<!-- <img src="<?php echo esc_url( $image_attribute[0] ); ?>" alt="<?php the_title_attribute();?>"> -->
