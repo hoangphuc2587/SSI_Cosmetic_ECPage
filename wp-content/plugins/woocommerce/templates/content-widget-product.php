@@ -34,7 +34,7 @@ $discount = ($regular_price - $price)/$regular_price*100;
 
 	<figure class="sc-grid-product-img">
 		<?php if ( $product->is_on_sale() ) { ?>
-			<?php echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale-top">' . $discount . '<span class="percent">%</span></span>', $post, $product ); ?>
+			<?php echo apply_filters( 'woocommerce_sale_flash', '<span class="text-discount">Discount</span><span class="onsale-top">' . $discount . '<span class="percent">%</span></span>', $post, $product ); ?>
 		<?php } ?>
 		<a href="<?php echo esc_url( get_permalink( $product->get_id() ) ); ?>" alt="<?php the_title_attribute();?>">
 		<!-- <img src="<?php echo esc_url( $image_attribute[0] ); ?>" alt="<?php the_title_attribute();?>"> -->

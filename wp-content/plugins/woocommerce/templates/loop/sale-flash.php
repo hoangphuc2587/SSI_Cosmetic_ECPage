@@ -26,7 +26,7 @@ $discount = ($regular_price - $price)/$regular_price*100;
 ?>
 <?php  if ( $product->is_on_sale() ) : ?>
 
-	<?php echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale">' . $discount . '<span class="percent">%</span></span>', $post, $product ); ?>
+	<?php echo apply_filters( 'woocommerce_sale_flash', '<span class="text-discount">Discount</span><span class="onsale">' . $discount . '<span class="percent">%</span></span>', $post, $product ); ?>
 
 	<?php
  endif;

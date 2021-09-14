@@ -3032,25 +3032,34 @@ html[xmlns] .brand-slider .slides {
 
 .sc-grid-product-img .onsale-top {
     color: #fff;
-    font-size: 40px;
+    font-size: 42px;
     position: absolute;
     top: 0px;
     left: 0;
     z-index: 1;
     text-transform: uppercase;
     padding: 0.3em 0.05em;
-    font-weight: 700;
     text-align: center;
-    width: 53px;  
+    width: 62px;  
+    font-family: montserratSemiBold;
 }
 
 .sc-grid-product-img .onsale-top .percent {
-    font-size: 18px;
+    font-size: 22px;
     position: absolute;
     top: 27px;
+    font-family: montserratSemiBold;
 }
 
-
+.sc-grid-product-img .text-discount{
+    font-size: 16px;
+    position: absolute;
+    top: 0px;
+    z-index: 3;
+    left: 5px;
+    color: #fff;
+    font-family: montserratSemiBold;
+}
 
 .sc-grid-product-img .onsale-top:before {
   background-image: url(/wp-content/themes/shoppingcart/images/top_nonumber.png);
@@ -3058,8 +3067,8 @@ html[xmlns] .brand-slider .slides {
   background-position: center;
   background-size: contain;
   content: "";
-  width: 110px;
-  height: 118px;
+  width: 129px;
+  height: 140px;
   position: absolute;
   z-index: -1;
   top: 0px;
@@ -4806,21 +4815,33 @@ div.bbp-template-notice, div.indicator-hint {
 	font-size: 20px;
 }
 
+.archive.woocommerce .text-discount{
+    font-size: 16px;
+    position: absolute;
+    top: 0px;
+    z-index: 999;
+    left: 5px;
+    color: #fff;
+    font-family: montserratSemiBold;
+}
+
 .archive.woocommerce ul.products li.product .onsale {
     top: 0;
     left: 0;
     padding: 0.5em 0.05em;    
     margin: 0;
-    font-size: 40px;
+    font-size: 42px;
     text-align: center;
     min-width: unset;
-    width: 49px;
+    width: 62px;
+    font-family: montserratSemiBold;
 }
 
 .archive.woocommerce ul.products li.product .onsale .percent {
-    font-size: 18px;
+    font-size: 22px;
     position: absolute;
-    top: 30px;
+    top: 32px;
+    font-family: montserratSemiBold;
 }
 
 .archive.woocommerce span.onsale:before {
@@ -4829,13 +4850,15 @@ div.bbp-template-notice, div.indicator-hint {
   background-position: center;
   background-size: contain;
   content: "";
-  width: 110px;
-  height: 118px;
+  width: 129px;
+  height: 140px;
   position: absolute;
   z-index: -1;
   top: 0px;
   left: 0px;
 }
+
+
 
 /*.woocommerce ul.products li.product .archive-imgae-wrap:hover span.onsale:before{
 		top: 10px;
