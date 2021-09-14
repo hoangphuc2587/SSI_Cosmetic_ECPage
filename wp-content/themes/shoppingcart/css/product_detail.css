@@ -397,12 +397,13 @@ article#page-7 .entry-content .woocommerce form.woocommerce-cart-form table.cart
     font-weight: 700;
     left: 0px;
     min-height: 2em;
-    min-width: 4em;
+    min-width: unset;
     padding: 1em 0.4em;
     top: 0px;
     border-radius: 0;
     line-height: unset;
-    text-align: left;
+    text-align: center;
+    width: 84px;
 }
 
 .woocommerce span.onsale:before {
@@ -411,10 +412,16 @@ article#page-7 .entry-content .woocommerce form.woocommerce-cart-form table.cart
     background-position: center;
     background-size: contain;
     content: "";
-    width: 110px;
+    width: 123px;
     height: 120px;
     position: absolute;
     left: -5px;
     top: 0;
     z-index: -1;
+}
+
+.woocommerce span.onsale .percent {
+    font-size: 25px;
+    position: absolute;
+    top: 54px;
 }

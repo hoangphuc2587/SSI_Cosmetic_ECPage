@@ -3032,7 +3032,7 @@ html[xmlns] .brand-slider .slides {
 
 .sc-grid-product-img .onsale-top {
     color: #fff;
-    font-size: 42px;
+    font-size: 40px;
     position: absolute;
     top: 0px;
     left: 0;
@@ -3040,8 +3040,17 @@ html[xmlns] .brand-slider .slides {
     text-transform: uppercase;
     padding: 0.3em 0.05em;
     font-weight: 700;
-   
+    text-align: center;
+    width: 53px;  
 }
+
+.sc-grid-product-img .onsale-top .percent {
+    font-size: 18px;
+    position: absolute;
+    top: 27px;
+}
+
+
 
 .sc-grid-product-img .onsale-top:before {
   background-image: url(/wp-content/themes/shoppingcart/images/top_nonumber.png);
@@ -4800,10 +4809,18 @@ div.bbp-template-notice, div.indicator-hint {
 .archive.woocommerce ul.products li.product .onsale {
     top: 0;
     left: 0;
-    padding: 0.5em 0.05em;
-    text-align: left;
+    padding: 0.5em 0.05em;    
     margin: 0;
-    font-size: 42px;
+    font-size: 40px;
+    text-align: center;
+    min-width: unset;
+    width: 49px;
+}
+
+.archive.woocommerce ul.products li.product .onsale .percent {
+    font-size: 18px;
+    position: absolute;
+    top: 30px;
 }
 
 .archive.woocommerce span.onsale:before {
