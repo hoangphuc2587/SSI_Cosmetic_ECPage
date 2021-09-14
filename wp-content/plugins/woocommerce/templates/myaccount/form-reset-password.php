@@ -19,17 +19,24 @@ defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_reset_password_form' );
 ?>
+<style type="text/css">
+  .woocommerce-error{
+	max-width: 400px;
+	margin: 20px auto;
+  }
+   
+</style>
 
-<form method="post" class="woocommerce-ResetPassword lost_reset_password">
+<form method="post" class="woocommerce-ResetPassword lost_reset_password" style="max-width: 400px;margin: auto;">
 
-	<p><?php echo apply_filters( 'woocommerce_reset_password_message', esc_html__( 'Enter a new password below.', 'woocommerce' ) ); ?></p><?php // @codingStandardsIgnoreLine ?>
+	<h1 style="margin-bottom: 30px;"><?php echo apply_filters( 'woocommerce_reset_password_message', esc_html__( 'Đặt lại mật khẩu', 'woocommerce' ) ); ?></h1><?php // @codingStandardsIgnoreLine ?>
 
-	<p class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
-		<label for="password_1"><?php esc_html_e( 'New password', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
+	<p style="width: 100%;" class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
+		<label for="password_1"><?php esc_html_e( 'Mật khẩu mới', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
 		<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password_1" id="password_1" autocomplete="new-password" />
 	</p>
-	<p class="woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
-		<label for="password_2"><?php esc_html_e( 'Re-enter new password', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
+	<p style="width: 100%;" class="woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
+		<label for="password_2"><?php esc_html_e( 'Nhập lại mật khẩu mới', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
 		<input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password_2" id="password_2" autocomplete="new-password" />
 	</p>
 
@@ -40,9 +47,9 @@ do_action( 'woocommerce_before_reset_password_form' );
 
 	<?php do_action( 'woocommerce_resetpassword_form' ); ?>
 
-	<p class="woocommerce-form-row form-row">
+	<p class="woocommerce-form-row form-row" style="text-align: center;">
 		<input type="hidden" name="wc_reset_password" value="true" />
-		<button type="submit" class="woocommerce-Button button" value="<?php esc_attr_e( 'Save', 'woocommerce' ); ?>"><?php esc_html_e( 'Save', 'woocommerce' ); ?></button>
+		<button type="submit" class="woocommerce-Button button" value="<?php esc_attr_e( 'Save', 'woocommerce' ); ?>"><?php esc_html_e( 'Cập nhật', 'woocommerce' ); ?></button>
 	</p>
 
 	<?php wp_nonce_field( 'reset_password', 'woocommerce-reset-password-nonce' ); ?>

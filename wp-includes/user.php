@@ -2244,7 +2244,7 @@ function _wp_get_user_contactmethods( $user = null ) {
  * @return string The password hint text.
  */
 function wp_get_password_hint() {
-	$hint = __( 'Hint: The password should be at least twelve characters long. To make it stronger, use upper and lower case letters, numbers, and symbols like ! " ? $ % ^ &amp; ).' );
+	$hint = __( 'Mật khẩu nên có ít nhất 10 ký tự. Để nâng cao độ bảo mật, sử dụng chữ in hoa, in thường, chữ số và các ký tự đặc biệt như ! " ? $ % ^ & ! " ? $ % ^ &amp; ).' );
 
 	/**
 	 * Filters the text describing the site's password complexity policy.

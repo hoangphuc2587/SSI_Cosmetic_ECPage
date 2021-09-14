@@ -62,6 +62,7 @@ if (!$user_ID) {
 				<input type="password" name="password" id="password" value="<?php echo $password ?>">
 
 				<input type="submit" id="btn-submit" value="Đăng nhập">
+				<p style="margin-bottom: 10px"><a href="/my-account/lost-password/">Quên mật khẩu ?</a></p>
 				<p>Bạn chưa có tài khoản? <a href="/register">Đăng ký</a>.</p>
 			</form>
 		</div>

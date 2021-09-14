@@ -302,13 +302,13 @@ class WC_Shortcode_My_Account {
 		}
 
 		if ( ! $user_data ) {
-			wc_add_notice( __( 'Invalid username or email.', 'woocommerce' ), 'error' );
+			wc_add_notice( __( 'Tên người dùng hoặc email không đúng.', 'woocommerce' ), 'error' );
 
 			return false;
 		}
 
 		if ( is_multisite() && ! is_user_member_of_blog( $user_data->ID, get_current_blog_id() ) ) {
-			wc_add_notice( __( 'Invalid username or email.', 'woocommerce' ), 'error' );
+			wc_add_notice( __( 'Tên người dùng hoặc email không đúng.', 'woocommerce' ), 'error' );
 
 			return false;
 		}

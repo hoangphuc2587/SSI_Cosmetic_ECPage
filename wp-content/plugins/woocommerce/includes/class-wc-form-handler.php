@@ -1085,11 +1085,11 @@ class WC_Form_Handler {
 
 		if ( $user instanceof WP_User ) {
 			if ( empty( $posted_fields['password_1'] ) ) {
-				wc_add_notice( __( 'Please enter your password.', 'woocommerce' ), 'error' );
+				wc_add_notice( __( 'Vui lòng nhập mật khẩu.', 'woocommerce' ), 'error' );
 			}
 
 			if ( $posted_fields['password_1'] !== $posted_fields['password_2'] ) {
-				wc_add_notice( __( 'Passwords do not match.', 'woocommerce' ), 'error' );
+				wc_add_notice( __( 'Mật khẩu nhập lại không đúng.', 'woocommerce' ), 'error' );
 			}
 
 			$errors = new WP_Error();
