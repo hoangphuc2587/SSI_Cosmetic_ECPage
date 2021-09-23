@@ -68,13 +68,19 @@ if ($_POST) {
 		$password_err = "Vui lòng nhập mật khẩu";
 		$hasErr = true;
 	} else {
-		if (trim($password_conf) === '') {
-			$password_conf_err = "Vui lòng nhập lại mật khẩu";
+
+		if (strlen($password) < 6 || !preg_match('/[a-zA-Z]/',$password)){
+			$password_err = "Mật khẩu phải có ít nhất 6 ký tự, trong đó phải có ít nhất 1 ký tự chữ in hoa hoặc in thường.";
 			$hasErr = true;
-		} else {
-			if (strcmp($password, $password_conf) !== 0) {
-				$password_conf_err = "Mật khẩu không trùng khớp";
+		}else{
+			if (trim($password_conf) === '') {
+				$password_conf_err = "Vui lòng nhập lại mật khẩu";
 				$hasErr = true;
+			} else {
+				if (strcmp($password, $password_conf) !== 0) {
+					$password_conf_err = "Mật khẩu không trùng khớp";
+					$hasErr = true;
+				}
 			}
 		}
 	}

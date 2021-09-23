@@ -2244,7 +2244,7 @@ function _wp_get_user_contactmethods( $user = null ) {
  * @return string The password hint text.
  */
 function wp_get_password_hint() {
-	$hint = __( 'Mật khẩu nên có ít nhất 6 ký tự và có ít nhất 1 ký tự chữ in hoa hoặc in thường.' );
+	$hint = __( 'Mật khẩu phải có ít nhất 6 ký tự, trong đó phải có ít nhất 1 ký tự chữ in hoa hoặc in thường.' );
 
 	/**
 	 * Filters the text describing the site's password complexity policy.
