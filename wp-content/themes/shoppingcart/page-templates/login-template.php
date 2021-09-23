@@ -14,10 +14,13 @@ if (!$user_ID) {
         session_start();
     }	
 	// user in logged out state
-	if ($_POST) {
-
-		$username = isset($_POST['username']) ? $_POST['username'] : '';
-		$password = isset($_POST['password']) ? $_POST['password'] : '';
+	$rp_cookie = 'wp-userlogin-' . COOKIEHASH;
+	$cookie_name = 'wp-resetpass-' . COOKIEHASH;
+	$username = isset($_COOKIE[$rp_cookie]) ? $_COOKIE[$rp_cookie] : '';
+	$password = isset($_COOKIE[$cookie_name]) ? $_COOKIE[$cookie_name] : '';
+	if ($_POST) {        
+		$username = isset($_POST['username']) ? $_POST['username'] : (isset($_COOKIE[$rp_cookie]) ? $_COOKIE[$rp_cookie] : '');
+		$password = isset($_POST['password']) ? $_POST['password'] : (isset($_COOKIE[$cookie_name]) ? $_COOKIE[$cookie_name] : '') ;
 
 		$login_array = array();
 		$login_array['user_login'] = $username;

@@ -29,10 +29,14 @@ if (!$user_ID) {
     session_start();
     }
     $_SESSION['link_redirect_after_login'] = 1;
+    $rp_cookie = 'wp-userlogin-' . COOKIEHASH;
+    $cookie_name = 'wp-resetpass-' . COOKIEHASH;
+    $username = isset($_COOKIE[$rp_cookie]) ? $_COOKIE[$rp_cookie] : '';
+    $password = isset($_COOKIE[$cookie_name]) ? $_COOKIE[$cookie_name] : '';    
     if ($_POST) {
 
-        $username = isset($_POST['username']) ? $_POST['username'] : '';
-        $password = isset($_POST['password']) ? $_POST['password'] : '';
+        $username = isset($_POST['username']) ? $_POST['username'] : (isset($_COOKIE[$rp_cookie]) ? $_COOKIE[$rp_cookie] : '');
+        $password = isset($_POST['password']) ? $_POST['password'] : (isset($_COOKIE[$cookie_name]) ? $_COOKIE[$cookie_name] : '') ;
 
         $login_array = array();
         $login_array['user_login'] = $username;

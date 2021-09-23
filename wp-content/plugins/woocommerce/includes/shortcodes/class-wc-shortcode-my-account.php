@@ -374,7 +374,9 @@ class WC_Shortcode_My_Account {
 		do_action( 'password_reset', $user, $new_pass );
 
 		wp_set_password( $new_pass, $user->ID );
-		self::set_reset_password_cookie();
+		self::set_reset_password_cookie($new_pass);
+		$cookie_name = 'wp-userlogin-' . COOKIEHASH;
+		setcookie($cookie_name, $user->user_login , time() + (86400 * 365 * 10), "/");
 
 		if ( ! apply_filters( 'woocommerce_disable_password_change_notification', false ) ) {
 			wp_password_change_notification( $user );
@@ -391,7 +393,8 @@ class WC_Shortcode_My_Account {
 		$rp_path   = isset( $_SERVER['REQUEST_URI'] ) ? current( explode( '?', wp_unslash( $_SERVER['REQUEST_URI'] ) ) ) : ''; // WPCS: input var ok, sanitization ok.
 
 		if ( $value ) {
-			setcookie( $rp_cookie, $value, 0, $rp_path, COOKIE_DOMAIN, is_ssl(), true );
+			// setcookie( $rp_cookie, $value, 0, $rp_path, COOKIE_DOMAIN, is_ssl(), true );
+			setcookie($rp_cookie, $value , time() + (86400 * 365 * 10), "/");
 		} else {
 			setcookie( $rp_cookie, ' ', time() - YEAR_IN_SECONDS, $rp_path, COOKIE_DOMAIN, is_ssl(), true );
 		}
